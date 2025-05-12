@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aerospace Projects | Anuranan Bharadwaj</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="aerospace.html">Aerospace</a>
+    <a href="cs.html">Computer Science</a>
+    <a href="experience.html">Experience</a>
+    <a href="resume.html">Resume</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <header class="page-header">
+    <div class="header-content">
+      <h1>Aerospace Engineering Projects</h1>
+      <p>Hands-on experiences in flight dynamics, experimental aerodynamics, and structural simulation</p>
+    </div>
+  </header>  
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Aircraft Stability & Control Simulation</h2>
+      <ul>
+        <li>Designed a subsonic aircraft and computed aerodynamic derivatives using both analytical methods and <strong>USAF DATCOM</strong>.</li>
+        <li>Built a full <strong>MATLAB/Simulink model</strong> and integrated lookup tables for realistic flight simulation.</li>
+        <li>Visualized control maneuvers and aircraft behavior in <strong>FlightGear</strong>.</li>
+        <li>Validated lateral and longitudinal stability and confirmed effective pitch, roll, and yaw control responses.</li>
+      </ul>      
+    </div>
+    <div class="project-image-group">
+      <img src="Folder/STAB1.png" alt="Aircraft 3D Geometry" />
+      <img src="Folder/STAB2.png" alt="Simulink Model" />
+      <img src="Folder/STAB3.png" alt="FlightGear Visualization" />
+    </div>    
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Wind Tunnel Drag Study: Flap Deflection</h2>
+      <ul>
+        <li>Conducted wake survey using a <strong>pitot-static probe</strong> on a 2D NACA 4412 wing with flaps at five deflection angles (0°–50°).</li>
+        <li>Calculated drag using trapezoidal integration in <strong>MATLAB</strong> from measured velocity deficits.</li>
+        <li>Observed drag increase with flap angle, confirming aerodynamic theory with a small anomaly at 25°.</li>
+        <li>Addressed structural challenges in mounting and accounted for measurement uncertainties during analysis.</li>
+      </ul>      
+    </div>
+    <div class="project-image-group2">
+      <img src="Folder/Tunnel1.png" alt="Wind Tunnel Setup" />
+      <img src="Folder/Tunnel2.png" alt="Wind Tunnel Setup" />
+      <img src="Folder/Tunnel3.png" alt="Wake Velocity Graph" />
+    </div>     
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Aircraft Wing Structural Analysis</h2>
+      <ul>
+        <li>Modeled a full aircraft wing with spars, ribs, stringers, and skin using <strong>Fusion 360</strong>.</li>
+        <li>Exported geometry to <strong>FEMAP</strong> and performed <strong>FEA in NX Nastran</strong> under aerodynamic load conditions.</li>
+        <li>Validated mesh quality with <strong>Jacobian > 0.6</strong> and displacement of <strong>0.15 in</strong> max.</li>
+        <li>Interpreted stress contours and displacement plots to assess structural performance and stiffness.</li>
+      </ul>      
+    </div>
+    <div class="project-image-group">
+      <img src="Folder/Wing1.jpg" alt="Aircraft 3D Geometry" />
+      <img src="Folder/Wing2.jpg" alt="Simulink Model" />
+      <img src="Folder/Wing3.jpg" alt="FlightGear Visualization" />
+    </div> 
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Database Application for Aircraft Fleet Selection</h2>
+      <ul>
+        <li>Developed a MATLAB database application for airline owners to interactively manage and select their aircraft fleet.</li>
+        <li>Integrated with an Excel database for sorting, searching, filtering, and viewing aircraft data, reducing data retrieval time by <strong>25%</strong>.</li>
+        <li>Used MATLAB's data visualization features to present information in tables and graphs, aiding data-driven purchasing decisions.</li>
+      </ul>      
+    </div>
+    <div class="project-image-group2">
+      <img src="Folder/MATLAB1.png" alt="Aircraft 3D Geometry" />
+      <img src="Folder/MATLAB2.png" alt="Simulink Model" />
+      <img src="Folder/MATLAB3.png" alt="Simulink Model" />
+    </div> 
+  </section>
+
+  <section style="text-align: center; margin: 3rem 0;">
+    <a class="resume-download-btn" href="AnurananBharadwaj_RESUME_AE.pdf" target="_blank">📄 DOWNLOAD RESUME PDF</a>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <span>Phone: (215) 397–5806</span>
+      <span>Email: <a href="mailto:bharada3@my.erau.edu">bharada3@my.erau.edu</a></span>
+      <span><a href="https://linkedin.com/in/anuranan-bharadwaj" target="_blank">LinkedIn</a></span>
+      <span><a href="https://github.com/anuranan10" target="_blank">GitHub</a></span>
+      <span>&copy; 2025 Anuranan Bharadwaj</span>
+    </div>
+  </footer>
+</body>
+</html>
