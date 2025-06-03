@@ -66,14 +66,8 @@ Each resume is linked via `resume.html` and is tailored for different job sector
 
 ## Contact & Links
 
-Visit the [Contact Page](contact.html) to find:
+Visit the [Contact Page](https://anuranan.info/contact.html) to find:
 - Email: [bharada3@my.erau.edu](mailto:bharada3@my.erau.edu)
 - US: +1 (215) 397–5806
 - [LinkedIn](https://linkedin.com/in/anuranan-bharadwaj)
 - [GitHub](https://github.com/anuranan10)
-
----
-
-## 📝 License
-
-This project is free to use and modify for educational or personal branding purposes. Attribution appreciated.
