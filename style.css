@@ -135,6 +135,17 @@ footer {
     margin-bottom: 1rem;
 }
 
+.project-title-link {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+}
+
+.project-title-link:hover {
+    color: #004f99;
+}
+
 .project-text ul {
     padding-left: 1.25rem;
     list-style-type: disc;
