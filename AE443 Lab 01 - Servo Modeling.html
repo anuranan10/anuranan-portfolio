@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lab 01: Servo Modeling | Anuranan Bharadwaj</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="aerospace.html">Aerospace</a>
+    <a href="cs.html">Computer Science</a>
+    <a href="experience.html">Work Experience</a>
+    <a href="lab-testing-experience.html">Lab Testing Experience</a>
+    <a href="resume.html">Resume</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <header class="page-header">
+    <div class="header-content">
+      <h1>Lab 01: Servo Modeling</h1>
+      <p>AE 443 &middot; Experimental Dynamics and Control Laboratory &middot; Spring 2026 &middot; ERAU</p>
+    </div>
+  </header>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Lab Overview</h2>
+      <ul>
+        <li><strong>Course:</strong> AE 443 &ndash; Experimental Dynamics and Control Laboratory (Bernardo Restrepo / Jared Getz) | February 13, 2026</li>
+        <li><strong>Objective:</strong> Identify a first-order transfer function for the Quanser SRV02 servo-motor gear system by applying a square-wave step input, extracting the steady-state gain (K) and time constant (&#964;) from the load shaft speed response, then validating and tuning the model against measured hardware data.</li>
+        <li><strong>Hardware:</strong> Quanser SRV02 rotary servo-motor, Q2-USB DAQ board, VoltPAQ amplifier</li>
+        <li><strong>Software:</strong> MATLAB/Simulink 2020, QUARC real-time control toolbox</li>
+        <li><strong>Transfer function model:</strong> &#937;(s)/V_m(s) = K / (&#964;s + 1)</li>
+      </ul>
+    </div>
+    <div class="project-image-group">
+      <div class="project-image-note">SRV02 servo-motor hardware</div>
+      <div class="project-image-note">Simulink signal generator configuration</div>
+      <div class="project-image-note">Bump test method diagram</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Procedure &amp; Methodology</h2>
+      <p><strong>Bump Test:</strong> A square-wave voltage (amplitude 1.5 V, offset 2.0 V, frequency 0.4 Hz) was applied to the SRV02 using the Simulink model. The load shaft speed &#969;_l (rad/s) and motor input voltage V_m (V) were recorded over 5 seconds. The steady-state gain was computed as K_e,b = (y_ss &#8722; y_0) / (u_max &#8722; u_min), where y_ss is the steady-state speed and y_0 is the initial speed. The time constant was identified as the time for the response to reach 63.2% of the steady-state change from the step onset.</p>
+      <p><strong>Model Validation:</strong> The Simulink model was re-run with four sets of (K, &#964;) values &mdash; nominal theoretical, bump-test, and two manual iterations &mdash; to overlay simulated responses against the measured speed trace. The pair producing the closest visual match was selected as the validated model.</p>
+    </div>
+    <div class="project-image-group">
+      <!-- insert figure: Voltage and rotational speed vs time — bump test (Fig. 1) -->
+      <div class="project-image-note">Voltage &amp; speed vs time &mdash; bump test (Fig. 1)</div>
+      <!-- insert figure: Model validation overlay K=1.68, tau=0.044 (Fig. 7) -->
+      <div class="project-image-note">Best-fit validation K=1.68, &#964;=0.044 (Fig. 7)</div>
+      <!-- insert figure: Model validation K=0.8, tau=0.06 for comparison (Fig. 3) -->
+      <div class="project-image-note">Comparison K=0.8, &#964;=0.06 (Fig. 3)</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Results &amp; Analysis</h2>
+      <table style="border-collapse:collapse; font-size:0.9em; margin-bottom:0.8rem;">
+        <tr style="background:#004080; color:white;">
+          <th style="padding:6px 12px;">Source</th>
+          <th style="padding:6px 12px;">K (rad/s/V)</th>
+          <th style="padding:6px 12px;">&#964; (s)</th>
+        </tr>
+        <tr style="background:#f4faff;">
+          <td style="padding:6px 12px;">Nominal (theoretical)</td>
+          <td style="padding:6px 12px;">1.53</td>
+          <td style="padding:6px 12px;">0.0253</td>
+        </tr>
+        <tr>
+          <td style="padding:6px 12px;">Bump test (experimental)</td>
+          <td style="padding:6px 12px;">1.7866</td>
+          <td style="padding:6px 12px;">0.048</td>
+        </tr>
+        <tr style="background:#f4faff;">
+          <td style="padding:6px 12px;">Model validation (best fit)</td>
+          <td style="padding:6px 12px;">1.68</td>
+          <td style="padding:6px 12px;">0.044</td>
+        </tr>
+      </table>
+      <ul>
+        <li>K_e,b was calculated as (6.051 &#8722; 0.6912) / (3.5 &#8722; 0.5) = <strong>1.7866 rad/s/V</strong>.</li>
+        <li>&#964;_e,b was found at t_63% = 1.298 s relative to step onset at 1.25 s: <strong>&#964; = 0.048 s</strong>.</li>
+        <li>The nominal model (K = 1.53, &#964; = 0.0253) under-predicted the steady-state speed and over-predicted the response speed due to parameter uncertainty and unmodeled friction.</li>
+        <li>The bump-test model improved accuracy; further manual iteration yielded the best-fit (K = 1.68, &#964; = 0.044), with simulated and measured responses nearly indistinguishable.</li>
+        <li>The time constant governs how quickly the motor reaches steady-state; the gain determines the magnitude of the speed output per unit voltage input.</li>
+      </ul>
+    </div>
+    <div class="project-image-group">
+      <!-- insert figure: Model validation K=1.53, tau=0.0253 (Fig. 5) -->
+      <div class="project-image-note">Nominal model overlay (Fig. 5)</div>
+      <!-- insert figure: Model validation K=1.25, tau=0.2 (Fig. 4) -->
+      <div class="project-image-note">Validation K=1.25, &#964;=0.2 (Fig. 4)</div>
+      <div class="project-image-note">Parameter summary table (Table 1)</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>MATLAB Code</h2>
+      <p>Data was saved from the Simulink workspace and plotted with subplots showing motor voltage and load shaft speed. The bump test gain and time constant were read from cursor coordinates on the MATLAB figure. Full script: Lab 1 Appendix B.</p>
+      <pre style="background:#f4faff; padding:1rem; border-radius:6px; overflow-x:auto;"><code>% Plot voltage and rotational speed vs time
+figure();
+subplot(2,1,1)
+plot(Vm(:,1), Vm(:,2), 'r', 'LineWidth', 1.5);
+grid on;
+xlabel('Time (s)');  ylabel('Voltage (V)');
+
+subplot(2,1,2)
+plot(wl(:,1), wl(:,2), 'LineWidth', 1.5);   % measured
+hold on
+plot(wl(:,1), wl(:,3), 'LineWidth', 1.5);   % simulated
+grid on;
+xlabel('Time (s)');  ylabel('Rotational Speed (rad/s)');
+
+% Bump test gain calculation
+K_eb = (y_ss - y_0) / (u_max - u_min);       % = 1.7866 (rad/s)/V
+
+% Time constant: locate t at 63.2% of steady-state change
+y_63 = 0.632 * y_ss;                          % ≈ 3.824 rad/s
+% From cursor: t1 = 1.298 s, t0 = 1.25 s
+tau_eb = t1 - t0;                             % = 0.048 s</code></pre>
+      <!-- full MATLAB code (AE443_Lab1.m) to be embedded here -->
+    </div>
+    <div class="project-image-group">
+      <div class="project-image-note">Full MATLAB script &mdash; Lab 1 Appendix B</div>
+      <div class="project-image-note">Simulink model: q_srv02_mdl</div>
+      <div class="project-image-note">Workspace .mat data files</div>
+    </div>
+  </section>
+
+  <section style="padding: 1rem 2rem 2rem;">
+    <p><a class="project-title-link" href="dynamics-control-labs.html">&#8592; Back to Dynamics &amp; Control Labs</a></p>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <span>Phone: (215) 397–5806</span>
+      <span>Email: <a href="mailto:bharada3@my.erau.edu">bharada3@my.erau.edu</a></span>
+      <span><a href="https://linkedin.com/in/anuranan-bharadwaj" target="_blank">LinkedIn</a></span>
+      <span><a href="https://github.com/anuranan10" target="_blank">GitHub</a></span>
+      <span>&copy; 2030 Anuranan Bharadwaj</span>
+    </div>
+  </footer>
+</body>
+</html>

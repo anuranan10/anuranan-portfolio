@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lab 03: SRV02 Position Control | Anuranan Bharadwaj</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="aerospace.html">Aerospace</a>
+    <a href="cs.html">Computer Science</a>
+    <a href="experience.html">Work Experience</a>
+    <a href="lab-testing-experience.html">Lab Testing Experience</a>
+    <a href="resume.html">Resume</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <header class="page-header">
+    <div class="header-content">
+      <h1>Lab 03: SRV02 Position Control</h1>
+      <p>AE 443 &middot; Experimental Dynamics and Control Laboratory &middot; Spring 2026 &middot; ERAU</p>
+    </div>
+  </header>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Lab Overview</h2>
+      <ul>
+        <li><strong>Course:</strong> AE 443 &ndash; Experimental Dynamics and Control Laboratory (Bernardo Restrepo / Jared Getz) | March 13, 2026</li>
+        <li><strong>Objective:</strong> Design PV (proportional-velocity) and PIV controllers for the SRV02 load shaft position, validate transient performance against second-order specifications (t_p = 0.20 s, PO = 5%), and demonstrate elimination of ramp tracking steady-state error by adding an integral term.</li>
+        <li><strong>Plant parameters:</strong> K = 1.53 rad/s/V, &#964; = 0.0254 s</li>
+        <li><strong>Control structure:</strong> PV = proportional + velocity feedback; PIV adds integral action to reduce e_ss under ramp input</li>
+        <li><strong>Design specs:</strong> Desired &#950; = 0.69, &#969;_n = 21.7 rad/s (from t_p = 0.20 s, PO = 5%)</li>
+      </ul>
+    </div>
+    <div class="project-image-group">
+      <!-- insert figure: Simulated step response with PV controller (Fig. 1) -->
+      <div class="project-image-note">Simulated step response &mdash; PV (Fig. 1)</div>
+      <!-- insert figure: Filtered PV step response (Fig. 2) -->
+      <div class="project-image-note">Filtered PV step response (Fig. 2)</div>
+      <!-- insert figure: Implemented PV step response (Fig. 3) -->
+      <div class="project-image-note">Implemented PV step response (Fig. 3)</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Controller Design</h2>
+      <p>The desired transient response (t_p = 0.20 s, PO = 5%) was converted to second-order system parameters: &#950; = 0.69 and &#969;_n = 21.7 rad/s. The PV controller gains were then derived from the closed-loop pole placement equations:</p>
+      <p style="text-align:center; font-style:italic; margin:0.5rem 0;">k_p = &#964;&#969;_n&#178; / K = 7.82 V/rad &nbsp;&nbsp;&nbsp; k_v = (2&#950;&#969;_n&#964; &#8722; 1) / K = &#8722;0.157 V&#183;s/rad</p>
+      <p>Maximum allowable k_p was bounded by the amplifier limit V_max = 10 V: k_p,max = 28.7 V/rad for a 20&#176; step, 12.7 V/rad for 45&#176;. The ramp steady-state error under PV control (Type-1 system) was predicted as e_ss = R(1 + Kk_v) / (Kk_p) = 0.214 rad. To eliminate this, an integral gain k_i was designed: k_i = (V_max &#8722; k_p&#183;e_ss) / (e_ss&#183;t) = 38.9 V/(rad&#183;s) for t = 1 s.</p>
+    </div>
+    <div class="project-image-group">
+      <!-- insert figure: Ramp response simulation with PV (Fig. 4) -->
+      <div class="project-image-note">Ramp response &mdash; PV simulation (Fig. 4)</div>
+      <!-- insert figure: Ramp response implementation with PV (Fig. 5) -->
+      <div class="project-image-note">Ramp response &mdash; PV hardware (Fig. 5)</div>
+      <!-- insert figure: PIV ramp response — no steady-state error (Fig. 7) -->
+      <div class="project-image-note">PIV ramp &mdash; near-zero e_ss (Fig. 7)</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Results &amp; Analysis</h2>
+      <table style="border-collapse:collapse; font-size:0.9em; margin-bottom:0.8rem;">
+        <tr style="background:#004080; color:white;">
+          <th style="padding:5px 10px;">Test</th>
+          <th style="padding:5px 10px;">t_p (s)</th>
+          <th style="padding:5px 10px;">PO (%)</th>
+          <th style="padding:5px 10px;">e_ss (rad)</th>
+        </tr>
+        <tr style="background:#f4faff;">
+          <td style="padding:5px 10px;">Step sim (PV)</td><td style="padding:5px 10px;">0.194</td><td style="padding:5px 10px;">5.0</td><td style="padding:5px 10px;">0</td>
+        </tr>
+        <tr>
+          <td style="padding:5px 10px;">Step sim (filtered PV)</td><td style="padding:5px 10px;">0.204</td><td style="padding:5px 10px;">5.7</td><td style="padding:5px 10px;">0.002</td>
+        </tr>
+        <tr style="background:#f4faff;">
+          <td style="padding:5px 10px;">Step impl (PV)</td><td style="padding:5px 10px;">0.170</td><td style="padding:5px 10px;">7.86</td><td style="padding:5px 10px;">0.004</td>
+        </tr>
+        <tr>
+          <td style="padding:5px 10px;">Ramp sim (PV)</td><td style="padding:5px 10px;">&mdash;</td><td style="padding:5px 10px;">&mdash;</td><td style="padding:5px 10px;">0.213</td>
+        </tr>
+        <tr style="background:#f4faff;">
+          <td style="padding:5px 10px;">Ramp impl (PV)</td><td style="padding:5px 10px;">&mdash;</td><td style="padding:5px 10px;">&mdash;</td><td style="padding:5px 10px;">0.186</td>
+        </tr>
+        <tr>
+          <td style="padding:5px 10px;">Ramp sim (PIV)</td><td style="padding:5px 10px;">&mdash;</td><td style="padding:5px 10px;">&mdash;</td><td style="padding:5px 10px;">0.005</td>
+        </tr>
+        <tr style="background:#f4faff;">
+          <td style="padding:5px 10px;">Ramp impl (PIV)</td><td style="padding:5px 10px;">&mdash;</td><td style="padding:5px 10px;">&mdash;</td><td style="padding:5px 10px;">0.007</td>
+        </tr>
+      </table>
+      <ul>
+        <li>PV step response met the 5% overshoot and 0.20 s peak time design specs in simulation; hardware showed marginally higher overshoot (7.86%) due to friction and noise.</li>
+        <li>Adding the low-pass filter slightly increased peak time but smoothed the response &mdash; e_ss remained negligible at 0.002 rad.</li>
+        <li>Adding the integral term (PIV) reduced ramp e_ss from ~0.19 rad to ~0.007 rad, confirming the Type-2 behavior introduced by the integrator.</li>
+      </ul>
+    </div>
+    <div class="project-image-group">
+      <div class="project-image-note">Controller gains and design calculations</div>
+      <div class="project-image-note">PV vs PIV ramp error comparison</div>
+      <div class="project-image-note">Full summary table (Table 1)</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>MATLAB Code</h2>
+      <p>The plotting script overlaid the setpoint and measured/simulated position responses. Full script: Lab 3 Appendix A.</p>
+      <pre style="background:#f4faff; padding:1rem; border-radius:6px; overflow-x:auto;"><code>% Plot setpoint vs measured position
+figure()
+plot(data_pos(:,1), data_pos(:,2))   % setpoint
+hold on
+plot(data_pos(:,1), data_pos(:,3))   % measured/simulated
+xlabel('Time (s)')
+ylabel('Load Shaft Position (rad)')
+title('Measured SRV02 PV ramp response')
+legend('Setpoint Position', 'Simulated Position')
+
+% Steady-state error calculation
+index = (time >= 4.9) & (time <= 9.9);
+r_ss  = mean(data_pos(index, 2));
+y_ss  = mean(data_pos(index, 3));
+e_ss  = r_ss - y_ss;    % ≈ 0.186 rad (PV ramp), 0.007 rad (PIV ramp)</code></pre>
+      <!-- full MATLAB code (AE443_Lab3.m) to be embedded here -->
+    </div>
+    <div class="project-image-group">
+      <div class="project-image-note">Full MATLAB script &mdash; Lab 3 Appendix A</div>
+      <div class="project-image-note">Simulink PV controller block diagram</div>
+      <div class="project-image-note">PIV controller with integral block</div>
+    </div>
+  </section>
+
+  <section style="padding: 1rem 2rem 2rem;">
+    <p><a class="project-title-link" href="dynamics-control-labs.html">&#8592; Back to Dynamics &amp; Control Labs</a></p>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <span>Phone: (215) 397–5806</span>
+      <span>Email: <a href="mailto:bharada3@my.erau.edu">bharada3@my.erau.edu</a></span>
+      <span><a href="https://linkedin.com/in/anuranan-bharadwaj" target="_blank">LinkedIn</a></span>
+      <span><a href="https://github.com/anuranan10" target="_blank">GitHub</a></span>
+      <span>&copy; 2030 Anuranan Bharadwaj</span>
+    </div>
+  </footer>
+</body>
+</html>

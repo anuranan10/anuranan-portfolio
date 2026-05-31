@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lab 05: Speed Control | Anuranan Bharadwaj</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="aerospace.html">Aerospace</a>
+    <a href="cs.html">Computer Science</a>
+    <a href="experience.html">Work Experience</a>
+    <a href="lab-testing-experience.html">Lab Testing Experience</a>
+    <a href="resume.html">Resume</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <header class="page-header">
+    <div class="header-content">
+      <h1>Lab 05: Speed Control</h1>
+      <p>AE 443 &middot; Experimental Dynamics and Control Laboratory &middot; Spring 2026 &middot; ERAU</p>
+    </div>
+  </header>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Lab Overview</h2>
+      <ul>
+        <li><strong>Course:</strong> AE 443 &ndash; Experimental Dynamics and Control Laboratory (Bernardo Restrepo / Jared Getz) | April 17, 2026</li>
+        <li><strong>Objective:</strong> Design PI and lead compensators for SRV02 motor speed regulation, evaluate their performance in simulation and hardware, and compare them using frequency-domain stability metrics (Bode plot, gain margin, phase margin).</li>
+        <li><strong>Plant with integrator:</strong> P_i(s) = K / [s(&#964;s + 1)] = 1.53 / [s(0.0254s + 1)]</li>
+        <li><strong>Stability margins:</strong> Gain Margin = &#8734;, Phase Margin = 87.8&#176; at &#969; = 1.53 rad/s</li>
+        <li><strong>Reference signal:</strong> Square wave alternating between 2.5 and 7.5 rad/s (step magnitude = 5 rad/s)</li>
+      </ul>
+    </div>
+    <div class="project-image-group">
+      <!-- insert figure: Bode diagram (Fig. 6) -->
+      <div class="project-image-note">Bode diagram &mdash; gain and phase margins (Fig. 6)</div>
+      <!-- insert figure: PI simulation speed response (Fig. 1) -->
+      <div class="project-image-note">PI step response &mdash; simulation (Fig. 1)</div>
+      <!-- insert figure: PI implementation speed response (Fig. 2) -->
+      <div class="project-image-note">PI step response &mdash; hardware (Fig. 2)</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Frequency-Domain Analysis &amp; Controller Design</h2>
+      <p>The plant transfer function P_i(s) = K / [s(&#964;s+1)] was evaluated in frequency domain. The magnitude is |P_i(j&#969;)| = K / [&#969;&#8730;(1 + (&#964;&#969;)&#178;)]. The Bode plot shows a pole at the origin (&#8722;20 dB/decade slope) and a second pole at &#969; = 1/&#964; = 39.4 rad/s. Phase starts at &#8722;90&#176; and approaches &#8722;180&#176; asymptotically, never crossing &#8722;180&#176; &rarr; Gain Margin = &#8734;. Phase Margin = 87.8&#176; at the gain crossover of 1.53 rad/s. Since one pole is at s = 0, P_i(s) is marginally stable.</p>
+      <p>The PI controller adds an integrator to eliminate steady-state error for step references and uses the proportional gain for transient shaping. The lead compensator adds phase lead to improve transient response while maintaining stability margins. Both were tuned in Simulink and then deployed to the SRV02 hardware via the QUARC interface.</p>
+    </div>
+    <div class="project-image-group">
+      <!-- insert figure: Lead simulation speed response (Fig. 4) -->
+      <div class="project-image-note">Lead step response &mdash; simulation (Fig. 4)</div>
+      <!-- insert figure: Lead implementation speed response (Fig. 5) -->
+      <div class="project-image-note">Lead step response &mdash; hardware (Fig. 5)</div>
+      <!-- insert figure: PI signal noise plot (Fig. 3) -->
+      <div class="project-image-note">PI ripple &mdash; signal noise analysis (Fig. 3)</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Results &amp; Analysis</h2>
+      <table style="border-collapse:collapse; font-size:0.9em; margin-bottom:0.8rem;">
+        <tr style="background:#004080; color:white;">
+          <th style="padding:5px 10px;">Controller / Test</th>
+          <th style="padding:5px 10px;">t_p (s)</th>
+          <th style="padding:5px 10px;">PO (%)</th>
+          <th style="padding:5px 10px;">e_ss (rad/s)</th>
+        </tr>
+        <tr style="background:#f4faff;">
+          <td style="padding:5px 10px;">PI &mdash; simulation</td><td style="padding:5px 10px;">0.04</td><td style="padding:5px 10px;">4.4</td><td style="padding:5px 10px;">0</td>
+        </tr>
+        <tr>
+          <td style="padding:5px 10px;">PI &mdash; hardware</td><td style="padding:5px 10px;">0.034</td><td style="padding:5px 10px;">23.8</td><td style="padding:5px 10px;">&#8722;3.17&#215;10&#8315;&#8309;</td>
+        </tr>
+        <tr style="background:#f4faff;">
+          <td style="padding:5px 10px;">Lead &mdash; simulation</td><td style="padding:5px 10px;">0.04</td><td style="padding:5px 10px;">2.0</td><td style="padding:5px 10px;">0</td>
+        </tr>
+        <tr>
+          <td style="padding:5px 10px;">Lead &mdash; hardware</td><td style="padding:5px 10px;">0.03</td><td style="padding:5px 10px;">44.4</td><td style="padding:5px 10px;">&#8722;0.0012</td>
+        </tr>
+      </table>
+      <ul>
+        <li>Both controllers met simulation specs; lead showed lower overshoot (2% vs 4.4%) in simulation.</li>
+        <li>On hardware, both had significantly higher overshoot than simulation due to friction, encoder quantization noise, and unmodeled dynamics.</li>
+        <li>PI hardware overshoot (23.8%) was much more moderate than lead (44.4%), making PI the preferred controller for this physical system.</li>
+        <li>Measured peak-to-peak ripple for PI: 1.16 rad/s vs. theoretical estimate of 0.525 rad/s &mdash; real encoder noise exceeded the theoretical bound.</li>
+        <li>The lead compensator is more sensitive to physical non-idealities because its derivative-like action amplifies high-frequency noise in the velocity signal.</li>
+      </ul>
+    </div>
+    <div class="project-image-group">
+      <div class="project-image-note">PI vs Lead overshoot comparison</div>
+      <div class="project-image-note">Ripple analysis &mdash; measured vs theoretical</div>
+      <div class="project-image-note">Full summary table (Table 1)</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>MATLAB Code</h2>
+      <p>The Bode plot was generated using MATLAB's <code>margin()</code> function on the P_i(s) transfer function. Response plots overlaid setpoint and measured speed. Full script: Lab 5 Appendix A.</p>
+      <pre style="background:#f4faff; padding:1rem; border-radius:6px; overflow-x:auto;"><code>% Plant with integrator: Pi(s) = K / [s(tau*s + 1)]
+K   = 1.53;
+tau = 0.0254;
+s   = tf('s');
+PI  = K / (s * (tau*s + 1));
+margin(PI)    % Gm = Inf, Pm = 87.8 deg at 1.53 rad/s
+
+% Speed response plot
+figure()
+plot(data_spd(:,1), data_spd(:,2))   % setpoint
+hold on
+plot(data_spd(:,1), data_spd(:,3))   % measured
+xlabel('Time (s)');  ylabel('Speed (rad/s)')
+title('Step response implementation with Lead Control')
+legend('Setpoint', 'Measured', Location='northwest')
+
+% Steady-state error over settling window
+index = (time >= 4.9) & (time <= 9.9);
+e_ss  = mean(r(index)) - mean(y(index));   % ≈ -3.17e-5 rad/s (PI)</code></pre>
+      <!-- full MATLAB code (AE443_Lab5.m) to be embedded here -->
+    </div>
+    <div class="project-image-group">
+      <div class="project-image-note">Full MATLAB script &mdash; Lab 5 Appendix A</div>
+      <div class="project-image-note">PI controller Simulink speed loop</div>
+      <div class="project-image-note">Lead compensator Simulink block</div>
+    </div>
+  </section>
+
+  <section style="padding: 1rem 2rem 2rem;">
+    <p><a class="project-title-link" href="dynamics-control-labs.html">&#8592; Back to Dynamics &amp; Control Labs</a></p>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <span>Phone: (215) 397–5806</span>
+      <span>Email: <a href="mailto:bharada3@my.erau.edu">bharada3@my.erau.edu</a></span>
+      <span><a href="https://linkedin.com/in/anuranan-bharadwaj" target="_blank">LinkedIn</a></span>
+      <span><a href="https://github.com/anuranan10" target="_blank">GitHub</a></span>
+      <span>&copy; 2030 Anuranan Bharadwaj</span>
+    </div>
+  </footer>
+</body>
+</html>
