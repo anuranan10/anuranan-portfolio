@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lab 02: Flow Around Cylinders | Anuranan Bharadwaj</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="aerospace.html">Aerospace</a>
+    <a href="cs.html">Computer Science</a>
+    <a href="experience.html">Work Experience</a>
+    <a href="lab-testing-experience.html">Lab Testing Experience</a>
+    <a href="resume.html">Resume</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <header class="page-header">
+    <div class="header-content">
+      <h1>Lab 02: Flow Around Cylinders</h1>
+      <p>AE 315 &middot; Experimental Aerodynamics &middot; Spring 2025 &middot; ERAU</p>
+    </div>
+  </header>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Lab Overview</h2>
+      <ul>
+        <li><strong>Course:</strong> AE 315 – Experimental Aerodynamics, Section 04 (Robert Bryan) | February 27, 2025</li>
+        <li><strong>Objective:</strong> Measure surface pressure distributions around a cylinder at two flow velocities, compute Cp, Cd, and drag force, and compare results to potential flow theory.</li>
+        <li><strong>Model:</strong> Circular cylinder, d = 1.4 in (0.03556 m), with a single static pressure port rotated through 24 angular positions (0°–180°)</li>
+        <li><strong>Ambient conditions:</strong> T = 24°C (297.15 K), P = 30.4 inHg (102,946.2 Pa), &#961; = 1.207 kg/m&#179;</li>
+        <li><strong>Test velocities:</strong> 10 m/s (Re &#8776; 23,515) and 15 m/s (Re &#8776; 35,272)</li>
+      </ul>
+    </div>
+    <div class="project-image-group">
+      <div class="project-image-note">Cylinder model mounted in test section</div>
+      <!-- insert figure: Cylinder with pressure port and angular positioning mechanism -->
+      <div class="project-image-note">Pressure port and rotation setup</div>
+      <div class="project-image-note">Wind tunnel test section configuration</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Procedure &amp; Methodology</h2>
+      <p>Ambient temperature and pressure were recorded before each run to establish air density. The cylinder's static pressure port was positioned at 24 discrete angles from 0° to 180°, and differential pressure data was collected at both 10 m/s and 15 m/s. Dynamic pressure was computed by subtracting ambient pressure from the total pressure reading, then the coefficient of pressure was calculated as C_p(actual) = P_dyn / (0.5 &#961; V&#178;).</p>
+      <p>The theoretical potential flow coefficient of pressure was computed as C_p(potential) = 1 &#8722; 4sin&#178;(&#952;) for comparison. The drag coefficient was then obtained by numerically integrating the pressure distribution using MATLAB's <code>trapz</code> function: C_d = &#8747; C_p cos&#952; d&#952;. Finally, drag force was computed as D = 0.5 &#961; V&#178; A C_d, where A is the frontal area of the cylinder.</p>
+      <p>Velocity and Cp uncertainties were propagated through partial derivatives of the governing equations, incorporating uncertainties in dynamic pressure, atmospheric pressure, and temperature.</p>
+    </div>
+    <div class="project-image-group">
+      <!-- insert figure: Cp vs Angle of Cylinder — potential flow vs 10 m/s vs 15 m/s (Fig. 1) -->
+      <div class="project-image-note">Cp vs Cylinder Angle (Fig. 1)</div>
+      <div class="project-image-note">Pressure port angular sweep</div>
+      <div class="project-image-note">Drag integration schematic</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Results &amp; Analysis</h2>
+      <ul>
+        <li>Both test velocities produced subcritical flow (Re &lt; 300,000); no drag crisis was observed.</li>
+        <li>At lower angles (&lt;40°), experimental Cp agreed closely with potential flow theory near the stagnation point.</li>
+        <li>Past &#8776;40°, actual Cp deviated significantly from potential flow as boundary layer separation occurred, creating a turbulent wake.</li>
+        <li>At 15 m/s, flow remained attached to the cylinder longer than at 10 m/s — consistent with higher Re delaying separation.</li>
+        <li><strong>Cd = 1.3055</strong> at 10 m/s (uncertainty: ±0.0043)</li>
+        <li><strong>Cd = 1.4239</strong> at 15 m/s (uncertainty: ±0.0051)</li>
+        <li>Drag force increased with velocity, confirming that drag scales with V&#178;. Deviations from the theoretical C_d vs Re curve are attributed to surface roughness and measurement error.</li>
+      </ul>
+    </div>
+    <div class="project-image-group">
+      <!-- insert figure: Cd vs Reynolds Number (Fig. 2) -->
+      <div class="project-image-note">Cd vs Reynolds Number (Fig. 2)</div>
+      <div class="project-image-note">Cd uncertainty table</div>
+      <div class="project-image-note">Drag force at each velocity</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>MATLAB Code</h2>
+      <p>Pressure data was loaded from 24 <code>.mat</code> files per velocity, converted to Pa, and processed to extract Cp and Cd. Below is a representative excerpt; the full script is <code>AE315_LAB2.m</code>.</p>
+      <pre style="background:#f4faff; padding:1rem; border-radius:6px; overflow-x:auto;"><code>% Load and process data for 10 m/s and 15 m/s
+for i = 1:filecount
+  file_10ms = load(sprintf('LAB2_DATA/10ms/Experiment2_10ms_%d.mat', i));
+  dp_10ms(i)       = mean(file_10ms.dp) * 248.84;  % inH2O → Pa
+  currAngle_10ms(i) = file_10ms.currAngle;
+  v_1 = 10;
+  Cp_10ms(i) = (dp_10ms(i)) / (0.5 * density * v_1^2) + 1;
+end
+
+% Potential flow Cp for comparison
+Cp_potential = 1 - 4 .* sind(currAngle_10ms(2:24)).^2;
+
+% Drag coefficient via trapezoidal integration
+theta    = deg2rad(currAngle_10ms(2:23));
+freq_10  = Cp_10ms(2:23) .* cos(theta);
+Cd_10    = trapz(theta, freq_10);   % = 1.3055
+
+% Drag force
+DF_10 = 0.5 * Cd_10 * density * diameter * 100;</code></pre>
+      <!-- full MATLAB code (AE315_LAB2.m) to be embedded here -->
+    </div>
+    <div class="project-image-group">
+      <div class="project-image-note">Full MATLAB script — AE315_LAB2.m</div>
+      <div class="project-image-note">Data file structure (.mat format)</div>
+      <div class="project-image-note">Uncertainty propagation equations</div>
+    </div>
+  </section>
+
+  <section style="padding: 1rem 2rem 2rem;">
+    <p><a class="project-title-link" href="lab-testing-experience.html">&#8592; Back to Lab Testing Experience</a></p>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <span>Phone: (215) 397–5806</span>
+      <span>Email: <a href="mailto:bharada3@my.erau.edu">bharada3@my.erau.edu</a></span>
+      <span><a href="https://linkedin.com/in/anuranan-bharadwaj" target="_blank">LinkedIn</a></span>
+      <span><a href="https://github.com/anuranan10" target="_blank">GitHub</a></span>
+      <span>&copy; 2030 Anuranan Bharadwaj</span>
+    </div>
+  </footer>
+</body>
+</html>
