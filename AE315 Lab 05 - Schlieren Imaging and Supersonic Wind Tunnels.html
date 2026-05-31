@@ -110,7 +110,7 @@ shock = dataframe(10) / dataframe(9);  % = 1.6142
 
 % Choked-flow mass rate (lbm/s)
 a    = sqrt(y * R * T);
-mdot = Ath * y * (P0/a) * ((y+1)/2)^((y+1)/(y-1)) * 32.174; % = 6.1036</code></pre>
+mdot = Ath * (P0/a) * sqrt(y) * ((2/(y+1))^((y+1)/(2*(y-1)))) * 32.174; % = 6.1036</code></pre>
       <!-- full MATLAB code (AE315_LAB5.m) to be embedded here -->
     </div>
     <div class="project-image-group">
