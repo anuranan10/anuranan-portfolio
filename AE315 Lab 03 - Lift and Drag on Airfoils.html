@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lab 03: Lift and Drag on Airfoils | Anuranan Bharadwaj</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="aerospace.html">Aerospace</a>
+    <a href="cs.html">Computer Science</a>
+    <a href="experience.html">Work Experience</a>
+    <a href="lab-testing-experience.html">Lab Testing Experience</a>
+    <a href="resume.html">Resume</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <header class="page-header">
+    <div class="header-content">
+      <h1>Lab 03: Lift and Drag on Airfoils</h1>
+      <p>AE 315 &middot; Experimental Aerodynamics &middot; Spring 2025 &middot; ERAU</p>
+    </div>
+  </header>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Lab Overview</h2>
+      <ul>
+        <li><strong>Course:</strong> AE 315 – Experimental Aerodynamics, Section 04 (Robert Bryan) | March 28, 2025</li>
+        <li><strong>Objective:</strong> Measure the surface pressure distribution and wake profile of a NACA 4412 airfoil at multiple angles of attack, extract lift, drag, and moment coefficients, and compare against panel code (potential flow) predictions.</li>
+        <li><strong>Model:</strong> NACA 4412 airfoil, c = 6-inch chord, instrumented with 18 static pressure taps (10 upper surface, 8 lower surface)</li>
+        <li><strong>Test speed:</strong> 15 m/s; angles of attack: &#8722;3°, 0°, 3°, 6°, 9°, 12°</li>
+        <li><strong>Ambient conditions:</strong> T = 22°C (295.15 K), P = 30.1 inHg (101,930.3 Pa), &#961; = 1.203 kg/m&#179;</li>
+      </ul>
+    </div>
+    <div class="project-image-group">
+      <!-- insert figure: NACA 4412 airfoil diagram with pressure tap locations -->
+      <div class="project-image-note">NACA 4412 airfoil with 18 pressure taps</div>
+      <div class="project-image-note">Airfoil mounted in wind tunnel test section</div>
+      <div class="project-image-note">Traversing pitot-static wake probe</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Procedure &amp; Methodology</h2>
+      <p>The tunnel was set to 15 m/s and the airfoil adjusted to each angle of attack from &#8722;3° to 12° in 3° increments. At each angle, the traversing pitot-static tube swept 76 height positions behind the airfoil to capture the wake velocity profile, while the 18 static pressure ports sampled the airfoil surface pressure simultaneously.</p>
+      <p>Pressure readings (in inH&#8322;O) were converted to Pa and normalized by dynamic pressure to obtain the pressure coefficient C_p = (P_diff + q_inf) / q_inf. The lift coefficient was computed by integrating the pressure difference between lower and upper surfaces: C_l = (1/c) &#8747; (C_p_lower &#8722; C_p_upper) dx. The drag coefficient was derived from the wake momentum deficit: C_d = (2/U&#8734;&#178;c) &#8747; U_w(U&#8734; &#8722; U_w) dy. Moment coefficients about the leading edge and quarter chord were obtained from weighted pressure integrals. All results were compared to panel code (potential flow) predictions loaded from <code>PanelCode.mat</code>.</p>
+    </div>
+    <div class="project-image-group">
+      <!-- insert figure: Wake velocity profiles for all AoA (Fig. 2) -->
+      <div class="project-image-note">Wake velocity profiles — all AoA (Fig. 2)</div>
+      <!-- insert figure: Cp distribution for all AoA (Fig. 3) -->
+      <div class="project-image-note">Cp distribution — all AoA (Fig. 3)</div>
+      <div class="project-image-note">Panel code vs experimental overlay</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Results &amp; Analysis</h2>
+      <ul>
+        <li>Cl increased linearly with angle of attack, but remained below the panel code prediction due to viscous effects (skin friction, flow rotation).</li>
+        <li>Cd increased with AoA; the drag polar was bowl-shaped rather than fishhook-shaped, partly attributable to elevated drag at &#8722;3° (likely measurement error or a larger-than-intended negative AoA).</li>
+        <li>C_m,LE became progressively more negative with increasing AoA, indicating a growing nose-down pitching moment as lift built up.</li>
+        <li>C_m,c/4 remained near &#8722;0.09 to &#8722;0.10, consistent with the theoretical near-constant aerodynamic center behavior; closely tracked panel code predictions.</li>
+        <li>The lift-to-drag ratio peaked at approximately 9° AoA, after which increased wake drag reduced efficiency.</li>
+        <li><strong>Zero-lift angle of attack: &#8722;3.31°</strong> (extrapolated from experimental Cl vs &#945; curve).</li>
+      </ul>
+    </div>
+    <div class="project-image-group">
+      <!-- insert figure: CL vs Angle of Attack (Fig. 4) -->
+      <div class="project-image-note">CL vs Angle of Attack (Fig. 4)</div>
+      <!-- insert figure: CD vs Angle of Attack (Fig. 5) -->
+      <div class="project-image-note">CD vs Angle of Attack (Fig. 5)</div>
+      <!-- insert figure: Drag Polar — Cd vs Cl (Fig. 8) -->
+      <div class="project-image-note">Drag Polar — Cd vs Cl (Fig. 8)</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Moment Coefficients &amp; L/D</h2>
+      <ul>
+        <li>C_m,LE decreased from &#8722;0.10 at &#8722;3° to &#8722;0.40 at 12°, consistently above (less negative than) the theoretical potential flow values — attributable to real-fluid viscous effects reducing the actual pitching moment.</li>
+        <li>C_m,c/4 fluctuated near &#8722;0.09, close to but slightly above the theoretical line, confirming the quarter-chord as near the aerodynamic center for this airfoil.</li>
+        <li>Peak CL/CD &#8776; 62 at 9° AoA (experimental); potential flow predicted a peak near 85 at 6°.</li>
+      </ul>
+    </div>
+    <div class="project-image-group">
+      <!-- insert figure: Cm,LE vs Angle of Attack (Fig. 6) -->
+      <div class="project-image-note">Cm,LE vs Angle of Attack (Fig. 6)</div>
+      <!-- insert figure: Cm,c/4 vs Angle of Attack (Fig. 7) -->
+      <div class="project-image-note">Cm,c/4 vs Angle of Attack (Fig. 7)</div>
+      <!-- insert figure: L/D ratio vs Angle of Attack (Fig. 9) -->
+      <div class="project-image-note">Lift-to-Drag Ratio vs AoA (Fig. 9)</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>MATLAB Code</h2>
+      <p>Wake traverse and surface pressure data were loaded from <code>.mat</code> and <code>.csv</code> files, converted, and integrated to produce aerodynamic coefficients. Below is a representative excerpt; the full script is <code>AE315_LAB3_Code.m</code>.</p>
+      <pre style="background:#f4faff; padding:1rem; border-radius:6px; overflow-x:auto;"><code>% Wake velocity from traversing pitot-static data
+Velocity = sqrt(2 * dp / rho0);
+
+% Freestream: average outside the wake bounds
+freestream(i) = mean([Velocity(i,1:LowBnd(i)), Velocity(i,UppBnd(i):end)]);
+
+% Drag from momentum deficit
+D(i) = rho0 * trapz(z_matrix(i, LowBnd(i):UppBnd(i)), ...
+  Velocity(i, LowBnd(i):UppBnd(i)) .* ...
+  (freestream(i) - Velocity(i, LowBnd(i):UppBnd(i))));
+
+% Pressure coefficient from 18 surface taps
+q         = 0.5 * rho0 * freestream(i)^2;
+Cp(i, :)  = (p_mean(i, :) ./ q) + 1;
+
+% Lift from Cp integration (lower minus upper surface)
+Cl(i) = trapz(lower_x_val, Cp_lower(i,:)) - trapz(upper_x_val, Cp_upper(i,:));
+
+% Zero-lift angle of attack
+zero_lift_AoA = interp1(Cl, AoA_vals, 0, 'linear', 'extrap'); % = -3.31°</code></pre>
+      <!-- full MATLAB code (AE315_LAB3_Code.m) to be embedded here -->
+    </div>
+    <div class="project-image-group">
+      <div class="project-image-note">Full MATLAB script — AE315_LAB3_Code.m</div>
+      <div class="project-image-note">PanelCode.mat data structure</div>
+      <div class="project-image-note">Pressure tap x/c positions</div>
+    </div>
+  </section>
+
+  <section style="padding: 1rem 2rem 2rem;">
+    <p><a class="project-title-link" href="lab-testing-experience.html">&#8592; Back to Lab Testing Experience</a></p>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <span>Phone: (215) 397–5806</span>
+      <span>Email: <a href="mailto:bharada3@my.erau.edu">bharada3@my.erau.edu</a></span>
+      <span><a href="https://linkedin.com/in/anuranan-bharadwaj" target="_blank">LinkedIn</a></span>
+      <span><a href="https://github.com/anuranan10" target="_blank">GitHub</a></span>
+      <span>&copy; 2030 Anuranan Bharadwaj</span>
+    </div>
+  </footer>
+</body>
+</html>
