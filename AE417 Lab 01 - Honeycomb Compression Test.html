@@ -26,82 +26,94 @@
 
   <section class="project-row">
     <div class="project-text">
-      <h2>Lab Overview</h2>
+      <h2>Experiment Overview</h2>
+      <p>Aluminum honeycomb core is one of the most weight-efficient structural materials in aerospace. It fills the interior of aircraft floor panels, fairings, and control surfaces, absorbing crash energy and carrying compressive loads at a fraction of the weight of solid metal. This lab tested an aluminum honeycomb specimen in out-of-plane compression per ASTM D 7336/D 7336M-07, characterizing its three-stage crushing behavior and comparing results against manufacturer specifications for the 5056 alloy series.</p>
       <ul>
-        <li><strong>Course:</strong> AE 417 &ndash; Aerospace Structures and Instrumentation Laboratory (David Sypeck / Reshma Kubsad) | September 19, 2025</li>
-        <li><strong>Objective:</strong> Measure the out-of-plane compressive behavior of an aluminum honeycomb structure per ASTM D 7336/D 7336M-07 and compare results to manufacturer-reported values for the 5056 Alloy Hexagonal Aluminum Honeycomb.</li>
-        <li><strong>Specimen:</strong> Aluminum honeycomb block; mean dimensions: L = 79.81 mm, W = 81.14 mm, H = 76.10 mm, cell size = 6.11 mm, foil thickness = 0.071 mm, mass = 36.39 g</li>
-        <li><strong>Instrumentation:</strong> Tinius Olsen 150ST Electromechanical Universal Testing Machine, digital calipers, mass scale, Motic stereo zoom microscope with digital camera</li>
-        <li><strong>Standard:</strong> ASTM D 7336/D 7336M-07 &mdash; Crushing Resistance of Sandwich Cores</li>
+        <li>Measure the out-of-plane compressive behavior of an aluminum honeycomb core following ASTM D 7336</li>
+        <li>Identify the three crush stages: initial linear elastic loading, progressive cell-wall buckling plateau, and final densification</li>
+        <li>Extract peak stress &sigma;<sub>peak</sub>, crush stress &sigma;<sub>crush</sub>, and total energy absorbed from the stress-strain curve</li>
+        <li>Examine post-crush cell wall morphology under microscopy to confirm the buckling mechanism</li>
       </ul>
     </div>
     <div class="project-image-group">
-      <!-- insert figure: Aluminum honeycomb specimen side view (Fig. 1) -->
-      <div class="project-image-note">Honeycomb specimen &mdash; side view (Fig. 1)</div>
-      <!-- insert figure: Aluminum honeycomb specimen top view (Fig. 2) -->
-      <div class="project-image-note">Honeycomb specimen &mdash; top view (Fig. 2)</div>
-      <!-- insert figure: Tinius Olsen 150ST with honeycomb specimen (Fig. 8) -->
-      <div class="project-image-note">Tinius Olsen 150ST testing machine (Fig. 8)</div>
+      <!-- insert figure: Honeycomb specimen side view (Fig. 1) -->
+      <div class="project-image-note">Honeycomb specimen &mdash; side view</div>
+      <!-- insert figure: Honeycomb specimen top view (Fig. 2) -->
+      <div class="project-image-note">Honeycomb specimen &mdash; top view</div>
+      <!-- insert figure: Tinius Olsen 150ST testing machine (Fig. 8) -->
+      <div class="project-image-note">Tinius Olsen 150ST testing machine</div>
     </div>
   </section>
 
   <section class="project-row">
     <div class="project-text">
-      <h2>Procedure &amp; Methodology</h2>
-      <p>Four teams each measured five specimens, recording foil thickness, length, width, height, cell size, and mass. A total mean was calculated across all teams; the specimen closest to that mean and showing the least visible damage was selected for compression testing. An additional in-plane crushed specimen was used to measure foil thickness via caliper with full cell wall access.</p>
-      <p>The selected specimen was placed in the Tinius Olsen 150ST with compression plates attached and the machine set to the "ERAU Honeycomb Compression" method. A pre-load of approximately &#8722;45 N was applied and the position zeroed before the automated test ran to completion. Post-compression, the crushed cell walls were imaged under a Motic stereo zoom microscope at multiple magnifications to document the buckling morphology.</p>
+      <h2>Approach</h2>
+      <p>Four teams each measured five nominally identical specimens, recording foil thickness, cell size, dimensions, and mass. The specimen closest to the cross-team mean was selected for compression testing to minimize variability. The Tinius Olsen 150ST applied an axial load at constant displacement rate using the &ldquo;ERAU Honeycomb Compression&rdquo; test method, recording force and displacement throughout the crush cycle. Stress was computed by dividing force by the measured cross-sectional area, and strain by dividing displacement by original height. Energy absorbed was calculated as the area under the stress-strain curve, computed analytically by breaking the curve into two geometric regions. Post-test microscopy documented cell wall buckling morphology at multiple magnifications.</p>
     </div>
     <div class="project-image-group">
-      <!-- insert figure: Measuring foil thickness with calipers (Fig. 12) -->
+      <!-- insert figure: Foil thickness measurement with calipers (Fig. 12) -->
       <div class="project-image-note">Foil thickness measurement (Fig. 12)</div>
-      <!-- insert figure: Honeycomb placed in machine pre-compression (Fig. 13) -->
-      <div class="project-image-note">Specimen in machine pre-compression (Fig. 13)</div>
-      <!-- insert figure: Honeycomb post-compression in machine (Fig. 16) -->
+      <!-- insert figure: Specimen in machine pre-compression (Fig. 13) -->
+      <div class="project-image-note">Specimen pre-compression (Fig. 13)</div>
+      <!-- insert figure: Specimen post-compression (Fig. 16) -->
       <div class="project-image-note">Specimen post-compression (Fig. 16)</div>
     </div>
   </section>
 
   <section class="project-row">
     <div class="project-text">
-      <h2>Results &amp; Analysis</h2>
+      <h2>Key Results</h2>
       <ul>
-        <li>The force-displacement curve showed the expected three-stage response: initial linear elastic region, progressive crushing plateau, and final densification.</li>
-        <li><strong>F_peak = 29,300 N</strong> at 0.535 mm displacement (initial peak before cell wall buckling onset).</li>
-        <li><strong>F_crush = 12,000 N</strong> &mdash; average crush force over the plateau region.</li>
-        <li><strong>&#963;_peak = 4.5 MPa</strong> &mdash; confirmed against manufacturer value of 4.3 pcf / &#963;_peak &#8776; 620 psi.</li>
-        <li><strong>&#963;_crush = 1.87 MPa (270 psi)</strong> vs. manufacturer target of 300 psi for the 5056 alloy at 4.3 pcf density.</li>
-        <li><strong>Energy absorbed &#8776; 798.9 MPa&#183;cm&#179;</strong> (area under stress-strain curve &#215; specimen volume of 492.8 cm&#179;).</li>
-        <li>Specimen density: 4.6 pcf &mdash; consistent with 5056 alloy designation &#188;-5056-0.002.</li>
-        <li>Microscopy confirmed progressive cell-wall local buckling and folding, consistent with the known energy absorption mechanism of metallic honeycombs.</li>
+        <li>The force-displacement curve showed all three expected stages: a steep linear rise, a buckling plateau at near-constant load, and a sharp densification spike at the end of travel.</li>
+        <li><strong>&sigma;<sub>peak</sub> = 4.5 MPa (653 psi)</strong> and <strong>&sigma;<sub>crush</sub> = 1.87 MPa (270 psi)</strong> &mdash; close to manufacturer specifications of 620 psi peak and 300 psi crush for the target 5056 alloy at 4.3 pcf density.</li>
+        <li><strong>Energy absorbed &asymp; 798.9 MPa&#183;cm&#179;</strong> over the full crush stroke, computed from the area under the stress-strain curve multiplied by specimen volume (492.8 cm&#179;).</li>
+        <li>Specimen density was 4.6 pcf and cell size 6.11 mm, identifying it as most likely a <strong>5056 Alloy Hexagonal Aluminum Honeycomb, designation &#188;-5056-0.002</strong>.</li>
+        <li>Microscopy confirmed progressive cell-wall local buckling and folding consistent with the expected energy absorption mechanism. Even as sections failed, buckled walls reinforced adjacent sections, explaining the near-constant plateau force.</li>
       </ul>
     </div>
     <div class="project-image-group">
       <!-- insert figure: Force vs Position curve (Fig. 18) -->
       <div class="project-image-note">Force vs Position curve (Fig. 18)</div>
-      <!-- insert figure: Stress vs Strain curve with annotated regions (Fig. 19 / 21) -->
+      <!-- insert figure: Stress vs Strain curve (Fig. 19) -->
       <div class="project-image-note">Stress vs Strain curve (Fig. 19)</div>
-      <!-- insert figure: Hexcel data sheet comparison (Fig. 22) -->
+      <!-- insert figure: Manufacturer spec comparison (Fig. 22) -->
       <div class="project-image-note">Manufacturer spec comparison (Fig. 22)</div>
     </div>
   </section>
 
   <section class="project-row">
     <div class="project-text">
-      <h2>Microscopy &amp; Failure Observation</h2>
+      <h2>Microscopy Findings</h2>
       <ul>
-        <li>Microscopy images (Figs. 20a–20c) showed bent and buckled cell walls with periodic fold lines characteristic of progressive axial crushing.</li>
-        <li>Top-view images revealed collapsed hexagonal geometry with cell walls folded against adjacent cells, demonstrating the progressive buffering mechanism.</li>
-        <li>Even as individual cell sections failed, the buckled material strengthened adjacent sections &mdash; explaining the near-constant plateau force and high specific energy absorption.</li>
-        <li>The test specimen was identified as most likely a 5056 Alloy Hexagonal Aluminum Honeycomb, designation &#188;-5056-0.002, based on &#963;_crush, &#963;_peak, density, and cell size matching the Hexcel Hexweb datasheet.</li>
+        <li>Close-up views showed bent and buckled cell walls with periodic fold lines &mdash; the characteristic signature of progressive axial crushing in thin-walled metallic structures.</li>
+        <li>Top-view images revealed collapsed hexagonal geometry, with cell walls folded inward against adjacent cells rather than fracturing, confirming ductile deformation consistent with aluminum alloy behavior.</li>
+        <li>The progressive failure mechanism &mdash; each buckled section strengthening its neighbor &mdash; physically explains the near-constant plateau force and high specific energy absorption that make honeycomb cores so valuable in crash structures.</li>
       </ul>
     </div>
     <div class="project-image-group">
-      <!-- insert figure: Microscopy — buckled cell walls close-up (Fig. 20a) -->
+      <!-- insert figure: Buckled cell walls close-up (Fig. 20a) -->
       <div class="project-image-note">Buckled cell walls &mdash; close-up (Fig. 20a)</div>
-      <!-- insert figure: Microscopy — top view collapsed hexagonal geometry (Fig. 20b) -->
+      <!-- insert figure: Collapsed hexagonal geometry (Fig. 20b) -->
       <div class="project-image-note">Collapsed hexagonal geometry (Fig. 20b)</div>
-      <!-- insert figure: Microscopy — adjacent cell deformation (Fig. 20c) -->
+      <!-- insert figure: Adjacent cell deformation (Fig. 20c) -->
       <div class="project-image-note">Adjacent cell wall bending (Fig. 20c)</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Valuable Takeaways</h2>
+      <ul>
+        <li><strong>Energy absorption is what makes honeycomb cores irreplaceable in crash structures.</strong> The flat plateau on the stress-strain curve represents sustained, controllable energy absorption over a long stroke &mdash; exactly what is needed in aircraft floor panels, helicopter seats, and automotive crumple zones.</li>
+        <li><strong>The three-stage crush curve is a design tool.</strong> Engineers select honeycomb density and cell size to place &sigma;<sub>crush</sub> at the right level for a specific load case, keeping loads below what occupants or equipment can tolerate while maximizing energy absorption.</li>
+        <li><strong>Standardized testing (ASTM D 7336) ensures reproducibility.</strong> Following the standard procedure &mdash; specimen selection, pre-load, test method &mdash; made results directly comparable to manufacturer data, demonstrating the importance of protocol adherence in structural materials testing.</li>
+        <li>Gained hands-on experience with a universal testing machine, structured specimen selection from multi-team data, and materials microscopy &mdash; all standard methods in aerospace structural qualification programs.</li>
+      </ul>
+    </div>
+    <div class="project-image-group">
+      <div class="project-image-note">Team measurement data (Tables 1&ndash;2)</div>
+      <div class="project-image-note">Energy absorption calculation</div>
+      <div class="project-image-note">Motic stereo zoom microscope</div>
     </div>
   </section>
 

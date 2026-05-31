@@ -26,111 +26,107 @@
 
   <section class="project-row">
     <div class="project-text">
-      <h2>Lab Overview</h2>
+      <h2>Experiment Overview</h2>
+      <p>Every control system design begins with a mathematical model of the plant. For a servo-motor driving a gear train &mdash; used in aircraft flight control actuators, robotic joints, and gimbal systems &mdash; that model is typically a first-order transfer function relating input voltage to output shaft speed. This lab identified that model experimentally for the Quanser SRV02 servo-motor using two complementary approaches: a bump test to extract parameters from the step response, and a model validation experiment to iteratively refine those parameters until simulated and measured responses matched.</p>
       <ul>
-        <li><strong>Course:</strong> AE 443 &ndash; Experimental Dynamics and Control Laboratory (Bernardo Restrepo / Jared Getz) | February 13, 2026</li>
-        <li><strong>Objective:</strong> Identify a first-order transfer function for the Quanser SRV02 servo-motor gear system by applying a square-wave step input, extracting the steady-state gain (K) and time constant (&#964;) from the load shaft speed response, then validating and tuning the model against measured hardware data.</li>
-        <li><strong>Hardware:</strong> Quanser SRV02 rotary servo-motor, Q2-USB DAQ board, VoltPAQ amplifier</li>
-        <li><strong>Software:</strong> MATLAB/Simulink 2020, QUARC real-time control toolbox</li>
-        <li><strong>Transfer function model:</strong> &#937;(s)/V_m(s) = K / (&#964;s + 1)</li>
+        <li>Apply a square-wave step input to the SRV02 and record the load shaft speed response</li>
+        <li>Extract steady-state gain K and time constant &tau; using the bump test method</li>
+        <li>Test multiple (K, &tau;) combinations in the Simulink model and select the best-fit parameters</li>
+        <li>Understand how K and &tau; independently shape the magnitude and speed of a first-order system response</li>
       </ul>
     </div>
     <div class="project-image-group">
-      <div class="project-image-note">SRV02 servo-motor hardware</div>
-      <div class="project-image-note">Simulink signal generator configuration</div>
-      <div class="project-image-note">Bump test method diagram</div>
+      <!-- insert figure: Voltage and speed vs time — bump test (Fig. 1) -->
+      <div class="project-image-note">Voltage &amp; speed &mdash; bump test (Fig. 1)</div>
+      <!-- insert figure: Best-fit model validation K=1.68 tau=0.044 (Fig. 7) -->
+      <div class="project-image-note">Best-fit validation K=1.68, &tau;=0.044 (Fig. 7)</div>
+      <div class="project-image-note">Simulink SRV02 model block diagram</div>
     </div>
   </section>
 
   <section class="project-row">
     <div class="project-text">
-      <h2>Procedure &amp; Methodology</h2>
-      <p><strong>Bump Test:</strong> A square-wave voltage (amplitude 1.5 V, offset 2.0 V, frequency 0.4 Hz) was applied to the SRV02 using the Simulink model. The load shaft speed &#969;_l (rad/s) and motor input voltage V_m (V) were recorded over 5 seconds. The steady-state gain was computed as K_e,b = (y_ss &#8722; y_0) / (u_max &#8722; u_min), where y_ss is the steady-state speed and y_0 is the initial speed. The time constant was identified as the time for the response to reach 63.2% of the steady-state change from the step onset.</p>
-      <p><strong>Model Validation:</strong> The Simulink model was re-run with four sets of (K, &#964;) values &mdash; nominal theoretical, bump-test, and two manual iterations &mdash; to overlay simulated responses against the measured speed trace. The pair producing the closest visual match was selected as the validated model.</p>
+      <h2>Approach &amp; Key Equations</h2>
+      <p>A square-wave voltage (amplitude 1.5 V, offset 2.0 V, frequency 0.4 Hz) was applied to the SRV02 via Simulink&rsquo;s &ldquo;Monitor &amp; Tune&rdquo; mode. The load shaft speed and motor voltage were recorded for 5 seconds. The steady-state gain was computed from the measured speed change divided by the voltage change:</p>
+      <p style="margin:0.5rem 0 0.5rem 1.5rem; font-style:italic; font-size:1.05em;">K = (y<sub>ss</sub> &minus; y<sub>0</sub>) / (u<sub>max</sub> &minus; u<sub>min</sub>)</p>
+      <p>The time constant was identified as the time elapsed between the step onset and the point where the response reached 63.2% of its final steady-state value. Both parameters were then entered into the Simulink model and the simulated output compared visually against the measured response. Multiple (K, &tau;) pairs were tested until the curves converged.</p>
     </div>
     <div class="project-image-group">
-      <!-- insert figure: Voltage and rotational speed vs time — bump test (Fig. 1) -->
-      <div class="project-image-note">Voltage &amp; speed vs time &mdash; bump test (Fig. 1)</div>
-      <!-- insert figure: Model validation overlay K=1.68, tau=0.044 (Fig. 7) -->
-      <div class="project-image-note">Best-fit validation K=1.68, &#964;=0.044 (Fig. 7)</div>
-      <!-- insert figure: Model validation K=0.8, tau=0.06 for comparison (Fig. 3) -->
-      <div class="project-image-note">Comparison K=0.8, &#964;=0.06 (Fig. 3)</div>
+      <!-- insert figure: Model validation K=0.8, tau=0.06 (Fig. 3) -->
+      <div class="project-image-note">Validation K=0.8, &tau;=0.06 (Fig. 3)</div>
+      <!-- insert figure: Model validation K=1.25, tau=0.2 (Fig. 4) -->
+      <div class="project-image-note">Validation K=1.25, &tau;=0.2 (Fig. 4)</div>
+      <!-- insert figure: Model validation K=1.53 nominal (Fig. 5) -->
+      <div class="project-image-note">Nominal model overlay (Fig. 5)</div>
     </div>
   </section>
 
   <section class="project-row">
     <div class="project-text">
-      <h2>Results &amp; Analysis</h2>
-      <table style="border-collapse:collapse; font-size:0.9em; margin-bottom:0.8rem;">
+      <h2>Key Results</h2>
+      <table style="border-collapse:collapse; font-size:0.9em; margin:0.5rem 0;">
         <tr style="background:#004080; color:white;">
-          <th style="padding:6px 12px;">Source</th>
-          <th style="padding:6px 12px;">K (rad/s/V)</th>
-          <th style="padding:6px 12px;">&#964; (s)</th>
+          <th style="padding:5px 12px;">Source</th><th style="padding:5px 12px;">K (rad/s/V)</th><th style="padding:5px 12px;">&tau; (s)</th>
         </tr>
-        <tr style="background:#f4faff;">
-          <td style="padding:6px 12px;">Nominal (theoretical)</td>
-          <td style="padding:6px 12px;">1.53</td>
-          <td style="padding:6px 12px;">0.0253</td>
-        </tr>
-        <tr>
-          <td style="padding:6px 12px;">Bump test (experimental)</td>
-          <td style="padding:6px 12px;">1.7866</td>
-          <td style="padding:6px 12px;">0.048</td>
-        </tr>
-        <tr style="background:#f4faff;">
-          <td style="padding:6px 12px;">Model validation (best fit)</td>
-          <td style="padding:6px 12px;">1.68</td>
-          <td style="padding:6px 12px;">0.044</td>
-        </tr>
+        <tr style="background:#f4faff;"><td style="padding:5px 12px;">Nominal (theoretical)</td><td style="padding:5px 12px;">1.53</td><td style="padding:5px 12px;">0.0253</td></tr>
+        <tr><td style="padding:5px 12px;">Bump test</td><td style="padding:5px 12px;">1.7866</td><td style="padding:5px 12px;">0.048</td></tr>
+        <tr style="background:#f4faff;"><td style="padding:5px 12px;">Model validation (best fit)</td><td style="padding:5px 12px;">1.68</td><td style="padding:5px 12px;">0.044</td></tr>
       </table>
       <ul>
-        <li>K_e,b was calculated as (6.051 &#8722; 0.6912) / (3.5 &#8722; 0.5) = <strong>1.7866 rad/s/V</strong>.</li>
-        <li>&#964;_e,b was found at t_63% = 1.298 s relative to step onset at 1.25 s: <strong>&#964; = 0.048 s</strong>.</li>
-        <li>The nominal model (K = 1.53, &#964; = 0.0253) under-predicted the steady-state speed and over-predicted the response speed due to parameter uncertainty and unmodeled friction.</li>
-        <li>The bump-test model improved accuracy; further manual iteration yielded the best-fit (K = 1.68, &#964; = 0.044), with simulated and measured responses nearly indistinguishable.</li>
-        <li>The time constant governs how quickly the motor reaches steady-state; the gain determines the magnitude of the speed output per unit voltage input.</li>
+        <li>K<sub>e,b</sub> = (6.051 &minus; 0.691) / (3.5 &minus; 0.5) = <strong>1.787 rad/s/V</strong> from the bump test. The time constant &tau;<sub>e,b</sub> = 1.298 &minus; 1.25 = <strong>0.048 s</strong> at the 63.2% crossing.</li>
+        <li>The nominal model (K = 1.53, &tau; = 0.0253) under-predicted steady-state speed and over-predicted response speed due to parameter uncertainty and unmodeled friction in the gear train.</li>
+        <li>The validated model (K = 1.68, &tau; = 0.044) produced near-exact overlay with the measured response, confirming that experimental identification outperforms purely theoretical parameters for real hardware.</li>
       </ul>
     </div>
     <div class="project-image-group">
-      <!-- insert figure: Model validation K=1.53, tau=0.0253 (Fig. 5) -->
-      <div class="project-image-note">Nominal model overlay (Fig. 5)</div>
-      <!-- insert figure: Model validation K=1.25, tau=0.2 (Fig. 4) -->
-      <div class="project-image-note">Validation K=1.25, &#964;=0.2 (Fig. 4)</div>
-      <div class="project-image-note">Parameter summary table (Table 1)</div>
+      <div class="project-image-note">Parameter comparison table (Table 1)</div>
+      <div class="project-image-note">K effect on steady-state speed magnitude</div>
+      <div class="project-image-note">&tau; effect on rise time</div>
     </div>
   </section>
 
   <section class="project-row">
     <div class="project-text">
       <h2>MATLAB Code</h2>
-      <p>Data was saved from the Simulink workspace and plotted with subplots showing motor voltage and load shaft speed. The bump test gain and time constant were read from cursor coordinates on the MATLAB figure. Full script: Lab 1 Appendix B.</p>
+      <p>Data was saved from the Simulink workspace and plotted with subplots showing voltage and load shaft speed. Bump test parameters were read from MATLAB cursor coordinates on the response plot.</p>
       <pre style="background:#f4faff; padding:1rem; border-radius:6px; overflow-x:auto;"><code>% Plot voltage and rotational speed vs time
 figure();
 subplot(2,1,1)
 plot(Vm(:,1), Vm(:,2), 'r', 'LineWidth', 1.5);
-grid on;
 xlabel('Time (s)');  ylabel('Voltage (V)');
 
 subplot(2,1,2)
 plot(wl(:,1), wl(:,2), 'LineWidth', 1.5);   % measured
 hold on
 plot(wl(:,1), wl(:,3), 'LineWidth', 1.5);   % simulated
-grid on;
 xlabel('Time (s)');  ylabel('Rotational Speed (rad/s)');
 
-% Bump test gain calculation
-K_eb = (y_ss - y_0) / (u_max - u_min);       % = 1.7866 (rad/s)/V
-
-% Time constant: locate t at 63.2% of steady-state change
-y_63 = 0.632 * y_ss;                          % ≈ 3.824 rad/s
-% From cursor: t1 = 1.298 s, t0 = 1.25 s
-tau_eb = t1 - t0;                             % = 0.048 s</code></pre>
-      <!-- full MATLAB code (AE443_Lab1.m) to be embedded here -->
+% Bump test gain and time constant
+K_eb   = (y_ss - y_0) / (u_max - u_min);     % = 1.7866 (rad/s)/V
+tau_eb = t_63pct - t_step_onset;             % = 0.048 s</code></pre>
+      <!-- full MATLAB code (AE443 Lab 1 Appendix B) to be embedded here -->
     </div>
     <div class="project-image-group">
-      <div class="project-image-note">Full MATLAB script &mdash; Lab 1 Appendix B</div>
+      <div class="project-image-note">Full script &mdash; Lab 1 Appendix B</div>
       <div class="project-image-note">Simulink model: q_srv02_mdl</div>
       <div class="project-image-note">Workspace .mat data files</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Valuable Takeaways</h2>
+      <ul>
+        <li><strong>Experimental system identification is more reliable than purely theoretical models.</strong> The nominal model &mdash; built from manufacturer specs &mdash; was noticeably less accurate than the bump test result, because real hardware includes friction, gear lash, and manufacturing tolerances that no datasheet captures.</li>
+        <li><strong>K controls &ldquo;how far&rdquo; and &tau; controls &ldquo;how fast.&rdquo;</strong> Understanding these two parameters independently is the foundation for all subsequent controller design: a smaller &tau; means faster response but also more sensitivity to noise and model uncertainty.</li>
+        <li><strong>Model validation is iterative.</strong> Overlaying simulation and measurement, then adjusting parameters until they match, is the standard workflow in model-based design &mdash; used in aerospace autopilot development, robotics, and automotive control systems.</li>
+        <li>Gained foundational experience with MATLAB/Simulink hardware-in-the-loop testing and the Quanser QUARC interface &mdash; the platform used in ERAU&rsquo;s flight control and robotics research programs.</li>
+      </ul>
+    </div>
+    <div class="project-image-group">
+      <div class="project-image-note">63.2% criterion diagram</div>
+      <div class="project-image-note">Nominal vs validated model overlay</div>
+      <div class="project-image-note">SRV02 gear train hardware</div>
     </div>
   </section>
 

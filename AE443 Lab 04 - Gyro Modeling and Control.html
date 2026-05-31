@@ -26,90 +26,76 @@
 
   <section class="project-row">
     <div class="project-text">
-      <h2>Lab Overview</h2>
+      <h2>Experiment Overview</h2>
+      <p>Gyroscopes are at the heart of inertial navigation systems, spacecraft attitude control, and platform stabilization for cameras, antennas, and weapons systems. A spinning gyroscope resists angular displacement through gyroscopic precession &mdash; but without active feedback control, external disturbances cause the deflection angle to wander unpredictably. This lab modeled the open-loop gyroscope dynamics, designed a PI controller to regulate deflection angle, and experimentally demonstrated the dramatic difference between controlled and uncontrolled system behavior when the base is disturbed.</p>
       <ul>
-        <li><strong>Course:</strong> AE 443 &ndash; Experimental Dynamics and Control Laboratory (Bernardo Restrepo / Jared Getz) | April 10, 2026</li>
-        <li><strong>Objective:</strong> Model the open-loop rotary gyroscope dynamics, design a PI controller to track a 2&#176; deflection reference angle &#945;, and compare open-loop vs. closed-loop disturbance rejection. Validate stability using the Routh-Hurwitz criterion.</li>
-        <li><strong>Open-loop model:</strong> &#945;(s)/V_m(s) = (1/G_g) &#183; K/(&#964;s+1) where K = 1.53 rad/s/V, &#964; = 0.9 s, G_g = 5.20 1/(rad&#183;s)</li>
-        <li><strong>Closed-loop TF:</strong> G_CL(s) = K(sk_p + k_i) / [G_g&#964;s&#178; + (Kk_p + G_g)s + Kk_i]</li>
-        <li><strong>Hardware:</strong> SRV02 with rotary gyroscope attachment, Q2-USB DAQ</li>
+        <li>Derive the closed-loop transfer function for a PI-controlled rotary gyroscope from the open-loop plant model</li>
+        <li>Design PI gains to track a 2&#176; deflection reference angle &alpha; with specified second-order transient behavior</li>
+        <li>Compare the open-loop and closed-loop responses to base rotation disturbances</li>
+        <li>Verify system stability for both configurations using the Routh-Hurwitz criterion</li>
       </ul>
     </div>
     <div class="project-image-group">
-      <!-- insert figure: Open-loop alpha response vs theoretical TF (Fig. 1) -->
-      <div class="project-image-note">Open-loop alpha response (Fig. 1)</div>
-      <!-- insert figure: Open-loop theta response (Fig. 2) -->
-      <div class="project-image-note">Open-loop theta response (Fig. 2)</div>
-      <!-- insert figure: Open-loop voltage (Fig. 3) -->
-      <div class="project-image-note">Open-loop voltage response (Fig. 3)</div>
+      <!-- insert figure: Open-loop alpha vs TF (Fig. 1) -->
+      <div class="project-image-note">Open-loop &alpha; response (Fig. 1)</div>
+      <!-- insert figure: Closed-loop alpha tracking 2 deg (Fig. 4) -->
+      <div class="project-image-note">Closed-loop &alpha; tracking 2&#176; (Fig. 4)</div>
+      <!-- insert figure: Disturbance rejection — PI on (Fig. 7) -->
+      <div class="project-image-note">Disturbance rejection &mdash; PI on (Fig. 7)</div>
     </div>
   </section>
 
   <section class="project-row">
     <div class="project-text">
-      <h2>PI Controller Design &amp; Analysis</h2>
-      <p>The PI controller law V_m(s) = (k_p + k_i/s)&#183;e(s) was substituted into the open-loop gyroscope model to derive the closed-loop transfer function G_CL(s). Matching its denominator to the standard second-order form s&#178; + 2&#950;&#969;_ns + &#969;_n&#178; gave the gain expressions:</p>
-      <p style="text-align:center; font-style:italic; margin:0.5rem 0;">k_p = G_g(2&#950;&#969;_n&#964; &#8722; 1) / K &nbsp;&nbsp;&nbsp; k_i = G_g&#964;&#969;_n&#178; / K</p>
-      <p>Using &#950; = 1.05 (slightly overdamped), &#969;_n = 3.61 rad/s, and the system parameters: <strong>k_p = 19.79</strong>, <strong>k_i = 39.86</strong>. The experimental open-loop time constant was identified as &#964; = 0.87 s using the 63.2% criterion on the &#945; step response. The open-loop model predicted &#945;_ss = 8.43&#176; but measured only 2.8&#176; (66.8% error), explained by unmodeled gyroscopic coupling and sensor noise.</p>
+      <h2>Approach &amp; Controller Design</h2>
+      <p>The open-loop gyroscope plant is a first-order system: &alpha;(s)/V<sub>m</sub>(s) = (K/G<sub>g</sub>) / (&tau;s + 1), where K = 1.53 rad/s/V, &tau; = 0.9 s, and G<sub>g</sub> = 5.20 1/(rad&#183;s). Closing the loop with a PI controller V<sub>m</sub>(s) = (k<sub>p</sub> + k<sub>i</sub>/s) &#183; e(s) produced a second-order closed-loop transfer function. Matching its denominator coefficients to the standard form gave the PI gain expressions, solved with &zeta; = 1.05 and &omega;<sub>n</sub> = 3.61 rad/s:</p>
+      <p style="margin:0.5rem 0 0.2rem 1.5rem; font-style:italic; font-size:1.05em;">k<sub>p</sub> = G<sub>g</sub>(2&zeta;&omega;<sub>n</sub>&tau; &minus; 1) / K = <strong>19.79</strong></p>
+      <p style="margin:0.2rem 0 0.5rem 1.5rem; font-style:italic; font-size:1.05em;">k<sub>i</sub> = G<sub>g</sub>&tau;&omega;<sub>n</sub>&#178; / K = <strong>39.86</strong></p>
+      <p>The experimental time constant was identified from the open-loop response: &tau;<sub>exp</sub> = 0.87 s at the 63.2% crossing, compared to the theoretical 0.9 s &mdash; close agreement despite the gyroscope&rsquo;s more complex dynamics.</p>
     </div>
     <div class="project-image-group">
-      <!-- insert figure: Closed-loop alpha tracking 2 deg (Fig. 4) -->
-      <div class="project-image-note">Closed-loop alpha tracking 2&#176; (Fig. 4)</div>
-      <!-- insert figure: Closed-loop voltage (Fig. 6) -->
+      <!-- insert figure: Open-loop theta (Fig. 2) -->
+      <div class="project-image-note">Open-loop theta response (Fig. 2)</div>
+      <!-- insert figure: Closed-loop voltage response (Fig. 6) -->
       <div class="project-image-note">Closed-loop voltage response (Fig. 6)</div>
-      <!-- insert figure: Closed-loop alpha with disturbance (Fig. 7) -->
-      <div class="project-image-note">Disturbance response &mdash; PI on (Fig. 7)</div>
+      <div class="project-image-note">Closed-loop TF derivation</div>
     </div>
   </section>
 
   <section class="project-row">
     <div class="project-text">
-      <h2>Results: Closed-Loop &amp; Disturbance Rejection</h2>
+      <h2>Key Results</h2>
       <ul>
-        <li><strong>Closed-loop tracking:</strong> With PI control, &#945; converged to 1.997&#176; (e_ss = 0.003&#176; &#8776; 0), confirming the integral action eliminates steady-state error for a step reference input.</li>
-        <li><strong>PI control ON &mdash; disturbance:</strong> Motor voltage adjusted dynamically to oppose base rotation; servo angle compensated rapidly; &#945; remained at &#8776;0&#176; (e_ss = 0&#176;), demonstrating active disturbance rejection.</li>
-        <li><strong>PI control OFF &mdash; disturbance:</strong> Motor voltage = 0; deflection reached &#177;7.4&#176; before passively recovering over &#8776;20 s. Gyroscope heading was not maintained without feedback.</li>
-        <li><strong>Routh-Hurwitz (open-loop):</strong> Single pole at s = &#8722;1/&#964; = &#8722;1.11 &rarr; left-half plane &rarr; stable.</li>
-        <li><strong>Routh-Hurwitz (closed-loop):</strong> All three Routh table entries positive for k_p = 19.79 &gt; &#8722;3.40 and k_i = 39.86 &gt; 0 &rarr; closed-loop system stable.</li>
-        <li>The gyroscope must continuously rotate about the z-axis to sustain a non-zero &#945;, reflecting the physics: T_g = H&#183;&#952;&#775;, so a constant deflection requires constant base angular velocity.</li>
+        <li><strong>Open-loop:</strong> Theoretical prediction was &alpha;<sub>ss</sub> = 8.43&#176;, but measured peak was only 2.8&#176; (66.8% error) &mdash; unmodeled gyroscopic coupling, nonlinear friction, and sensor noise caused the real response to oscillate rather than smoothly converge.</li>
+        <li><strong>Closed-loop tracking:</strong> With PI control active, &alpha; converged to <strong>1.997&#176;</strong> (e<sub>ss</sub> = 0.003&#176; &#8776; 0), demonstrating that the integral term successfully eliminated steady-state tracking error despite the model inaccuracies.</li>
+        <li><strong>PI control ON &mdash; disturbance:</strong> Motor voltage responded dynamically to oppose base rotation; gyroscope deflection held at ~0&#176; (e<sub>ss</sub> = 0&#176;). The base rotated continuously to generate the gyroscopic torque needed to maintain heading.</li>
+        <li><strong>PI control OFF &mdash; disturbance:</strong> Deflection reached &plusmn;7.4&#176; and took ~20 seconds to passively damp out &mdash; the gyroscope had no ability to maintain its heading without active feedback.</li>
+        <li><strong>Routh-Hurwitz:</strong> Both open-loop (single pole at &minus;1.11) and closed-loop (all Routh table entries positive for k<sub>p</sub> = 19.79, k<sub>i</sub> = 39.86) are stable.</li>
       </ul>
     </div>
     <div class="project-image-group">
       <!-- insert figure: Open-loop disturbance alpha (Fig. 10) -->
-      <div class="project-image-note">Open-loop disturbance &mdash; alpha (Fig. 10)</div>
-      <!-- insert figure: Closed-loop with disturbance alpha zoom (Fig. 13) -->
-      <div class="project-image-note">Closed-loop alpha converged to 2&#176; (Fig. 13)</div>
-      <div class="project-image-note">Routh-Hurwitz table (Table 1)</div>
+      <div class="project-image-note">Open-loop disturbance &mdash; &alpha; (Fig. 10)</div>
+      <!-- insert figure: Closed-loop alpha converged to 2 deg (Fig. 13) -->
+      <div class="project-image-note">Closed-loop &alpha; converged to 2&#176; (Fig. 13)</div>
+      <div class="project-image-note">Routh-Hurwitz stability table</div>
     </div>
   </section>
 
   <section class="project-row">
     <div class="project-text">
-      <h2>MATLAB Code</h2>
-      <p>Separate figures were generated for open-loop and closed-loop responses of &#945;, &#952;, and V_m, overlaying transfer function predictions against measured hardware data. Full script: Lab 4 Appendix A.</p>
-      <pre style="background:#f4faff; padding:1rem; border-radius:6px; overflow-x:auto;"><code>% Open-loop alpha plot with TF overlay
-figure()
-plot(data_alpha(:,1), data_alpha(:,2))   % transfer function prediction
-hold on
-plot(data_alpha(:,1), data_alpha(:,3))   % measured system output
-xlabel('Time (s)');  ylabel('Alpha (deg)')
-title('Open Loop - Alpha Plot')
-legend('Transfer Function', 'System Output', Location='northwest')
-
-% Closed-loop with disturbance — PI ON
-figure()
-plot(data_alpha_PI(:,1), data_alpha_PI(:,2))   % TF
-hold on
-plot(data_alpha_PI(:,1), data_alpha_PI(:,3))   % measured
-xlabel('Time (s)');  ylabel('Alpha (deg)')
-title('Closed Loop with Disturbance - Alpha Plot')
-legend('Transfer Function', 'System Output', Location='northwest')</code></pre>
-      <!-- full MATLAB code (AE443_Lab4.m) to be embedded here -->
+      <h2>Valuable Takeaways</h2>
+      <ul>
+        <li><strong>Passive gyroscopic stability is insufficient for precision heading control.</strong> The open-loop disturbance test showed 7.4&#176; of deflection; the closed-loop held near 0&#176;. This is why every real inertial navigation system and spacecraft attitude controller uses active feedback, not just a spinning mass.</li>
+        <li><strong>The PI controller converts a passive gyroscope into an actively stabilized platform.</strong> This is the operating principle of gimbal stabilizers in camera drones, ship-mounted antennas, and the Hubble Space Telescope&rsquo;s pointing system.</li>
+        <li><strong>Open-loop model accuracy matters less when you have good feedback.</strong> The 66.8% discrepancy between the open-loop model and measured response did not prevent the PI controller from achieving near-zero tracking error &mdash; demonstrating the robustness that feedback control provides over model-dependent open-loop approaches.</li>
+        <li>Gained experience designing PI controllers for a multi-physics system involving gyroscopic precession, applying the Routh-Hurwitz stability criterion analytically, and validating controller performance experimentally under both tracking and disturbance conditions.</li>
+      </ul>
     </div>
     <div class="project-image-group">
-      <div class="project-image-note">Full MATLAB script &mdash; Lab 4 Appendix A</div>
-      <div class="project-image-note">PI controller Simulink block</div>
-      <div class="project-image-note">Gyroscope hardware setup</div>
+      <div class="project-image-note">PI vs open-loop disturbance comparison</div>
+      <div class="project-image-note">Base rotation required to sustain heading</div>
+      <div class="project-image-note">Closed-loop TF pole-zero analysis</div>
     </div>
   </section>
 
@@ -120,7 +106,7 @@ legend('Transfer Function', 'System Output', Location='northwest')</code></pre>
   <footer>
     <div class="footer-container">
       <span>Phone: (215) 397–5806</span>
-      <span>Email: <a href="mailto:bharada3@my.erau.edu">bharada3@my.eru.edu</a></span>
+      <span>Email: <a href="mailto:bharada3@my.erau.edu">bharada3@my.erau.edu</a></span>
       <span><a href="https://linkedin.com/in/anuranan-bharadwaj" target="_blank">LinkedIn</a></span>
       <span><a href="https://github.com/anuranan10" target="_blank">GitHub</a></span>
       <span>&copy; 2030 Anuranan Bharadwaj</span>

@@ -26,88 +26,99 @@
 
   <section class="project-row">
     <div class="project-text">
-      <h2>Lab Overview</h2>
+      <h2>Experiment Overview</h2>
+      <p>Aircraft wings, helicopter rotor blades, and spacecraft solar panels are all flexible structures driven by servo actuators. Modeling them requires capturing not just the rigid-body motion of the actuator, but also the structural vibration modes of the flexible member attached to it. This lab derived the equations of motion for the SRV02 rotary flexible link system from first principles, experimentally identified the link&rsquo;s stiffness from a free-oscillation test, and validated a 4-state state-space model against measured hardware responses.</p>
       <ul>
-        <li><strong>Course:</strong> AE 443 &ndash; Experimental Dynamics and Control Laboratory (Bernardo Restrepo / Jared Getz) | February 27, 2026</li>
-        <li><strong>Objective:</strong> Derive the equations of motion for the SRV02 rotary flexible link system via the Euler-Lagrange method, experimentally determine the link's natural frequency and stiffness from a free-oscillation response, and validate a 4-state state-space model against measured hardware data.</li>
-        <li><strong>System states:</strong> x = [&#952;, &#945;, &#952;&#775;, &#945;&#775;]&#7488; where &#952; is the servo angle and &#945; is the flexible link deflection angle</li>
-        <li><strong>Hardware:</strong> SRV02 with rotary flexible link, strain gauge sensor, Q2-USB DAQ</li>
-        <li><strong>Parameters:</strong> B_eq = 0.004 N&#183;m/(rad/s), J_eq = 2.08&#215;10&#8315;&#179; kg&#183;m&#178;, m_l = 0.065 kg, L_l = 0.419 m</li>
+        <li>Derive the equations of motion for the servo-plus-flexible-link system using the Euler-Lagrange method</li>
+        <li>Identify the link&rsquo;s natural frequency &omega;<sub>n</sub> and rotational stiffness K<sub>s</sub> from a free-oscillation decay experiment</li>
+        <li>Build a 4-state state-space model (servo angle &theta;, link deflection &alpha;, and their derivatives)</li>
+        <li>Validate the model by comparing simulated and measured responses to a step motor command</li>
       </ul>
     </div>
     <div class="project-image-group">
-      <!-- insert figure: SRV02 flexible link hardware -->
-      <div class="project-image-note">SRV02 rotary flexible link system</div>
       <!-- insert figure: Free-oscillation plot (Fig. 1) -->
       <div class="project-image-note">Free-oscillation response (Fig. 1)</div>
-      <div class="project-image-note">Free-oscillation with data point cursors (Fig. 4)</div>
+      <!-- insert figure: Servo angle model validation (Fig. 2) -->
+      <div class="project-image-note">Model validation &mdash; servo angle &theta; (Fig. 2)</div>
+      <!-- insert figure: Flexible link angle validation (Fig. 3) -->
+      <div class="project-image-note">Model validation &mdash; link angle &alpha; (Fig. 3)</div>
     </div>
   </section>
 
   <section class="project-row">
     <div class="project-text">
-      <h2>Equations of Motion &amp; State-Space Model</h2>
-      <p>The system Lagrangian L = T &#8722; V was formed using the kinetic energy T = &#189;J_eq&#952;&#775;&#178; + &#189;J_l(&#952;&#775; + &#945;&#775;)&#178; and elastic potential V = &#189;K_s&#945;&#178;. Applying the Euler-Lagrange equations yielded two coupled equations of motion &mdash; a servo equation and a link equation. Solving these with B_l = 0 (undamped link assumption) produced the 4&#215;4 state matrix A and 4&#215;1 input matrix B.</p>
-      <p>Natural frequency was extracted from the free-oscillation response using three successive peak amplitudes to compute the period T_osc, the damped natural frequency &#969;_d, the subsidence (decrement) ratio &#948;, the damping ratio &#950;, and finally &#969;_n = &#969;_d / &#8730;(1&#8722;&#950;&#178;). Stiffness was then calculated as K_s = J_l&#969;_n&#178;.</p>
+      <h2>Approach &amp; Equations of Motion</h2>
+      <p>The system Lagrangian L = T &minus; V was formed using the kinetic energy of both the servo base and the flexible link, and the elastic potential energy stored in the link spring. Applying the Euler-Lagrange equations to each generalized coordinate produced coupled second-order differential equations. These were rewritten in first-order state-space form x&#775; = Ax + Bu, with states x = [&theta;, &alpha;, &theta;&#775;, &alpha;&#775;].</p>
+      <p>Link stiffness was determined experimentally by freely oscillating the link with the servo locked, measuring successive peak amplitudes to compute the damped natural frequency &omega;<sub>d</sub> and damping ratio &zeta;, then recovering the undamped natural frequency and applying:</p>
+      <p style="margin:0.5rem 0 0.5rem 1.5rem; font-style:italic; font-size:1.05em;">K<sub>s</sub> = J<sub>l</sub> &#183; &omega;<sub>n</sub>&#178; &nbsp;&nbsp; where &nbsp; J<sub>l</sub> = m<sub>l</sub>L<sub>l</sub>&#178; / 3</p>
     </div>
     <div class="project-image-group">
-      <!-- insert figure: Servo angle model validation (Fig. 2) -->
-      <div class="project-image-note">Model validation &mdash; servo angle &#952; (Fig. 2)</div>
-      <!-- insert figure: Flexible link angle model validation (Fig. 3) -->
-      <div class="project-image-note">Model validation &mdash; link angle &#945; (Fig. 3)</div>
-      <div class="project-image-note">State-space matrices A, B, C, D (Table 1)</div>
+      <!-- insert figure: Free-oscillation with cursor data points (Fig. 4) -->
+      <div class="project-image-note">Free-oscillation with cursor data (Fig. 4)</div>
+      <div class="project-image-note">State-space matrices A, B, C, D</div>
+      <div class="project-image-note">Open-loop pole locations</div>
     </div>
   </section>
 
   <section class="project-row">
     <div class="project-text">
-      <h2>Results &amp; Analysis</h2>
+      <h2>Key Results</h2>
       <ul>
-        <li>From three successive peaks (O&#8321; = 20.48&#176; at t = 0.244 s, O&#8322; = 13.38&#176; at t = 0.592 s, O&#8323; = 9.70&#176; at t = 0.924 s): T_osc = 0.34 s, &#969;_d = 18.48 rad/s, &#948; = 0.213, &#950; = 0.0339.</li>
-        <li><strong>Natural frequency: &#969;_n = 18.49 rad/s</strong></li>
-        <li><strong>Link stiffness: K_s = J_l&#969;_n&#178; = 0.0038 &#215; 18.49&#178; = 1.30 N&#183;m/rad</strong></li>
-        <li>Open-loop poles: P&#8321; = 0 (marginally stable); P&#8322;,&#8323; = &#8722;8.1565 &#177; 22.5207i (stable oscillatory); P&#8324; = &#8722;24.0076 (stable).</li>
-        <li>The pole at zero indicates the system is marginally stable in open loop; the flexible link dynamics produce stable oscillatory modes at &#8776;22.5 rad/s.</li>
-        <li>Simulated and measured servo angle responses agreed well in rise time; the link angle showed correct frequency but slight amplitude deviation due to unmodeled damping and sensor noise.</li>
+        <li>From peak amplitudes O<sub>1</sub> = 20.48&#176; at t = 0.244 s and O<sub>3</sub> = 9.70&#176; at t = 0.924 s: T<sub>osc</sub> = 0.34 s, &omega;<sub>d</sub> = 18.48 rad/s, &zeta; = 0.034.</li>
+        <li><strong>&omega;<sub>n</sub> = 18.49 rad/s</strong> and <strong>K<sub>s</sub> = 1.30 N&#183;m/rad</strong>.</li>
+        <li>Open-loop poles: P<sub>1</sub> = 0 (marginally stable); P<sub>2,3</sub> = &minus;8.16 &plusmn; 22.52i (stable oscillatory modes); P<sub>4</sub> = &minus;24.01 (stable).</li>
+        <li>The pole at the origin indicates the system is marginally stable in open loop: a constant motor input causes the servo angle to drift without bound, while the flexible link oscillates at ~22.5 rad/s before damping out.</li>
+        <li>Simulated and measured servo angle responses agreed closely in rise time and steady state. The flexible link angle matched the correct oscillation frequency but showed slight amplitude discrepancy from unmodeled structural damping.</li>
       </ul>
     </div>
     <div class="project-image-group">
-      <div class="project-image-note">Natural frequency calculation worksheet</div>
-      <div class="project-image-note">Open-loop poles on s-plane</div>
-      <div class="project-image-note">Transfer function expressions</div>
+      <div class="project-image-note">Natural frequency calculation from peaks</div>
+      <div class="project-image-note">Transfer function &mdash; &theta;(s)/u(s) and &alpha;(s)/u(s)</div>
+      <div class="project-image-note">Pole-zero map for open-loop system</div>
     </div>
   </section>
 
   <section class="project-row">
     <div class="project-text">
       <h2>MATLAB Code</h2>
-      <p>Three scripts handled the free-oscillation plot, model validation comparison, and state-space / transfer function derivation. Full script: Lab 2 Appendix A.</p>
-      <pre style="background:#f4faff; padding:1rem; border-radius:6px; overflow-x:auto;"><code>% Experiment 1: Free-oscillation plot
-figure();
+      <p>Three scripts handled the free-oscillation plot, model validation comparisons, and state-space to transfer function conversion.</p>
+      <pre style="background:#f4faff; padding:1rem; border-radius:6px; overflow-x:auto;"><code>% Free-oscillation plot
 plot(data_alpha(:,1), data_alpha(:,2), 'r', 'LineWidth', 1.5);
-grid on;
-xlabel('Time (s)');  ylabel('Angle (Deg)');
-title('Free-Oscillation');
+xlabel('Time (s)');  ylabel('Angle (Deg)');  title('Free-Oscillation');
 
-% Experiment 2: Model validation — servo angle
-figure();
-plot(data_theta(:,1), data_theta(:,2), 'LineWidth', 1.5);   % simulated
+% Model validation — servo angle overlay
+plot(data_theta(:,1), data_theta(:,2), 'LineWidth', 1.5);  % simulated
 hold on
-plot(data_theta(:,1), data_theta(:,3), 'LineWidth', 1.5);   % measured
-xlabel('Time (s)');  ylabel('Servo Angle (Deg)');
-title('Model Validation');
+plot(data_theta(:,1), data_theta(:,3), 'LineWidth', 1.5);  % measured
 legend('Simulated Servo Angle', 'Measured')
 
-% State-space → transfer function and poles
+% State-space → transfer function and open-loop poles
 sys   = ss(A, B, C, D);
-TF    = tf(sys)         % 2×1 transfer function [theta/u; alpha/u]
-poles = eig(A)          % open-loop poles</code></pre>
-      <!-- full MATLAB code (AE443_Lab2.m) to be embedded here -->
+TF    = tf(sys);         % 2×1: [theta(s)/u(s); alpha(s)/u(s)]
+poles = eig(A)           % P1=0, P2,3=−8.16±22.52i, P4=−24.01</code></pre>
+      <!-- full MATLAB code (AE443 Lab 2 Appendix A) to be embedded here -->
     </div>
     <div class="project-image-group">
-      <div class="project-image-note">Full MATLAB script &mdash; Lab 2 Appendix A</div>
-      <div class="project-image-note">setup_flexgage.m setup script</div>
+      <div class="project-image-note">Full script &mdash; Lab 2 Appendix A</div>
+      <div class="project-image-note">setup_flexgage.m configuration script</div>
       <div class="project-image-note">q_flexgage_val Simulink model</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Valuable Takeaways</h2>
+      <ul>
+        <li><strong>A marginally stable open-loop system requires feedback control.</strong> The pole at the origin means the servo drifts without constraint, directly motivating why real flexible-link systems &mdash; like aircraft control surfaces and robotic manipulators &mdash; use closed-loop control rather than open-loop commands.</li>
+        <li><strong>Structural stiffness can be identified from a simple free-oscillation test.</strong> Measuring three successive peak amplitudes and applying the logarithmic decrement method extracted K<sub>s</sub> from experimental data alone &mdash; no physical material test required.</li>
+        <li><strong>State-space models connect physics to control design.</strong> The A matrix derived from the Euler-Lagrange equations is the same matrix whose eigenvalues define stability, whose structure determines observability and controllability, and whose entries feed directly into LQR or pole-placement controller designs.</li>
+        <li>Gained hands-on experience connecting Lagrangian mechanics, linear system theory, and real hardware validation &mdash; the full workflow from equation derivation to experimental confirmation used in aerospace structural dynamics and flexible-body control research.</li>
+      </ul>
+    </div>
+    <div class="project-image-group">
+      <div class="project-image-note">Euler-Lagrange derivation summary</div>
+      <div class="project-image-note">Damping ratio and damped frequency</div>
+      <div class="project-image-note">SRV02 flexible link hardware</div>
     </div>
   </section>
 

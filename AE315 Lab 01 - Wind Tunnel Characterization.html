@@ -26,93 +26,102 @@
 
   <section class="project-row">
     <div class="project-text">
-      <h2>Lab Overview</h2>
+      <h2>Experiment Overview</h2>
+      <p>Before any aerodynamic test can be trusted, the wind tunnel itself must be understood. This lab established how the ERAU open-circuit wind tunnel behaves &mdash; mapping how fan speed translates to airflow velocity and how that airflow varies across the test section height. These baseline measurements are the foundation every subsequent experiment in the course depends on.</p>
       <ul>
-        <li><strong>Course:</strong> AE 315 – Experimental Aerodynamics, Section 04 (Robert Bryan) | February 7, 2025</li>
-        <li><strong>Objective:</strong> Learn to operate the ERAU open-circuit wind tunnel, collect airspeed data across varying fan frequencies and probe heights, and propagate measurement uncertainties using MATLAB.</li>
-        <li><strong>Instrumentation:</strong> Traverse pitot-static probe, analog manometer, analog-to-digital converter (ADC), data acquisition computer</li>
-        <li><strong>Ambient conditions:</strong> T = 21.5°C (294.65 K), P = 30.3 inHg (102,607.6 Pa), &#961; = 1.213 kg/m&#179;</li>
+        <li>Operate the ERAU open-circuit wind tunnel and its MATLAB-based data acquisition system</li>
+        <li>Quantify how airspeed scales with fan frequency by sweeping 5&ndash;25 Hz</li>
+        <li>Profile airspeed and turbulence intensity variation with probe height to assess flow uniformity</li>
+        <li>Propagate measurement uncertainty for all recorded velocities using standard error methods</li>
       </ul>
     </div>
     <div class="project-image-group">
-      <!-- insert figure: Full wind tunnel showing inlet, nozzle, test section, diffuser, and fan -->
+      <!-- insert figure: Full wind tunnel assembly -->
       <div class="project-image-note">Full wind tunnel assembly</div>
-      <!-- insert figure: Pitot-static probe mounted in test section -->
-      <div class="project-image-note">Pitot-static probe in test section</div>
-      <!-- insert figure: DAQ computer and ADC hardware -->
+      <!-- insert figure: Traverse pitot-static probe in test section -->
+      <div class="project-image-note">Traverse pitot-static probe</div>
+      <!-- insert figure: DAQ computer and ADC -->
       <div class="project-image-note">DAQ computer and ADC</div>
     </div>
   </section>
 
   <section class="project-row">
     <div class="project-text">
-      <h2>Procedure &amp; Methodology</h2>
-      <p>The lab was divided into two experiments. In Experiment A, the traverse pitot probe was fixed at a constant height while fan frequency was increased in 5 Hz increments from 0 to 25 Hz. The 0 Hz baseline reading was subtracted from each measurement to isolate differential pressure, and airspeed was computed using V = &#8730;(2q/&#961;). Reynolds number per unit length was then calculated at each frequency using Re/l = &#961;v/&#956;, where dynamic viscosity &#956; was determined via Sutherland's formula.</p>
-      <p>In Experiment B, the fan was held at 15 Hz (&#8776;10 m/s) while the probe height was swept from 1 to 40 inches across the test section height. Velocity and turbulence intensity (I = STD_v / V&#772; &times; 100) were computed at each increment. All data was acquired, processed, and visualized in MATLAB, with uncertainty propagated using standard error of the mean.</p>
+      <h2>Approach &amp; Key Measurements</h2>
+      <p>A traverse pitot-static probe was held at a fixed height while the fan swept from 0 to 25 Hz in 5 Hz steps. Airspeed was computed from the measured differential pressure q using:</p>
+      <p style="margin:0.5rem 0 0.5rem 1.5rem; font-style:italic; font-size:1.05em;">V = &radic;(2q / &rho;)</p>
+      <p>where air density &rho; was derived from ambient temperature and pressure via the ideal gas law. In a second experiment, the fan was fixed at 15 Hz while the probe traversed 1&ndash;40 inches in height. At each position, turbulence intensity I = 100 &times; &sigma;<sub>V</sub> / V&#772; was computed to assess flow quality near the tunnel walls. Reynolds number per unit length Re/l = &rho;V/&mu; was also recorded at each fan speed, using viscosity from Sutherland&rsquo;s formula.</p>
     </div>
     <div class="project-image-group">
-      <!-- insert figure: Analog manometer reading during experiment -->
-      <div class="project-image-note">Analog manometer reading</div>
-      <!-- insert figure: Airspeed vs Fan Speed plot with error bars (Fig. 2) -->
+      <!-- insert figure: Airspeed vs Fan Speed (Fig. 2) -->
       <div class="project-image-note">Airspeed vs Fan Speed (Fig. 2)</div>
-      <div class="project-image-note">Probe traversal setup</div>
+      <!-- insert figure: Height vs Airspeed (Fig. 3) -->
+      <div class="project-image-note">Height vs Airspeed (Fig. 3)</div>
+      <!-- insert figure: Height vs Turbulence Intensity (Fig. 4) -->
+      <div class="project-image-note">Height vs Turbulence Intensity (Fig. 4)</div>
     </div>
   </section>
 
   <section class="project-row">
     <div class="project-text">
-      <h2>Results &amp; Analysis</h2>
+      <h2>Key Results</h2>
       <ul>
-        <li>Airspeed increased linearly with fan frequency: 2.89 m/s at 5 Hz up to 18.2 m/s at 25 Hz, confirming a direct correlation.</li>
-        <li>Reynolds number per unit length ranged from 192,508 m&#8315;&#185; (5 Hz) to 1,212,334 m&#8315;&#185; (25 Hz).</li>
-        <li>Velocity measurement uncertainty decreased with speed: 0.42% at 2.89 m/s down to 0.056% at 18.2 m/s.</li>
-        <li>Pressure uncertainty was consistent at &#8776;1.27% across all fan frequencies, indicating stable sensor performance.</li>
-        <li>At constant 15 Hz, airspeed decreased slightly as probe height increased toward the tunnel ceiling, consistent with boundary layer effects and wall proximity.</li>
-        <li>Turbulence intensity mirrored the height–speed relationship: intensity increased as the probe approached the ceiling and the flow became less uniform.</li>
+        <li>Airspeed scaled nearly linearly with fan frequency: <strong>2.89 m/s at 5 Hz up to 18.2 m/s at 25 Hz</strong>, validating the tunnel&rsquo;s controllability across the test range.</li>
+        <li>Reynolds number per unit length reached <strong>1.21 &times; 10&#8310; m&#8315;&#185; at 25 Hz</strong>, establishing the operating envelope for all subsequent aerodynamic tests in the course.</li>
+        <li>Velocity measurement uncertainty dropped from <strong>0.42% at low speeds to 0.056% at 18.2 m/s</strong> &mdash; higher dynamic pressures yield more accurate airspeed measurements.</li>
+        <li>Near the test section ceiling, airspeed decreased slightly and turbulence intensity rose, confirming measurable boundary layer effects that influence test model placement decisions.</li>
       </ul>
     </div>
     <div class="project-image-group">
-      <!-- insert figure: Height vs Airspeed plot (Fig. 3) -->
-      <div class="project-image-note">Height vs Airspeed (Fig. 3)</div>
-      <!-- insert figure: Height vs Turbulence Intensity plot (Fig. 4) -->
-      <div class="project-image-note">Height vs Turbulence Intensity (Fig. 4)</div>
-      <div class="project-image-note">Uncertainty summary table</div>
+      <div class="project-image-note">Reynolds number per unit length table</div>
+      <div class="project-image-note">Velocity uncertainty vs fan speed</div>
+      <div class="project-image-note">Analog manometer during test</div>
     </div>
   </section>
 
   <section class="project-row">
     <div class="project-text">
       <h2>MATLAB Code</h2>
-      <p>Pressure data was loaded from CSV, converted from inH&#8322;O to Pa (&#215;248.84), and used to compute velocity, Reynolds number, and turbulence intensity. Below is a representative excerpt; the full script is <code>AE315_INT.m</code>.</p>
-      <pre style="background:#f4faff; padding:1rem; border-radius:6px; overflow-x:auto;"><code>% Subtract baseline (0 Hz) and convert inH2O → Pa
-Hz_5  = (data(:,2) - data(:,1)) * 248.84;
+      <p>Differential pressures were loaded from CSV, converted from inches of water to Pascals (&#215;248.84), and used to compute speed and turbulence intensity across both experiments.</p>
+      <pre style="background:#f4faff; padding:1rem; border-radius:6px; overflow-x:auto;"><code>% Convert inH2O → Pa and compute airspeed
 Hz_15 = (data(:,4) - data(:,1)) * 248.84;
+rho   = 1.213;                              % kg/m³, ideal gas
+V_15  = sqrt(2 * Hz_15 / rho);
 
-rho = 1.213; % kg/m^3  (ideal gas: P = rhoRT)
-V_5  = sqrt(2 * Hz_5  / rho);
-V_15 = sqrt(2 * Hz_15 / rho);
+% Turbulence intensity across probe heights
+v_avg     = mean(v, 2);
+intensity = (std(v_avg) ./ v_avg) * 100;
 
-% Reynolds number per unit length
-mu   = 1.821e-5; % N·s/m²  (Sutherland's formula)
-Re_l = (rho * mean(V_15)) / mu;
-
-% Turbulence intensity at each probe height
-v_2       = mean(v, 2);           % mean velocity per height row
-intensity = (std(v_2) ./ v_2) * 100;
-
-% Uncertainty (standard error of mean, as %)
-UC_V_5 = (std(V_5) / sqrt(length(V_5))) * 100;</code></pre>
+% Velocity uncertainty (standard error, %)
+UC_V = (std(V_15) / sqrt(length(V_15))) * 100;</code></pre>
       <!-- full MATLAB code (AE315_INT.m) to be embedded here -->
     </div>
     <div class="project-image-group">
-      <div class="project-image-note">Full MATLAB script — AE315_INT.m</div>
-      <div class="project-image-note">CSV data file structure</div>
-      <div class="project-image-note">Uncertainty calculation output</div>
+      <div class="project-image-note">Full script &mdash; AE315_INT.m</div>
+      <div class="project-image-note">CSV data file layout</div>
+      <div class="project-image-note">Sutherland viscosity calculation</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Valuable Takeaways</h2>
+      <ul>
+        <li><strong>Calibrating the measurement environment is step one of every test campaign.</strong> Understanding the tunnel&rsquo;s own speed-frequency relationship and cross-section uniformity is essential before trusting any aerodynamic data collected inside it.</li>
+        <li><strong>Uncertainty decreases with higher flow speed.</strong> Stronger dynamic pressure signals dominate sensor noise, a practical principle that influences how test conditions are selected in both academic and industry wind tunnel programs.</li>
+        <li><strong>Wall effects are real and quantifiable.</strong> The turbulence intensity rise near the ceiling directly illustrates boundary layer growth, connecting theoretical fluid mechanics to measurement engineering.</li>
+        <li>Gained hands-on proficiency with pitot-static probes, analog-to-digital data acquisition, and MATLAB signal processing &mdash; all standard tools in aerospace flight test and wind tunnel programs.</li>
+      </ul>
+    </div>
+    <div class="project-image-group">
+      <div class="project-image-note">Uncertainty summary table</div>
+      <div class="project-image-note">Probe traversal mechanism</div>
+      <div class="project-image-note">Test section flow uniformity assessment</div>
     </div>
   </section>
 
   <section style="padding: 1rem 2rem 2rem;">
-    <p><a class="project-title-link" href="experimental-aerodynamics-labs.html">href="lab-testing-experience.html">&#8592; Back to Lab Testing Experience#8592; Back to Experimental Aerodynamics Labs</a></p>
+    <p><a class="project-title-link" href="experimental-aerodynamics-labs.html">&#8592; Back to Experimental Aerodynamics Labs</a></p>
   </section>
 
   <footer>

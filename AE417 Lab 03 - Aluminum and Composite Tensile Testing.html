@@ -26,59 +26,57 @@
 
   <section class="project-row">
     <div class="project-text">
-      <h2>Lab Overview</h2>
+      <h2>Experiment Overview</h2>
+      <p>Choosing between aluminum alloys and fiber-reinforced composites is one of the most consequential decisions in aerospace structural design. Aluminum is reliable, well-understood, and easy to repair; composites offer far superior strength and stiffness per unit weight but require different design methods. This lab pulled three materials to fracture &mdash; Al-2024-T351, glass-fiber reinforced polymer (GFRP), and carbon-fiber reinforced polymer (CFRP) &mdash; and built the stress-strain curves that quantify those trade-offs in direct, measurable terms.</p>
       <ul>
-        <li><strong>Course:</strong> AE 417 &ndash; Aerospace Structures and Instrumentation Laboratory (David Sypeck / Reshma Kubsad) | October 24, 2025</li>
-        <li><strong>Objective:</strong> Perform uniaxial tensile testing of three aerospace materials to fracture, extract mechanical properties from stress-strain curves, and validate CFRP modulus using the rule of mixtures and optical metallography.</li>
-        <li><strong>Specimens:</strong> Al 2024-T351 (d&#772; = 8.58 mm); GFRP polyester matrix rod (d = 9.53 mm, L = 295 mm, m = 39.4 g); CFRP rod (d&#772; = 9.38 mm, L = 320 mm, m = 31.78 g)</li>
-        <li><strong>Instrumentation:</strong> Tinius Olsen 150ST with LVDT extensometer, Motic metallurgical microscope, grinding/polishing machine, digital calipers, mass scale</li>
-        <li><strong>Test speeds:</strong> 5 mm/min (metal), 1 mm/min (composites)</li>
+        <li>Perform uniaxial tensile tests on Al-2024-T351, GFRP, and CFRP rods to fracture using a Tinius Olsen LVDT extensometer</li>
+        <li>Extract Young&rsquo;s modulus E, ultimate stress &sigma;<sub>u</sub>, and yield stress &sigma;<sub>y</sub> (aluminum only) from stress-strain curves</li>
+        <li>Validate CFRP modulus independently using the rule of mixtures applied to optical fiber volume fraction measurements</li>
+        <li>Compare strength-to-weight ratios across all three materials to quantify the weight efficiency trade-off</li>
       </ul>
     </div>
     <div class="project-image-group">
       <!-- insert figure: Three specimens before testing (Fig. 1) -->
-      <div class="project-image-note">CFRP, GFRP, and Al-2024 specimens (Fig. 1)</div>
+      <div class="project-image-note">CFRP, GFRP, and Al-2024 specimens</div>
       <!-- insert figure: Three specimens after fracture (Fig. 2) -->
-      <div class="project-image-note">Specimens after fracture (Fig. 2)</div>
+      <div class="project-image-note">Specimens after fracture</div>
       <!-- insert figure: Tinius Olsen 150ST (Fig. 3) -->
-      <div class="project-image-note">Tinius Olsen 150ST testing machine (Fig. 3)</div>
+      <div class="project-image-note">Tinius Olsen 150ST testing machine</div>
     </div>
   </section>
 
   <section class="project-row">
     <div class="project-text">
-      <h2>Procedure &amp; Methodology</h2>
-      <p>Each specimen was lightly sanded, cleaned with acetone, and fitted with 6061-T6 aluminum gripping tubes bonded with cyanoacrylate adhesive. The LVDT extensometer was attached to the gauge section using hot glue at the knife edges. The cross-sectional area (mean of 5 diameter measurements) was entered into the Tinius Olsen Horizon software before each test. Aluminum was tested in metal tensile mode; GFRP and CFRP in composite tensile mode.</p>
-      <p>Young's modulus was extracted by averaging &#963;/&#949; at five points within the elastic region. Ultimate stress was taken as the maximum stress value. Yield stress for the aluminum was determined via the 0.2% offset method. For CFRP, a polished cross-section was prepared by hand-sanding through 240&ndash;600 grit SiC and final polishing with 1 &#956;m alumina slurry. Microscopy images were used to count fibers and measure average fiber radius; the rule of mixtures (E_c = E_m V_m + E_f V_f) was then applied to estimate Young's modulus independently.</p>
+      <h2>Approach</h2>
+      <p>Each rod was sanded, cleaned with acetone, and fitted with 6061-T6 aluminum gripping tubes bonded with cyanoacrylate adhesive. An LVDT extensometer measured elongation at the gauge section. Young&rsquo;s modulus was computed as the average of &sigma;/&epsilon; at five points in the elastic region. Ultimate stress was the maximum recorded value; yield stress for the aluminum was found by the 0.2% offset method.</p>
+      <p>For CFRP, the standard stress-strain method severely underestimated E (by ~49%). An independent estimate was obtained using the rule of mixtures E<sub>c</sub> = E<sub>m</sub>V<sub>m</sub> + E<sub>f</sub>V<sub>f</sub>, where the fiber volume fraction V<sub>f</sub> was measured by counting and sizing fibers in polished cross-section microscopy images. Strength-to-weight ratios were computed by dividing ultimate stress by the measured density of each rod.</p>
     </div>
     <div class="project-image-group">
-      <!-- insert figure: CFRP polishing microscopy setup -->
-      <div class="project-image-note">CFRP polishing and microscopy setup (Fig. 5/6)</div>
-      <!-- insert figure: CFRP cross-section microscopy image (Fig. 9) -->
-      <div class="project-image-note">CFRP fiber cross-section &mdash; microscopy (Fig. 9)</div>
+      <!-- insert figure: CFRP microscopy fiber cross-section (Fig. 9) -->
+      <div class="project-image-note">CFRP fiber cross-section &mdash; microscopy</div>
+      <!-- insert figure: Grinding and polishing machine (Fig. 6) -->
+      <div class="project-image-note">Sample polishing for metallography</div>
       <!-- insert figure: More CFRP microscopy (Fig. 11) -->
-      <div class="project-image-note">CFRP fiber distribution detail (Fig. 11)</div>
+      <div class="project-image-note">CFRP fiber distribution detail</div>
     </div>
   </section>
 
   <section class="project-row">
     <div class="project-text">
-      <h2>Results &amp; Analysis</h2>
+      <h2>Key Results</h2>
       <ul>
-        <li><strong>Al 2024-T351:</strong> E = 693 MPa, &#963;_u = 497 MPa, &#963;_y = 361 MPa. Percent difference vs. handbook (E = 731 MPa, &#963;_u = 469 MPa, &#963;_y = 324 MPa): 1.3%, 1.4%, 2.7% &mdash; all within acceptable range.</li>
-        <li><strong>GFRP:</strong> E = 373.9 MPa, &#963;_u = 469 MPa. Percent difference vs. handbook (E = 276 MPa): 0.4%.</li>
-        <li><strong>CFRP:</strong> E = 1118.6 MPa (stress-strain method), &#963;_u = 1030 MPa. The stress-strain E shows &#8776;49% error vs. published; CFRP requires the rule of mixtures for accurate modulus extraction.</li>
-        <li><strong>CFRP E via rule of mixtures = 126,984 MPa</strong> (V_f &#8776; 55%, E_f = 228 GPa, E_m = 3.3 GPa) &mdash; 6% difference from published value.</li>
-        <li><strong>Strength-to-weight ratios:</strong> Al 2024 = 178,777; GFRP = 250,482; CFRP = 717,297 MPa&#183;mm&#179;/g. CFRP outperforms by &#8776;4&#215; over aluminum.</li>
-        <li>Al 2024 exhibited ductile yielding and necking before fracture; both composites fractured in a brittle manner without yielding.</li>
+        <li><strong>Al-2024-T351:</strong> E = 693 MPa, &sigma;<sub>u</sub> = 497 MPa, &sigma;<sub>y</sub> = 361 MPa. Percent differences vs. handbook: 1.3%, 1.4%, and 2.7% &mdash; excellent agreement, confirming reliable test execution for ductile metals.</li>
+        <li><strong>GFRP:</strong> E = 373.9 MPa, &sigma;<sub>u</sub> = 469 MPa. Percent error vs. handbook E: 0.4% &mdash; the polyester matrix composite behaved predictably.</li>
+        <li><strong>CFRP stress-strain E = 1,118.6 MPa</strong> &mdash; showed ~49% error vs. handbook. Rule-of-mixtures E = <strong>126,984 MPa</strong> (V<sub>f</sub> &asymp; 55%) agreed within 6%, confirming that the stress-strain method cannot accurately capture CFRP modulus and that metallography-based analysis is required.</li>
+        <li>Strength-to-weight ratios: Al-2024 = 178,777; GFRP = 250,482; <strong>CFRP = 717,297 MPa&#183;mm&#179;/g</strong> &mdash; CFRP outperforms aluminum by ~4&#215; on this metric, directly explaining its dominance in modern aircraft primary structure.</li>
       </ul>
     </div>
     <div class="project-image-group">
-      <!-- insert figure: Stress-strain curve Al 2024 with yield and ultimate (Fig. 14) -->
-      <div class="project-image-note">Stress-strain &mdash; Al 2024 (Fig. 14)</div>
-      <!-- insert figure: Stress-strain curve GFRP (Fig. 15) -->
+      <!-- insert figure: Stress-strain Al-2024 (Fig. 14) -->
+      <div class="project-image-note">Stress-strain &mdash; Al-2024 (Fig. 14)</div>
+      <!-- insert figure: Stress-strain GFRP (Fig. 15) -->
       <div class="project-image-note">Stress-strain &mdash; GFRP (Fig. 15)</div>
-      <!-- insert figure: Stress-strain curve CFRP (Fig. 16) -->
+      <!-- insert figure: Stress-strain CFRP (Fig. 16) -->
       <div class="project-image-note">Stress-strain &mdash; CFRP (Fig. 16)</div>
     </div>
   </section>
@@ -86,35 +84,42 @@
   <section class="project-row">
     <div class="project-text">
       <h2>MATLAB Code</h2>
-      <p>Stress and strain were read directly from the Tinius Olsen CSV output. Young's modulus was extracted by averaging &#963;/&#949; at five elastic-region data points per specimen. The rule of mixtures was applied using fiber volume fraction measured from microscopy images. Below is a representative excerpt; the full script is the Lab 3 appendix code.</p>
-      <pre style="background:#f4faff; padding:1rem; border-radius:6px; overflow-x:auto;"><code>% Load Tinius Olsen CSV data
-Al_data  = readtable('Al_2024_metal_sample_tensile_test.csv');
-Al_stress = table2array(Al_data(:,3));   % MPa
-Al_strain = table2array(Al_data(:,4));   % %
+      <p>Stress and strain were read from Tinius Olsen CSV output. Young&rsquo;s modulus was averaged from five elastic-region data points, and rule-of-mixtures E was computed from fiber volume fraction measured in microscopy images.</p>
+      <pre style="background:#f4faff; padding:1rem; border-radius:6px; overflow-x:auto;"><code>% Young's modulus: average of 5 elastic-region points
+E_Al = mean([Al_stress(10)/Al_strain(10), Al_stress(25)/Al_strain(25), ...
+             Al_stress(50)/Al_strain(50), Al_stress(86)/Al_strain(86), ...
+             Al_stress(90)/Al_strain(90)]);          % ≈ 693 MPa
 
-% Young's modulus: average of 5 elastic-region points
-E_Al_average = mean([Al_stress(10)/Al_strain(10), ...
-                     Al_stress(25)/Al_strain(25), ...
-                     Al_stress(50)/Al_strain(50), ...
-                     Al_stress(86)/Al_strain(86), ...
-                     Al_stress(90)/Al_strain(90)]);  % ≈ 693 MPa
+% Rule of mixtures for CFRP
+E_m = 3300;  E_f = 228000;            % MPa
+Vf  = mean([Vf1, Vf2, Vf3, Vf4, Vf5]);  % fiber volume fraction from microscopy
+E_c = E_m*(1-Vf) + E_f*Vf;           % ≈ 126,984 MPa
 
-% Rule of mixtures for CFRP Young's modulus
-E_m = 3300;   E_f = 228000;  % MPa
-Vf  = mean([Vf1, Vf2, Vf3, Vf4, Vf5]);   % fiber volume fraction from microscopy
-Vm  = 1 - Vf;
-E_c = E_m*Vm + E_f*Vf;                    % ≈ 126,984 MPa
-
-% Strength-to-weight
-density_Al   = 2.78/1000;           % g/mm³
-sigma_u_Al   = max(Al_stress);      % MPa
-specific_str = sigma_u_Al / density_Al;   % MPa·mm³/g</code></pre>
+% Strength-to-weight: sigma_u / density
+specific_strength = max(Al_stress) / (2.78e-3);  % MPa·mm³/g</code></pre>
       <!-- full MATLAB code (Lab 3 appendix) to be embedded here -->
     </div>
     <div class="project-image-group">
       <div class="project-image-note">Full MATLAB script &mdash; Lab 3 appendix</div>
       <div class="project-image-note">Tensile test CSV data files</div>
       <div class="project-image-note">Fiber radius measurements from microscopy</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Valuable Takeaways</h2>
+      <ul>
+        <li><strong>No single test method works for all materials.</strong> The stress-strain approach accurately characterized aluminum and GFRP but failed for CFRP, where the rule of mixtures plus microstructural analysis was required &mdash; a lesson in choosing the right tool for the material at hand.</li>
+        <li><strong>CFRP&rsquo;s specific strength advantage is enormous.</strong> At 717,297 MPa&#183;mm&#179;/g versus 178,777 for aluminum, CFRP can carry the same structural load at roughly a quarter of the weight &mdash; the driving force behind the Boeing 787 and Airbus A350 being &gt;50% composite by weight.</li>
+        <li><strong>Brittle vs. ductile failure modes tell different stories.</strong> Al-2024 yielded, necked, and fractured gradually; GFRP and CFRP fractured suddenly with no warning. This distinction drives damage tolerance requirements and inspection intervals for aerospace structures.</li>
+        <li>Gained experience with the complete tensile test workflow: specimen preparation, extensometer attachment, universal testing machine operation, fracture characterization, and cross-validation using metallography.</li>
+      </ul>
+    </div>
+    <div class="project-image-group">
+      <div class="project-image-note">Strength-to-weight comparison chart</div>
+      <div class="project-image-note">Brittle vs ductile fracture surfaces</div>
+      <div class="project-image-note">Handbook vs measured values table</div>
     </div>
   </section>
 

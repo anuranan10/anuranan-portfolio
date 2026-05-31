@@ -26,85 +26,59 @@
 
   <section class="project-row">
     <div class="project-text">
-      <h2>Lab Overview</h2>
+      <h2>Experiment Overview</h2>
+      <p>Every rocket motor &mdash; from a model rocket to a solid rocket booster &mdash; must be characterized by its thrust-time profile before it can be reliably used in a vehicle design. The thrust curve tells you peak load, average thrust, total impulse, and burn duration: the four numbers that define a propulsion system&rsquo;s capability. This lab designed and calibrated a strain-gage cantilever beam load cell, then used it to fire-test five Estes solid rocket motors of increasing power class and verify their performance against published specifications.</p>
       <ul>
-        <li><strong>Course:</strong> AE 417 &ndash; Aerospace Structures and Instrumentation Laboratory (David Sypeck / Reshma Kubsad) | December 3, 2025</li>
-        <li><strong>Objective:</strong> Build and calibrate a strain-gage cantilever beam load cell, then use it to measure thrust-time profiles for five Estes solid rocket motors and compare extracted propulsion parameters against manufacturer specifications.</li>
-        <li><strong>Motors tested:</strong> A8-3, B4-4, C6-5, C11-0, E16-4 (Estes black-powder solid rocket motors)</li>
-        <li><strong>Instrumentation:</strong> Aluminum cantilever beam with half-bridge strain-gage load cell, digital strain indicator, TracerDAQ data acquisition software, calibration masses (1, 2, 3 kg), hose clamp motor mount, STP oil damping fluid</li>
-        <li><strong>Test location:</strong> Outdoors; data acquisition under a canopy tent with the motor nozzle pointed downward into a fire-safe deflector container</li>
+        <li>Build and statically calibrate a strain-gage cantilever beam load cell using known masses to create a voltage-to-force conversion</li>
+        <li>Record thrust-time profiles for five motors: A8-3, B4-4, C6-5, C11-0, and E16-4</li>
+        <li>Extract peak thrust, average thrust, burn time, and total impulse from each curve</li>
+        <li>Compare C6-5 measured performance against Estes manufacturer specifications and quantify deviations</li>
       </ul>
     </div>
     <div class="project-image-group">
-      <!-- insert figure: Equipment cart outdoors with test setup (Fig. 1/6) -->
-      <div class="project-image-note">Outdoor test setup &mdash; equipment cart (Fig. 6)</div>
-      <!-- insert figure: Cantilever beam with calibration masses (Fig. 3/7) -->
-      <div class="project-image-note">Cantilever beam and calibration masses (Fig. 3)</div>
+      <!-- insert figure: Equipment cart outdoors (Fig. 6) -->
+      <div class="project-image-note">Outdoor test setup &mdash; equipment cart</div>
+      <!-- insert figure: Cantilever beam and calibration masses (Fig. 3) -->
+      <div class="project-image-note">Cantilever beam and calibration masses</div>
       <!-- insert figure: Solid rocket motors (Fig. 5) -->
-      <div class="project-image-note">Estes solid rocket motors A-through-E class (Fig. 5)</div>
+      <div class="project-image-note">Estes solid rocket motors A&ndash;E class</div>
     </div>
   </section>
 
   <section class="project-row">
     <div class="project-text">
-      <h2>Calibration &amp; Methodology</h2>
-      <p>Before live fire testing, the beam was statically calibrated by hanging known masses (1 kg, 2 kg, 3 kg) from the motor clamp end and recording the stable voltage plateau at each load. A linear fit to the four voltage-force pairs (including zero) produced the calibration equation:</p>
-      <p style="text-align:center; font-style:italic; margin:0.5rem 0;">F = 32.931 &#215; V &#8722; 40.732</p>
-      <p>This equation was applied to all subsequent voltage-time recordings to convert them to thrust-time curves. Each motor was mounted with the nozzle pointing downward, an igniter inserted and secured with the correct color-coded plug, and the launch controller armed. Data acquisition was started &#8776;3 seconds before ignition to capture the baseline. Total impulse was computed by trapezoidal integration of the thrust-time curve; average thrust followed as I_t / t_b.</p>
+      <h2>Approach &amp; Calibration</h2>
+      <p>A strain-gage load cell was built from an aluminum cantilever beam instrumented in a half-bridge configuration. Known masses of 1, 2, and 3 kg were hung from the motor clamp end and the stable voltage plateau at each load was recorded. A linear fit to the four voltage-force pairs (including zero) produced the calibration equation that converts any measured voltage to force:</p>
+      <p style="margin:0.5rem 0 0.5rem 1.5rem; font-style:italic; font-size:1.05em;">F = 32.931 &times; V &minus; 40.732 &nbsp;(N)</p>
+      <p>This equation was applied to all subsequent voltage-time recordings to produce thrust-time curves. Total impulse was computed by trapezoidal integration of the thrust curve, and average thrust as I<sub>t</sub> / t<sub>b</sub>. Each motor was mounted with its nozzle pointing downward, an igniter inserted with a color-coded plug, and the launch controller armed. Data acquisition ran ~3 seconds before ignition to capture the pre-fire baseline for subtraction.</p>
     </div>
     <div class="project-image-group">
-      <!-- insert figure: Voltage vs Time calibration graph (Fig. 8) -->
+      <!-- insert figure: Voltage vs Time calibration (Fig. 8) -->
       <div class="project-image-note">Voltage vs Time &mdash; calibration (Fig. 8)</div>
-      <!-- insert figure: Force vs Time calibration verification (Fig. 13) -->
+      <!-- insert figure: Force vs Time calibration (Fig. 13) -->
       <div class="project-image-note">Force vs Time &mdash; calibration (Fig. 13)</div>
-      <!-- insert figure: Solid rocket igniters and plugs (Fig. 2/4) -->
-      <div class="project-image-note">Rocket igniters and color-coded plugs (Fig. 4)</div>
+      <!-- insert figure: Rocket igniters and plugs (Fig. 4) -->
+      <div class="project-image-note">Rocket igniters and color-coded plugs</div>
     </div>
   </section>
 
   <section class="project-row">
     <div class="project-text">
-      <h2>Results &amp; Analysis</h2>
-      <p>All five motors produced thrust-time profiles consistent with black-powder solid rocket behavior: an initial ignition surge, a sustained thrust plateau, and a sharp burnout. The C6-5 motor was selected for detailed analysis and comparison against Estes published specifications.</p>
-      <table style="border-collapse:collapse; font-size:0.9em; margin-top:0.5rem;">
+      <h2>Key Results</h2>
+      <p>All five motors showed the characteristic black-powder thrust profile: a sharp ignition spike, a sustained plateau, and a sharp burnout. The C6-5 was selected for detailed analysis:</p>
+      <table style="border-collapse:collapse; font-size:0.9em; margin:0.5rem 0;">
         <tr style="background:#004080; color:white;">
-          <th style="padding:6px 12px;">Parameter</th>
-          <th style="padding:6px 12px;">Measured</th>
-          <th style="padding:6px 12px;">Estes Spec</th>
-          <th style="padding:6px 12px;">% Difference</th>
+          <th style="padding:5px 10px;">Parameter</th><th style="padding:5px 10px;">Measured</th><th style="padding:5px 10px;">Estes Spec</th><th style="padding:5px 10px;">% Diff</th>
         </tr>
-        <tr style="background:#f4faff;">
-          <td style="padding:6px 12px;">Peak thrust (N)</td>
-          <td style="padding:6px 12px;">13.55</td>
-          <td style="padding:6px 12px;">15.3</td>
-          <td style="padding:6px 12px;">12.1%</td>
-        </tr>
-        <tr>
-          <td style="padding:6px 12px;">Burn time (s)</td>
-          <td style="padding:6px 12px;">2.1</td>
-          <td style="padding:6px 12px;">1.6</td>
-          <td style="padding:6px 12px;">27.0%</td>
-        </tr>
-        <tr style="background:#f4faff;">
-          <td style="padding:6px 12px;">Total impulse (N&#183;s)</td>
-          <td style="padding:6px 12px;">8.53</td>
-          <td style="padding:6px 12px;">10.0</td>
-          <td style="padding:6px 12px;">15.9%</td>
-        </tr>
-        <tr>
-          <td style="padding:6px 12px;">Delay time (s)</td>
-          <td style="padding:6px 12px;">4.8</td>
-          <td style="padding:6px 12px;">5.0</td>
-          <td style="padding:6px 12px;">4.1%</td>
-        </tr>
-        <tr style="background:#f4faff;">
-          <td style="padding:6px 12px;">Average thrust (N)</td>
-          <td style="padding:6px 12px;">4.6</td>
-          <td style="padding:6px 12px;">&mdash;</td>
-          <td style="padding:6px 12px;">&mdash;</td>
-        </tr>
+        <tr style="background:#f4faff;"><td style="padding:5px 10px;">Peak thrust (N)</td><td style="padding:5px 10px;">13.55</td><td style="padding:5px 10px;">15.3</td><td style="padding:5px 10px;">12.1%</td></tr>
+        <tr><td style="padding:5px 10px;">Burn time (s)</td><td style="padding:5px 10px;">2.1</td><td style="padding:5px 10px;">1.6</td><td style="padding:5px 10px;">27.0%</td></tr>
+        <tr style="background:#f4faff;"><td style="padding:5px 10px;">Total impulse (N&#183;s)</td><td style="padding:5px 10px;">8.53</td><td style="padding:5px 10px;">10.0</td><td style="padding:5px 10px;">15.9%</td></tr>
+        <tr><td style="padding:5px 10px;">Delay time (s)</td><td style="padding:5px 10px;">4.8</td><td style="padding:5px 10px;">5.0</td><td style="padding:5px 10px;">4.1%</td></tr>
       </table>
-      <p style="margin-top:0.5rem;">The 27% burn time deviation is the largest discrepancy and is attributed to ignition delays, beam damping, and hobby-grade motor manufacturing tolerances. The higher impulse class motors (C11-0, E16-4) produced peak thrusts of &#8776;30 N and &#8776;30 N respectively, with distinctive sharp ignition spikes visible in their voltage-time profiles.</p>
+      <ul>
+        <li>The 27% burn time deviation was the largest discrepancy, attributed to ignition delays, beam damping from the oil-bath dashpot, and manufacturing tolerances in hobby-grade motors.</li>
+        <li>Higher impulse class motors (C11-0, E16-4) produced peak thrusts of ~30 N with characteristic sharp ignition spikes visible in their voltage traces.</li>
+      </ul>
     </div>
     <div class="project-image-group">
       <!-- insert figure: Thrust vs Time C6-5 (Fig. 17) -->
@@ -118,29 +92,18 @@
 
   <section class="project-row">
     <div class="project-text">
-      <h2>Data Processing</h2>
-      <p>TracerDAQ acquired voltage-time CSV files at a fixed sample rate. The calibration equation converted all voltage readings to force; the pre-ignition baseline was subtracted to zero the thrust axis. Total impulse was computed by numerical integration (trapezoidal rule) and average thrust by dividing by burn time. Below is a representative processing outline; full TracerDAQ data files to be embedded here.</p>
-      <pre style="background:#f4faff; padding:1rem; border-radius:6px; overflow-x:auto;"><code>% Calibration: voltage to force linear fit
-% Known masses: 0, 1, 2, 3 kg → forces: 0, -9.81, -19.62, -29.43 N
-% Measured voltages: 1.243, 0.940, 0.640, 0.352 V
-F = 32.931 * V - 40.732;   % calibration equation
-
-% Subtract pre-ignition baseline, zero thrust axis
-baseline = mean(F(1:pre_ignition_samples));
-Thrust = F - baseline;
-
-% Total impulse via trapezoidal integration
-It = trapz(time(burn_start:burn_end), Thrust(burn_start:burn_end));
-
-% Average thrust
-t_b  = time(burn_end) - time(burn_start);   % burn duration
-F_avg = It / t_b;</code></pre>
-      <!-- full TracerDAQ CSV data files and processing script to be embedded here -->
+      <h2>Valuable Takeaways</h2>
+      <ul>
+        <li><strong>Static calibration is the foundation of any force measurement system.</strong> The voltage-to-force conversion derived from known masses is what made every subsequent thrust reading meaningful. A poorly calibrated load cell produces data that looks precise but is systematically wrong &mdash; a critical lesson for any instrumentation role.</li>
+        <li><strong>Real motors deviate from specifications, and that deviation matters.</strong> A 27% burn time error means a vehicle reaches altitude 27% later than planned &mdash; the kind of discrepancy that drives test-before-fly requirements in professional propulsion programs, from CubeSat kick stages to large solid rocket boosters.</li>
+        <li><strong>The thrust curve encodes everything about a propulsion system.</strong> Area under the curve is impulse; shape determines vehicle dynamics; peak loads size the structure. Learning to read and extract parameters from thrust curves is a core skill in propulsion engineering.</li>
+        <li>Gained end-to-end experience in instrumentation design: from calibration curve derivation and outdoor live-fire data acquisition, through TracerDAQ signal processing, to propulsion parameter extraction and comparison against manufacturer specifications.</li>
+      </ul>
     </div>
     <div class="project-image-group">
-      <div class="project-image-note">TracerDAQ CSV data &mdash; all five motors</div>
-      <div class="project-image-note">Calibration curve &mdash; voltage to force</div>
-      <div class="project-image-note">C6-5 thrust parameters vs Estes spec</div>
+      <div class="project-image-note">Thrust profiles &mdash; all five motors</div>
+      <div class="project-image-note">C6-5 parameter vs Estes spec table</div>
+      <div class="project-image-note">Oil-bath dashpot damping rod</div>
     </div>
   </section>
 

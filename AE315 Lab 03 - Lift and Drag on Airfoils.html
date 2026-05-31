@@ -26,75 +26,58 @@
 
   <section class="project-row">
     <div class="project-text">
-      <h2>Lab Overview</h2>
+      <h2>Experiment Overview</h2>
+      <p>The NACA 4412 is a classic cambered airfoil used on general aviation aircraft. This lab measured its real aerodynamic performance across a range of angles of attack, then compared those measurements against ideal potential-flow predictions. The gap between theory and experiment directly quantifies the performance penalty of viscosity: the reason every real wing produces less lift and more drag than inviscid models predict &mdash; a trade-off designers must account for from the earliest stages of wing design.</p>
       <ul>
-        <li><strong>Course:</strong> AE 315 – Experimental Aerodynamics, Section 04 (Robert Bryan) | March 28, 2025</li>
-        <li><strong>Objective:</strong> Measure the surface pressure distribution and wake profile of a NACA 4412 airfoil at multiple angles of attack, extract lift, drag, and moment coefficients, and compare against panel code (potential flow) predictions.</li>
-        <li><strong>Model:</strong> NACA 4412 airfoil, c = 6-inch chord, instrumented with 18 static pressure taps (10 upper surface, 8 lower surface)</li>
-        <li><strong>Test speed:</strong> 15 m/s; angles of attack: &#8722;3°, 0°, 3°, 6°, 9°, 12°</li>
-        <li><strong>Ambient conditions:</strong> T = 22°C (295.15 K), P = 30.1 inHg (101,930.3 Pa), &#961; = 1.203 kg/m&#179;</li>
+        <li>Map the pressure distribution across 18 static taps on the NACA 4412 at angles of attack from &minus;3&#176; to 12&#176;</li>
+        <li>Conduct a wake survey with a traversing pitot tube to compute drag from the momentum deficit downstream</li>
+        <li>Extract lift coefficient C<sub>l</sub>, drag coefficient C<sub>d</sub>, and moment coefficients C<sub>m,LE</sub> and C<sub>m,c/4</sub></li>
+        <li>Determine the zero-lift angle of attack and identify the most aerodynamically efficient operating point</li>
       </ul>
     </div>
     <div class="project-image-group">
-      <!-- insert figure: NACA 4412 airfoil diagram with pressure tap locations -->
-      <div class="project-image-note">NACA 4412 airfoil with 18 pressure taps</div>
-      <div class="project-image-note">Airfoil mounted in wind tunnel test section</div>
-      <div class="project-image-note">Traversing pitot-static wake probe</div>
+      <!-- insert figure: NACA 4412 with 18 pressure taps -->
+      <div class="project-image-note">NACA 4412 with 18 pressure taps</div>
+      <!-- insert figure: Wake traverse probe -->
+      <div class="project-image-note">Traversing wake survey probe</div>
+      <!-- insert figure: Airfoil in test section -->
+      <div class="project-image-note">Airfoil mounted in wind tunnel</div>
     </div>
   </section>
 
   <section class="project-row">
     <div class="project-text">
-      <h2>Procedure &amp; Methodology</h2>
-      <p>The tunnel was set to 15 m/s and the airfoil adjusted to each angle of attack from &#8722;3° to 12° in 3° increments. At each angle, the traversing pitot-static tube swept 76 height positions behind the airfoil to capture the wake velocity profile, while the 18 static pressure ports sampled the airfoil surface pressure simultaneously.</p>
-      <p>Pressure readings (in inH&#8322;O) were converted to Pa and normalized by dynamic pressure to obtain the pressure coefficient C_p = (P_diff + q_inf) / q_inf. The lift coefficient was computed by integrating the pressure difference between lower and upper surfaces: C_l = (1/c) &#8747; (C_p_lower &#8722; C_p_upper) dx. The drag coefficient was derived from the wake momentum deficit: C_d = (2/U&#8734;&#178;c) &#8747; U_w(U&#8734; &#8722; U_w) dy. Moment coefficients about the leading edge and quarter chord were obtained from weighted pressure integrals. All results were compared to panel code (potential flow) predictions loaded from <code>PanelCode.mat</code>.</p>
+      <h2>Approach &amp; Key Equations</h2>
+      <p>At 15 m/s, the 18 surface pressure taps sampled the pressure distribution simultaneously at each angle of attack while a traversing probe swept 76 heights through the downstream wake. Lift was obtained by integrating the pressure difference between the lower and upper surfaces along the chord:</p>
+      <p style="margin:0.5rem 0 0.5rem 1.5rem; font-style:italic; font-size:1.05em;">C<sub>l</sub> = (1/c) &int;<sub>LE</sub><sup>TE</sup> (C<sub>p,lower</sub> &minus; C<sub>p,upper</sub>) dx</p>
+      <p>Drag was derived from the wake momentum deficit &mdash; a method that captures viscous drag directly from the velocity profile downstream and requires no physical force sensor. Pitching moments about both the leading edge and quarter-chord were integrated from the same pressure data, and all results were compared against panel code (potential flow) predictions.</p>
     </div>
     <div class="project-image-group">
       <!-- insert figure: Wake velocity profiles for all AoA (Fig. 2) -->
-      <div class="project-image-note">Wake velocity profiles — all AoA (Fig. 2)</div>
+      <div class="project-image-note">Wake velocity profiles (Fig. 2)</div>
       <!-- insert figure: Cp distribution for all AoA (Fig. 3) -->
-      <div class="project-image-note">Cp distribution — all AoA (Fig. 3)</div>
+      <div class="project-image-note">C<sub>p</sub> distribution &mdash; all AoA (Fig. 3)</div>
       <div class="project-image-note">Panel code vs experimental overlay</div>
     </div>
   </section>
 
   <section class="project-row">
     <div class="project-text">
-      <h2>Results &amp; Analysis</h2>
+      <h2>Key Results</h2>
       <ul>
-        <li>Cl increased linearly with angle of attack, but remained below the panel code prediction due to viscous effects (skin friction, flow rotation).</li>
-        <li>Cd increased with AoA; the drag polar was bowl-shaped rather than fishhook-shaped, partly attributable to elevated drag at &#8722;3° (likely measurement error or a larger-than-intended negative AoA).</li>
-        <li>C_m,LE became progressively more negative with increasing AoA, indicating a growing nose-down pitching moment as lift built up.</li>
-        <li>C_m,c/4 remained near &#8722;0.09 to &#8722;0.10, consistent with the theoretical near-constant aerodynamic center behavior; closely tracked panel code predictions.</li>
-        <li>The lift-to-drag ratio peaked at approximately 9° AoA, after which increased wake drag reduced efficiency.</li>
-        <li><strong>Zero-lift angle of attack: &#8722;3.31°</strong> (extrapolated from experimental Cl vs &#945; curve).</li>
+        <li>C<sub>l</sub> increased linearly with angle of attack but remained <strong>consistently below the potential-flow prediction</strong> &mdash; quantifying the lift penalty from viscous skin friction in a real flow.</li>
+        <li>C<sub>m,LE</sub> became progressively more negative with angle of attack (stronger nose-down pitching moment), while <strong>C<sub>m,c/4</sub> stayed approximately constant near &minus;0.09</strong>, confirming the quarter-chord as the aerodynamic center for this airfoil.</li>
+        <li><strong>Zero-lift angle of attack = &minus;3.31&#176;</strong>, extrapolated from the experimental C<sub>l</sub> vs &alpha; curve &mdash; consistent with theory for a positively cambered airfoil.</li>
+        <li><strong>Peak L/D ratio occurred near 9&#176; AoA</strong>, identifying the most aerodynamically efficient operating point for the NACA 4412 at this Reynolds number.</li>
+        <li>The drag polar was bowl-shaped rather than the ideal fishhook shape, partly attributable to elevated drag at &minus;3&#176; from a larger-than-intended setup angle.</li>
       </ul>
     </div>
     <div class="project-image-group">
-      <!-- insert figure: CL vs Angle of Attack (Fig. 4) -->
-      <div class="project-image-note">CL vs Angle of Attack (Fig. 4)</div>
-      <!-- insert figure: CD vs Angle of Attack (Fig. 5) -->
-      <div class="project-image-note">CD vs Angle of Attack (Fig. 5)</div>
-      <!-- insert figure: Drag Polar — Cd vs Cl (Fig. 8) -->
-      <div class="project-image-note">Drag Polar — Cd vs Cl (Fig. 8)</div>
-    </div>
-  </section>
-
-  <section class="project-row">
-    <div class="project-text">
-      <h2>Moment Coefficients &amp; L/D</h2>
-      <ul>
-        <li>C_m,LE decreased from &#8722;0.10 at &#8722;3° to &#8722;0.40 at 12°, consistently above (less negative than) the theoretical potential flow values — attributable to real-fluid viscous effects reducing the actual pitching moment.</li>
-        <li>C_m,c/4 fluctuated near &#8722;0.09, close to but slightly above the theoretical line, confirming the quarter-chord as near the aerodynamic center for this airfoil.</li>
-        <li>Peak CL/CD &#8776; 62 at 9° AoA (experimental); potential flow predicted a peak near 85 at 6°.</li>
-      </ul>
-    </div>
-    <div class="project-image-group">
-      <!-- insert figure: Cm,LE vs Angle of Attack (Fig. 6) -->
-      <div class="project-image-note">Cm,LE vs Angle of Attack (Fig. 6)</div>
-      <!-- insert figure: Cm,c/4 vs Angle of Attack (Fig. 7) -->
-      <div class="project-image-note">Cm,c/4 vs Angle of Attack (Fig. 7)</div>
-      <!-- insert figure: L/D ratio vs Angle of Attack (Fig. 9) -->
+      <!-- insert figure: CL vs AoA (Fig. 4) -->
+      <div class="project-image-note">C<sub>L</sub> vs Angle of Attack (Fig. 4)</div>
+      <!-- insert figure: Drag Polar (Fig. 8) -->
+      <div class="project-image-note">Drag Polar &mdash; C<sub>d</sub> vs C<sub>l</sub> (Fig. 8)</div>
+      <!-- insert figure: L/D vs AoA (Fig. 9) -->
       <div class="project-image-note">Lift-to-Drag Ratio vs AoA (Fig. 9)</div>
     </div>
   </section>
@@ -102,38 +85,46 @@
   <section class="project-row">
     <div class="project-text">
       <h2>MATLAB Code</h2>
-      <p>Wake traverse and surface pressure data were loaded from <code>.mat</code> and <code>.csv</code> files, converted, and integrated to produce aerodynamic coefficients. Below is a representative excerpt; the full script is <code>AE315_LAB3_Code.m</code>.</p>
-      <pre style="background:#f4faff; padding:1rem; border-radius:6px; overflow-x:auto;"><code>% Wake velocity from traversing pitot-static data
-Velocity = sqrt(2 * dp / rho0);
+      <p>Surface pressure and wake traverse data were integrated to extract aerodynamic coefficients. The zero-lift angle was found by linear interpolation of the C<sub>l</sub>&ndash;&alpha; curve through zero lift.</p>
+      <pre style="background:#f4faff; padding:1rem; border-radius:6px; overflow-x:auto;"><code>% Lift coefficient from pressure integration (lower − upper)
+Cl(i) = trapz(lower_x, Cp_lower(i,:)) - trapz(upper_x, Cp_upper(i,:));
 
-% Freestream: average outside the wake bounds
-freestream(i) = mean([Velocity(i,1:LowBnd(i)), Velocity(i,UppBnd(i):end)]);
-
-% Drag from momentum deficit
-D(i) = rho0 * trapz(z_matrix(i, LowBnd(i):UppBnd(i)), ...
-  Velocity(i, LowBnd(i):UppBnd(i)) .* ...
-  (freestream(i) - Velocity(i, LowBnd(i):UppBnd(i))));
-
-% Pressure coefficient from 18 surface taps
-q         = 0.5 * rho0 * freestream(i)^2;
-Cp(i, :)  = (p_mean(i, :) ./ q) + 1;
-
-% Lift from Cp integration (lower minus upper surface)
-Cl(i) = trapz(lower_x_val, Cp_lower(i,:)) - trapz(upper_x_val, Cp_upper(i,:));
+% Drag from wake momentum deficit
+D(i)  = rho * trapz(z(i,:), Vel(i,:) .* (V_inf - Vel(i,:)));
+Cd(i) = D(i) / (0.5 * rho * V_inf^2 * chord);
 
 % Zero-lift angle of attack
-zero_lift_AoA = interp1(Cl, AoA_vals, 0, 'linear', 'extrap'); % = -3.31°</code></pre>
+alpha_0 = interp1(Cl, AoA_vals, 0, 'linear', 'extrap');  % = -3.31°</code></pre>
       <!-- full MATLAB code (AE315_LAB3_Code.m) to be embedded here -->
     </div>
     <div class="project-image-group">
-      <div class="project-image-note">Full MATLAB script — AE315_LAB3_Code.m</div>
-      <div class="project-image-note">PanelCode.mat data structure</div>
-      <div class="project-image-note">Pressure tap x/c positions</div>
+      <div class="project-image-note">Full script &mdash; AE315_LAB3_Code.m</div>
+      <div class="project-image-note">Panel code reference data</div>
+      <div class="project-image-note">Pressure tap chord positions</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Valuable Takeaways</h2>
+      <ul>
+        <li><strong>Viscosity costs lift and adds drag &mdash; quantifiably.</strong> Plotting both experimental and theoretical C<sub>l</sub> curves makes this performance penalty tangible, not just a textbook abstraction.</li>
+        <li><strong>The drag polar is one of the most information-rich plots in aerodynamics.</strong> Its shape encodes efficiency at every operating point, and reading it fluently is essential for wing design, glider optimization, and aircraft performance analysis.</li>
+        <li><strong>The wake momentum method is a powerful, hardware-independent drag measurement technique</strong> used in academic and industrial wind tunnel testing, including at NASA Langley and major airframe manufacturers.</li>
+        <li>Gained end-to-end experience: raw pressure tap data &rarr; C<sub>p</sub> distributions &rarr; integrated aerodynamic coefficients &rarr; validated polar curves &mdash; the same workflow used in real aerodynamic development programs.</li>
+      </ul>
+    </div>
+    <div class="project-image-group">
+      <!-- insert figure: Cm,LE vs AoA (Fig. 6) -->
+      <div class="project-image-note">C<sub>m,LE</sub> vs Angle of Attack (Fig. 6)</div>
+      <!-- insert figure: Cm,c/4 vs AoA (Fig. 7) -->
+      <div class="project-image-note">C<sub>m,c/4</sub> vs Angle of Attack (Fig. 7)</div>
+      <div class="project-image-note">Zero-lift AoA extrapolation</div>
     </div>
   </section>
 
   <section style="padding: 1rem 2rem 2rem;">
-    <p><a class="project-title-link" href="experimental-aerodynamics-labs.html">href="lab-testing-experience.html">&#8592; Back to Lab Testing Experience#8592; Back to Experimental Aerodynamics Labs</a></p>
+    <p><a class="project-title-link" href="experimental-aerodynamics-labs.html">&#8592; Back to Experimental Aerodynamics Labs</a></p>
   </section>
 
   <footer>

@@ -26,112 +26,83 @@
 
   <section class="project-row">
     <div class="project-text">
-      <h2>Lab Overview</h2>
+      <h2>Experiment Overview</h2>
+      <p>Position control is fundamental to flight control actuators, robotic arms, gimbal systems, and telescope pointing mechanisms. The challenge is achieving a fast, accurate step response while also tracking continuously-changing reference inputs (like a ramp command) without accumulating position error. This lab designed and implemented a PV controller meeting second-order transient specifications, then demonstrated why adding an integral term is necessary to eliminate the persistent error that appears when the system must track a ramp reference.</p>
       <ul>
-        <li><strong>Course:</strong> AE 443 &ndash; Experimental Dynamics and Control Laboratory (Bernardo Restrepo / Jared Getz) | March 13, 2026</li>
-        <li><strong>Objective:</strong> Design PV (proportional-velocity) and PIV controllers for the SRV02 load shaft position, validate transient performance against second-order specifications (t_p = 0.20 s, PO = 5%), and demonstrate elimination of ramp tracking steady-state error by adding an integral term.</li>
-        <li><strong>Plant parameters:</strong> K = 1.53 rad/s/V, &#964; = 0.0254 s</li>
-        <li><strong>Control structure:</strong> PV = proportional + velocity feedback; PIV adds integral action to reduce e_ss under ramp input</li>
-        <li><strong>Design specs:</strong> Desired &#950; = 0.69, &#969;_n = 21.7 rad/s (from t_p = 0.20 s, PO = 5%)</li>
+        <li>Design PV (proportional-velocity) controller gains from second-order transient specifications: peak time t<sub>p</sub> = 0.20 s and percent overshoot PO = 5%</li>
+        <li>Validate the step response in simulation and on the physical SRV02 hardware</li>
+        <li>Demonstrate the ramp tracking steady-state error inherent to PV-only control</li>
+        <li>Add an integral gain to create a PIV controller and reduce ramp steady-state error to near zero</li>
       </ul>
     </div>
     <div class="project-image-group">
-      <!-- insert figure: Simulated step response with PV controller (Fig. 1) -->
-      <div class="project-image-note">Simulated step response &mdash; PV (Fig. 1)</div>
-      <!-- insert figure: Filtered PV step response (Fig. 2) -->
-      <div class="project-image-note">Filtered PV step response (Fig. 2)</div>
+      <!-- insert figure: Simulated step response PV (Fig. 1) -->
+      <div class="project-image-note">Simulated PV step response (Fig. 1)</div>
       <!-- insert figure: Implemented PV step response (Fig. 3) -->
       <div class="project-image-note">Implemented PV step response (Fig. 3)</div>
+      <!-- insert figure: PIV ramp — near-zero steady-state error (Fig. 7) -->
+      <div class="project-image-note">PIV ramp &mdash; near-zero e<sub>ss</sub> (Fig. 7)</div>
     </div>
   </section>
 
   <section class="project-row">
     <div class="project-text">
       <h2>Controller Design</h2>
-      <p>The desired transient response (t_p = 0.20 s, PO = 5%) was converted to second-order system parameters: &#950; = 0.69 and &#969;_n = 21.7 rad/s. The PV controller gains were then derived from the closed-loop pole placement equations:</p>
-      <p style="text-align:center; font-style:italic; margin:0.5rem 0;">k_p = &#964;&#969;_n&#178; / K = 7.82 V/rad &nbsp;&nbsp;&nbsp; k_v = (2&#950;&#969;_n&#964; &#8722; 1) / K = &#8722;0.157 V&#183;s/rad</p>
-      <p>Maximum allowable k_p was bounded by the amplifier limit V_max = 10 V: k_p,max = 28.7 V/rad for a 20&#176; step, 12.7 V/rad for 45&#176;. The ramp steady-state error under PV control (Type-1 system) was predicted as e_ss = R(1 + Kk_v) / (Kk_p) = 0.214 rad. To eliminate this, an integral gain k_i was designed: k_i = (V_max &#8722; k_p&#183;e_ss) / (e_ss&#183;t) = 38.9 V/(rad&#183;s) for t = 1 s.</p>
+      <p>The desired transient specs (t<sub>p</sub> = 0.20 s, PO = 5%) were mapped to second-order system parameters: &zeta; = 0.69 and &omega;<sub>n</sub> = 21.7 rad/s. The PV gains were then derived analytically:</p>
+      <p style="margin:0.5rem 0 0.2rem 1.5rem; font-style:italic; font-size:1.05em;">k<sub>p</sub> = &tau;&omega;<sub>n</sub>&#178; / K = 7.82 V/rad</p>
+      <p style="margin:0.2rem 0 0.5rem 1.5rem; font-style:italic; font-size:1.05em;">k<sub>v</sub> = (2&zeta;&omega;<sub>n</sub>&tau; &minus; 1) / K = &minus;0.157 V&#183;s/rad</p>
+      <p>Since a PV controller makes the position loop a Type-1 system, a ramp input produces a predictable non-zero steady-state error e<sub>ss</sub> = R(1 + Kk<sub>v</sub>) / (Kk<sub>p</sub>) = 0.214 rad. Adding an integral gain k<sub>i</sub> = 38.9 V/(rad&#183;s) upgraded the controller to PIV, eliminating this error by continuously accumulating and correcting residual position deviation.</p>
     </div>
     <div class="project-image-group">
-      <!-- insert figure: Ramp response simulation with PV (Fig. 4) -->
+      <!-- insert figure: Ramp response PV simulation (Fig. 4) -->
       <div class="project-image-note">Ramp response &mdash; PV simulation (Fig. 4)</div>
-      <!-- insert figure: Ramp response implementation with PV (Fig. 5) -->
+      <!-- insert figure: Ramp response PV hardware (Fig. 5) -->
       <div class="project-image-note">Ramp response &mdash; PV hardware (Fig. 5)</div>
-      <!-- insert figure: PIV ramp response — no steady-state error (Fig. 7) -->
-      <div class="project-image-note">PIV ramp &mdash; near-zero e_ss (Fig. 7)</div>
+      <!-- insert figure: PIV ramp simulation (Fig. 6) -->
+      <div class="project-image-note">PIV ramp &mdash; simulation (Fig. 6)</div>
     </div>
   </section>
 
   <section class="project-row">
     <div class="project-text">
-      <h2>Results &amp; Analysis</h2>
-      <table style="border-collapse:collapse; font-size:0.9em; margin-bottom:0.8rem;">
+      <h2>Key Results</h2>
+      <table style="border-collapse:collapse; font-size:0.9em; margin:0.5rem 0;">
         <tr style="background:#004080; color:white;">
-          <th style="padding:5px 10px;">Test</th>
-          <th style="padding:5px 10px;">t_p (s)</th>
-          <th style="padding:5px 10px;">PO (%)</th>
-          <th style="padding:5px 10px;">e_ss (rad)</th>
+          <th style="padding:5px 10px;">Test</th><th style="padding:5px 10px;">t<sub>p</sub> (s)</th><th style="padding:5px 10px;">PO (%)</th><th style="padding:5px 10px;">e<sub>ss</sub> (rad)</th>
         </tr>
-        <tr style="background:#f4faff;">
-          <td style="padding:5px 10px;">Step sim (PV)</td><td style="padding:5px 10px;">0.194</td><td style="padding:5px 10px;">5.0</td><td style="padding:5px 10px;">0</td>
-        </tr>
-        <tr>
-          <td style="padding:5px 10px;">Step sim (filtered PV)</td><td style="padding:5px 10px;">0.204</td><td style="padding:5px 10px;">5.7</td><td style="padding:5px 10px;">0.002</td>
-        </tr>
-        <tr style="background:#f4faff;">
-          <td style="padding:5px 10px;">Step impl (PV)</td><td style="padding:5px 10px;">0.170</td><td style="padding:5px 10px;">7.86</td><td style="padding:5px 10px;">0.004</td>
-        </tr>
-        <tr>
-          <td style="padding:5px 10px;">Ramp sim (PV)</td><td style="padding:5px 10px;">&mdash;</td><td style="padding:5px 10px;">&mdash;</td><td style="padding:5px 10px;">0.213</td>
-        </tr>
-        <tr style="background:#f4faff;">
-          <td style="padding:5px 10px;">Ramp impl (PV)</td><td style="padding:5px 10px;">&mdash;</td><td style="padding:5px 10px;">&mdash;</td><td style="padding:5px 10px;">0.186</td>
-        </tr>
-        <tr>
-          <td style="padding:5px 10px;">Ramp sim (PIV)</td><td style="padding:5px 10px;">&mdash;</td><td style="padding:5px 10px;">&mdash;</td><td style="padding:5px 10px;">0.005</td>
-        </tr>
-        <tr style="background:#f4faff;">
-          <td style="padding:5px 10px;">Ramp impl (PIV)</td><td style="padding:5px 10px;">&mdash;</td><td style="padding:5px 10px;">&mdash;</td><td style="padding:5px 10px;">0.007</td>
-        </tr>
+        <tr style="background:#f4faff;"><td style="padding:5px 10px;">Step sim (PV)</td><td style="padding:5px 10px;">0.194</td><td style="padding:5px 10px;">5.0</td><td style="padding:5px 10px;">0</td></tr>
+        <tr><td style="padding:5px 10px;">Step impl (PV)</td><td style="padding:5px 10px;">0.170</td><td style="padding:5px 10px;">7.86</td><td style="padding:5px 10px;">0.004</td></tr>
+        <tr style="background:#f4faff;"><td style="padding:5px 10px;">Ramp sim (PV)</td><td style="padding:5px 10px;">&mdash;</td><td style="padding:5px 10px;">&mdash;</td><td style="padding:5px 10px;">0.213</td></tr>
+        <tr><td style="padding:5px 10px;">Ramp impl (PV)</td><td style="padding:5px 10px;">&mdash;</td><td style="padding:5px 10px;">&mdash;</td><td style="padding:5px 10px;">0.186</td></tr>
+        <tr style="background:#f4faff;"><td style="padding:5px 10px;">Ramp sim (PIV)</td><td style="padding:5px 10px;">&mdash;</td><td style="padding:5px 10px;">&mdash;</td><td style="padding:5px 10px;">0.005</td></tr>
+        <tr><td style="padding:5px 10px;">Ramp impl (PIV)</td><td style="padding:5px 10px;">&mdash;</td><td style="padding:5px 10px;">&mdash;</td><td style="padding:5px 10px;">0.007</td></tr>
       </table>
       <ul>
-        <li>PV step response met the 5% overshoot and 0.20 s peak time design specs in simulation; hardware showed marginally higher overshoot (7.86%) due to friction and noise.</li>
-        <li>Adding the low-pass filter slightly increased peak time but smoothed the response &mdash; e_ss remained negligible at 0.002 rad.</li>
-        <li>Adding the integral term (PIV) reduced ramp e_ss from ~0.19 rad to ~0.007 rad, confirming the Type-2 behavior introduced by the integrator.</li>
+        <li>Hardware step response (PO = 7.86%) slightly exceeded the 5% design spec, attributable to friction and encoder quantization noise not captured in the model.</li>
+        <li>PIV reduced ramp e<sub>ss</sub> from ~0.19 rad to ~0.007 rad &mdash; a <strong>97% reduction</strong> by adding one integral term, directly validating the Type-2 behavior theory predicts.</li>
       </ul>
     </div>
     <div class="project-image-group">
-      <div class="project-image-note">Controller gains and design calculations</div>
+      <div class="project-image-note">Full results summary (Table 1)</div>
+      <div class="project-image-note">Gain design calculation worksheet</div>
       <div class="project-image-note">PV vs PIV ramp error comparison</div>
-      <div class="project-image-note">Full summary table (Table 1)</div>
     </div>
   </section>
 
   <section class="project-row">
     <div class="project-text">
-      <h2>MATLAB Code</h2>
-      <p>The plotting script overlaid the setpoint and measured/simulated position responses. Full script: Lab 3 Appendix A.</p>
-      <pre style="background:#f4faff; padding:1rem; border-radius:6px; overflow-x:auto;"><code>% Plot setpoint vs measured position
-figure()
-plot(data_pos(:,1), data_pos(:,2))   % setpoint
-hold on
-plot(data_pos(:,1), data_pos(:,3))   % measured/simulated
-xlabel('Time (s)')
-ylabel('Load Shaft Position (rad)')
-title('Measured SRV02 PV ramp response')
-legend('Setpoint Position', 'Simulated Position')
-
-% Steady-state error calculation
-index = (time >= 4.9) & (time <= 9.9);
-r_ss  = mean(data_pos(index, 2));
-y_ss  = mean(data_pos(index, 3));
-e_ss  = r_ss - y_ss;    % ≈ 0.186 rad (PV ramp), 0.007 rad (PIV ramp)</code></pre>
-      <!-- full MATLAB code (AE443_Lab3.m) to be embedded here -->
+      <h2>Valuable Takeaways</h2>
+      <ul>
+        <li><strong>Transient specifications translate directly into controller gains.</strong> Mapping peak time and overshoot to &zeta; and &omega;<sub>n</sub>, then to k<sub>p</sub> and k<sub>v</sub>, is a reusable workflow for any second-order position control problem, from aircraft actuators to CNC machine tool axes.</li>
+        <li><strong>The type number of a control system determines what inputs it can track without error.</strong> PV (Type 1) tracks step positions but accumulates ramp error; PIV (Type 2) tracks both &mdash; this distinction drives integrator inclusion decisions in autopilot and flight controller design.</li>
+        <li><strong>Hardware always differs from simulation.</strong> The 7.86% vs 5% overshoot discrepancy came from real-world nonlinearities. Recognizing and explaining this gap &mdash; rather than ignoring it &mdash; is what separates competent control engineers from those who only work in simulation.</li>
+        <li>Developed proficiency in the complete MATLAB/Simulink hardware-in-the-loop workflow, from analytical gain design and simulation validation through hardware implementation and performance characterization.</li>
+      </ul>
     </div>
     <div class="project-image-group">
-      <div class="project-image-note">Full MATLAB script &mdash; Lab 3 Appendix A</div>
-      <div class="project-image-note">Simulink PV controller block diagram</div>
-      <div class="project-image-note">PIV controller with integral block</div>
+      <div class="project-image-note">Controller gains derivation</div>
+      <div class="project-image-note">Type 1 vs Type 2 error comparison</div>
+      <div class="project-image-note">Low-pass filter effect on step response</div>
     </div>
   </section>
 

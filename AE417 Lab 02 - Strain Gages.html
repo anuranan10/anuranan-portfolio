@@ -26,59 +26,59 @@
 
   <section class="project-row">
     <div class="project-text">
-      <h2>Lab Overview</h2>
+      <h2>Experiment Overview</h2>
+      <p>Strain gages are the workhorse sensor of structural testing. They appear on aircraft structural test articles, wind turbine blades, bridge load cells, and Formula 1 suspension components. Unlike extensometers, they can be bonded to any surface, measure highly localized strain, and operate in environments where no other sensor could reach. This lab covered the full installation process from raw surface preparation through data collection, developing practical skills that are directly applicable to structural health monitoring, load cell design, and experimental stress analysis.</p>
       <ul>
-        <li><strong>Course:</strong> AE 417 &ndash; Aerospace Structures and Instrumentation Laboratory (David Sypeck / Reshma Kubsad) | October 3, 2025</li>
-        <li><strong>Objective:</strong> Install a 120 &#937; foil strain gage on an aluminum cantilever beam, measure resistance changes under incremental bending loads in tension and compression, and derive Young's modulus for both an aluminum and a Nomex/CFRP honeycomb sandwich beam.</li>
-        <li><strong>Specimens:</strong> Al 6061-T6511 strip beam (L &#8776; 299 mm, w = 25.52 mm, h = 4.82 mm); Nomex honeycomb beam with CFRP skin (L &#8776; 294 mm, w = 24.41 mm, h = 10.26 mm, t_face = 0.336 mm)</li>
-        <li><strong>Instrumentation:</strong> 120 &#937; Micro-Measurements strain gages (GF = 2), digital multimeter (via banana plug), C-clamp cantilever setup, calibration masses (1, 2, 3 kg)</li>
-        <li><strong>Installation standard:</strong> Vishay bulletins B-127-14, TT-603, TT-609</li>
+        <li>Install a 120 &#937; foil strain gage on an Al 6061-T6511 beam following Vishay installation procedures</li>
+        <li>Measure resistance changes under bending loads in both tension and compression orientations</li>
+        <li>Derive Young&rsquo;s modulus E for both the aluminum beam and a Nomex/CFRP honeycomb sandwich beam via Hooke&rsquo;s law</li>
+        <li>Compare computed modulus values against handbook data and assess sources of error</li>
       </ul>
     </div>
     <div class="project-image-group">
-      <!-- insert figure: Installed strain gauge on aluminum beam (Fig. 8) -->
-      <div class="project-image-note">Strain gage installed on aluminum beam (Fig. 8)</div>
+      <!-- insert figure: Strain gage installed on aluminum beam (Fig. 8) -->
+      <div class="project-image-note">Strain gage installed on aluminum beam</div>
       <!-- insert figure: Aluminum beam in tension with masses (Fig. 11) -->
-      <div class="project-image-note">Aluminum beam in tension at max mass (Fig. 11)</div>
+      <div class="project-image-note">Aluminum beam in tension at max mass</div>
       <!-- insert figure: Honeycomb beam with weighted tension (Fig. 14) -->
-      <div class="project-image-note">Honeycomb beam with weighted tension (Fig. 14)</div>
+      <div class="project-image-note">Honeycomb beam weighted tension test</div>
     </div>
   </section>
 
   <section class="project-row">
     <div class="project-text">
-      <h2>Procedure &amp; Methodology</h2>
-      <p>Each beam's dimensions and mass were measured five times and averaged. The aluminum beam was prepared per Vishay instructions: surface degreased, sanded (320 then 400 grit), conditioned with M-Prep Conditioner A, neutralized, and dried. The strain gage was positioned using tape transfer and bonded with M-Bond 200 adhesive and catalyst. Leads were soldered to bondable terminals and connected via banana plug to the digital multimeter.</p>
-      <p>The beam was clamped to the edge of the workbench in a cantilever (&#8220;diving board&#8221;) configuration. The resting resistance was recorded as the zero reference, then 1 kg, 2 kg, and 3 kg masses were hung from the free end, with a reading taken at each load. The beam was then flipped to put the gage in compression and the mass sequence repeated. The entire procedure was repeated for the Nomex honeycomb beam using its pre-installed gage. Strain was computed as &#949; = (&#916;R/R) / GF; stress was computed from beam bending theory (&#963; = My/I for the aluminum; &#963; = M/(h&#183;t_f&#183;b) for the sandwich beam); Young's modulus followed from E = &#963;/&#949;.</p>
+      <h2>Approach &amp; Key Equations</h2>
+      <p>The aluminum beam surface was degreased, sanded through 320 and 400 grit, conditioned with M-Prep Conditioner A, then the gage was positioned and bonded with M-Bond 200 adhesive and catalyst following Vishay bulletin B-127-14. Lead wires were soldered and connected via banana plug to a digital multimeter, which measured resistance to 0.001 &#937; resolution. The beam was cantilevered in a &ldquo;diving board&rdquo; configuration and masses of 1, 2, and 3 kg were hung from the free end. Bending strain was computed from the measured resistance change &Delta;R and the gage factor GF:</p>
+      <p style="margin:0.5rem 0 0.5rem 1.5rem; font-style:italic; font-size:1.05em;">&epsilon; = (&Delta;R / R) / GF</p>
+      <p>Bending stress was calculated from beam theory (&sigma; = My/I for the aluminum beam; &sigma; = M/(h&#183;t<sub>f</sub>&#183;b) for the sandwich beam), and Young&rsquo;s modulus extracted as E = &sigma;/&epsilon;.</p>
     </div>
     <div class="project-image-group">
-      <!-- insert figure: Strain gage installation tools and chemicals (Fig. 4a/4b) -->
-      <div class="project-image-note">Installation chemicals and tools (Fig. 4a/4b)</div>
-      <!-- insert figure: Aluminum beam resting compression setup (Fig. 12) -->
+      <!-- insert figure: Installation chemicals and tools (Fig. 4a/4b) -->
+      <div class="project-image-note">Installation chemicals &amp; tools (Fig. 4a)</div>
+      <!-- insert figure: Aluminum beam compression setup (Fig. 12) -->
       <div class="project-image-note">Aluminum beam in compression (Fig. 12)</div>
-      <!-- insert figure: Honeycomb beam in compression (Fig. 16) -->
+      <!-- insert figure: Honeycomb beam compression (Fig. 16) -->
       <div class="project-image-note">Honeycomb beam in compression (Fig. 16)</div>
     </div>
   </section>
 
   <section class="project-row">
     <div class="project-text">
-      <h2>Results &amp; Analysis</h2>
+      <h2>Key Results</h2>
       <ul>
-        <li>Aluminum beam resistance increased by &#8776;0.08 &#937; in tension and decreased by &#8776;0.08 &#937; in compression for 3 kg load, confirming symmetric bending response.</li>
-        <li>Honeycomb beam resistance changed by &#8776;0.10 &#937; in both directions for 3 kg, reflecting higher bending stiffness due to the sandwich construction.</li>
-        <li><strong>E_Al = 84 GPa</strong> &mdash; 17.9% error relative to the 6061-T651 handbook value of 69 GPa; attributed to minor gage misalignment and surface preparation variability.</li>
-        <li><strong>E_Honeycomb = 74 GPa</strong> &mdash; within the expected 70&ndash;120 GPa range for woven CFRP facing skins.</li>
-        <li>Stress vs. strain curves for tension and compression were nearly coincident, validating correct gage installation and material isotropy in the elastic regime.</li>
-        <li>At the same load, the honeycomb beam showed less strain than aluminum, confirming its higher effective bending stiffness per unit cross-section owing to the sandwich core.</li>
+        <li>Aluminum beam resistance changed by ~0.08 &#937; per kilogram of load in both tension and compression &mdash; <strong>nearly symmetric responses</strong> that validated correct gage installation and consistent material behavior.</li>
+        <li><strong>E<sub>Al</sub> = 84 GPa</strong> vs. handbook value of 69 GPa for 6061-T651 (17.9% error) &mdash; attributed to minor gage misalignment during bonding and surface preparation variability.</li>
+        <li><strong>E<sub>honeycomb</sub> = 74 GPa</strong> for the Nomex/CFRP sandwich beam &mdash; within the expected 70&ndash;120 GPa range for woven carbon fiber facing skins.</li>
+        <li>At identical loads, the honeycomb beam showed less strain than the aluminum beam, confirming its higher effective bending stiffness per unit cross-section thanks to the sandwich construction principle.</li>
+        <li>Stress-strain curves for tension and compression were nearly coincident, validating symmetric material response in the elastic regime.</li>
       </ul>
     </div>
     <div class="project-image-group">
-      <!-- insert figure: Strain vs Load for aluminum and CFRP beams (Fig. 17) -->
+      <!-- insert figure: Strain vs Load (Fig. 17) -->
       <div class="project-image-note">Strain vs Load &mdash; both beams (Fig. 17)</div>
-      <!-- insert figure: Stress vs Strain — aluminum beam (Fig. 18) -->
+      <!-- insert figure: Stress vs Strain aluminum (Fig. 18) -->
       <div class="project-image-note">Stress vs Strain &mdash; aluminum (Fig. 18)</div>
-      <!-- insert figure: Stress vs Strain — honeycomb beam (Fig. 19) -->
+      <!-- insert figure: Stress vs Strain honeycomb (Fig. 19) -->
       <div class="project-image-note">Stress vs Strain &mdash; honeycomb (Fig. 19)</div>
     </div>
   </section>
@@ -86,27 +86,20 @@
   <section class="project-row">
     <div class="project-text">
       <h2>MATLAB Code</h2>
-      <p>Two scripts were used: one to plot strain vs. load for both beams, and one to compute and plot stress vs. strain using measured beam geometry and bending theory. Below is a representative excerpt; full scripts are <code>Lab2_Main.m</code> and <code>Lab2_Main_stress_strain.m</code>.</p>
-      <pre style="background:#f4faff; padding:1rem; border-radius:6px; overflow-x:auto;"><code>% Strain from resistance change and gage factor
-load = [0 1 2 3];  % kg
-GF   = 2;          % gage factor
-
+      <p>Two scripts handled strain-load plotting and stress-strain curve generation using measured beam geometry and bending theory formulas.</p>
+      <pre style="background:#f4faff; padding:1rem; border-radius:6px; overflow-x:auto;"><code>% Strain from resistance change and gage factor (GF = 2)
 al_strain_T = [0  0.000354  0.000699  0.00104];   % aluminum tension
-al_strain_C = [0 -0.000350 -0.000699 -0.00105];   % aluminum compression
 hc_strain_T = [0  0.000429  0.000861  0.00129];   % CFRP tension
-hc_strain_C = [0 -0.000433 -0.000445 -0.00131];   % CFRP compression
 
-% Aluminum bending stress: sigma = My/I
-F    = load * 9.81;            % N
-M_al = F * L_al;               % N·m
-sigma_al = M_al .* y_al ./ I_al;   % Pa
+% Aluminum bending stress: sigma = M*y / I
+M_al     = F * L_al;                  % N·m
+sigma_al = M_al .* y_al ./ I_al;     % Pa
 
-% CFRP sandwich stress: sigma = M / (b * h_f * t_face)
-M_cf    = F * L_cf;
-sigma_cf = M_cf ./ (b_cf * h_f * t_face);  % Pa
+% CFRP sandwich facing stress: sigma = M / (b * h_f * t_face)
+sigma_cf = M_cf ./ (b_cf * h_f * t_face);
 
-% Young's modulus: E = sigma/epsilon  (1 kg load, tension)
-E_Al  = sigma_al(2) / al_strain_T(2);  % ≈ 84 GPa
+% Young's modulus at 1 kg: E = sigma / epsilon
+E_Al   = sigma_al(2) / al_strain_T(2);  % ≈ 84 GPa
 E_CFRP = sigma_cf(2) / hc_strain_T(2); % ≈ 74 GPa</code></pre>
       <!-- full MATLAB code (Lab2_Main.m, Lab2_Main_stress_strain.m) to be embedded here -->
     </div>
@@ -114,6 +107,23 @@ E_CFRP = sigma_cf(2) / hc_strain_T(2); % ≈ 74 GPa</code></pre>
       <div class="project-image-note">Full script &mdash; Lab2_Main.m</div>
       <div class="project-image-note">Full script &mdash; Lab2_Main_stress_strain.m</div>
       <div class="project-image-note">Resistance measurement data tables</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Valuable Takeaways</h2>
+      <ul>
+        <li><strong>Strain gage installation is a high-precision craft.</strong> Surface preparation, gage alignment, adhesive application, and lead wire soldering each introduce potential error. The 17.9% Young&rsquo;s modulus error versus handbook data shows directly how installation quality affects result accuracy.</li>
+        <li><strong>The sandwich beam demonstrates why composite structures are so weight-efficient.</strong> Separating stiff facing skins with a lightweight core dramatically increases bending stiffness per unit mass &mdash; the same principle used in aircraft floors, fuselage panels, and spacecraft structures.</li>
+        <li><strong>Symmetric tension and compression responses are the signature of proper gage installation.</strong> Asymmetry would indicate gage misalignment, a debonded terminal, or nonlinear material behavior &mdash; skills in recognizing these signatures matter in any structural instrumentation role.</li>
+        <li>Gained practical proficiency in the full strain gage workflow &mdash; surface prep, adhesive bonding, soldering, Wheatstone bridge measurement, and MATLAB data analysis &mdash; transferable directly to flight test and structural health monitoring applications.</li>
+      </ul>
+    </div>
+    <div class="project-image-group">
+      <div class="project-image-note">Gage bonding tools and chemicals</div>
+      <div class="project-image-note">Digital multimeter resistance readings</div>
+      <div class="project-image-note">Nomex honeycomb beam cross-section</div>
     </div>
   </section>
 

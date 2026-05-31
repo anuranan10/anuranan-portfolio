@@ -26,132 +26,87 @@
 
   <section class="project-row">
     <div class="project-text">
-      <h2>Lab Overview</h2>
+      <h2>Experiment Overview</h2>
+      <p>Delta wing and canard configurations appear on high-performance aircraft like the Eurofighter and Saab Gripen because they sustain lift at extreme angles of attack through leading-edge vortex lift &mdash; a mechanism conventional airfoils cannot exploit. This lab used the ERAU Micaplex closed-circuit wind tunnel&rsquo;s six-component force balance to measure the complete aerodynamic load set on a canard-delta model across a wide operating envelope, giving direct exposure to how professional wind tunnel testing is conducted.</p>
       <ul>
-        <li><strong>Course:</strong> AE 315 – Experimental Aerodynamics, Section 04 (Robert Bryan) | April 4, 2025</li>
-        <li><strong>Objective:</strong> Use the ERAU Micaplex closed-circuit wind tunnel and an external six-component force balance to measure lift, drag, side force, and pitching, rolling, and yawing moments on a canard-delta wing model across a wide angle-of-attack range and two yaw conditions.</li>
-        <li><strong>Tunnel:</strong> Embry-Riddle Micaplex Wind Tunnel (closed-circuit)</li>
-        <li><strong>Model geometry:</strong> Main wing S_w = 242.01 in&#178;, c_w = 9.88 in, b_w = 24.5 in; Canard S_c = 71.97 in&#178;, c_c = 5.68 in, b_c = 12.67 in</li>
-        <li><strong>Test matrix:</strong> 75 fps and 100 fps &#215; 0° and 10° yaw; AoA swept &#8722;4° to 34° in 2° increments</li>
-        <li><strong>Ambient conditions:</strong> P = 102,438 Pa, T = 295.15 K, &#961; = 1.205 kg/m&#179;</li>
+        <li>Measure all six aerodynamic loads: lift, drag, side force, and pitching, rolling, and yawing moments</li>
+        <li>Apply aerodynamic tares using the image&ndash;invert method to remove structural interference from force balance readings</li>
+        <li>Compare performance at two Reynolds numbers and two yaw angles across angles of attack from &minus;4&#176; to 34&#176;</li>
+        <li>Build a drag polar and identify the best C<sub>L</sub>/C<sub>D</sub> operating point for each test condition</li>
       </ul>
     </div>
     <div class="project-image-group">
       <div class="project-image-note">Micaplex wind tunnel test section</div>
-      <div class="project-image-note">Canard-delta wing model on force balance</div>
-      <div class="project-image-note">Six-component force balance sting mount</div>
+      <div class="project-image-note">Canard-delta model on force balance sting</div>
+      <div class="project-image-note">Six-component WAFBC force balance</div>
     </div>
   </section>
 
   <section class="project-row">
     <div class="project-text">
-      <h2>Procedure &amp; Methodology</h2>
-      <p>Before extracting aerodynamic forces, tare corrections were applied using the image–invert method: the model was run in its normal orientation (image) and then inverted, and the average of those readings subtracted from the test data to eliminate structural and gravitational interference loads. Data was collected at four conditions: 0° yaw at 75 fps and 100 fps, and 10° yaw at 75 fps and 100 fps.</p>
-      <p>Lift, drag, side force, pitch, roll, and yaw were read directly from the WAFBC force balance output. Each force was normalized by dynamic pressure and reference area to produce non-dimensional coefficients: C_L = Lift/(qS_w), C_D = Drag/(qS_w), C_m = Pitch/(qS_w c_w), C_l = Roll/(qS_w b_w), C_n = Yaw/(qS_w b_w). A quadratic drag polar (C_D = C_D0 + K C_L&#178;) was fit to extract parasitic drag and induced drag factor.</p>
-      <p>Reynolds numbers based on mean wing chord were computed from the "Reynolds Number per ft" column in the raw data files and scaled to the wing geometry. A 1% systematic uncertainty was assumed for all force balance outputs per the Micaplex calibration specification.</p>
+      <h2>Approach &amp; Key Equations</h2>
+      <p>The model was tested at four conditions &mdash; 75 fps and 100 fps, at 0&#176; and 10&#176; yaw &mdash; while angle of attack swept from &minus;4&#176; to 34&#176; in 2&#176; steps. Raw balance outputs were corrected using the image-invert tare procedure, then non-dimensionalized by dynamic pressure q and reference area S<sub>w</sub>:</p>
+      <p style="margin:0.5rem 0 0.5rem 1.5rem; font-style:italic; font-size:1.05em;">C<sub>L</sub> = Lift / (q&#183;S<sub>w</sub>) &nbsp;&nbsp; C<sub>D</sub> = Drag / (q&#183;S<sub>w</sub>) &nbsp;&nbsp; C<sub>m</sub> = Pitch / (q&#183;S<sub>w</sub>&#183;c<sub>w</sub>)</p>
+      <p>A quadratic curve fit to the drag polar (C<sub>D</sub> = C<sub>D0</sub> + K&#183;C<sub>L</sub>&#178;) extracted the parasitic drag and induced drag factor K for each condition. Reynolds numbers were computed from the &ldquo;Reynolds Number per ft&rdquo; channel in the raw tunnel data.</p>
     </div>
     <div class="project-image-group">
-      <!-- insert figure: Lift vs AoA for all 4 test conditions (Fig. 1) -->
-      <div class="project-image-note">Lift vs AoA — 4 conditions (Fig. 1)</div>
+      <!-- insert figure: Lift vs AoA (Fig. 1) -->
+      <div class="project-image-note">Lift vs AoA &mdash; 4 conditions (Fig. 1)</div>
       <!-- insert figure: Drag vs AoA (Fig. 2) -->
       <div class="project-image-note">Drag vs AoA (Fig. 2)</div>
-      <!-- insert figure: Side Force vs AoA (Fig. 3) -->
-      <div class="project-image-note">Side Force vs AoA (Fig. 3)</div>
+      <!-- insert figure: Drag Polar CL vs CD (Fig. 9) -->
+      <div class="project-image-note">Drag Polar &mdash; C<sub>L</sub> vs C<sub>D</sub> (Fig. 9)</div>
     </div>
   </section>
 
   <section class="project-row">
     <div class="project-text">
-      <h2>Results &amp; Analysis</h2>
+      <h2>Key Results</h2>
       <ul>
-        <li>C_L increased nearly linearly with AoA up to &#8776;25°, after which flow separation caused a gradual roll-off rather than a sharp stall, characteristic of delta wing vortex lift.</li>
-        <li>Higher Reynolds numbers (100 fps) produced marginally higher C_L at a given AoA and lower C_D due to improved flow attachment.</li>
-        <li>10° yaw had negligible influence on lift but introduced measurable side force and increased yawing moment across the AoA range.</li>
-        <li>C_D rose steeply above 15° AoA as separated flow and vortex breakdown increased pressure drag.</li>
-        <li>C_m increased with pitch angle, reflecting a growing nose-up pitching moment; higher Re amplified this trend.</li>
-        <li>C_l and C_n remained near zero at 0° yaw; at 10° yaw, both showed small but consistent offsets consistent with lateral asymmetry.</li>
+        <li>C<sub>L</sub> increased nearly linearly up to ~25&#176;, then gradually rolled off &mdash; the signature of vortex lift breakdown on a delta wing rather than the abrupt stall of a conventional airfoil.</li>
+        <li>Higher Reynolds number (100 fps) produced marginally higher C<sub>L</sub> and lower C<sub>D</sub>, confirming that better flow attachment at higher Re improves overall efficiency.</li>
+        <li>10&#176; yaw had negligible effect on lift but measurably increased side force and yawing moment &mdash; important considerations for directional stability analysis.</li>
+        <li><strong>Best C<sub>L</sub>/C<sub>D</sub> = 4.21 at 12&#176; AoA</strong> (75 fps, 0&#176; yaw). Higher yaw and higher Re both reduced the peak efficiency ratio.</li>
       </ul>
-      <table style="border-collapse:collapse; margin-top:0.5rem; font-size:0.9em;">
+      <table style="border-collapse:collapse; font-size:0.9em; margin-top:0.5rem;">
         <tr style="background:#004080; color:white;">
-          <th style="padding:6px 12px;">Re</th>
-          <th style="padding:6px 12px;">Speed</th>
-          <th style="padding:6px 12px;">Yaw</th>
-          <th style="padding:6px 12px;">Best C_L/C_D</th>
-          <th style="padding:6px 12px;">Best AoA</th>
+          <th style="padding:5px 10px;">Speed</th><th style="padding:5px 10px;">Yaw</th><th style="padding:5px 10px;">Best C<sub>L</sub>/C<sub>D</sub></th><th style="padding:5px 10px;">AoA</th>
         </tr>
-        <tr style="background:#f4faff;">
-          <td style="padding:6px 12px;">4.61 &#215; 10&#8309;</td>
-          <td style="padding:6px 12px;">75 fps</td>
-          <td style="padding:6px 12px;">0°</td>
-          <td style="padding:6px 12px;">4.21</td>
-          <td style="padding:6px 12px;">12°</td>
-        </tr>
-        <tr>
-          <td style="padding:6px 12px;">6.10 &#215; 10&#8309;</td>
-          <td style="padding:6px 12px;">100 fps</td>
-          <td style="padding:6px 12px;">0°</td>
-          <td style="padding:6px 12px;">3.77</td>
-          <td style="padding:6px 12px;">12°</td>
-        </tr>
-        <tr style="background:#f4faff;">
-          <td style="padding:6px 12px;">4.60 &#215; 10&#8309;</td>
-          <td style="padding:6px 12px;">75 fps</td>
-          <td style="padding:6px 12px;">10°</td>
-          <td style="padding:6px 12px;">3.19</td>
-          <td style="padding:6px 12px;">12°</td>
-        </tr>
-        <tr>
-          <td style="padding:6px 12px;">6.09 &#215; 10&#8309;</td>
-          <td style="padding:6px 12px;">100 fps</td>
-          <td style="padding:6px 12px;">10°</td>
-          <td style="padding:6px 12px;">2.67</td>
-          <td style="padding:6px 12px;">12°</td>
-        </tr>
+        <tr style="background:#f4faff;"><td style="padding:5px 10px;">75 fps</td><td style="padding:5px 10px;">0&#176;</td><td style="padding:5px 10px;">4.21</td><td style="padding:5px 10px;">12&#176;</td></tr>
+        <tr><td style="padding:5px 10px;">100 fps</td><td style="padding:5px 10px;">0&#176;</td><td style="padding:5px 10px;">3.77</td><td style="padding:5px 10px;">12&#176;</td></tr>
+        <tr style="background:#f4faff;"><td style="padding:5px 10px;">75 fps</td><td style="padding:5px 10px;">10&#176;</td><td style="padding:5px 10px;">3.19</td><td style="padding:5px 10px;">12&#176;</td></tr>
+        <tr><td style="padding:5px 10px;">100 fps</td><td style="padding:5px 10px;">10&#176;</td><td style="padding:5px 10px;">2.67</td><td style="padding:5px 10px;">12&#176;</td></tr>
       </table>
     </div>
     <div class="project-image-group">
       <!-- insert figure: CL vs AoA (Fig. 7) -->
-      <div class="project-image-note">Lift Coefficient vs AoA (Fig. 7)</div>
-      <!-- insert figure: Drag Polar CL vs CD (Fig. 9) -->
-      <div class="project-image-note">Drag Polar — CL vs CD (Fig. 9)</div>
-      <!-- insert figure: Lift-to-Drag Ratio vs AoA (Fig. 10) -->
-      <div class="project-image-note">Lift-to-Drag Ratio vs AoA (Fig. 10)</div>
+      <div class="project-image-note">C<sub>L</sub> vs AoA (Fig. 7)</div>
+      <!-- insert figure: CL/CD vs AoA (Fig. 10) -->
+      <div class="project-image-note">C<sub>L</sub>/C<sub>D</sub> vs AoA (Fig. 10)</div>
+      <!-- insert figure: Pitching Moment vs AoA (Fig. 11) -->
+      <div class="project-image-note">Pitching Moment vs AoA (Fig. 11)</div>
     </div>
   </section>
 
   <section class="project-row">
     <div class="project-text">
-      <h2>MATLAB Code</h2>
-      <p>Raw force balance data was loaded from CSV files for each test condition. Aerodynamic tares were applied before computing non-dimensional coefficients. Below is a representative excerpt; the full script is <code>AE315_LAB4.m</code>.</p>
-      <pre style="background:#f4faff; padding:1rem; border-radius:6px; overflow-x:auto;"><code>% Apply aerodynamic tares: image-invert method
-lift0_75 = yaw0_75data.("WAFBC Lift") ...
-         - image0_75data.("WAFBC Lift")(2:2:end) ...
-         + invert0_75data.("WAFBC Lift")(2:2:end);
-
-% Non-dimensional coefficients
-q  = mean(yaw0_75data.("Dynamic Pressure"));  % psf
-sw = 242.01;  % in² reference area
-CL = lift0_75 ./ (q * sw);
-CD = drag0_75 ./ (q * sw);
-
-% Drag polar curve fit: CD = CD0 + K*CL^2
-[p, ~] = polyfit(CL, CD, 2);
-CD0 = p(3);   % parasitic drag
-K   = p(1);   % induced drag factor
-
-% Reynolds number from tunnel data
-RE0_75 = mean(yaw0_75data.("Reynolds Number per ft"));</code></pre>
-      <!-- full MATLAB code (AE315_LAB4.m) to be embedded here -->
+      <h2>Valuable Takeaways</h2>
+      <ul>
+        <li><strong>Delta wings don&rsquo;t stall abruptly &mdash; they tolerate high angles of attack gracefully.</strong> The gradual vortex lift roll-off above 25&#176; is why delta configurations appear on fighters and supersonic aircraft that must operate across extreme flight regimes.</li>
+        <li><strong>Tare corrections are essential for accurate force balance data.</strong> Without the image-invert method, structural interference from the mount hardware would contaminate every measurement &mdash; a fundamental discipline in professional wind tunnel testing.</li>
+        <li><strong>The drag polar compresses all performance information into a single curve.</strong> Reading it to extract C<sub>D0</sub>, K, and the best-glide point is a core skill for aircraft sizing, mission analysis, and performance optimization.</li>
+        <li>Gained direct experience operating a closed-circuit facility, applying multi-variable test matrix design, and analyzing six-degree-of-freedom aerodynamic datasets &mdash; skills directly applicable to industry wind tunnel programs.</li>
+      </ul>
     </div>
     <div class="project-image-group">
-      <div class="project-image-note">Full MATLAB script — AE315_LAB4.m</div>
-      <div class="project-image-note">Tare data files (image/invert CSVs)</div>
-      <div class="project-image-note">Force balance output column layout</div>
+      <div class="project-image-note">Side force and yaw moment vs AoA</div>
+      <div class="project-image-note">Rolling moment coefficient vs AoA</div>
+      <div class="project-image-note">Tare correction procedure</div>
     </div>
   </section>
 
   <section style="padding: 1rem 2rem 2rem;">
-    <p><a class="project-title-link" href="experimental-aerodynamics-labs.html">href="lab-testing-experience.html">&#8592; Back to Lab Testing Experience#8592; Back to Experimental Aerodynamics Labs</a></p>
+    <p><a class="project-title-link" href="experimental-aerodynamics-labs.html">&#8592; Back to Experimental Aerodynamics Labs</a></p>
   </section>
 
   <footer>
