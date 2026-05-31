@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lab 02: Strain Gages | Anuranan Bharadwaj</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="aerospace.html">Aerospace</a>
+    <a href="cs.html">Computer Science</a>
+    <a href="experience.html">Work Experience</a>
+    <a href="lab-testing-experience.html">Lab Testing Experience</a>
+    <a href="resume.html">Resume</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <header class="page-header">
+    <div class="header-content">
+      <h1>Lab 02: Strain Gages</h1>
+      <p>AE 417 &middot; Aerospace Structures and Instrumentation Laboratory &middot; Fall 2025 &middot; ERAU</p>
+    </div>
+  </header>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Lab Overview</h2>
+      <ul>
+        <li><strong>Course:</strong> AE 417 &ndash; Aerospace Structures and Instrumentation Laboratory (David Sypeck / Reshma Kubsad) | October 3, 2025</li>
+        <li><strong>Objective:</strong> Install a 120 &#937; foil strain gage on an aluminum cantilever beam, measure resistance changes under incremental bending loads in tension and compression, and derive Young's modulus for both an aluminum and a Nomex/CFRP honeycomb sandwich beam.</li>
+        <li><strong>Specimens:</strong> Al 6061-T6511 strip beam (L &#8776; 299 mm, w = 25.52 mm, h = 4.82 mm); Nomex honeycomb beam with CFRP skin (L &#8776; 294 mm, w = 24.41 mm, h = 10.26 mm, t_face = 0.336 mm)</li>
+        <li><strong>Instrumentation:</strong> 120 &#937; Micro-Measurements strain gages (GF = 2), digital multimeter (via banana plug), C-clamp cantilever setup, calibration masses (1, 2, 3 kg)</li>
+        <li><strong>Installation standard:</strong> Vishay bulletins B-127-14, TT-603, TT-609</li>
+      </ul>
+    </div>
+    <div class="project-image-group">
+      <!-- insert figure: Installed strain gauge on aluminum beam (Fig. 8) -->
+      <div class="project-image-note">Strain gage installed on aluminum beam (Fig. 8)</div>
+      <!-- insert figure: Aluminum beam in tension with masses (Fig. 11) -->
+      <div class="project-image-note">Aluminum beam in tension at max mass (Fig. 11)</div>
+      <!-- insert figure: Honeycomb beam with weighted tension (Fig. 14) -->
+      <div class="project-image-note">Honeycomb beam with weighted tension (Fig. 14)</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Procedure &amp; Methodology</h2>
+      <p>Each beam's dimensions and mass were measured five times and averaged. The aluminum beam was prepared per Vishay instructions: surface degreased, sanded (320 then 400 grit), conditioned with M-Prep Conditioner A, neutralized, and dried. The strain gage was positioned using tape transfer and bonded with M-Bond 200 adhesive and catalyst. Leads were soldered to bondable terminals and connected via banana plug to the digital multimeter.</p>
+      <p>The beam was clamped to the edge of the workbench in a cantilever (&#8220;diving board&#8221;) configuration. The resting resistance was recorded as the zero reference, then 1 kg, 2 kg, and 3 kg masses were hung from the free end, with a reading taken at each load. The beam was then flipped to put the gage in compression and the mass sequence repeated. The entire procedure was repeated for the Nomex honeycomb beam using its pre-installed gage. Strain was computed as &#949; = (&#916;R/R) / GF; stress was computed from beam bending theory (&#963; = My/I for the aluminum; &#963; = M/(h&#183;t_f&#183;b) for the sandwich beam); Young's modulus followed from E = &#963;/&#949;.</p>
+    </div>
+    <div class="project-image-group">
+      <!-- insert figure: Strain gage installation tools and chemicals (Fig. 4a/4b) -->
+      <div class="project-image-note">Installation chemicals and tools (Fig. 4a/4b)</div>
+      <!-- insert figure: Aluminum beam resting compression setup (Fig. 12) -->
+      <div class="project-image-note">Aluminum beam in compression (Fig. 12)</div>
+      <!-- insert figure: Honeycomb beam in compression (Fig. 16) -->
+      <div class="project-image-note">Honeycomb beam in compression (Fig. 16)</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Results &amp; Analysis</h2>
+      <ul>
+        <li>Aluminum beam resistance increased by &#8776;0.08 &#937; in tension and decreased by &#8776;0.08 &#937; in compression for 3 kg load, confirming symmetric bending response.</li>
+        <li>Honeycomb beam resistance changed by &#8776;0.10 &#937; in both directions for 3 kg, reflecting higher bending stiffness due to the sandwich construction.</li>
+        <li><strong>E_Al = 84 GPa</strong> &mdash; 17.9% error relative to the 6061-T651 handbook value of 69 GPa; attributed to minor gage misalignment and surface preparation variability.</li>
+        <li><strong>E_Honeycomb = 74 GPa</strong> &mdash; within the expected 70&ndash;120 GPa range for woven CFRP facing skins.</li>
+        <li>Stress vs. strain curves for tension and compression were nearly coincident, validating correct gage installation and material isotropy in the elastic regime.</li>
+        <li>At the same load, the honeycomb beam showed less strain than aluminum, confirming its higher effective bending stiffness per unit cross-section owing to the sandwich core.</li>
+      </ul>
+    </div>
+    <div class="project-image-group">
+      <!-- insert figure: Strain vs Load for aluminum and CFRP beams (Fig. 17) -->
+      <div class="project-image-note">Strain vs Load &mdash; both beams (Fig. 17)</div>
+      <!-- insert figure: Stress vs Strain — aluminum beam (Fig. 18) -->
+      <div class="project-image-note">Stress vs Strain &mdash; aluminum (Fig. 18)</div>
+      <!-- insert figure: Stress vs Strain — honeycomb beam (Fig. 19) -->
+      <div class="project-image-note">Stress vs Strain &mdash; honeycomb (Fig. 19)</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>MATLAB Code</h2>
+      <p>Two scripts were used: one to plot strain vs. load for both beams, and one to compute and plot stress vs. strain using measured beam geometry and bending theory. Below is a representative excerpt; full scripts are <code>Lab2_Main.m</code> and <code>Lab2_Main_stress_strain.m</code>.</p>
+      <pre style="background:#f4faff; padding:1rem; border-radius:6px; overflow-x:auto;"><code>% Strain from resistance change and gage factor
+load = [0 1 2 3];  % kg
+GF   = 2;          % gage factor
+
+al_strain_T = [0  0.000354  0.000699  0.00104];   % aluminum tension
+al_strain_C = [0 -0.000350 -0.000699 -0.00105];   % aluminum compression
+hc_strain_T = [0  0.000429  0.000861  0.00129];   % CFRP tension
+hc_strain_C = [0 -0.000433 -0.000445 -0.00131];   % CFRP compression
+
+% Aluminum bending stress: sigma = My/I
+F    = load * 9.81;            % N
+M_al = F * L_al;               % N·m
+sigma_al = M_al .* y_al ./ I_al;   % Pa
+
+% CFRP sandwich stress: sigma = M / (b * h_f * t_face)
+M_cf    = F * L_cf;
+sigma_cf = M_cf ./ (b_cf * h_f * t_face);  % Pa
+
+% Young's modulus: E = sigma/epsilon  (1 kg load, tension)
+E_Al  = sigma_al(2) / al_strain_T(2);  % ≈ 84 GPa
+E_CFRP = sigma_cf(2) / hc_strain_T(2); % ≈ 74 GPa</code></pre>
+      <!-- full MATLAB code (Lab2_Main.m, Lab2_Main_stress_strain.m) to be embedded here -->
+    </div>
+    <div class="project-image-group">
+      <div class="project-image-note">Full script &mdash; Lab2_Main.m</div>
+      <div class="project-image-note">Full script &mdash; Lab2_Main_stress_strain.m</div>
+      <div class="project-image-note">Resistance measurement data tables</div>
+    </div>
+  </section>
+
+  <section style="padding: 1rem 2rem 2rem;">
+    <p><a class="project-title-link" href="structures-instrumentation-labs.html">&#8592; Back to Structures &amp; Instrumentation Labs</a></p>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <span>Phone: (215) 397–5806</span>
+      <span>Email: <a href="mailto:bharada3@my.erau.edu">bharada3@my.erau.edu</a></span>
+      <span><a href="https://linkedin.com/in/anuranan-bharadwaj" target="_blank">LinkedIn</a></span>
+      <span><a href="https://github.com/anuranan10" target="_blank">GitHub</a></span>
+      <span>&copy; 2030 Anuranan Bharadwaj</span>
+    </div>
+  </footer>
+</body>
+</html>

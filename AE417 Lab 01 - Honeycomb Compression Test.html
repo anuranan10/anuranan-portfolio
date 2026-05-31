@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lab 01: Honeycomb Compression Test | Anuranan Bharadwaj</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="aerospace.html">Aerospace</a>
+    <a href="cs.html">Computer Science</a>
+    <a href="experience.html">Work Experience</a>
+    <a href="lab-testing-experience.html">Lab Testing Experience</a>
+    <a href="resume.html">Resume</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <header class="page-header">
+    <div class="header-content">
+      <h1>Lab 01: Honeycomb Compression Test</h1>
+      <p>AE 417 &middot; Aerospace Structures and Instrumentation Laboratory &middot; Fall 2025 &middot; ERAU</p>
+    </div>
+  </header>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Lab Overview</h2>
+      <ul>
+        <li><strong>Course:</strong> AE 417 &ndash; Aerospace Structures and Instrumentation Laboratory (David Sypeck / Reshma Kubsad) | September 19, 2025</li>
+        <li><strong>Objective:</strong> Measure the out-of-plane compressive behavior of an aluminum honeycomb structure per ASTM D 7336/D 7336M-07 and compare results to manufacturer-reported values for the 5056 Alloy Hexagonal Aluminum Honeycomb.</li>
+        <li><strong>Specimen:</strong> Aluminum honeycomb block; mean dimensions: L = 79.81 mm, W = 81.14 mm, H = 76.10 mm, cell size = 6.11 mm, foil thickness = 0.071 mm, mass = 36.39 g</li>
+        <li><strong>Instrumentation:</strong> Tinius Olsen 150ST Electromechanical Universal Testing Machine, digital calipers, mass scale, Motic stereo zoom microscope with digital camera</li>
+        <li><strong>Standard:</strong> ASTM D 7336/D 7336M-07 &mdash; Crushing Resistance of Sandwich Cores</li>
+      </ul>
+    </div>
+    <div class="project-image-group">
+      <!-- insert figure: Aluminum honeycomb specimen side view (Fig. 1) -->
+      <div class="project-image-note">Honeycomb specimen &mdash; side view (Fig. 1)</div>
+      <!-- insert figure: Aluminum honeycomb specimen top view (Fig. 2) -->
+      <div class="project-image-note">Honeycomb specimen &mdash; top view (Fig. 2)</div>
+      <!-- insert figure: Tinius Olsen 150ST with honeycomb specimen (Fig. 8) -->
+      <div class="project-image-note">Tinius Olsen 150ST testing machine (Fig. 8)</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Procedure &amp; Methodology</h2>
+      <p>Four teams each measured five specimens, recording foil thickness, length, width, height, cell size, and mass. A total mean was calculated across all teams; the specimen closest to that mean and showing the least visible damage was selected for compression testing. An additional in-plane crushed specimen was used to measure foil thickness via caliper with full cell wall access.</p>
+      <p>The selected specimen was placed in the Tinius Olsen 150ST with compression plates attached and the machine set to the "ERAU Honeycomb Compression" method. A pre-load of approximately &#8722;45 N was applied and the position zeroed before the automated test ran to completion. Post-compression, the crushed cell walls were imaged under a Motic stereo zoom microscope at multiple magnifications to document the buckling morphology.</p>
+    </div>
+    <div class="project-image-group">
+      <!-- insert figure: Measuring foil thickness with calipers (Fig. 12) -->
+      <div class="project-image-note">Foil thickness measurement (Fig. 12)</div>
+      <!-- insert figure: Honeycomb placed in machine pre-compression (Fig. 13) -->
+      <div class="project-image-note">Specimen in machine pre-compression (Fig. 13)</div>
+      <!-- insert figure: Honeycomb post-compression in machine (Fig. 16) -->
+      <div class="project-image-note">Specimen post-compression (Fig. 16)</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Results &amp; Analysis</h2>
+      <ul>
+        <li>The force-displacement curve showed the expected three-stage response: initial linear elastic region, progressive crushing plateau, and final densification.</li>
+        <li><strong>F_peak = 29,300 N</strong> at 0.535 mm displacement (initial peak before cell wall buckling onset).</li>
+        <li><strong>F_crush = 12,000 N</strong> &mdash; average crush force over the plateau region.</li>
+        <li><strong>&#963;_peak = 4.5 MPa</strong> &mdash; confirmed against manufacturer value of 4.3 pcf / &#963;_peak &#8776; 620 psi.</li>
+        <li><strong>&#963;_crush = 1.87 MPa (270 psi)</strong> vs. manufacturer target of 300 psi for the 5056 alloy at 4.3 pcf density.</li>
+        <li><strong>Energy absorbed &#8776; 798.9 MPa&#183;cm&#179;</strong> (area under stress-strain curve &#215; specimen volume of 492.8 cm&#179;).</li>
+        <li>Specimen density: 4.6 pcf &mdash; consistent with 5056 alloy designation &#188;-5056-0.002.</li>
+        <li>Microscopy confirmed progressive cell-wall local buckling and folding, consistent with the known energy absorption mechanism of metallic honeycombs.</li>
+      </ul>
+    </div>
+    <div class="project-image-group">
+      <!-- insert figure: Force vs Position curve (Fig. 18) -->
+      <div class="project-image-note">Force vs Position curve (Fig. 18)</div>
+      <!-- insert figure: Stress vs Strain curve with annotated regions (Fig. 19 / 21) -->
+      <div class="project-image-note">Stress vs Strain curve (Fig. 19)</div>
+      <!-- insert figure: Hexcel data sheet comparison (Fig. 22) -->
+      <div class="project-image-note">Manufacturer spec comparison (Fig. 22)</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Microscopy &amp; Failure Observation</h2>
+      <ul>
+        <li>Microscopy images (Figs. 20a–20c) showed bent and buckled cell walls with periodic fold lines characteristic of progressive axial crushing.</li>
+        <li>Top-view images revealed collapsed hexagonal geometry with cell walls folded against adjacent cells, demonstrating the progressive buffering mechanism.</li>
+        <li>Even as individual cell sections failed, the buckled material strengthened adjacent sections &mdash; explaining the near-constant plateau force and high specific energy absorption.</li>
+        <li>The test specimen was identified as most likely a 5056 Alloy Hexagonal Aluminum Honeycomb, designation &#188;-5056-0.002, based on &#963;_crush, &#963;_peak, density, and cell size matching the Hexcel Hexweb datasheet.</li>
+      </ul>
+    </div>
+    <div class="project-image-group">
+      <!-- insert figure: Microscopy — buckled cell walls close-up (Fig. 20a) -->
+      <div class="project-image-note">Buckled cell walls &mdash; close-up (Fig. 20a)</div>
+      <!-- insert figure: Microscopy — top view collapsed hexagonal geometry (Fig. 20b) -->
+      <div class="project-image-note">Collapsed hexagonal geometry (Fig. 20b)</div>
+      <!-- insert figure: Microscopy — adjacent cell deformation (Fig. 20c) -->
+      <div class="project-image-note">Adjacent cell wall bending (Fig. 20c)</div>
+    </div>
+  </section>
+
+  <section style="padding: 1rem 2rem 2rem;">
+    <p><a class="project-title-link" href="structures-instrumentation-labs.html">&#8592; Back to Structures &amp; Instrumentation Labs</a></p>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <span>Phone: (215) 397–5806</span>
+      <span>Email: <a href="mailto:bharada3@my.erau.edu">bharada3@my.erau.edu</a></span>
+      <span><a href="https://linkedin.com/in/anuranan-bharadwaj" target="_blank">LinkedIn</a></span>
+      <span><a href="https://github.com/anuranan10" target="_blank">GitHub</a></span>
+      <span>&copy; 2030 Anuranan Bharadwaj</span>
+    </div>
+  </footer>
+</body>
+</html>

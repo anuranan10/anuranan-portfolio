@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lab 04: Methods for Nondestructive Evaluation | Anuranan Bharadwaj</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="aerospace.html">Aerospace</a>
+    <a href="cs.html">Computer Science</a>
+    <a href="experience.html">Work Experience</a>
+    <a href="lab-testing-experience.html">Lab Testing Experience</a>
+    <a href="resume.html">Resume</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <header class="page-header">
+    <div class="header-content">
+      <h1>Lab 04: Methods for Nondestructive Evaluation</h1>
+      <p>AE 417 &middot; Aerospace Structures and Instrumentation Laboratory &middot; Fall 2025 &middot; ERAU</p>
+    </div>
+  </header>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Lab Overview</h2>
+      <ul>
+        <li><strong>Course:</strong> AE 417 &ndash; Aerospace Structures and Instrumentation Laboratory (David Sypeck / Reshma Kubsad) | October 24, 2025</li>
+        <li><strong>Objective:</strong> Survey five nondestructive evaluation (NDE) techniques, applying each to relevant aerospace test subjects to understand their complementary strengths in detecting surface and subsurface flaws without damaging components.</li>
+        <li><strong>Techniques covered:</strong> Visual inspection (borescope), thermography (FLIR T440 infrared camera), radiography (X-ray), liquid penetrant (fluorescent dye / UV developer), ultrasonics (5 MHz piezoelectric transducer)</li>
+        <li><strong>Test subjects:</strong> Metallic wing airfoil section, aluminum pressure vessel, welded aluminum plate, Apple Watch, aluminum calibration blocks (SCB)</li>
+      </ul>
+    </div>
+    <div class="project-image-group">
+      <!-- insert figure: Aircraft wing airfoil test subject (Fig. 2) -->
+      <div class="project-image-note">Aircraft wing airfoil &mdash; test subject (Fig. 2)</div>
+      <!-- insert figure: FLIR T440 camera and paper subject (Fig. 9) -->
+      <div class="project-image-note">FLIR T440 thermography setup (Fig. 9)</div>
+      <!-- insert figure: Ultrasonic inspection equipment (Fig. 25) -->
+      <div class="project-image-note">Ultrasonic inspection equipment (Fig. 25)</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Visual Inspection</h2>
+      <p>A Ridgid Micro CA-150 borescope camera was connected to a Funai LED display and inserted into the interior of a metallic aircraft wing airfoil section. The camera was navigated along the inner surface, with brightness adjusted to minimize glare on the metallic skin. Photographs were taken at locations of interest and reviewed for surface-level damage indicators.</p>
+      <p><strong>Results:</strong> Visible scratches and cracks were identified near the rivet holes on the interior surface. These are consistent with stress-concentration-driven fatigue damage from cyclic loading. No corrosion or delamination was observed. Borescope imaging proved effective for preliminary screening of difficult-to-access interior surfaces, though it cannot detect subsurface damage.</p>
+    </div>
+    <div class="project-image-group">
+      <!-- insert figure: Borescope image of surface crack (Fig. 5) -->
+      <div class="project-image-note">Interior surface crack near rivet hole (Fig. 5)</div>
+      <!-- insert figure: Borescope image of surface scratches (Fig. 7) -->
+      <div class="project-image-note">Interior surface scratches (Fig. 7)</div>
+      <!-- insert figure: Borescope image — fastener hole with crack (Fig. 8) -->
+      <div class="project-image-note">Scratch and fastener hole detail (Fig. 8)</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Thermography, Radiography &amp; Liquid Penetrant</h2>
+      <p><strong>Thermography:</strong> The FLIR T440 thermal camera imaged a sheet of paper before and after applying cold water droplets and a hand imprint. The camera clearly resolved the temperature differential &mdash; cold water appeared as dark (lower temperature) zones and the hand imprint as warm (higher temperature) regions. This demonstrated thermography's sensitivity to surface thermal nonuniformities, applicable to detecting disbonds, coolant leaks, or heat-affected zones in aerospace structures.</p>
+      <p><strong>Radiography:</strong> An X-ray system (film/digital) imaged a welded aluminum plate and an Apple Watch. The weld X-ray revealed interior bead geometry useful for quality assurance; the watch X-ray resolved internal electronic components. Complex assemblies showed overlapping features that complicate defect discrimination &mdash; a known limitation of projection radiography.</p>
+      <p><strong>Liquid Penetrant:</strong> A fluorescent penetrant was sprayed onto an aluminum pressure vessel, allowed to dwell for &#8776;10 minutes, wiped clean, and developed. Under UV illumination, at least eight discrete damage indications appeared as bright zones contrasting the green developer background. These included scratches and cracks invisible under normal light, confirming the dye/developer system's sensitivity to shallow, tight surface discontinuities.</p>
+    </div>
+    <div class="project-image-group">
+      <!-- insert figure: FLIR image of water chill on paper (Fig. 13) -->
+      <div class="project-image-note">FLIR image &mdash; water chill on paper (Fig. 13)</div>
+      <!-- insert figure: X-ray of aluminum weld (Fig. 17) -->
+      <div class="project-image-note">X-ray of welded aluminum plate (Fig. 17)</div>
+      <!-- insert figure: Liquid penetrant UV result showing damage areas (Fig. 23/24) -->
+      <div class="project-image-note">Liquid penetrant &mdash; UV damage map (Fig. 23)</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Ultrasonics</h2>
+      <p>A portable Quantum TE ultrasonic inspection device with a 5 MHz piezoelectric transducer was coupled to stepped aluminum calibration blocks (SCB) using ultrasonic couplant gel. The transducer was swept across the block surface and the echo time-of-flight patterns recorded at each thickness step.</p>
+      <p><strong>Results:</strong> As the transducer moved from the tallest (&#8776;24.96 mm) to the shortest (&#8776;3.32 mm) section, the spacing between successive back-wall echoes decreased proportionally, confirming the ultrasonic pulse-echo thickness measurement principle. Echo amplitude decreased slightly with step edges due to wave scattering at the ledges. The technique is directly applicable to detecting cracks, corrosion thinning, and delaminations in aircraft skins and turbine blades without requiring access to the back surface.</p>
+    </div>
+    <div class="project-image-group">
+      <!-- insert figure: Aluminum calibration block with couplant (Fig. 27) -->
+      <div class="project-image-note">Calibration block with couplant (Fig. 27)</div>
+      <!-- insert figure: Ultrasonic echo at tallest section (Fig. 29) -->
+      <div class="project-image-note">Echo pattern &mdash; tallest section (Fig. 29)</div>
+      <!-- insert figure: Ultrasonic echo at shortest section (Fig. 32) -->
+      <div class="project-image-note">Echo pattern &mdash; shortest section (Fig. 32)</div>
+    </div>
+  </section>
+
+  <section style="padding: 1rem 2rem 2rem;">
+    <p><a class="project-title-link" href="structures-instrumentation-labs.html">&#8592; Back to Structures &amp; Instrumentation Labs</a></p>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <span>Phone: (215) 397–5806</span>
+      <span>Email: <a href="mailto:bharada3@my.erau.edu">bharada3@my.erau.edu</a></span>
+      <span><a href="https://linkedin.com/in/anuranan-bharadwaj" target="_blank">LinkedIn</a></span>
+      <span><a href="https://github.com/anuranan10" target="_blank">GitHub</a></span>
+      <span>&copy; 2030 Anuranan Bharadwaj</span>
+    </div>
+  </footer>
+</body>
+</html>

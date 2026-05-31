@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lab 06: Rocket Thrust Measurement | Anuranan Bharadwaj</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="aerospace.html">Aerospace</a>
+    <a href="cs.html">Computer Science</a>
+    <a href="experience.html">Work Experience</a>
+    <a href="lab-testing-experience.html">Lab Testing Experience</a>
+    <a href="resume.html">Resume</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <header class="page-header">
+    <div class="header-content">
+      <h1>Lab 06: Rocket Thrust Measurement</h1>
+      <p>AE 417 &middot; Aerospace Structures and Instrumentation Laboratory &middot; Fall 2025 &middot; ERAU</p>
+    </div>
+  </header>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Lab Overview</h2>
+      <ul>
+        <li><strong>Course:</strong> AE 417 &ndash; Aerospace Structures and Instrumentation Laboratory (David Sypeck / Reshma Kubsad) | December 3, 2025</li>
+        <li><strong>Objective:</strong> Build and calibrate a strain-gage cantilever beam load cell, then use it to measure thrust-time profiles for five Estes solid rocket motors and compare extracted propulsion parameters against manufacturer specifications.</li>
+        <li><strong>Motors tested:</strong> A8-3, B4-4, C6-5, C11-0, E16-4 (Estes black-powder solid rocket motors)</li>
+        <li><strong>Instrumentation:</strong> Aluminum cantilever beam with half-bridge strain-gage load cell, digital strain indicator, TracerDAQ data acquisition software, calibration masses (1, 2, 3 kg), hose clamp motor mount, STP oil damping fluid</li>
+        <li><strong>Test location:</strong> Outdoors; data acquisition under a canopy tent with the motor nozzle pointed downward into a fire-safe deflector container</li>
+      </ul>
+    </div>
+    <div class="project-image-group">
+      <!-- insert figure: Equipment cart outdoors with test setup (Fig. 1/6) -->
+      <div class="project-image-note">Outdoor test setup &mdash; equipment cart (Fig. 6)</div>
+      <!-- insert figure: Cantilever beam with calibration masses (Fig. 3/7) -->
+      <div class="project-image-note">Cantilever beam and calibration masses (Fig. 3)</div>
+      <!-- insert figure: Solid rocket motors (Fig. 5) -->
+      <div class="project-image-note">Estes solid rocket motors A-through-E class (Fig. 5)</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Calibration &amp; Methodology</h2>
+      <p>Before live fire testing, the beam was statically calibrated by hanging known masses (1 kg, 2 kg, 3 kg) from the motor clamp end and recording the stable voltage plateau at each load. A linear fit to the four voltage-force pairs (including zero) produced the calibration equation:</p>
+      <p style="text-align:center; font-style:italic; margin:0.5rem 0;">F = 32.931 &#215; V &#8722; 40.732</p>
+      <p>This equation was applied to all subsequent voltage-time recordings to convert them to thrust-time curves. Each motor was mounted with the nozzle pointing downward, an igniter inserted and secured with the correct color-coded plug, and the launch controller armed. Data acquisition was started &#8776;3 seconds before ignition to capture the baseline. Total impulse was computed by trapezoidal integration of the thrust-time curve; average thrust followed as I_t / t_b.</p>
+    </div>
+    <div class="project-image-group">
+      <!-- insert figure: Voltage vs Time calibration graph (Fig. 8) -->
+      <div class="project-image-note">Voltage vs Time &mdash; calibration (Fig. 8)</div>
+      <!-- insert figure: Force vs Time calibration verification (Fig. 13) -->
+      <div class="project-image-note">Force vs Time &mdash; calibration (Fig. 13)</div>
+      <!-- insert figure: Solid rocket igniters and plugs (Fig. 2/4) -->
+      <div class="project-image-note">Rocket igniters and color-coded plugs (Fig. 4)</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Results &amp; Analysis</h2>
+      <p>All five motors produced thrust-time profiles consistent with black-powder solid rocket behavior: an initial ignition surge, a sustained thrust plateau, and a sharp burnout. The C6-5 motor was selected for detailed analysis and comparison against Estes published specifications.</p>
+      <table style="border-collapse:collapse; font-size:0.9em; margin-top:0.5rem;">
+        <tr style="background:#004080; color:white;">
+          <th style="padding:6px 12px;">Parameter</th>
+          <th style="padding:6px 12px;">Measured</th>
+          <th style="padding:6px 12px;">Estes Spec</th>
+          <th style="padding:6px 12px;">% Difference</th>
+        </tr>
+        <tr style="background:#f4faff;">
+          <td style="padding:6px 12px;">Peak thrust (N)</td>
+          <td style="padding:6px 12px;">13.55</td>
+          <td style="padding:6px 12px;">15.3</td>
+          <td style="padding:6px 12px;">12.1%</td>
+        </tr>
+        <tr>
+          <td style="padding:6px 12px;">Burn time (s)</td>
+          <td style="padding:6px 12px;">2.1</td>
+          <td style="padding:6px 12px;">1.6</td>
+          <td style="padding:6px 12px;">27.0%</td>
+        </tr>
+        <tr style="background:#f4faff;">
+          <td style="padding:6px 12px;">Total impulse (N&#183;s)</td>
+          <td style="padding:6px 12px;">8.53</td>
+          <td style="padding:6px 12px;">10.0</td>
+          <td style="padding:6px 12px;">15.9%</td>
+        </tr>
+        <tr>
+          <td style="padding:6px 12px;">Delay time (s)</td>
+          <td style="padding:6px 12px;">4.8</td>
+          <td style="padding:6px 12px;">5.0</td>
+          <td style="padding:6px 12px;">4.1%</td>
+        </tr>
+        <tr style="background:#f4faff;">
+          <td style="padding:6px 12px;">Average thrust (N)</td>
+          <td style="padding:6px 12px;">4.6</td>
+          <td style="padding:6px 12px;">&mdash;</td>
+          <td style="padding:6px 12px;">&mdash;</td>
+        </tr>
+      </table>
+      <p style="margin-top:0.5rem;">The 27% burn time deviation is the largest discrepancy and is attributed to ignition delays, beam damping, and hobby-grade motor manufacturing tolerances. The higher impulse class motors (C11-0, E16-4) produced peak thrusts of &#8776;30 N and &#8776;30 N respectively, with distinctive sharp ignition spikes visible in their voltage-time profiles.</p>
+    </div>
+    <div class="project-image-group">
+      <!-- insert figure: Thrust vs Time C6-5 (Fig. 17) -->
+      <div class="project-image-note">Thrust vs Time &mdash; C6-5 (Fig. 17)</div>
+      <!-- insert figure: Thrust vs Time E16-4 (Fig. 15) -->
+      <div class="project-image-note">Thrust vs Time &mdash; E16-4 (Fig. 15)</div>
+      <!-- insert figure: Thrust vs Time B4-4 (Fig. 14) -->
+      <div class="project-image-note">Thrust vs Time &mdash; B4-4 (Fig. 14)</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Data Processing</h2>
+      <p>TracerDAQ acquired voltage-time CSV files at a fixed sample rate. The calibration equation converted all voltage readings to force; the pre-ignition baseline was subtracted to zero the thrust axis. Total impulse was computed by numerical integration (trapezoidal rule) and average thrust by dividing by burn time. Below is a representative processing outline; full TracerDAQ data files to be embedded here.</p>
+      <pre style="background:#f4faff; padding:1rem; border-radius:6px; overflow-x:auto;"><code>% Calibration: voltage to force linear fit
+% Known masses: 0, 1, 2, 3 kg → forces: 0, -9.81, -19.62, -29.43 N
+% Measured voltages: 1.243, 0.940, 0.640, 0.352 V
+F = 32.931 * V - 40.732;   % calibration equation
+
+% Subtract pre-ignition baseline, zero thrust axis
+baseline = mean(F(1:pre_ignition_samples));
+Thrust = F - baseline;
+
+% Total impulse via trapezoidal integration
+It = trapz(time(burn_start:burn_end), Thrust(burn_start:burn_end));
+
+% Average thrust
+t_b  = time(burn_end) - time(burn_start);   % burn duration
+F_avg = It / t_b;</code></pre>
+      <!-- full TracerDAQ CSV data files and processing script to be embedded here -->
+    </div>
+    <div class="project-image-group">
+      <div class="project-image-note">TracerDAQ CSV data &mdash; all five motors</div>
+      <div class="project-image-note">Calibration curve &mdash; voltage to force</div>
+      <div class="project-image-note">C6-5 thrust parameters vs Estes spec</div>
+    </div>
+  </section>
+
+  <section style="padding: 1rem 2rem 2rem;">
+    <p><a class="project-title-link" href="structures-instrumentation-labs.html">&#8592; Back to Structures &amp; Instrumentation Labs</a></p>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <span>Phone: (215) 397–5806</span>
+      <span>Email: <a href="mailto:bharada3@my.erau.edu">bharada3@my.erau.edu</a></span>
+      <span><a href="https://linkedin.com/in/anuranan-bharadwaj" target="_blank">LinkedIn</a></span>
+      <span><a href="https://github.com/anuranan10" target="_blank">GitHub</a></span>
+      <span>&copy; 2030 Anuranan Bharadwaj</span>
+    </div>
+  </footer>
+</body>
+</html>
