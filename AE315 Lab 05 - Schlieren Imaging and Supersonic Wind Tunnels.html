@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lab 05: Schlieren Imaging &amp; Supersonic Wind Tunnels | Anuranan Bharadwaj</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="aerospace.html">Aerospace</a>
+    <a href="cs.html">Computer Science</a>
+    <a href="experience.html">Work Experience</a>
+    <a href="lab-testing-experience.html">Lab Testing Experience</a>
+    <a href="resume.html">Resume</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <header class="page-header">
+    <div class="header-content">
+      <h1>Lab 05: Schlieren Imaging &amp; Supersonic Wind Tunnels</h1>
+      <p>AE 315 &middot; Experimental Aerodynamics &middot; Spring 2025 &middot; ERAU</p>
+    </div>
+  </header>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Lab Overview</h2>
+      <ul>
+        <li><strong>Course:</strong> AE 315 – Experimental Aerodynamics, Section 04 (Robert Bryan) | April 18, 2025</li>
+        <li><strong>Objective:</strong> Operate the ERAU blowdown supersonic wind tunnel, use Schlieren imaging to visualize shock wave formation in the nozzle, and quantify nozzle pressure ratio, shock strength, and mass flow rate from static pressure tap data.</li>
+        <li><strong>Tunnel type:</strong> Blowdown, air-driven, convergent-divergent (C-D) nozzle; throat area A_th = 0.765 in&#178;, nozzle half-angle &#8776;4.8°</li>
+        <li><strong>Instrumentation:</strong> 13 static pressure taps at positions 1.5–19.5 inches along nozzle floor, Schlieren optical imaging system</li>
+        <li><strong>Tunnel components documented:</strong> Air dryer, compressor, storage tank, main valve, pressure regulator, quick-disconnect nozzle, Schlieren system, silencer</li>
+      </ul>
+    </div>
+    <div class="project-image-group">
+      <!-- insert figure: Air storage tank and compressor -->
+      <div class="project-image-note">Air compressor and storage tank</div>
+      <!-- insert figure: Supersonic nozzle with pressure taps -->
+      <div class="project-image-note">C-D nozzle with 13 pressure taps</div>
+      <!-- insert figure: Schlieren imaging system setup -->
+      <div class="project-image-note">Schlieren optical system</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Schlieren Imaging &amp; Wind Tunnel Components</h2>
+      <p>Schlieren imaging is an optical technique that visualizes density gradients in a flow field by detecting how light rays refract as they pass through regions of varying refractive index — directly proportional to local density. In a supersonic nozzle, this reveals shocks and expansion fans as sharp bright or dark bands without any physical intrusion into the flow.</p>
+      <p>The ERAU supersonic tunnel uses a blowdown configuration: compressed air stored in a high-pressure tank is released through a main valve, regulated to a set stagnation pressure, and accelerated through a C-D nozzle. The divergent section expands the flow to supersonic speeds. Pressure taps along the nozzle floor sample the static pressure distribution during the run window, and the Schlieren system captures still images of the test section throughout.</p>
+    </div>
+    <div class="project-image-group">
+      <!-- insert figure: Schlieren image 1 showing shock wave (Fig. 2.1) -->
+      <div class="project-image-note">Schlieren image — shock wave (Fig. 2.1)</div>
+      <!-- insert figure: Schlieren image 2 (Fig. 2.2) -->
+      <div class="project-image-note">Schlieren image — shock detail (Fig. 2.2)</div>
+      <div class="project-image-note">Annotated nozzle cross-section</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Results &amp; Analysis</h2>
+      <ul>
+        <li>Schlieren images confirmed a clear normal shock wave positioned between tap locations 9.5 and 10.5 inches in the divergent section of the nozzle.</li>
+        <li>The static pressure distribution showed a continuous decrease from the throat through the divergent section, followed by a sharp pressure rise at the shock location, then recovery toward back pressure.</li>
+        <li><strong>Nozzle Pressure Ratio: NPR = P&#8320; / P_exit = 3.932</strong> — exceeding the critical NPR, confirming that the nozzle was choked and a shock was present.</li>
+        <li><strong>Shock strength: S = P_before / P_after = 1.6142</strong> — classified as a moderately strong shock.</li>
+        <li><strong>Mass flow rate: &#7745; = 6.1036 lbm/s</strong> — computed from throat conditions using the isentropic choked-flow relation.</li>
+        <li>All uncertainties were evaluated at a 95% confidence interval using standard deviation of the steady-state pressure data window.</li>
+      </ul>
+    </div>
+    <div class="project-image-group">
+      <!-- insert figure: Static Pressure vs Tap Position (Fig. 3.1) -->
+      <div class="project-image-note">Pressure vs Tap Position (Fig. 3.1)</div>
+      <!-- insert figure: Static Pressure vs Row Points with steady-state window (Fig. 3.2) -->
+      <div class="project-image-note">Pressure vs Row Points (Fig. 3.2)</div>
+      <div class="project-image-note">NPR and shock strength summary</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>MATLAB Code</h2>
+      <p>Raw pressure data was read from a CSV file, averaged over the steady-state window (rows 1,653–2,103), and augmented with atmospheric pressure. Total pressure was back-calculated from the throat Mach number, and the mass flow rate computed from choked-flow theory. Below is a representative excerpt; the full script is <code>AE315_LAB5.m</code>.</p>
+      <pre style="background:#f4faff; padding:1rem; border-radius:6px; overflow-x:auto;"><code>% Constants
+Patm = 14.7;       % psi
+T0   = 27;         % °C ambient
+T    = T0*(9/5) + 491.67;   % → Rankine
+y    = 1.4;
+R    = 1716;       % ft·lbf/(slug·°R)
+Ath  = 0.765;      % throat area (in²)
+
+% Steady-state average + add atmospheric pressure
+range_ss  = tempData(1653:2103, :);
+dataframe = mean(range_ss) + Patm;    % 13-element vector (psi)
+
+% Back-calculate total pressure from throat tap (Mach 1)
+pTotal = dataframe(2);
+P0     = pTotal / (1 + (y-1)/2)^(-y/(y-1));
+
+% Nozzle pressure ratio
+Pb  = mean(dataframe(11));   % back-pressure tap
+NPR = P0 / Pb;               % = 3.932
+
+% Shock strength between taps 9 and 10
+shock = dataframe(10) / dataframe(9);  % = 1.6142
+
+% Choked-flow mass rate (lbm/s)
+a    = sqrt(y * R * T);
+mdot = Ath * y * (P0/a) * ((y+1)/2)^((y+1)/(y-1)) * 32.174; % = 6.1036</code></pre>
+      <!-- full MATLAB code (AE315_LAB5.m) to be embedded here -->
+    </div>
+    <div class="project-image-group">
+      <div class="project-image-note">Full MATLAB script — AE315_LAB5.m</div>
+      <div class="project-image-note">Pressure_data.csv layout (13 taps)</div>
+      <div class="project-image-note">Steady-state window selection logic</div>
+    </div>
+  </section>
+
+  <section style="padding: 1rem 2rem 2rem;">
+    <p><a class="project-title-link" href="lab-testing-experience.html">&#8592; Back to Lab Testing Experience</a></p>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <span>Phone: (215) 397–5806</span>
+      <span>Email: <a href="mailto:bharada3@my.erau.edu">bharada3@my.erau.edu</a></span>
+      <span><a href="https://linkedin.com/in/anuranan-bharadwaj" target="_blank">LinkedIn</a></span>
+      <span><a href="https://github.com/anuranan10" target="_blank">GitHub</a></span>
+      <span>&copy; 2030 Anuranan Bharadwaj</span>
+    </div>
+  </footer>
+</body>
+</html>
