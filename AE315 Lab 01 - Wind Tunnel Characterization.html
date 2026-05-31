@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lab 01: Wind Tunnel Characterization | Anuranan Bharadwaj</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="aerospace.html">Aerospace</a>
+    <a href="cs.html">Computer Science</a>
+    <a href="experience.html">Work Experience</a>
+    <a href="lab-testing-experience.html">Lab Testing Experience</a>
+    <a href="resume.html">Resume</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <header class="page-header">
+    <div class="header-content">
+      <h1>Lab 01: Wind Tunnel Characterization</h1>
+      <p>AE 315 &middot; Experimental Aerodynamics &middot; Spring 2025 &middot; ERAU</p>
+    </div>
+  </header>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Lab Overview</h2>
+      <ul>
+        <li><strong>Course:</strong> AE 315 – Experimental Aerodynamics, Section 04 (Robert Bryan) | February 7, 2025</li>
+        <li><strong>Objective:</strong> Learn to operate the ERAU open-circuit wind tunnel, collect airspeed data across varying fan frequencies and probe heights, and propagate measurement uncertainties using MATLAB.</li>
+        <li><strong>Instrumentation:</strong> Traverse pitot-static probe, analog manometer, analog-to-digital converter (ADC), data acquisition computer</li>
+        <li><strong>Ambient conditions:</strong> T = 21.5°C (294.65 K), P = 30.3 inHg (102,607.6 Pa), &#961; = 1.213 kg/m&#179;</li>
+      </ul>
+    </div>
+    <div class="project-image-group">
+      <!-- insert figure: Full wind tunnel showing inlet, nozzle, test section, diffuser, and fan -->
+      <div class="project-image-note">Full wind tunnel assembly</div>
+      <!-- insert figure: Pitot-static probe mounted in test section -->
+      <div class="project-image-note">Pitot-static probe in test section</div>
+      <!-- insert figure: DAQ computer and ADC hardware -->
+      <div class="project-image-note">DAQ computer and ADC</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Procedure &amp; Methodology</h2>
+      <p>The lab was divided into two experiments. In Experiment A, the traverse pitot probe was fixed at a constant height while fan frequency was increased in 5 Hz increments from 0 to 25 Hz. The 0 Hz baseline reading was subtracted from each measurement to isolate differential pressure, and airspeed was computed using V = &#8730;(2q/&#961;). Reynolds number per unit length was then calculated at each frequency using Re/l = &#961;v/&#956;, where dynamic viscosity &#956; was determined via Sutherland's formula.</p>
+      <p>In Experiment B, the fan was held at 15 Hz (&#8776;10 m/s) while the probe height was swept from 1 to 40 inches across the test section height. Velocity and turbulence intensity (I = STD_v / V&#772; &times; 100) were computed at each increment. All data was acquired, processed, and visualized in MATLAB, with uncertainty propagated using standard error of the mean.</p>
+    </div>
+    <div class="project-image-group">
+      <!-- insert figure: Analog manometer reading during experiment -->
+      <div class="project-image-note">Analog manometer reading</div>
+      <!-- insert figure: Airspeed vs Fan Speed plot with error bars (Fig. 2) -->
+      <div class="project-image-note">Airspeed vs Fan Speed (Fig. 2)</div>
+      <div class="project-image-note">Probe traversal setup</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Results &amp; Analysis</h2>
+      <ul>
+        <li>Airspeed increased linearly with fan frequency: 2.89 m/s at 5 Hz up to 18.2 m/s at 25 Hz, confirming a direct correlation.</li>
+        <li>Reynolds number per unit length ranged from 192,508 m&#8315;&#185; (5 Hz) to 1,212,334 m&#8315;&#185; (25 Hz).</li>
+        <li>Velocity measurement uncertainty decreased with speed: 0.42% at 2.89 m/s down to 0.056% at 18.2 m/s.</li>
+        <li>Pressure uncertainty was consistent at &#8776;1.27% across all fan frequencies, indicating stable sensor performance.</li>
+        <li>At constant 15 Hz, airspeed decreased slightly as probe height increased toward the tunnel ceiling, consistent with boundary layer effects and wall proximity.</li>
+        <li>Turbulence intensity mirrored the height–speed relationship: intensity increased as the probe approached the ceiling and the flow became less uniform.</li>
+      </ul>
+    </div>
+    <div class="project-image-group">
+      <!-- insert figure: Height vs Airspeed plot (Fig. 3) -->
+      <div class="project-image-note">Height vs Airspeed (Fig. 3)</div>
+      <!-- insert figure: Height vs Turbulence Intensity plot (Fig. 4) -->
+      <div class="project-image-note">Height vs Turbulence Intensity (Fig. 4)</div>
+      <div class="project-image-note">Uncertainty summary table</div>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>MATLAB Code</h2>
+      <p>Pressure data was loaded from CSV, converted from inH&#8322;O to Pa (&#215;248.84), and used to compute velocity, Reynolds number, and turbulence intensity. Below is a representative excerpt; the full script is <code>AE315_INT.m</code>.</p>
+      <pre style="background:#f4faff; padding:1rem; border-radius:6px; overflow-x:auto;"><code>% Subtract baseline (0 Hz) and convert inH2O → Pa
+Hz_5  = (data(:,2) - data(:,1)) * 248.84;
+Hz_15 = (data(:,4) - data(:,1)) * 248.84;
+
+rho = 1.213; % kg/m^3  (ideal gas: P = rhoRT)
+V_5  = sqrt(2 * Hz_5  / rho);
+V_15 = sqrt(2 * Hz_15 / rho);
+
+% Reynolds number per unit length
+mu   = 1.821e-5; % N·s/m²  (Sutherland's formula)
+Re_l = (rho * mean(V_15)) / mu;
+
+% Turbulence intensity at each probe height
+v_2       = mean(v, 2);           % mean velocity per height row
+intensity = (std(v_2) ./ v_2) * 100;
+
+% Uncertainty (standard error of mean, as %)
+UC_V_5 = (std(V_5) / sqrt(length(V_5))) * 100;</code></pre>
+      <!-- full MATLAB code (AE315_INT.m) to be embedded here -->
+    </div>
+    <div class="project-image-group">
+      <div class="project-image-note">Full MATLAB script — AE315_INT.m</div>
+      <div class="project-image-note">CSV data file structure</div>
+      <div class="project-image-note">Uncertainty calculation output</div>
+    </div>
+  </section>
+
+  <section style="padding: 1rem 2rem 2rem;">
+    <p><a class="project-title-link" href="lab-testing-experience.html">&#8592; Back to Lab Testing Experience</a></p>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <span>Phone: (215) 397–5806</span>
+      <span>Email: <a href="mailto:bharada3@my.erau.edu">bharada3@my.erau.edu</a></span>
+      <span><a href="https://linkedin.com/in/anuranan-bharadwaj" target="_blank">LinkedIn</a></span>
+      <span><a href="https://github.com/anuranan10" target="_blank">GitHub</a></span>
+      <span>&copy; 2030 Anuranan Bharadwaj</span>
+    </div>
+  </footer>
+</body>
+</html>
