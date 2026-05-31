@@ -47,6 +47,19 @@
 
   <section class="project-row">
     <div class="project-text">
+      <h2>Equipment &amp; Tools</h2>
+      <ul>
+        <li>Quanser SRV02 rotary flexible link system (m<sub>l</sub> = 0.065 kg, L<sub>l</sub> = 0.419 m)</li>
+        <li>Strain gauge sensor embedded in the flexible link for deflection angle measurement</li>
+        <li>Q2-USB data acquisition board</li>
+        <li>VoltPAQ power amplifier</li>
+        <li>MATLAB/Simulink with QUARC real-time toolbox (setup_flexgage.m and q_flexgage_val model)</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
       <h2>Approach &amp; Equations of Motion</h2>
       <p>The system Lagrangian L = T &minus; V was formed using the kinetic energy of both the servo base and the flexible link, and the elastic potential energy stored in the link spring. Applying the Euler-Lagrange equations to each generalized coordinate produced coupled second-order differential equations. These were rewritten in first-order state-space form x&#775; = Ax + Bu, with states x = [&theta;, &alpha;, &theta;&#775;, &alpha;&#775;].</p>
       <p>Link stiffness was determined experimentally by freely oscillating the link with the servo locked, measuring successive peak amplitudes to compute the damped natural frequency &omega;<sub>d</sub> and damping ratio &zeta;, then recovering the undamped natural frequency and applying:</p>

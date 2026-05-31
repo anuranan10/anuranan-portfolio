@@ -44,6 +44,19 @@
 
   <section class="project-row">
     <div class="project-text">
+      <h2>Equipment &amp; Tools</h2>
+      <ul>
+        <li>ERAU open-circuit wind tunnel</li>
+        <li>1.4-inch aluminum cylinder with single static pressure port (24 angular positions, 0&#176;&ndash;180&#176;)</li>
+        <li>Differential pressure transducer and analog manometer</li>
+        <li>Angular rotation fixture for cylinder positioning</li>
+        <li>MATLAB for data acquisition, coefficient computation, and plotting</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
       <h2>Approach &amp; Key Equations</h2>
       <p>A 1.4-inch cylinder with a single static pressure port was rotated to 24 angular positions from 0&#176; to 180&#176;, capturing differential pressure at each angle for both test speeds. The pressure coefficient was found by normalizing each reading against the freestream dynamic pressure. Potential flow theory predicts C<sub>p</sub> = 1 &minus; 4sin&#178;(&theta;), which was plotted alongside measured data for comparison.</p>
       <p>Drag was extracted by integrating C<sub>p</sub>&#183;cos(&theta;) around the cylinder using MATLAB&rsquo;s <code>trapz</code> function. This pressure-integration method converts the mapped surface pressures directly into a net streamwise force coefficient, requiring no physical force sensor:</p>
