@@ -20,26 +20,311 @@
   <header class="page-header">
     <div class="header-content">
       <h1>TDRS-M Orbital Mechanics and Trajectory Design</h1>
-      <p>LEO to GEO transfer and maneuver simulation benchmarked to mission-profile tradeoffs</p>
+      <p>AE 313 &middot; Space Mechanics &middot; Fall 2025 &middot; ERAU</p>
     </div>
   </header>
 
+  <!-- Engineering Snapshot Card -->
+  <section style="background:#004080; color:white; padding:2rem 2rem;">
+    <div style="max-width:960px; margin:0 auto; display:flex; flex-wrap:wrap; gap:2rem; align-items:flex-start;">
+      <div style="flex:1; min-width:200px;">
+        <p style="font-size:0.75em; letter-spacing:0.07em; text-transform:uppercase; opacity:0.65; margin:0 0 0.35rem;">Role</p>
+        <p style="font-weight:600; font-size:1.05em; margin:0 0 0.25rem;">Team Member &mdash; Orbital Mechanics Analysis</p>
+        <p style="font-size:0.88em; opacity:0.8; margin:0;">AE 313: Space Mechanics &middot; ERAU &middot; Fall 2025</p>
+      </div>
+      <div style="flex:1; min-width:200px;">
+        <p style="font-size:0.75em; letter-spacing:0.07em; text-transform:uppercase; opacity:0.65; margin:0 0 0.35rem;">Tools</p>
+        <p style="font-size:0.92em; line-height:1.75; margin:0;">MATLAB &middot; <code style="background:rgba(255,255,255,0.15); padding:0 4px; border-radius:3px;">ode45</code> &middot; Vis-viva Equation<br>Tsiolkovsky Rocket Equation &middot; Hohmann Transfer Theory</p>
+      </div>
+      <div style="flex:1.6; min-width:240px;">
+        <p style="font-size:0.75em; letter-spacing:0.07em; text-transform:uppercase; opacity:0.65; margin:0 0 0.35rem;">Key Contributions</p>
+        <ul style="margin:0; padding-left:1.15rem; font-size:0.92em; line-height:1.85;">
+          <li>Numerically propagated 300 km LEO parking orbit with sub-meter accuracy using <code style="background:rgba(255,255,255,0.15); padding:0 4px; border-radius:3px;">ode45</code></li>
+          <li>Computed full &Delta;v budget for LEO &rarr; GTO &rarr; GEO, including 28.5&deg; plane change</li>
+          <li>Designed phasing maneuver to resolve a 5&deg; longitude offset between two GEO spacecraft</li>
+          <li>Benchmarked simulation outcomes against real TDRS-M 2017 mission parameters</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stat Boxes -->
+  <section style="background:#f4faff; border-bottom:1px solid #d0dde8; padding:1.5rem 2rem;">
+    <div style="max-width:960px; margin:0 auto; display:flex; flex-wrap:wrap; gap:1rem; justify-content:center;">
+      <div style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+        <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">5.36 <span style="font-size:1rem; font-weight:400;">km/s</span></div>
+        <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Total Mission &Delta;v</div>
+      </div>
+      <div style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+        <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">82<span style="font-size:1rem; font-weight:400;">%</span></div>
+        <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Propellant Mass Fraction</div>
+      </div>
+      <div style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+        <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">2,867 <span style="font-size:1rem; font-weight:400;">kg</span></div>
+        <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Propellant Consumed</div>
+      </div>
+      <div style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+        <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">0.028 <span style="font-size:1rem; font-weight:400;">km/s</span></div>
+        <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Phasing Maneuver Cost</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Context -->
   <section class="project-row">
-    <div class="project-text">
-      <h2>Project Overview</h2>
+    <div class="project-text" style="max-width:820px;">
+      <h2>Mission Context</h2>
+      <p>Geostationary Earth Orbit satellites form the backbone of global communications, weather monitoring, and data-relay networks. NASA&rsquo;s Tracking and Data Relay Satellite System (TDRS) enables continuous contact between LEO spacecraft and ground stations &mdash; but reaching GEO from a 300 km parking orbit requires a precise, multi-burn ascent that consumes the majority of a spacecraft&rsquo;s propellant. This project simulated the full orbital trajectory and maneuver sequence for a TDRS-M-class spacecraft: from LEO insertion through a Hohmann transfer to GTO, to final GEO circularization and inclination reduction, with an additional phasing maneuver designed to correct a 5&deg; longitudinal slot error.</p>
       <ul>
-        <li>Developed a group simulation for complete trajectory and maneuver planning from LEO to GEO.</li>
-        <li>Modeled mission burns, propellant consumption, and phasing strategy with realistic constraints.</li>
-        <li>Evaluated transfer sequence timing and fuel tradeoffs through precision phasing maneuvers.</li>
-        <li>Compared outcomes to NASA TDRS-M mission characteristics to validate feasibility.</li>
+        <li>Propagate a 300 km circular parking orbit via two-body equations of motion integrated with <code>ode45</code></li>
+        <li>Compute &Delta;v requirements for the full LEO &rarr; GTO &rarr; GEO sequence, including a 28.5&deg; plane change</li>
+        <li>Estimate propellant mass and mass fraction using the Tsiolkovsky Rocket Equation (I<sub>sp</sub> = 320 s)</li>
+        <li>Extract Classical Orbital Elements (COEs) at every major mission stage</li>
+        <li>Design and validate a phasing maneuver to synchronize two co-GEO spacecraft separated by 5&deg;</li>
+        <li>Benchmark all results against real TDRS-M (2017) mission data</li>
       </ul>
-      <p><a class="project-title-link" href="aerospace.html">Back to Aerospace Projects</a></p>
     </div>
     <div class="project-image-group">
-      <div class="project-image-note">LEO to GEO transfer arc simulation</div>
-      <div class="project-image-note">Burn sequencing and propellant accounting</div>
-      <div class="project-image-note">Mission-profile tradeoff comparison</div>
+      <img src="Folder/AE313/fig01_parking_orbit_2d.jpeg" alt="300 km parking orbit 2D propagation" style="width:100%; border-radius:6px; margin-bottom:0.5rem;" />
+      <img src="Folder/AE313/fig02_3d_orbit.jpeg" alt="3D ECI frame orbit propagation" style="width:100%; border-radius:6px; margin-bottom:0.5rem;" />
+      <img src="Folder/AE313/fig06_ascent_schematic.jpeg" alt="TDRS-M ascent trajectory schematic" style="width:100%; border-radius:6px;" />
     </div>
+  </section>
+
+  <!-- Phase 1: LEO Parking Orbit -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:820px;">
+      <h2>Phase 1 &mdash; LEO Parking Orbit Propagation</h2>
+      <p>The spacecraft begins at r<sub>0</sub> = R<sub>E</sub> + 300 = <strong>6678 km</strong> in a circular equatorial orbit. Circular velocity follows directly from the gravitational parameter &mu;<sub>E</sub> = 398,600.418 km<sup>3</sup>/s<sup>2</sup>:</p>
+      <p style="margin:0.5rem 0 0.5rem 1.5rem; font-style:italic; font-size:1.05em;">V<sub>circ</sub> = &radic;(&mu;/r<sub>0</sub>) = <strong>7.73 km/s</strong></p>
+      <p>The initial Cartesian state r(0) = [6678, 0, 0] km and v(0) = [0, 7.73, 0] km/s was integrated for one full orbital period T = 2&pi;&radic;(r<sub>0</sub><sup>3</sup>/&mu;) = <strong>5400 s</strong> using <code>ode45</code> at RelTol = AbsTol = 10<sup>&minus;9</sup>. Position magnitude error over the full orbit was less than 10<sup>&minus;5</sup> km, confirming numerical stability consistent with mission-grade analysis.</p>
+
+      <figure style="margin:1rem 0;">
+        <img src="Folder/AE313/fig03_position_vs_time.jpeg" alt="Position magnitude vs time — constant 6678 km" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 3: Position magnitude stays constant at 6678 km, confirming circular motion and propagator stability</figcaption>
+      </figure>
+
+      <p>The parking orbit Classical Orbital Elements (COEs): a = 6678 km, e = 0, i = 28.5&deg;, &Omega; = 0&deg;, &omega; = 0&deg;, &theta; = 0&deg;. The trajectory lies entirely in the equatorial plane as expected for a zero-inclination initial state.</p>
+    </div>
+  </section>
+
+  <!-- Phase 2: Hohmann Transfer -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:820px;">
+      <h2>Phase 2 &mdash; Hohmann Transfer (LEO &rarr; GTO)</h2>
+      <p>A Hohmann transfer ellipse connects the parking orbit perigee (r<sub>p</sub> = 6678 km) to GEO altitude (r<sub>a</sub> = 42164 km). Transfer orbit velocities at perigee and apogee were computed from the vis-viva equation:</p>
+      <p style="margin:0.5rem 0 0.5rem 1.5rem; font-style:italic; font-size:1.05em;">v = &radic;[&mu;(2/r &minus; 1/a)]</p>
+      <p>Key computed values:</p>
+      <ul>
+        <li>Transfer semi-major axis: a<sub>t</sub> = (6678 + 42164) / 2 = <strong>24421 km</strong></li>
+        <li>Transfer perigee velocity: V<sub>p,t</sub> = <strong>10.15 km/s</strong></li>
+        <li>Transfer apogee velocity: V<sub>a,t</sub> = <strong>1.61 km/s</strong></li>
+        <li>Transfer orbit period: T = <strong>10.95 hr</strong> &nbsp;&nbsp;&rarr;&nbsp;&nbsp; time to apogee: t<sub>PA</sub> = <strong>5.48 hr</strong></li>
+        <li>First burn (injection into GTO): &Delta;v<sub>1</sub> = 10.15 &minus; 7.73 = <strong>2.42 km/s</strong></li>
+      </ul>
+
+      <figure style="margin:1rem 0;">
+        <img src="Folder/AE313/fig06_ascent_schematic.jpeg" alt="TDRS-M ascent schematic — LEO, GTO, GEO arcs" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Ascent schematic &mdash; LEO parking orbit (green), GTO transfer ellipse (dashed red), and GEO circle</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Phase 3: GEO Insertion + Plane Change -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:820px;">
+      <h2>Phase 3 &mdash; GEO Insertion &amp; Plane Change</h2>
+      <p>At GEO apogee the spacecraft must simultaneously circularize its orbit and reduce inclination from 28.5&deg; to 0&deg;. Performing the plane change here &mdash; where velocity is lowest at <strong>3.07 km/s</strong> &mdash; is critical. The same plane change executed at LEO perigee (10.15 km/s) would cost approximately 5.00 km/s, rendering the mission propellant budget infeasible.</p>
+      <p>Circularization and inclination burns analyzed separately:</p>
+      <p style="margin:0.5rem 0 0.2rem 1.5rem; font-style:italic; font-size:1.05em;">&Delta;v<sub>circ</sub> = V<sub>GEO</sub> &minus; V<sub>a,t</sub> = 3.07 &minus; 1.61 = <strong>1.46 km/s</strong></p>
+      <p style="margin:0.2rem 0 0.5rem 1.5rem; font-style:italic; font-size:1.05em;">&Delta;v<sub>inc</sub> = 2 &middot; V<sub>GEO</sub> &middot; sin(&Delta;i / 2) = 2(3.07)sin(14.25&deg;) = <strong>1.50 km/s</strong></p>
+      <p>Total mission &Delta;v = 2.42 + 1.46 + 1.50 = <strong>5.36 km/s</strong>.</p>
+      <p>Propellant mass estimation via the Tsiolkovsky Rocket Equation (m<sub>0</sub> = 3500 kg, V<sub>e</sub> = I<sub>sp</sub> &middot; g<sub>0</sub> = 3.139 km/s):</p>
+      <p style="margin:0.5rem 0 0.5rem 1.5rem; font-style:italic; font-size:1.05em;">m<sub>0</sub> / m<sub>f</sub> = e<sup>&Delta;v/V<sub>e</sub></sup> = e<sup>5.36/3.139</sup> = 5.53 &nbsp;&nbsp;&rarr;&nbsp;&nbsp; m<sub>f</sub> = <strong>633 kg</strong>, m<sub>p</sub> = <strong>2867 kg</strong> (82%)</p>
+
+      <figure style="margin:1rem 0;">
+        <img src="Folder/AE313/fig04_velocity_vs_time.jpeg" alt="Velocity magnitude vs time — parking orbit" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Velocity magnitude vs time &mdash; constant 7.726 km/s confirms circular orbit over one full period</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Phase 4: Phasing Maneuver -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:820px;">
+      <h2>Phase 4 &mdash; GEO Phasing Maneuver</h2>
+      <p>An interceptor spacecraft leading its target by &Delta;&theta;<sub>0</sub> = 5&deg; in GEO needs to slow its angular drift and wait for the target to catch up. This is achieved by briefly raising the orbit into a phasing ellipse with a longer period. The required semi-major axis satisfies:</p>
+      <p style="margin:0.5rem 0 0.5rem 1.5rem; font-style:italic; font-size:1.05em;">T<sub>phase</sub> / T<sub>GEO</sub> = 1 + &Delta;&theta; / 2&pi;</p>
+      <p>Computed phasing orbit parameters:</p>
+      <ul>
+        <li>Phasing semi-major axis: a<sub>phase</sub> = <strong>42554 km</strong></li>
+        <li>Phasing apogee radius: r<sub>a</sub> = <strong>42943 km</strong> (758 km above GEO)</li>
+        <li>Maneuver duration: <strong>24.3 hours</strong></li>
+        <li>Burn 1 (enter phasing orbit): &Delta;v<sub>1</sub> = <strong>0.014 km/s</strong></li>
+        <li>Burn 2 (return to GEO): &Delta;v<sub>2</sub> = <strong>0.014 km/s</strong></li>
+        <li>Total phasing cost: <strong>0.028 km/s</strong> &mdash; less than 0.6% of the total mission &Delta;v budget</li>
+      </ul>
+      <p>Numerical propagation confirmed the relative longitude decreased smoothly from 5&deg; to 0&deg; over the 24.3-hour window, with <code>ode45</code> tracking both spacecraft simultaneously in the ECI frame.</p>
+
+      <figure style="margin:1rem 0;">
+        <img src="Folder/AE313/fig05_phasing_longitude.jpeg" alt="Relative longitude vs time — phasing maneuver" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Relative longitude &Delta;&theta; vs time &mdash; smooth convergence from 5&deg; to 0&deg; over 24.3 hours</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Key Results Tables -->
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Key Results</h2>
+
+      <p><strong>&Delta;v Budget by Maneuver:</strong></p>
+      <table style="border-collapse:collapse; font-size:0.9em; margin:0.5rem 0 1.2rem;">
+        <tr style="background:#004080; color:white;">
+          <th style="padding:6px 12px;">Maneuver</th>
+          <th style="padding:6px 12px;">&Delta;v (km/s)</th>
+          <th style="padding:6px 12px;">Details</th>
+        </tr>
+        <tr style="background:#f4faff;">
+          <td style="padding:6px 12px;">LEO &rarr; GTO injection</td>
+          <td style="padding:6px 12px;"><strong>2.42</strong></td>
+          <td style="padding:6px 12px;">7.73 &rarr; 10.15 km/s at LEO perigee</td>
+        </tr>
+        <tr>
+          <td style="padding:6px 12px;">GEO circularization</td>
+          <td style="padding:6px 12px;"><strong>1.46</strong></td>
+          <td style="padding:6px 12px;">1.61 &rarr; 3.07 km/s at GEO apogee</td>
+        </tr>
+        <tr style="background:#f4faff;">
+          <td style="padding:6px 12px;">28.5&deg; plane change</td>
+          <td style="padding:6px 12px;"><strong>1.50</strong></td>
+          <td style="padding:6px 12px;">Performed at apogee; perigee equivalent &asymp; 5.00 km/s</td>
+        </tr>
+        <tr style="background:#004080; color:white;">
+          <td style="padding:6px 12px;"><strong>Total</strong></td>
+          <td style="padding:6px 12px;"><strong>5.36</strong></td>
+          <td style="padding:6px 12px;">&mdash;</td>
+        </tr>
+      </table>
+
+      <p><strong>Simulation vs Real TDRS-M (2017):</strong></p>
+      <table style="border-collapse:collapse; font-size:0.9em; margin:0.5rem 0;">
+        <tr style="background:#004080; color:white;">
+          <th style="padding:6px 12px;">Parameter</th>
+          <th style="padding:6px 12px;">This Simulation</th>
+          <th style="padding:6px 12px;">Real TDRS-M</th>
+        </tr>
+        <tr style="background:#f4faff;">
+          <td style="padding:6px 12px;">Total spacecraft &Delta;v</td>
+          <td style="padding:6px 12px;">5.36 km/s</td>
+          <td style="padding:6px 12px;">~2.0 km/s</td>
+        </tr>
+        <tr>
+          <td style="padding:6px 12px;">Propellant fraction</td>
+          <td style="padding:6px 12px;">82%</td>
+          <td style="padding:6px 12px;">42% (R-4D engine, I<sub>sp</sub> = 312 s)</td>
+        </tr>
+        <tr style="background:#f4faff;">
+          <td style="padding:6px 12px;">Plane change responsibility</td>
+          <td style="padding:6px 12px;">Fully by spacecraft</td>
+          <td style="padding:6px 12px;">Mostly by Delta IV M+ launch vehicle</td>
+        </tr>
+        <tr>
+          <td style="padding:6px 12px;">GTO type</td>
+          <td style="padding:6px 12px;">Standard 28.5&deg; GTO</td>
+          <td style="padding:6px 12px;">Supersynchronous (26.2&deg;, perigee 4700 km)</td>
+        </tr>
+      </table>
+    </div>
+    <div class="project-image-group">
+      <img src="Folder/AE313/fig05_phasing_longitude.jpeg" alt="Relative longitude vs time — phasing maneuver" style="width:100%; border-radius:6px; margin-bottom:0.5rem;" />
+      <img src="Folder/AE313/fig01_parking_orbit_2d.jpeg" alt="2D parking orbit propagation" style="width:100%; border-radius:6px; margin-bottom:0.5rem;" />
+      <img src="Folder/AE313/fig06_ascent_schematic.jpeg" alt="TDRS-M ascent schematic" style="width:100%; border-radius:6px;" />
+    </div>
+  </section>
+
+  <!-- MATLAB Code -->
+  <section class="project-row">
+    <div class="project-text">
+      <h2>MATLAB Code</h2>
+      <p>Two simulation scripts formed the core analysis. The parking orbit propagator used a local <code>twobody</code> function passed to <code>ode45</code>. The phasing script computed orbit geometry analytically and then integrated both spacecraft simultaneously to verify longitude convergence.</p>
+      <pre style="background:#f4faff; padding:1rem; border-radius:6px; overflow-x:auto;"><code>% AE 313 — Parking Orbit Propagation
+mu = 398600.4418;
+r0 = [6678; 0; 0];
+v0 = [0; sqrt(mu/6678); 0];
+y0 = [r0; v0];
+T  = 2*pi*sqrt(6678^3/mu);           % 5400 s
+
+opts = odeset('RelTol',1e-9,'AbsTol',1e-9);
+[t,y] = ode45(@(t,y) twobody(t,y,mu), [0 T], y0, opts);
+
+plot(y(:,1), y(:,2), 'LineWidth', 1.5)
+axis equal;  xlabel('x (km)');  ylabel('y (km)')
+
+function dydt = twobody(~, y, mu)
+    r = y(1:3);  v = y(4:6);
+    a = -mu * r / norm(r)^3;
+    dydt = [v; a];
+end
+
+% AE 313 — Phasing Maneuver Numerical Simulation
+rG = 42164;
+vG = sqrt(mu/rG);   nG = sqrt(mu/rG^3);
+dth0 = deg2rad(5);
+
+np     = nG / (1 + dth0/(2*pi));
+Tphase = 2*pi / np;
+ap     = (mu / np^2)^(1/3);          % 42554 km
+ra     = 2*ap - rG;                  % 42943 km
+
+vp_phase = sqrt(mu*(2/rG - 1/ap));
+dv1 = vp_phase - vG;                 % 0.0140 km/s
+
+fprintf('a_phase = %.1f km | ra = %.1f km\n', ap, ra)
+fprintf('dv1 = %.4f km/s | Tphase = %.2f hr\n', dv1, Tphase/3600)
+% Output: a_phase = 42553.5 km | ra = 42943.0 km
+%         dv1 = 0.0140 km/s  | Tphase = 24.27 hr</code></pre>
+      <!-- full MATLAB code for both scripts to be embedded here -->
+    </div>
+    <div class="project-image-group">
+      <img src="Folder/AE313/fig02_3d_orbit.jpeg" alt="3D ECI orbit propagation" style="width:100%; border-radius:6px; margin-bottom:0.5rem;" />
+      <img src="Folder/AE313/fig03_position_vs_time.jpeg" alt="Position magnitude vs time" style="width:100%; border-radius:6px; margin-bottom:0.5rem;" />
+      <img src="Folder/AE313/fig04_velocity_vs_time.jpeg" alt="Velocity magnitude vs time" style="width:100%; border-radius:6px;" />
+    </div>
+  </section>
+
+  <!-- Takeaways — 2x2 Card Grid -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:860px;">
+      <h2>Key Takeaways</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-top:1rem;">
+
+        <div style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+          <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">Always perform plane changes at apogee.</p>
+          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">The 28.5&deg; inclination reduction cost 1.50 km/s at GEO altitude vs. ~5.00 km/s at LEO perigee &mdash; a 3.5 km/s savings from one sequencing decision. This rule is fundamental to every GEO mission burn design.</p>
+        </div>
+
+        <div style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+          <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">Launch vehicles do the heavy lifting in real missions.</p>
+          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">TDRS-M&rsquo;s Delta IV absorbed most of the inclination reduction through a supersynchronous GTO. The result: 42% propellant fraction vs. this simulation&rsquo;s 82%. Optimizing the LV injection profile is as important as spacecraft propulsion design.</p>
+        </div>
+
+        <div style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+          <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">Phasing orbits are extremely fuel-efficient.</p>
+          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">Correcting a 5&deg; longitude error cost only 0.028 km/s &mdash; less than 0.6% of total mission &Delta;v. This efficiency makes phasing the standard technique for GEO slot acquisition, satellite repositioning, and on-orbit rendezvous operations.</p>
+        </div>
+
+        <div style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+          <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;"><code>ode45</code> delivers mission-grade numerical accuracy.</p>
+          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">Position error stayed below 10<sup>&minus;5</sup> km over a full 5400-second orbit with RelTol = AbsTol = 10<sup>&minus;9</sup>. This solver-tolerance discipline is the same approach used in NASA preliminary orbit analysis tools and is essential for any simulation that feeds a propellant budget.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 1rem 2rem 2rem;">
+    <p><a class="project-title-link" href="aerospace.html">&#8592; Back to Aerospace Projects</a></p>
   </section>
 
   <footer>
@@ -53,4 +338,3 @@
   </footer>
 </body>
 </html>
-
