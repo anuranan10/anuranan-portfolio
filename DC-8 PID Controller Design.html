@@ -20,26 +20,253 @@
   <header class="page-header">
     <div class="header-content">
       <h1>DC-8 PID Controller Design</h1>
-      <p>Automated flight control development using aircraft dynamic modeling and PID tuning</p>
+      <p>AE 432 &middot; Flight Dynamics and Control &middot; Fall 2025 &middot; ERAU</p>
     </div>
   </header>
 
+  <!-- Engineering Snapshot Card -->
+  <section style="background:#004080; color:white; padding:2rem;">
+    <div style="max-width:960px; margin:0 auto; display:flex; flex-wrap:wrap; gap:2rem; align-items:flex-start;">
+      <div style="flex:1; min-width:200px;">
+        <p style="font-size:0.75em; letter-spacing:0.07em; text-transform:uppercase; opacity:0.65; margin:0 0 0.35rem;">Role</p>
+        <p style="font-weight:600; font-size:1.05em; margin:0 0 0.25rem;">Team Member &mdash; Flight Dynamics &amp; PID Design</p>
+        <p style="font-size:0.88em; opacity:0.8; margin:0;">AE 432: Flight Dynamics and Control &middot; ERAU &middot; Fall 2025</p>
+      </div>
+      <div style="flex:1; min-width:200px;">
+        <p style="font-size:0.75em; letter-spacing:0.07em; text-transform:uppercase; opacity:0.65; margin:0 0 0.35rem;">Tools</p>
+        <p style="font-size:0.92em; line-height:1.75; margin:0;">MATLAB &middot; Transfer Function Analysis &middot; Pole Placement<br>Characteristic Polynomial Matching &middot; Final Value Theorem</p>
+      </div>
+      <div style="flex:1.6; min-width:240px;">
+        <p style="font-size:0.75em; letter-spacing:0.07em; text-transform:uppercase; opacity:0.65; margin:0 0 0.35rem;">Key Contributions</p>
+        <ul style="margin:0; padding-left:1.15rem; font-size:0.92em; line-height:1.85;">
+          <li>Derived short period, phugoid, and Dutch roll transfer functions from DC-8 stability derivatives</li>
+          <li>Characterized all three natural flight modes: &omega;<sub>n</sub>, &zeta;, and poles at sea level standard</li>
+          <li>Designed AOA PID controller achieving 4% overshoot against a 5% specification</li>
+          <li>Verified zero steady-state tracking error analytically using the Final Value Theorem</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stat Boxes -->
+  <section style="background:#f4faff; border-bottom:1px solid #d0dde8; padding:1.5rem 2rem;">
+    <div style="max-width:960px; margin:0 auto; display:flex; flex-wrap:wrap; gap:1rem; justify-content:center;">
+      <div style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+        <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">3</div>
+        <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Flight Modes Characterized</div>
+      </div>
+      <div style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+        <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">4<span style="font-size:1rem; font-weight:400;">%</span></div>
+        <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">AOA Max Overshoot</div>
+      </div>
+      <div style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+        <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">1.614 <span style="font-size:1rem; font-weight:400;">rad/s</span></div>
+        <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Short Period &omega;<sub>n</sub></div>
+      </div>
+      <div style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+        <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">0<span style="font-size:1rem; font-weight:400;">°</span></div>
+        <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">AOA Steady-State Error</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Context -->
   <section class="project-row">
-    <div class="project-text">
-      <h2>Project Overview</h2>
+    <div class="project-text" style="max-width:820px;">
+      <h2>Project Context</h2>
+      <p>Modern aircraft rely on automated flight control systems to maintain stability, track commanded states, and reject atmospheric disturbances &mdash; tasks too fast and too precise for a pilot to perform manually at all flight conditions. The PID controller is the foundational architecture behind elevator deflection systems, autothrottle, and autopilot modes on virtually every commercial aircraft flying today. This project applied that theory to the McDonnell Douglas DC-8: a classic long-range jet airliner whose well-documented stability derivatives made it an ideal subject for a full modal analysis and controller synthesis workflow.</p>
       <ul>
-        <li>Completed a group controller design project for the McDonnell Douglas DC-8 airframe.</li>
-        <li>Modeled both longitudinal and lateral-directional dynamics for closed-loop analysis.</li>
-        <li>Tuned PID loops to regulate angle of attack and forward speed simultaneously.</li>
-        <li>Validated overshoot and settling-time behavior against specified design constraints.</li>
+        <li>Extract short period, phugoid, and Dutch roll transfer functions from DC-8 stability derivatives at sea level standard (Mach 0.218, V = 243 ft/s)</li>
+        <li>Compute natural frequencies and damping ratios for all three longitudinal and lateral-directional flight modes</li>
+        <li>Design an elevator-input PID controller to regulate angle of attack (&Delta;&alpha;) to a 5&deg; step command with M<sub>p</sub> &le; 5% and t<sub>s</sub> &lt; 10 s</li>
+        <li>Design a throttle-input PID controller to regulate forward speed (&Delta;U) with M<sub>p</sub> &le; 7% and t<sub>s</sub> &lt; 15 s</li>
+        <li>Verify steady-state tracking analytically with the Final Value Theorem for both control loops</li>
       </ul>
-      <p><a class="project-title-link" href="aerospace.html">Back to Aerospace Projects</a></p>
     </div>
     <div class="project-image-group">
-      <div class="project-image-note">State-space aircraft dynamics model</div>
-      <div class="project-image-note">PID loop tuning for multi-variable regulation</div>
-      <div class="project-image-note">Time-domain performance constraints check</div>
+      <img src="Folder/DC8PID/fig03_stability_table.png" alt="DC-8 aircraft stability characteristics table" style="width:100%; border-radius:6px;" />
     </div>
+  </section>
+
+  <!-- Phase 1: Modal Analysis -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:820px;">
+      <h2>Phase 1 &mdash; Transfer Functions &amp; Modal Characterization</h2>
+      <p>Three classical approximation transfer functions were derived from the DC-8&rsquo;s published stability derivatives, one for each natural mode of motion. Each was obtained by applying Laplace transforms to the linearized equations of motion and isolating the ratio of output state to control surface deflection.</p>
+
+      <p><strong>Short Period (elevator &rarr; angle of attack):</strong></p>
+      <p style="margin:0.4rem 0 0.4rem 1.5rem; font-style:italic;">&Delta;&alpha;(s) / &Delta;&delta;<sub>e</sub>(s) = (&minus;0.04195s &minus; 1.384) / (s<sup>2</sup> + 1.6815s + 2.616)</p>
+
+      <p><strong>Phugoid / Long Period (throttle &rarr; forward speed):</strong></p>
+      <p style="margin:0.4rem 0 0.4rem 1.5rem; font-style:italic;">&Delta;U(s) / &Delta;&delta;<sub>T</sub>(s) = 12.9s / (s<sup>2</sup> + 0.02915s + 0.03326)</p>
+
+      <p><strong>Dutch Roll (rudder &rarr; roll rate):</strong></p>
+      <p style="margin:0.4rem 0 0.4rem 1.5rem; font-style:italic;">&Delta;P(s) / &Delta;&delta;<sub>r</sub>(s) = (0.03379s &minus; 0.3953) / (s<sup>2</sup> + 0.3794s + 0.7918)</p>
+
+      <p>Natural frequencies and damping ratios extracted from pole locations:</p>
+      <table style="border-collapse:collapse; font-size:0.9em; margin:0.6rem 0 0.8rem;">
+        <tr style="background:#004080; color:white;">
+          <th style="padding:6px 12px;">Mode</th>
+          <th style="padding:6px 12px;">Poles</th>
+          <th style="padding:6px 12px;">&omega;<sub>n</sub> (rad/s)</th>
+          <th style="padding:6px 12px;">&zeta;</th>
+        </tr>
+        <tr style="background:#f4faff;">
+          <td style="padding:6px 12px;">Short Period</td>
+          <td style="padding:6px 12px;">&minus;0.8404 &plusmn; j1.3819</td>
+          <td style="padding:6px 12px;"><strong>1.6144</strong></td>
+          <td style="padding:6px 12px;"><strong>0.5196</strong></td>
+        </tr>
+        <tr>
+          <td style="padding:6px 12px;">Phugoid</td>
+          <td style="padding:6px 12px;">&minus;0.01455 &plusmn; j0.18179</td>
+          <td style="padding:6px 12px;"><strong>0.1823</strong></td>
+          <td style="padding:6px 12px;"><strong>0.0798</strong></td>
+        </tr>
+        <tr style="background:#f4faff;">
+          <td style="padding:6px 12px;">Dutch Roll</td>
+          <td style="padding:6px 12px;">&minus;0.1897 &plusmn; j0.8694</td>
+          <td style="padding:6px 12px;"><strong>0.8899</strong></td>
+          <td style="padding:6px 12px;"><strong>0.2132</strong></td>
+        </tr>
+      </table>
+      <p>The phugoid mode&rsquo;s low damping (&zeta; = 0.0798) is characteristic of commercial transport aircraft &mdash; it produces slow, lightly-damped speed-altitude oscillations that pilots typically correct through autothrottle engagement. The short period&rsquo;s &zeta; = 0.5196 is within the acceptable MIL-SPEC range for Level 1 handling qualities.</p>
+    </div>
+  </section>
+
+  <!-- Phase 2: AOA PID -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:820px;">
+      <h2>Phase 2 &mdash; Angle of Attack PID Controller</h2>
+      <p>The closed-loop transfer function C(s) for the AOA loop combines the short period plant G(s), an actuator model G<sub>A</sub>(s) = 50/(s+50), and the PID controller G<sub>C</sub>(s) = (k<sub>d</sub>s<sup>2</sup> + k<sub>p</sub>s + k<sub>I</sub>)/s. To make the gain system solvable (3 unknowns, 3 equations), the actuator was treated as perfect (G<sub>A</sub> = 1), reducing the closed-loop characteristic equation to 3rd order.</p>
+
+      <p>Performance specifications mapped to desired pole locations:</p>
+      <ul>
+        <li>M<sub>p</sub> &le; 5% &nbsp;&rarr;&nbsp; &zeta;<sub>d</sub> = <strong>0.6901</strong></li>
+        <li>t<sub>s</sub> &lt; 10 s &nbsp;&rarr;&nbsp; &omega;<sub>nd</sub> = 3 / (t<sub>s</sub> &zeta;<sub>d</sub>) = <strong>0.4347 rad/s</strong></li>
+        <li>Third real pole: p<sub>3</sub> = &minus;10 &zeta;<sub>d</sub> &omega;<sub>nd</sub> &asymp; <strong>&minus;3</strong></li>
+      </ul>
+      <p>Desired characteristic equation: s<sup>3</sup> + 3.6s<sup>2</sup> + 1.989s + 0.567 = 0</p>
+      <p>Matching coefficients of the closed-loop denominator to the desired equation yielded:</p>
+      <p style="margin:0.4rem 0 0.2rem 1.5rem; font-style:italic;">k<sub>P</sub> = <strong>0.3718</strong> &nbsp;&nbsp; k<sub>I</sub> = <strong>&minus;0.4366</strong> &nbsp;&nbsp; k<sub>d</sub> = <strong>&minus;1.569</strong></p>
+      <p>The Final Value Theorem confirmed zero steady-state error: &Delta;&alpha;<sub>ss</sub> = lim<sub>s&rarr;0</sub> s &middot; C(s) &middot; (5/s) = <strong>5&deg;</strong>, exactly tracking the commanded step.</p>
+
+      <figure style="margin:1rem 0;">
+        <img src="Folder/DC8PID/fig01_aoa_response.png" alt="AOA step response with designed PID controller" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 1: AOA step response &mdash; 4% overshoot (spec met), settling time 15 s (spec not met), zero steady-state error</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Phase 3: Forward Speed PID -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:820px;">
+      <h2>Phase 3 &mdash; Forward Speed PID Controller (Throttle Input)</h2>
+      <p>The throttle-controlled forward speed loop used the phugoid transfer function as the plant, paired with an actuator G<sub>A</sub>(s) = 75/(s+75). The closed-loop characteristic equation expanded to 4th order. Because the actuator introduced a 4th pole at s = &minus;75 while only 3 PID gains are available, the system was underdetermined. The 4th pole was removed from the desired characteristic equation to make it solvable.</p>
+
+      <p>Performance specifications:</p>
+      <ul>
+        <li>M<sub>p</sub> &le; 7% &nbsp;&rarr;&nbsp; &zeta;<sub>d</sub> = <strong>0.6461</strong></li>
+        <li>t<sub>s</sub> &lt; 15 s &nbsp;&rarr;&nbsp; &omega;<sub>nd</sub> = <strong>0.3095 rad/s</strong>, p<sub>3</sub> &asymp; <strong>&minus;2</strong></li>
+      </ul>
+      <p>Solved PID gains: k<sub>d</sub> = &minus;0.075, k<sub>p</sub> = &minus;7.364&times;10<sup>&minus;3</sup>, k<sub>I</sub> = &minus;2.381&times;10<sup>&minus;3</sup></p>
+      <p>The Final Value Theorem confirmed &Delta;U<sub>ss</sub> = 0 &mdash; zero steady-state speed error. However, the extremely small gain magnitudes and the resulting large forward speed transients (visible in Fig. 2) indicated the plant model was not well-conditioned for this controller topology at this flight condition.</p>
+
+      <figure style="margin:1rem 0;">
+        <img src="Folder/DC8PID/fig02_forward_speed_response.png" alt="Forward speed response: uncontrolled vs PID controlled" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 2: Forward speed response &mdash; uncontrolled (top) vs PID controlled (bottom); very small gains produce large-amplitude transients</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Key Results -->
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Key Results</h2>
+      <table style="border-collapse:collapse; font-size:0.9em; margin:0.5rem 0 1.2rem;">
+        <tr style="background:#004080; color:white;">
+          <th style="padding:6px 12px;">Controller</th>
+          <th style="padding:6px 12px;">Max Overshoot</th>
+          <th style="padding:6px 12px;">Settling Time</th>
+          <th style="padding:6px 12px;">Steady-State Error</th>
+          <th style="padding:6px 12px;">Spec Met?</th>
+        </tr>
+        <tr style="background:#f4faff;">
+          <td style="padding:6px 12px;">AOA (elevator)</td>
+          <td style="padding:6px 12px;"><strong>4%</strong> (spec: &le;5%)</td>
+          <td style="padding:6px 12px;"><strong>15 s</strong> (spec: &lt;10 s)</td>
+          <td style="padding:6px 12px;"><strong>0&deg;</strong></td>
+          <td style="padding:6px 12px;">Overshoot &#10003; &nbsp; t<sub>s</sub> &#10007;</td>
+        </tr>
+        <tr>
+          <td style="padding:6px 12px;">Forward Speed (throttle)</td>
+          <td style="padding:6px 12px;">N/A &mdash; large transients</td>
+          <td style="padding:6px 12px;">Not achieved</td>
+          <td style="padding:6px 12px;"><strong>0 ft/s</strong></td>
+          <td style="padding:6px 12px;">Analytically &#10007;</td>
+        </tr>
+      </table>
+
+      <p><strong>PID Gain Summary:</strong></p>
+      <table style="border-collapse:collapse; font-size:0.9em; margin:0.5rem 0;">
+        <tr style="background:#004080; color:white;">
+          <th style="padding:6px 12px;">Loop</th>
+          <th style="padding:6px 12px;">k<sub>P</sub></th>
+          <th style="padding:6px 12px;">k<sub>I</sub></th>
+          <th style="padding:6px 12px;">k<sub>d</sub></th>
+        </tr>
+        <tr style="background:#f4faff;">
+          <td style="padding:6px 12px;">AOA (elevator)</td>
+          <td style="padding:6px 12px;">0.3718</td>
+          <td style="padding:6px 12px;">&minus;0.4366</td>
+          <td style="padding:6px 12px;">&minus;1.569</td>
+        </tr>
+        <tr>
+          <td style="padding:6px 12px;">Forward Speed (throttle)</td>
+          <td style="padding:6px 12px;">&minus;7.364&times;10<sup>&minus;3</sup></td>
+          <td style="padding:6px 12px;">&minus;2.381&times;10<sup>&minus;3</sup></td>
+          <td style="padding:6px 12px;">&minus;0.075</td>
+        </tr>
+      </table>
+    </div>
+    <div class="project-image-group">
+      <img src="Folder/DC8PID/fig01_aoa_response.png" alt="AOA PID step response" style="width:100%; border-radius:6px; margin-bottom:0.5rem;" />
+      <img src="Folder/DC8PID/fig02_forward_speed_response.png" alt="Forward speed PID response" style="width:100%; border-radius:6px;" />
+    </div>
+  </section>
+
+  <!-- Takeaways 2x2 Grid -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:860px;">
+      <h2>Key Takeaways</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-top:1rem;">
+
+        <div style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+          <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">PID gains can be solved analytically from characteristic polynomial matching.</p>
+          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">Mapping performance specs (M<sub>p</sub>, t<sub>s</sub>) to desired poles, then equating denominator coefficients of the closed-loop TF to those desired poles, yields exact PID gain values &mdash; no trial and error. This coefficient-matching method is the standard workflow for any design-to-spec controller problem.</p>
+        </div>
+
+        <div style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+          <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">Actuator dynamics can make the system of equations unsolvable.</p>
+          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">Including G<sub>A</sub>(s) = 75/(s+75) raised the characteristic equation to 4th order with only 3 unknowns, creating an underdetermined system. Removing the actuator pole made it tractable, but the resulting gain magnitudes were near-zero &mdash; signaling the actuator may not meaningfully affect this loop at sea level.</p>
+        </div>
+
+        <div style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+          <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">The phugoid mode&rsquo;s low damping is why autothrottle exists.</p>
+          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">The DC-8&rsquo;s phugoid damping &zeta; = 0.0798 means uncontrolled speed-altitude oscillations decay extremely slowly. This is normal for transport aircraft &mdash; the mode is stable but barely. Modern autothrottle and flight management systems exist precisely to regulate this otherwise sluggish response.</p>
+        </div>
+
+        <div style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+          <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">The integral gain guarantees zero steady-state error regardless of transient behavior.</p>
+          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">The Final Value Theorem confirmed &Delta;&alpha;<sub>ss</sub> = 5&deg; analytically &mdash; even though the settling time specification was missed, the error at steady state is guaranteed zero by the integrator. This distinction between transient and steady-state performance is fundamental: a controller can fail one spec while passing another.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 1rem 2rem 2rem;">
+    <p><a class="project-title-link" href="aerospace.html">&#8592; Back to Aerospace Projects</a></p>
   </section>
 
   <footer>
@@ -53,4 +280,3 @@
   </footer>
 </body>
 </html>
-
