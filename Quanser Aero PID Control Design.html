@@ -20,31 +20,313 @@
   <header class="page-header">
     <div class="header-content">
       <h1>Quanser Aero PID Control Design</h1>
-      <p>Team-based pitch-control PID design and validation on the Quanser Aero platform</p>
+      <p>AE 443 &middot; Experimental Dynamics &amp; Control Laboratory &middot; Spring 2026 &middot; ERAU</p>
     </div>
   </header>
 
+  <!-- Engineering Snapshot Card -->
+  <section style="background:#004080; color:white; padding:2rem;">
+    <div style="max-width:960px; margin:0 auto; display:flex; flex-wrap:wrap; gap:2rem; align-items:flex-start;">
+      <div style="flex:1; min-width:200px;">
+        <p style="font-size:0.75em; letter-spacing:0.07em; text-transform:uppercase; opacity:0.65; margin:0 0 0.35rem;">Role</p>
+        <p style="font-weight:600; font-size:1.05em; margin:0 0 0.25rem;">Team Member &mdash; PID Tuning &amp; System Identification</p>
+        <p style="font-size:0.88em; opacity:0.8; margin:0;">AE 443: Experimental Dynamics &amp; Control &middot; ERAU &middot; Spring 2026</p>
+      </div>
+      <div style="flex:1; min-width:200px;">
+        <p style="font-size:0.75em; letter-spacing:0.07em; text-transform:uppercase; opacity:0.65; margin:0 0 0.35rem;">Tools</p>
+        <p style="font-size:0.92em; line-height:1.75; margin:0;">MATLAB &middot; Simulink &middot; QUARC Real-Time Control<br>Transfer Function Analysis &middot; Bode / Frequency Response</p>
+      </div>
+      <div style="flex:1.6; min-width:240px;">
+        <p style="font-size:0.75em; letter-spacing:0.07em; text-transform:uppercase; opacity:0.65; margin:0 0 0.35rem;">Key Contributions</p>
+        <ul style="margin:0; padding-left:1.15rem; font-size:0.92em; line-height:1.85;">
+          <li>Tuned PID controller (k<sub>p</sub> = 8, k<sub>d</sub> = 3.1, k<sub>i</sub> = 5) achieving 4.12% overshoot against a sub-16.7% design spec</li>
+          <li>Identified second-order plant model from experimental step response: &zeta; = 0.0452, &omega;<sub>n</sub> = 2.18 rad/s</li>
+          <li>Derived analytical PID gains from pole-placement and verified phase margin improvement from 3.68&deg; to 87.5&deg;</li>
+          <li>Compared model-based and manually tuned controllers, demonstrating why empirical tuning outperformed the analytical design for tracking a square-wave command</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stat Boxes -->
+  <section style="background:#f4faff; border-bottom:1px solid #d0dde8; padding:1.5rem 2rem;">
+    <div style="max-width:960px; margin:0 auto; display:flex; flex-wrap:wrap; gap:1rem; justify-content:center;">
+      <div style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+        <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">4.12<span style="font-size:1rem; font-weight:400;">%</span></div>
+        <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Final PID Overshoot</div>
+      </div>
+      <div style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+        <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">1.18<span style="font-size:1rem; font-weight:400;">s</span></div>
+        <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Peak Time (Tuned PID)</div>
+      </div>
+      <div style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+        <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">87.5<span style="font-size:1rem; font-weight:400;">&deg;</span></div>
+        <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Phase Margin (PID Loop)</div>
+      </div>
+      <div style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+        <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">2.18<span style="font-size:1rem; font-weight:400;"> rad/s</span></div>
+        <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Identified &omega;<sub>n</sub></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- System Description -->
   <section class="project-row">
-    <div class="project-text">
-      <h2>Project Overview</h2>
+    <div class="project-text" style="max-width:820px;">
+      <h2>System Description &amp; Objectives</h2>
+      <p>The Quanser Aero is a two-degree-of-freedom laboratory platform that mimics the pitch and yaw dynamics of a helicopter body. Two brushless DC motors drive propellers mounted at the ends of a rigid arm; the resulting thrust forces create moments about the pitch axis (elevation) and the yaw axis (travel). The platform is instrumented with encoders on both axes and connects to a host PC through QUARC real-time software, which closes the control loop in hardware at millisecond sampling rates. Because the aerodynamic coupling, inertia, and motor dynamics are all present, the Quanser Aero provides a physically meaningful testbed for classic control techniques well beyond pure simulation.</p>
+      <p>This project focused exclusively on the pitch axis. The objectives were:</p>
       <ul>
-        <li>Worked in a three-person team to design and evaluate PID controllers for Quanser Aero pitch control.</li>
-        <li>Selected and tuned gains to satisfy transient response requirements.</li>
-        <li>Achieved 4.12% overshoot and 1.18 second peak time in performance validation.</li>
-        <li>Compared test responses to target specifications to confirm controller quality.</li>
+        <li>Characterize the open-loop pitch response and extract key transient parameters (&omega;<sub>n</sub>, &zeta;, settling time)</li>
+        <li>Systematically study the individual effects of proportional, derivative, and integral control action on response speed, damping, and steady-state error</li>
+        <li>Tune a PID controller to meet design requirements: peak pitch &le; 0.35 rad and peak time &lt; 1.1 s for a 0.3 rad square-wave command</li>
+        <li>Develop a second-order plant model from experimental data and use it to calculate PID gains analytically, then compare with the tuned controller</li>
+        <li>Evaluate closed-loop stability margins using Bode analysis in MATLAB</li>
       </ul>
-      <p><a class="project-title-link" href="aerospace.html">Back to Aerospace Projects</a></p>
     </div>
-    <div class="project-image-group">
-      <div class="project-image-note">Pitch-axis plant behavior characterization</div>
-      <div class="project-image-note">Controller gain tuning and refinement</div>
-      <div class="project-image-note">Measured vs required transient metrics</div>
+  </section>
+
+  <!-- Open-Loop Characterization -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:820px;">
+      <h2>Open-Loop System Characterization</h2>
+      <p>The experiment began with a unity-feedback step response on the uncompensated pitch axis to measure baseline dynamics. From the measured response, the following key points were identified: t<sub>peak</sub> = 2.692 s, t<sub>0</sub> = 0.998 s (step onset), y<sub>peak</sub> = 0.15033 rad, y<sub>ss</sub> = 0.0890 rad. These values were used to compute the standard second-order metrics:</p>
+      <table style="border-collapse:collapse; font-size:0.9em; margin:0.6rem 0 0.8rem;">
+        <tr style="background:#004080; color:white;">
+          <th style="padding:6px 14px;">Parameter</th>
+          <th style="padding:6px 14px;">Symbol</th>
+          <th style="padding:6px 14px;">Value</th>
+        </tr>
+        <tr style="background:#f4faff;">
+          <td style="padding:6px 14px;">Peak Time</td>
+          <td style="padding:6px 14px;">t<sub>p</sub></td>
+          <td style="padding:6px 14px;"><strong>1.694 s</strong></td>
+        </tr>
+        <tr>
+          <td style="padding:6px 14px;">Settling Time (5%)</td>
+          <td style="padding:6px 14px;">T<sub>s</sub></td>
+          <td style="padding:6px 14px;"><strong>13.63 s</strong></td>
+        </tr>
+        <tr style="background:#f4faff;">
+          <td style="padding:6px 14px;">Percentage Overshoot</td>
+          <td style="padding:6px 14px;">PO</td>
+          <td style="padding:6px 14px;"><strong>68.96%</strong></td>
+        </tr>
+        <tr>
+          <td style="padding:6px 14px;">Damping Ratio</td>
+          <td style="padding:6px 14px;">&zeta;</td>
+          <td style="padding:6px 14px;"><strong>0.1178</strong></td>
+        </tr>
+        <tr style="background:#f4faff;">
+          <td style="padding:6px 14px;">Natural Frequency</td>
+          <td style="padding:6px 14px;">&omega;<sub>n</sub></td>
+          <td style="padding:6px 14px;"><strong>1.865 rad/s</strong></td>
+        </tr>
+      </table>
+      <p>With a damping ratio of &zeta; = 0.1178, the uncompensated Quanser Aero pitch axis is highly underdamped. The 68.96% overshoot and 13.63-second settling time confirm that compensation is required before the platform can track any meaningful command.</p>
+      <figure style="margin:1rem 0;">
+        <img src="Folder/QuanserAero/fig01_unity_step_response.png" alt="Unity-feedback open-loop step response of Quanser Aero pitch axis" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 1 &amp; Table 1: Unity-feedback open-loop step response &mdash; PO = 68.96%, T<sub>s</sub> = 13.63 s, &omega;<sub>n</sub> = 1.865 rad/s</figcaption>
+      </figure>
     </div>
+  </section>
+
+  <!-- PID Gain Effects -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:820px;">
+      <h2>Effect of Each Control Action on Pitch Response</h2>
+
+      <h3 style="color:#004080; margin-top:1.2rem;">Proportional Gain</h3>
+      <p>Proportional gain k<sub>p</sub> was varied from 5 to 10 in steps of 2.5. Increasing k<sub>p</sub> decreased peak time slightly (from ~1.17 s at k<sub>p</sub> = 5 to ~1.1 s at k<sub>p</sub> = 10) but drove the percentage overshoot from ~20% up past 60%, with oscillations that failed to decay at the highest gain. Proportional control alone could not satisfy both the peak time and overshoot requirements simultaneously.</p>
+      <figure style="margin:1rem 0;">
+        <img src="Folder/QuanserAero/fig02_step_response_P_gains.png" alt="Pitch response for three proportional gains" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 3: Pitch response for k<sub>p</sub> &isin; {5, 7.5, 10} &mdash; faster response but rapidly growing overshoot</figcaption>
+      </figure>
+
+      <h3 style="color:#004080; margin-top:1.5rem;">Derivative Gain</h3>
+      <p>Derivative gain k<sub>d</sub> was varied from 4 to 8 in steps of 2, with k<sub>p</sub> held fixed. All three values produced zero percent overshoot &mdash; a significant improvement &mdash; but the tradeoff was increasing peak time (from ~1.6 s at k<sub>d</sub> = 4 to ~2.6 s at k<sub>d</sub> = 8). A secondary test at k<sub>d</sub> = 0.25 showed the expected fast but oscillatory response, confirming the damping role of the derivative term.</p>
+      <figure style="margin:1rem 0;">
+        <img src="Folder/QuanserAero/fig03_step_response_D_gains.png" alt="Pitch response for three derivative gains" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 4 &amp; 5: Pitch response for k<sub>d</sub> &isin; {4, 6, 8} and k<sub>d</sub> = 0.25 &mdash; derivative action eliminates overshoot but slows response</figcaption>
+      </figure>
+
+      <h3 style="color:#004080; margin-top:1.5rem;">Integral Gain</h3>
+      <p>With the square-wave input active, integral gain k<sub>i</sub> was varied from 3 to 6 in steps of 1.5. At k<sub>i</sub> = 3 the system tracked below the setpoint; at k<sub>i</sub> = 6 the steady-state error was nearly eliminated, but overshoot grew to ~0.4 rad and inter-cycle oscillations became pronounced. A tuned value of k<sub>i</sub> = 5 gave a steady-state pitch of 0.2976 rad (setpoint: 0.3 rad) with controlled overshoot.</p>
+      <figure style="margin:1rem 0;">
+        <img src="Folder/QuanserAero/fig04_step_response_D_tuned.png" alt="Pitch response for tuned derivative gain and integral gain sweep" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 6 &amp; 7: Tuned derivative gain (k<sub>d</sub> = 3, y<sub>peak</sub> = 0.2577 rad) and integral gain sweep (k<sub>i</sub> &isin; {3, 4.5, 6})</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Final PID Tuning -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:820px;">
+      <h2>Final PID Tuning &amp; Performance</h2>
+      <p>The three gains were tuned simultaneously on the hardware until the combined response met all design requirements. The final tuned gains were k<sub>p</sub> = 8, k<sub>d</sub> = 3.1, k<sub>i</sub> = 5. These values were chosen by first setting k<sub>p</sub> high enough for fast rise, then adding k<sub>d</sub> to suppress oscillations, and finally increasing k<sub>i</sub> incrementally to drive out the remaining steady-state error without reintroducing instability.</p>
+
+      <table style="border-collapse:collapse; font-size:0.9em; margin:0.6rem 0 0.8rem;">
+        <tr style="background:#004080; color:white;">
+          <th style="padding:6px 14px;">Parameter</th>
+          <th style="padding:6px 14px;">Value</th>
+          <th style="padding:6px 14px;">Specification</th>
+          <th style="padding:6px 14px;">Met?</th>
+        </tr>
+        <tr style="background:#f4faff;">
+          <td style="padding:6px 14px;">Peak Time (t<sub>p</sub>)</td>
+          <td style="padding:6px 14px;"><strong>1.18 s</strong></td>
+          <td style="padding:6px 14px;">&lt; 1.1 s</td>
+          <td style="padding:6px 14px;">&#10007; (marginal)</td>
+        </tr>
+        <tr>
+          <td style="padding:6px 14px;">Percentage Overshoot</td>
+          <td style="padding:6px 14px;"><strong>4.12%</strong></td>
+          <td style="padding:6px 14px;">Peak &le; 0.35 rad</td>
+          <td style="padding:6px 14px;">&#10003;</td>
+        </tr>
+        <tr style="background:#f4faff;">
+          <td style="padding:6px 14px;">Steady-State Value</td>
+          <td style="padding:6px 14px;"><strong>0.2976 rad</strong></td>
+          <td style="padding:6px 14px;">~0.3 rad</td>
+          <td style="padding:6px 14px;">&#10003;</td>
+        </tr>
+      </table>
+
+      <figure style="margin:1rem 0;">
+        <img src="Folder/QuanserAero/fig05_step_response_I_tuned_PID.png" alt="Pitch response with final tuned PID gains" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 8 &amp; 9: Tuned k<sub>i</sub> = 5 response (left) and final PID k<sub>p</sub> = 8, k<sub>d</sub> = 3.1, k<sub>i</sub> = 5 square-wave tracking (right) &mdash; 4.12% overshoot, y<sub>ss</sub> = 0.2976 rad</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Second-Order Approximation -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:820px;">
+      <h2>Second-Order System Identification &amp; Analytical PID Design</h2>
+      <p>A second independent step response was recorded under unity feedback to derive a second-order plant model. From the measured data (y<sub>peak</sub> = 0.4755 rad, y<sub>ss</sub> = 0.2546 rad, t<sub>p</sub> = 1.442 s), the following model parameters were calculated:</p>
+      <ul>
+        <li>Percentage Overshoot: <strong>86.75%</strong></li>
+        <li>Damping Ratio: <strong>&zeta; = 0.0452</strong></li>
+        <li>Natural Frequency: <strong>&omega;<sub>n</sub> = 2.18 rad/s</strong></li>
+      </ul>
+      <p>The resulting second-order transfer function approximating the Quanser Aero pitch axis is:</p>
+      <p style="margin:0.5rem 0 0.5rem 1.5rem; font-style:italic;">G(s) = 1.27332 / (s<sup>2</sup> + 0.10047s + 3.62403)</p>
+      <p>To validate the model, its simulated step response was overlaid with the experimental plant response. The agreement was strong: peak time error was only <strong>0.14%</strong>, percent overshoot error was <strong>3.48%</strong>, and steady-state difference was <strong>3.61%</strong>. The small errors confirm the approximation captures the dominant dynamics well, though higher-order effects (friction, actuator saturation) prevent a perfect match.</p>
+
+      <figure style="margin:1rem 0;">
+        <img src="Folder/QuanserAero/fig06_2nd_order_step_model.png" alt="Step response of second-order approximation model" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 11: Simulated step response of the identified second-order model &mdash; captures peak time and overshoot within 3.5%</figcaption>
+      </figure>
+
+      <figure style="margin:1rem 0;">
+        <img src="Folder/QuanserAero/fig_combined_model_plant.png" alt="Combined comparison of plant and second-order model responses" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 14: Overlaid plant (hardware) and second-order model responses &mdash; steady-state error between responses is 0.0092 rad (3.61%)</figcaption>
+      </figure>
+
+      <h3 style="color:#004080; margin-top:1.5rem;">Analytically Calculated PID Gains</h3>
+      <p>Using the identified transfer function coefficients (a = 1.27332, b = 0.10047, c = 3.62403) and a target of critically damped response (&zeta;<sub>d</sub> = 1, &omega;<sub>nd</sub> = 2 rad/s) with integrator zero p<sub>0</sub> = 1, the three PID gains were solved analytically:</p>
+      <ul>
+        <li>k<sub>d</sub> = (2&zeta;<sub>d</sub>&omega;<sub>nd</sub> + p<sub>0</sub> &minus; b) / a = <strong>3.847</strong></li>
+        <li>k<sub>p</sub> = (&omega;<sub>nd</sub><sup>2</sup> + 2&zeta;<sub>d</sub>&omega;<sub>nd</sub>p<sub>0</sub> &minus; c) / a = <strong>3.437</strong></li>
+        <li>k<sub>i</sub> = &omega;<sub>nd</sub><sup>2</sup>p<sub>0</sub> / a = <strong>3.141</strong></li>
+      </ul>
+      <p>For hardware testing, the workbook solution values (k<sub>p</sub> = 3.3739, k<sub>d</sub> = 3.7484, k<sub>i</sub> = 3.06) were used. These produced a critically damped square-wave response with 0% overshoot and a peak time of 4.64 s &mdash; considerably slower than the tuned controller due to the conservative critical damping target and the limitations of the second-order approximation.</p>
+
+      <figure style="margin:1rem 0;">
+        <img src="Folder/QuanserAero/fig07_step_response_calc_PID.png" alt="Pitch response using analytically calculated PID gains" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 13: Square-wave response using calculated PID gains (k<sub>p</sub> = 3.3739, k<sub>d</sub> = 3.7484, k<sub>i</sub> = 3.06) &mdash; 0% overshoot but sluggish tracking</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Bode Analysis -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:820px;">
+      <h2>Frequency-Domain Analysis &amp; Stability Margins</h2>
+      <p>Bode plots were generated in MATLAB for both the open-loop plant and the PID-compensated open loop. The plant transfer function G(s) = &omega;<sub>n</sub><sup>2</sup> / (s<sup>2</sup> + 2&zeta;&omega;<sub>n</sub>s + &omega;<sub>n</sub><sup>2</sup>) was combined with the PID controller C(s) = k<sub>p</sub> + k<sub>i</sub>/s + k<sub>d</sub>s, and the <code>margin()</code> function was used to extract gain margins, phase margins, and bandwidth.</p>
+
+      <table style="border-collapse:collapse; font-size:0.9em; margin:0.6rem 0 0.8rem;">
+        <tr style="background:#004080; color:white;">
+          <th style="padding:6px 14px;">System</th>
+          <th style="padding:6px 14px;">Phase Margin</th>
+          <th style="padding:6px 14px;">Gain Margin</th>
+          <th style="padding:6px 14px;">Bandwidth</th>
+        </tr>
+        <tr style="background:#f4faff;">
+          <td style="padding:6px 14px;">Open Loop (plant only)</td>
+          <td style="padding:6px 14px;"><strong>3.68&deg;</strong></td>
+          <td style="padding:6px 14px;">&infin;</td>
+          <td style="padding:6px 14px;">N/A</td>
+        </tr>
+        <tr>
+          <td style="padding:6px 14px;">PID Compensated</td>
+          <td style="padding:6px 14px;"><strong>87.5&deg;</strong></td>
+          <td style="padding:6px 14px;">&infin;</td>
+          <td style="padding:6px 14px;"><strong>19.32 rad/s</strong></td>
+        </tr>
+      </table>
+
+      <p>The open-loop plant has a phase margin of only 3.68&deg;, placing it right at the edge of instability &mdash; consistent with the severe oscillations seen in the open-loop step response. Adding the PID controller drives the phase margin to 87.5&deg;, a dramatic improvement indicating robust stability with ample damping. The gain margin is infinite for both cases because the phase never crosses &minus;180&deg; in the frequency range of interest.</p>
+
+      <figure style="margin:1rem 0;">
+        <img src="Folder/QuanserAero/fig_bode_open_loop.png" alt="Open-loop Bode plot of Quanser Aero plant" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 15: Open-loop Bode plot &mdash; phase margin = 3.68&deg;, barely stable; gain margin = &infin;</figcaption>
+      </figure>
+
+      <figure style="margin:1rem 0;">
+        <img src="Folder/QuanserAero/fig_bode_pid_controlled.png" alt="Bode plot of PID-compensated open loop" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 16: PID-compensated open-loop Bode plot &mdash; phase margin improved to 87.5&deg;, bandwidth = 19.32 rad/s</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- State-Space Context -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:820px;">
+      <h2>State-Space Formulation &amp; System Properties</h2>
+      <p>The identified second-order transfer function was converted to state-space form by defining states x<sub>1</sub> = y (pitch angle) and x<sub>2</sub> = &dot;y (pitch rate). The resulting matrices are:</p>
+      <p style="margin:0.4rem 0 0.2rem 1.5rem; font-style:italic;">A = [[0, 1], [&minus;&omega;<sub>n</sub><sup>2</sup>, &minus;2&zeta;&omega;<sub>n</sub>]] &nbsp;&nbsp; B = [[0], [&omega;<sub>n</sub><sup>2</sup>]] &nbsp;&nbsp; C = [1, 0] &nbsp;&nbsp; D = [0]</p>
+      <p>The controllability matrix P<sub>c</sub> has determinant &minus;&omega;<sub>n</sub><sup>4</sup> &ne; 0 and rank 2, confirming the system is <strong>fully controllable</strong>. The observability matrix P<sub>o</sub> = I<sub>2&times;2</sub>, so det(P<sub>o</sub>) = 1 and rank = 2, confirming <strong>full observability</strong>. Although the system satisfies the necessary conditions for state-feedback control, PID remains the more practical choice here: the plant is simple enough that the additional complexity of a full state observer is not justified.</p>
+    </div>
+  </section>
+
+  <!-- Key Takeaways -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:860px;">
+      <h2>Key Takeaways</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-top:1rem;">
+
+        <div style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+          <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">Manual tuning outperformed model-based design for tracking a square-wave command.</p>
+          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">The analytically calculated gains produced 0% overshoot but tracked the command too slowly (t<sub>p</sub> = 4.64 s vs. 1.18 s for the tuned controller). The second-order model was adequate for linear analysis but missed friction, actuator limits, and higher-order dynamics that empirical tuning naturally compensated for.</p>
+        </div>
+
+        <div style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+          <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">PID compensation transformed a nearly unstable plant into a robustly stable closed loop.</p>
+          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">The open-loop Quanser Aero pitch axis had a phase margin of only 3.68&deg; &mdash; one small perturbation from instability. Adding the PID controller raised the phase margin to 87.5&deg;, transforming a poorly damped (&zeta; = 0.0452) system into one with reliable, repeatable square-wave tracking.</p>
+        </div>
+
+        <div style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+          <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">Each gain has a distinct, quantifiable trade-off between speed and stability.</p>
+          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">Increasing k<sub>p</sub> alone pushed overshoot past 60%; increasing k<sub>d</sub> alone pushed peak time past 2.6 s; increasing k<sub>i</sub> alone caused oscillations at the square-wave transitions. The final tuned combination (k<sub>p</sub> = 8, k<sub>d</sub> = 3.1, k<sub>i</sub> = 5) balanced all three effects to satisfy both speed and damping requirements simultaneously.</p>
+        </div>
+
+        <div style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+          <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">A second-order step-response model can capture dominant dynamics with &lt;4% error.</p>
+          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">The identified transfer function G(s) = 1.27332 / (s<sup>2</sup> + 0.10047s + 3.62403) reproduced the hardware step response with 0.14% peak-time error and 3.48% overshoot error. This validates the second-order approximation method as a fast, practical tool for controller pre-design, even when the real plant contains unmodeled nonlinearities.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 1rem 2rem 2rem;">
+    <p><a class="project-title-link" href="aerospace.html">&#8592; Back to Aerospace Projects</a></p>
   </section>
 
   <footer>
     <div class="footer-container">
-      <span>Phone: (215) 397–5806</span>
+      <span>Phone: (215) 397&#8211;5806</span>
       <span>Email: <a href="mailto:bharada3@my.erau.edu">bharada3@my.erau.edu</a></span>
       <span><a href="https://linkedin.com/in/anuranan-bharadwaj" target="_blank">LinkedIn</a></span>
       <span><a href="https://github.com/anuranan10" target="_blank">GitHub</a></span>
@@ -53,4 +335,3 @@
   </footer>
 </body>
 </html>
-
