@@ -36,9 +36,18 @@
       </ul>
     </div>
     <div class="project-image-group">
-      <img src="Folder/AE443/lab03/fig01.png" alt="Simulated PV step response — ideal position tracking, tₚ=0.194 s, PO=5%" />
-      <img src="Folder/AE443/lab03/fig02.png" alt="Filtered PV simulated step response showing effect of low-pass filter on velocity feedback" />
-      <img src="Folder/AE443/lab03/fig03.png" alt="Implemented PV step response on hardware — tₚ=0.170 s, PO=7.86%, ess=0.004 rad" />
+      <figure style="margin:0; text-align:center;">
+        <img src="Folder/AE443/lab03/fig01.png" alt="Simulated PV step response — ideal position tracking, tₚ=0.194 s, PO=5%" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Figure 1: Simulated PV step response &mdash; t<sub>p</sub>=0.194 s, PO=5%</figcaption>
+      </figure>
+      <figure style="margin:0; text-align:center;">
+        <img src="Folder/AE443/lab03/fig02.png" alt="Filtered PV simulated step response showing effect of low-pass filter on velocity feedback" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Figure 2: Filtered PV simulated step response &mdash; low-pass filter effect on velocity feedback</figcaption>
+      </figure>
+      <figure style="margin:0; text-align:center;">
+        <img src="Folder/AE443/lab03/fig03.png" alt="Implemented PV step response on hardware — tₚ=0.170 s, PO=7.86%, ess=0.004 rad" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Figure 3: Hardware PV step response &mdash; t<sub>p</sub>=0.170 s, PO=7.86%</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -64,9 +73,18 @@
       <p>Since a PV controller makes the position loop a Type-1 system, a ramp input produces a predictable non-zero steady-state error e<sub>ss</sub> = R(1 + Kk<sub>v</sub>) / (Kk<sub>p</sub>) = 0.214 rad. Adding an integral gain k<sub>i</sub> = 38.9 V/(rad&#183;s) upgraded the controller to PIV, eliminating this error by continuously accumulating and correcting residual position deviation.</p>
     </div>
     <div class="project-image-group">
-      <img src="Folder/AE443/lab03/fig04.png" alt="PV controller — simulated ramp response, ess=0.213 rad" />
-      <img src="Folder/AE443/lab03/fig05.png" alt="PV controller — measured ramp response on hardware, ess=0.186 rad" />
-      <img src="Folder/AE443/lab03/fig06.png" alt="PIV controller — simulated ramp response with near-zero steady-state error, ess=0.005 rad" />
+      <figure style="margin:0; text-align:center;">
+        <img src="Folder/AE443/lab03/fig04.png" alt="PV controller — simulated ramp response, ess=0.213 rad" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Figure 4: PV controller &mdash; simulated ramp response, e<sub>ss</sub>=0.213 rad</figcaption>
+      </figure>
+      <figure style="margin:0; text-align:center;">
+        <img src="Folder/AE443/lab03/fig05.png" alt="PV controller — measured ramp response on hardware, ess=0.186 rad" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Figure 5: PV controller &mdash; hardware ramp response, e<sub>ss</sub>=0.186 rad</figcaption>
+      </figure>
+      <figure style="margin:0; text-align:center;">
+        <img src="Folder/AE443/lab03/fig06.png" alt="PIV controller — simulated ramp response with near-zero steady-state error, ess=0.005 rad" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Figure 6: PIV controller &mdash; simulated ramp response, e<sub>ss</sub>=0.005 rad</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -90,7 +108,10 @@
       </ul>
     </div>
     <div class="project-image-group">
-      <img src="Folder/AE443/lab03/fig07.png" alt="PIV controller — measured ramp response on hardware, ess=0.007 rad (97% reduction vs PV)" />
+      <figure style="margin:0; text-align:center;">
+        <img src="Folder/AE443/lab03/fig07.png" alt="PIV controller — measured ramp response on hardware, ess=0.007 rad (97% reduction vs PV)" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Figure 7: PIV controller &mdash; hardware ramp response, e<sub>ss</sub>=0.007 rad (97% reduction vs PV)</figcaption>
+      </figure>
     </div>
   </section>
 
