@@ -36,9 +36,9 @@
       </ul>
     </div>
     <div class="project-image-group">
-      <img src="Folder/AE443/lab04/fig02.png" alt="Open-loop α response (Fig. 1)" />
-      <img src="Folder/AE443/lab04/fig05.png" alt="Closed-loop α tracking 2° (Fig. 4)" />
-      <img src="Folder/AE443/lab04/fig08.jpeg" alt="Disturbance rejection — PI on (Fig. 7)" />
+      <img src="Folder/AE443/lab04/fig01.jpeg" alt="Open-loop α response with 63.2% cursor annotation — τ=0.87 s identified experimentally" />
+      <img src="Folder/AE443/lab04/fig02.png" alt="Open-loop α (alpha) — transfer function model vs. system output, showing model–hardware discrepancy" />
+      <img src="Folder/AE443/lab04/fig03.png" alt="Open-loop θ (theta) — servo angle continuously increasing under constant voltage input" />
     </div>
   </section>
 
@@ -65,9 +65,10 @@
       <p>The experimental time constant was identified from the open-loop response: &tau;<sub>exp</sub> = 0.87 s at the 63.2% crossing, compared to the theoretical 0.9 s &mdash; close agreement despite the gyroscope&rsquo;s more complex dynamics.</p>
     </div>
     <div class="project-image-group">
-      <img src="Folder/AE443/lab04/fig03.png" alt="Open-loop theta response (Fig. 2)" />
-      <img src="Folder/AE443/lab04/fig07.jpeg" alt="Closed-loop voltage response (Fig. 6)" />
-      <img src="Folder/AE443/lab04/fig01.jpeg" alt="Closed-loop TF derivation" />
+      <img src="Folder/AE443/lab04/fig04.jpeg" alt="Open-loop voltage input — constant 0.5 V applied to identify gyroscope time constant" />
+      <img src="Folder/AE443/lab04/fig05.png" alt="Closed-loop α — PI controller tracking 2° reference, ess=0.003°" />
+      <img src="Folder/AE443/lab04/fig06.jpeg" alt="Closed-loop θ — servo angle ramping to generate gyroscopic torque" />
+      <img src="Folder/AE443/lab04/fig07.jpeg" alt="Closed-loop voltage — sinusoidal PI control effort reflecting gyroscopic coupling" />
     </div>
   </section>
 
@@ -83,9 +84,14 @@
       </ul>
     </div>
     <div class="project-image-group">
-      <img src="Folder/AE443/lab04/fig15.jpeg" alt="Open-loop disturbance — α (Fig. 10)" />
-      <img src="Folder/AE443/lab04/fig14.jpeg" alt="Closed-loop α converged to 2° (Fig. 13)" />
-      <img src="Folder/AE443/lab04/fig11.jpeg" alt="Routh-Hurwitz stability table" />
+      <img src="Folder/AE443/lab04/fig14.jpeg" alt="Closed-loop α with data cursor — steady-state value 1.997°, ess=0.003°" />
+      <img src="Folder/AE443/lab04/fig08.jpeg" alt="Closed-loop with disturbance — α response: PI control holds heading near 0° during base rotation" />
+      <img src="Folder/AE443/lab04/fig09.jpeg" alt="Closed-loop with disturbance — θ transient during base disturbance, servo actively counteracting" />
+      <img src="Folder/AE443/lab04/fig10.jpeg" alt="Closed-loop with disturbance — voltage control effort responding dynamically to reject disturbance" />
+      <img src="Folder/AE443/lab04/fig11.jpeg" alt="Open-loop with disturbance — α deflection spike to ±7.4° with no active control" />
+      <img src="Folder/AE443/lab04/fig12.jpeg" alt="Open-loop with disturbance — θ oscillates and settles at new position without feedback correction" />
+      <img src="Folder/AE443/lab04/fig13.jpeg" alt="Open-loop with disturbance — voltage remains constant at 0 V, no corrective action" />
+      <img src="Folder/AE443/lab04/fig15.jpeg" alt="Open-loop disturbance — α annotated with peak 7.36° and trough -7.18°, 20 s passive damping" />
     </div>
   </section>
 
@@ -98,11 +104,6 @@
         <li><strong>Open-loop model accuracy matters less when you have good feedback.</strong> The 66.8% discrepancy between the open-loop model and measured response did not prevent the PI controller from achieving near-zero tracking error &mdash; demonstrating the robustness that feedback control provides over model-dependent open-loop approaches.</li>
         <li>Gained experience designing PI controllers for a multi-physics system involving gyroscopic precession, applying the Routh-Hurwitz stability criterion analytically, and validating controller performance experimentally under both tracking and disturbance conditions.</li>
       </ul>
-    </div>
-    <div class="project-image-group">
-      <div class="project-image-note">PI vs open-loop disturbance comparison</div>
-      <div class="project-image-note">Base rotation required to sustain heading</div>
-      <div class="project-image-note">Closed-loop TF pole-zero analysis</div>
     </div>
   </section>
 

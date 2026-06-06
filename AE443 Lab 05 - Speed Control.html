@@ -36,9 +36,9 @@
       </ul>
     </div>
     <div class="project-image-group">
-      <img src="Folder/AE443/lab05/fig06.jpeg" alt="Bode diagram — gain and phase margins (Fig. 6)" />
-      <img src="Folder/AE443/lab05/fig01.png" alt="PI step response — simulation (Fig. 1)" />
-      <img src="Folder/AE443/lab05/fig04.png" alt="Lead step response — simulation (Fig. 4)" />
+      <img src="Folder/AE443/lab05/fig06.jpeg" alt="Bode diagram of augmented plant Pᵢ(s) — infinite gain margin, phase margin 87.8° at 1.53 rad/s" />
+      <img src="Folder/AE443/lab05/fig01.png" alt="PI controller — simulated step response, tₚ=0.04 s, PO=4.4%, zero steady-state error" />
+      <img src="Folder/AE443/lab05/fig04.png" alt="Lead compensator — simulated step response, tₚ=0.04 s, PO=2.0%, zero steady-state error" />
     </div>
   </section>
 
@@ -59,11 +59,6 @@
     <div class="project-text">
       <h2>Frequency-Domain Analysis</h2>
       <p>The plant including an integrator, P<sub>i</sub>(s) = K / [s(&tau;s+1)], was analyzed in frequency domain. The magnitude response is |P<sub>i</sub>(j&omega;)| = K / [&omega;&radic;(1 + (&tau;&omega;)&#178;)], which rolls off at &minus;20 dB/decade from the origin pole, steepening to &minus;40 dB/decade above &omega; = 1/&tau; = 39.4 rad/s. The phase starts at &minus;90&#176; and asymptotes toward &minus;180&#176; but never reaches it &mdash; giving the system an <strong>infinite gain margin</strong>. The <strong>phase margin was 87.8&#176;</strong> at the gain crossover of 1.53 rad/s, indicating excellent stability robustness. Since one pole sits exactly at the origin, P<sub>i</sub>(s) is marginally stable.</p>
-    </div>
-    <div class="project-image-group">
-      <img src="Folder/AE443/lab05/fig02.jpeg" alt="PI step response — hardware (Fig. 2)" />
-      <img src="Folder/AE443/lab05/fig05.jpeg" alt="Lead step response — hardware (Fig. 5)" />
-      <img src="Folder/AE443/lab05/fig03.jpeg" alt="PI signal noise analysis (Fig. 3)" />
     </div>
   </section>
 
@@ -86,9 +81,9 @@
       </ul>
     </div>
     <div class="project-image-group">
-      <div class="project-image-note">Gain and phase margin annotations</div>
-      <div class="project-image-note">PI vs lead overshoot comparison</div>
-      <div class="project-image-note">Ripple analysis &mdash; measured vs theoretical</div>
+      <img src="Folder/AE443/lab05/fig02.jpeg" alt="PI controller — hardware step response, tₚ=0.034 s, PO=23.8% due to encoder noise" />
+      <img src="Folder/AE443/lab05/fig03.jpeg" alt="PI controller — steady-state speed signal showing 1.16 rad/s peak-to-peak encoder noise ripple" />
+      <img src="Folder/AE443/lab05/fig05.jpeg" alt="Lead compensator — hardware step response, PO=44.4% driven by derivative amplification of encoder noise" />
     </div>
   </section>
 
@@ -112,12 +107,6 @@ legend('Setpoint', 'Measured')
 % Steady-state error over settling window
 index = (time >= 4.9) & (time <= 9.9);
 e_ss  = mean(r(index)) - mean(y(index));  % ≈ -3.17e-5 rad/s (PI)</code></pre>
-      <!-- full MATLAB code (AE443 Lab 5 Appendix A) to be embedded here -->
-    </div>
-    <div class="project-image-group">
-      <div class="project-image-note">Full script &mdash; Lab 5 Appendix A</div>
-      <div class="project-image-note">PI controller Simulink speed loop</div>
-      <div class="project-image-note">Lead compensator block configuration</div>
     </div>
   </section>
 
@@ -130,11 +119,6 @@ e_ss  = mean(r(index)) - mean(y(index));  % ≈ -3.17e-5 rad/s (PI)</code></pre>
         <li><strong>Controller selection depends on the physical system, not just the model.</strong> For this servo application, PI was more practical than lead despite lead&rsquo;s theoretical transient advantage, because PI is less sensitive to noise &mdash; a lesson that applies broadly to industrial motor drives and flight control actuators.</li>
         <li>Completed the full frequency-domain control design cycle: Bode analysis &rarr; stability margin verification &rarr; controller synthesis &rarr; simulation validation &rarr; hardware implementation &rarr; performance characterization and explanation.</li>
       </ul>
-    </div>
-    <div class="project-image-group">
-      <div class="project-image-note">Simulation vs hardware performance gap</div>
-      <div class="project-image-note">Phase margin visualization on Bode plot</div>
-      <div class="project-image-note">Encoder noise effect on lead control</div>
     </div>
   </section>
 

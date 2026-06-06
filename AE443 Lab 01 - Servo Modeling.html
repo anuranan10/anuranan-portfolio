@@ -36,9 +36,8 @@
       </ul>
     </div>
     <div class="project-image-group">
-      <img src="Folder/AE443/lab01/fig01.jpeg" alt="Voltage & speed — bump test (Fig. 1)" />
-      <img src="Folder/AE443/lab01/fig07.jpeg" alt="Best-fit validation K=1.68, τ=0.044 (Fig. 7)" />
-      <img src="Folder/AE443/lab01/fig06.jpeg" alt="Simulink SRV02 model block diagram" />
+      <img src="Folder/AE443/lab01/fig01.jpeg" alt="Bump test — voltage and rotational speed vs. time, K=1.53, τ=0.0253" />
+      <img src="Folder/AE443/lab01/fig08.png" alt="63.2% criterion diagram for time constant identification from step response" />
     </div>
   </section>
 
@@ -63,9 +62,9 @@
       <p>The time constant was identified as the time elapsed between the step onset and the point where the response reached 63.2% of its final steady-state value. Both parameters were then entered into the Simulink model and the simulated output compared visually against the measured response. Multiple (K, &tau;) pairs were tested until the curves converged.</p>
     </div>
     <div class="project-image-group">
-      <img src="Folder/AE443/lab01/fig03.jpeg" alt="Validation K=0.8, τ=0.06 (Fig. 3)" />
-      <img src="Folder/AE443/lab01/fig04.jpeg" alt="Validation K=1.25, τ=0.2 (Fig. 4)" />
-      <img src="Folder/AE443/lab01/fig05.jpeg" alt="Nominal model overlay (Fig. 5)" />
+      <img src="Folder/AE443/lab01/fig02.jpeg" alt="Model validation iteration — K=1.0, τ=0.1, simulated vs. measured speed" />
+      <img src="Folder/AE443/lab01/fig03.jpeg" alt="Model validation iteration — K=0.8, τ=0.06, simulated vs. measured speed" />
+      <img src="Folder/AE443/lab01/fig04.jpeg" alt="Model validation iteration — K=1.25, τ=0.2, simulated vs. measured speed" />
     </div>
   </section>
 
@@ -87,9 +86,9 @@
       </ul>
     </div>
     <div class="project-image-group">
-      <div class="project-image-note">Parameter comparison table (Table 1)</div>
-      <div class="project-image-note">K effect on steady-state speed magnitude</div>
-      <div class="project-image-note">&tau; effect on rise time</div>
+      <img src="Folder/AE443/lab01/fig05.jpeg" alt="Model validation — K=1.53, τ=0.0253 (nominal), simulated vs. measured speed" />
+      <img src="Folder/AE443/lab01/fig06.jpeg" alt="Model validation — K=1.7866, τ=0.048 (bump test result), simulated vs. measured speed" />
+      <img src="Folder/AE443/lab01/fig07.jpeg" alt="Best-fit validated model — K=1.68, τ=0.044, near-exact overlay of simulated and measured speed" />
     </div>
   </section>
 
@@ -112,12 +111,6 @@ xlabel('Time (s)');  ylabel('Rotational Speed (rad/s)');
 % Bump test gain and time constant
 K_eb   = (y_ss - y_0) / (u_max - u_min);     % = 1.7866 (rad/s)/V
 tau_eb = t_63pct - t_step_onset;             % = 0.048 s</code></pre>
-      <!-- full MATLAB code (AE443 Lab 1 Appendix B) to be embedded here -->
-    </div>
-    <div class="project-image-group">
-      <div class="project-image-note">Full script &mdash; Lab 1 Appendix B</div>
-      <div class="project-image-note">Simulink model: q_srv02_mdl</div>
-      <div class="project-image-note">Workspace .mat data files</div>
     </div>
   </section>
 
@@ -130,11 +123,6 @@ tau_eb = t_63pct - t_step_onset;             % = 0.048 s</code></pre>
         <li><strong>Model validation is iterative.</strong> Overlaying simulation and measurement, then adjusting parameters until they match, is the standard workflow in model-based design &mdash; used in aerospace autopilot development, robotics, and automotive control systems.</li>
         <li>Gained foundational experience with MATLAB/Simulink hardware-in-the-loop testing and the Quanser QUARC interface &mdash; the platform used in ERAU&rsquo;s flight control and robotics research programs.</li>
       </ul>
-    </div>
-    <div class="project-image-group">
-      <div class="project-image-note">63.2% criterion diagram</div>
-      <div class="project-image-note">Nominal vs validated model overlay</div>
-      <div class="project-image-note">SRV02 gear train hardware</div>
     </div>
   </section>
 

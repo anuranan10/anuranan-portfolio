@@ -35,11 +35,6 @@
         <li>Observe how increasing Reynolds number delays flow separation from the cylinder surface</li>
       </ul>
     </div>
-    <div class="project-image-group">
-      <div class="project-image-note">Cylinder model in test section</div>
-      <div class="project-image-note">Static pressure port and rotation mechanism</div>
-      <div class="project-image-note">Pressure distribution measurement setup</div>
-    </div>
   </section>
 
   <section class="project-row">
@@ -63,9 +58,8 @@
       <p style="margin:0.5rem 0 0.5rem 1.5rem; font-style:italic; font-size:1.05em;">C<sub>d</sub> = &int;<sub>0</sub><sup>&pi;</sup> C<sub>p</sub> cos(&theta;) d&theta;</p>
     </div>
     <div class="project-image-group">
-      <img src="Folder/AE315/lab02/fig01.jpeg" alt="Cp vs Cylinder Angle (Fig. 1)" />
-      <img src="Folder/AE315/lab02/fig02.jpeg" alt="Cd vs Reynolds Number (Fig. 2)" />
-      <div class="project-image-note">Flow separation schematic</div>
+      <img src="Folder/AE315/lab02/fig01.jpeg" alt="Cp vs cylinder angle at 10 m/s and 15 m/s compared to potential flow" />
+      <img src="Folder/AE315/lab02/fig02.jpeg" alt="Drag coefficient vs Reynolds number — experimental points at 10 and 15 m/s on Cd-Re curve" />
     </div>
   </section>
 
@@ -78,11 +72,6 @@
         <li>At 15 m/s, flow remained attached slightly longer than at 10 m/s &mdash; a direct demonstration that higher Reynolds number delays separation, reducing the low-pressure wake region.</li>
         <li><strong>C<sub>d</sub> = 1.31 at 10 m/s and C<sub>d</sub> = 1.42 at 15 m/s</strong> &mdash; drag coefficient increased with speed because a wider turbulent wake raised the pressure drag contribution.</li>
       </ul>
-    </div>
-    <div class="project-image-group">
-      <div class="project-image-note">Separation point comparison at 10 vs 15 m/s</div>
-      <div class="project-image-note">C<sub>d</sub> uncertainty summary</div>
-      <div class="project-image-note">Subcritical flow regime annotation</div>
     </div>
   </section>
 
@@ -99,12 +88,6 @@ Cp_potential = 1 - 4 .* sind(angles).^2;
 % Drag coefficient via trapezoidal integration
 theta = deg2rad(angles);
 Cd_10 = trapz(theta, Cp_10 .* cos(theta));  % = 1.3055</code></pre>
-      <!-- full MATLAB code (AE315_LAB2.m) to be embedded here -->
-    </div>
-    <div class="project-image-group">
-      <div class="project-image-note">Full script &mdash; AE315_LAB2.m</div>
-      <div class="project-image-note">Angular sweep data (.mat files)</div>
-      <div class="project-image-note">Uncertainty propagation formulas</div>
     </div>
   </section>
 
@@ -117,11 +100,6 @@ Cd_10 = trapz(theta, Cp_10 .* cos(theta));  % = 1.3055</code></pre>
         <li><strong>Reynolds number controls separation.</strong> Even the modest difference between 10 and 15 m/s produced measurable differences in flow attachment &mdash; reinforcing why scale effects must be considered when interpreting wind tunnel data for full-size aircraft.</li>
         <li>Developed practical skills in angular pressure acquisition, numerical integration of surface distributions, and structured comparison of experimental versus analytical aerodynamic predictions.</li>
       </ul>
-    </div>
-    <div class="project-image-group">
-      <div class="project-image-note">Pressure-drag integration diagram</div>
-      <div class="project-image-note">Stagnation-to-separation pressure trace</div>
-      <div class="project-image-note">Re effect on separation angle</div>
     </div>
   </section>
 

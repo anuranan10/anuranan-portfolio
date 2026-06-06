@@ -36,9 +36,7 @@
       </ul>
     </div>
     <div class="project-image-group">
-      <div class="project-image-note">NACA 4412 with 18 pressure taps</div>
-      <div class="project-image-note">Traversing wake survey probe</div>
-      <div class="project-image-note">Airfoil mounted in wind tunnel</div>
+      <img src="Folder/AE315/lab03/fig01.jpeg" alt="NACA 4412 airfoil diagram showing the 18 numbered pressure tap locations along upper and lower surfaces" />
     </div>
   </section>
 
@@ -64,9 +62,8 @@
       <p>Drag was derived from the wake momentum deficit &mdash; a method that captures viscous drag directly from the velocity profile downstream and requires no physical force sensor. Pitching moments about both the leading edge and quarter-chord were integrated from the same pressure data, and all results were compared against panel code (potential flow) predictions.</p>
     </div>
     <div class="project-image-group">
-      <img src="Folder/AE315/lab03/fig02.png" alt="Wake velocity profiles (Fig. 2)" />
-      <img src="Folder/AE315/lab03/fig03.png" alt="Cp distribution — all AoA (Fig. 3)" />
-      <div class="project-image-note">Panel code vs experimental overlay</div>
+      <img src="Folder/AE315/lab03/fig02.png" alt="Wake velocity profiles at six angles of attack from -3 to 12 degrees" />
+      <img src="Folder/AE315/lab03/fig03.png" alt="Pressure coefficient distributions along the NACA 4412 chord at all angles of attack, experimental vs panel code" />
     </div>
   </section>
 
@@ -82,9 +79,9 @@
       </ul>
     </div>
     <div class="project-image-group">
-      <img src="Folder/AE315/lab03/fig04.jpeg" alt="CL vs Angle of Attack (Fig. 4)" />
-      <img src="Folder/AE315/lab03/fig08.png" alt="Drag Polar — Cd vs Cl (Fig. 8)" />
-      <img src="Folder/AE315/lab03/fig09.png" alt="Lift-to-Drag Ratio vs AoA (Fig. 9)" />
+      <img src="Folder/AE315/lab03/fig04.jpeg" alt="Lift coefficient vs angle of attack — experimental compared to theoretical potential flow" />
+      <img src="Folder/AE315/lab03/fig05.png" alt="Drag coefficient vs angle of attack — experimental compared to potential flow" />
+      <img src="Folder/AE315/lab03/fig08.png" alt="Drag polar — Cd vs Cl showing the aerodynamic efficiency envelope of the NACA 4412" />
     </div>
   </section>
 
@@ -101,12 +98,6 @@ Cd(i) = D(i) / (0.5 * rho * V_inf^2 * chord);
 
 % Zero-lift angle of attack
 alpha_0 = interp1(Cl, AoA_vals, 0, 'linear', 'extrap');  % = -3.31°</code></pre>
-      <!-- full MATLAB code (AE315_LAB3_Code.m) to be embedded here -->
-    </div>
-    <div class="project-image-group">
-      <div class="project-image-note">Full script &mdash; AE315_LAB3_Code.m</div>
-      <div class="project-image-note">Panel code reference data</div>
-      <div class="project-image-note">Pressure tap chord positions</div>
     </div>
   </section>
 
@@ -121,9 +112,9 @@ alpha_0 = interp1(Cl, AoA_vals, 0, 'linear', 'extrap');  % = -3.31°</code></pre
       </ul>
     </div>
     <div class="project-image-group">
-      <img src="Folder/AE315/lab03/fig06.jpeg" alt="Cm,LE vs Angle of Attack (Fig. 6)" />
-      <img src="Folder/AE315/lab03/fig07.jpeg" alt="Cm,c/4 vs Angle of Attack (Fig. 7)" />
-      <div class="project-image-note">Zero-lift AoA extrapolation</div>
+      <img src="Folder/AE315/lab03/fig06.jpeg" alt="Pitching moment coefficient about the leading edge vs angle of attack" />
+      <img src="Folder/AE315/lab03/fig07.jpeg" alt="Pitching moment coefficient about the quarter-chord vs angle of attack — confirming aerodynamic center" />
+      <img src="Folder/AE315/lab03/fig09.png" alt="Lift-to-drag ratio vs angle of attack — peak efficiency near 9 degrees AoA" />
     </div>
   </section>
 

@@ -36,9 +36,9 @@
       </ul>
     </div>
     <div class="project-image-group">
-      <img src="Folder/AE443/lab03/fig01.png" alt="Simulated PV step response (Fig. 1)" />
-      <img src="Folder/AE443/lab03/fig03.png" alt="Implemented PV step response (Fig. 3)" />
-      <img src="Folder/AE443/lab03/fig07.png" alt="PIV ramp — near-zero ess (Fig. 7)" />
+      <img src="Folder/AE443/lab03/fig01.png" alt="Simulated PV step response — ideal position tracking, tₚ=0.194 s, PO=5%" />
+      <img src="Folder/AE443/lab03/fig02.png" alt="Filtered PV simulated step response showing effect of low-pass filter on velocity feedback" />
+      <img src="Folder/AE443/lab03/fig03.png" alt="Implemented PV step response on hardware — tₚ=0.170 s, PO=7.86%, ess=0.004 rad" />
     </div>
   </section>
 
@@ -64,9 +64,9 @@
       <p>Since a PV controller makes the position loop a Type-1 system, a ramp input produces a predictable non-zero steady-state error e<sub>ss</sub> = R(1 + Kk<sub>v</sub>) / (Kk<sub>p</sub>) = 0.214 rad. Adding an integral gain k<sub>i</sub> = 38.9 V/(rad&#183;s) upgraded the controller to PIV, eliminating this error by continuously accumulating and correcting residual position deviation.</p>
     </div>
     <div class="project-image-group">
-      <img src="Folder/AE443/lab03/fig04.png" alt="Ramp response — PV simulation (Fig. 4)" />
-      <img src="Folder/AE443/lab03/fig05.png" alt="Ramp response — PV hardware (Fig. 5)" />
-      <img src="Folder/AE443/lab03/fig06.png" alt="PIV ramp — simulation (Fig. 6)" />
+      <img src="Folder/AE443/lab03/fig04.png" alt="PV controller — simulated ramp response, ess=0.213 rad" />
+      <img src="Folder/AE443/lab03/fig05.png" alt="PV controller — measured ramp response on hardware, ess=0.186 rad" />
+      <img src="Folder/AE443/lab03/fig06.png" alt="PIV controller — simulated ramp response with near-zero steady-state error, ess=0.005 rad" />
     </div>
   </section>
 
@@ -90,9 +90,7 @@
       </ul>
     </div>
     <div class="project-image-group">
-      <div class="project-image-note">Full results summary (Table 1)</div>
-      <div class="project-image-note">Gain design calculation worksheet</div>
-      <div class="project-image-note">PV vs PIV ramp error comparison</div>
+      <img src="Folder/AE443/lab03/fig07.png" alt="PIV controller — measured ramp response on hardware, ess=0.007 rad (97% reduction vs PV)" />
     </div>
   </section>
 
@@ -105,11 +103,6 @@
         <li><strong>Hardware always differs from simulation.</strong> The 7.86% vs 5% overshoot discrepancy came from real-world nonlinearities. Recognizing and explaining this gap &mdash; rather than ignoring it &mdash; is what separates competent control engineers from those who only work in simulation.</li>
         <li>Developed proficiency in the complete MATLAB/Simulink hardware-in-the-loop workflow, from analytical gain design and simulation validation through hardware implementation and performance characterization.</li>
       </ul>
-    </div>
-    <div class="project-image-group">
-      <div class="project-image-note">Controller gains derivation</div>
-      <div class="project-image-note">Type 1 vs Type 2 error comparison</div>
-      <div class="project-image-note">Low-pass filter effect on step response</div>
     </div>
   </section>
 

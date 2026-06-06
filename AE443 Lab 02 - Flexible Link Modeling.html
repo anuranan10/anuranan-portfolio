@@ -36,9 +36,9 @@
       </ul>
     </div>
     <div class="project-image-group">
-      <img src="Folder/AE443/lab02/fig01.png" alt="Free-oscillation response (Fig. 1)" />
-      <img src="Folder/AE443/lab02/fig02.png" alt="Model validation — servo angle θ (Fig. 2)" />
-      <img src="Folder/AE443/lab02/fig03.png" alt="Model validation — link angle α (Fig. 3)" />
+      <img src="Folder/AE443/lab02/fig01.png" alt="Free-oscillation decay of flexible link angle — used to identify natural frequency and stiffness" />
+      <img src="Folder/AE443/lab02/fig02.png" alt="Model validation — simulated vs. measured servo angle θ during step command" />
+      <img src="Folder/AE443/lab02/fig03.png" alt="Model validation — simulated vs. measured flexible link deflection angle α" />
     </div>
   </section>
 
@@ -63,9 +63,7 @@
       <p style="margin:0.5rem 0 0.5rem 1.5rem; font-style:italic; font-size:1.05em;">K<sub>s</sub> = J<sub>l</sub> &#183; &omega;<sub>n</sub>&#178; &nbsp;&nbsp; where &nbsp; J<sub>l</sub> = m<sub>l</sub>L<sub>l</sub>&#178; / 3</p>
     </div>
     <div class="project-image-group">
-      <img src="Folder/AE443/lab02/fig04.png" alt="Free-oscillation with cursor data (Fig. 4)" />
-      <div class="project-image-note">State-space matrices A, B, C, D</div>
-      <div class="project-image-note">Open-loop pole locations</div>
+      <img src="Folder/AE443/lab02/fig04.png" alt="Free-oscillation plot with cursor data points for logarithmic decrement calculation" />
     </div>
   </section>
 
@@ -79,11 +77,6 @@
         <li>The pole at the origin indicates the system is marginally stable in open loop: a constant motor input causes the servo angle to drift without bound, while the flexible link oscillates at ~22.5 rad/s before damping out.</li>
         <li>Simulated and measured servo angle responses agreed closely in rise time and steady state. The flexible link angle matched the correct oscillation frequency but showed slight amplitude discrepancy from unmodeled structural damping.</li>
       </ul>
-    </div>
-    <div class="project-image-group">
-      <div class="project-image-note">Natural frequency calculation from peaks</div>
-      <div class="project-image-note">Transfer function &mdash; &theta;(s)/u(s) and &alpha;(s)/u(s)</div>
-      <div class="project-image-note">Pole-zero map for open-loop system</div>
     </div>
   </section>
 
@@ -105,12 +98,6 @@ legend('Simulated Servo Angle', 'Measured')
 sys   = ss(A, B, C, D);
 TF    = tf(sys);         % 2×1: [theta(s)/u(s); alpha(s)/u(s)]
 poles = eig(A)           % P1=0, P2,3=−8.16±22.52i, P4=−24.01</code></pre>
-      <!-- full MATLAB code (AE443 Lab 2 Appendix A) to be embedded here -->
-    </div>
-    <div class="project-image-group">
-      <div class="project-image-note">Full script &mdash; Lab 2 Appendix A</div>
-      <div class="project-image-note">setup_flexgage.m configuration script</div>
-      <div class="project-image-note">q_flexgage_val Simulink model</div>
     </div>
   </section>
 
@@ -123,11 +110,6 @@ poles = eig(A)           % P1=0, P2,3=−8.16±22.52i, P4=−24.01</code></pre>
         <li><strong>State-space models connect physics to control design.</strong> The A matrix derived from the Euler-Lagrange equations is the same matrix whose eigenvalues define stability, whose structure determines observability and controllability, and whose entries feed directly into LQR or pole-placement controller designs.</li>
         <li>Gained hands-on experience connecting Lagrangian mechanics, linear system theory, and real hardware validation &mdash; the full workflow from equation derivation to experimental confirmation used in aerospace structural dynamics and flexible-body control research.</li>
       </ul>
-    </div>
-    <div class="project-image-group">
-      <div class="project-image-note">Euler-Lagrange derivation summary</div>
-      <div class="project-image-note">Damping ratio and damped frequency</div>
-      <div class="project-image-note">SRV02 flexible link hardware</div>
     </div>
   </section>
 
