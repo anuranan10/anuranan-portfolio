@@ -5,6 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>High-Bypass Turbofan Engine Senior Design | Anuranan Bharadwaj</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .stat-box { animation: fadeInUp 0.55s ease both; }
+    .stat-box:nth-child(1) { animation-delay: 0.05s; }
+    .stat-box:nth-child(2) { animation-delay: 0.18s; }
+    .stat-box:nth-child(3) { animation-delay: 0.31s; }
+    .stat-box:nth-child(4) { animation-delay: 0.44s; }
+    .snapshot-card { animation: fadeInUp 0.5s ease 0.05s both; }
+    .takeaway-card { transition: transform 0.22s ease, box-shadow 0.22s ease; }
+    .takeaway-card:hover { transform: translateY(-5px); box-shadow: 0 14px 32px rgba(0,64,128,0.22); }
+    table tr:not(:first-child):hover td { background: #ddeeff !important; transition: background 0.15s ease; }
+  </style>
 </head>
 <body>
   <nav>
@@ -25,7 +40,7 @@
   </header>
 
   <!-- Engineering Snapshot -->
-  <section style="background:#004080; color:white; padding:2rem;">
+  <section class="snapshot-card" style="background:#004080; color:white; padding:2rem;">
     <div style="max-width:960px; margin:0 auto; display:flex; flex-wrap:wrap; gap:2rem; align-items:flex-start;">
       <div style="flex:1; min-width:200px;">
         <p style="font-size:0.75em; letter-spacing:0.07em; text-transform:uppercase; opacity:0.65; margin:0 0 0.35rem;">Role</p>
@@ -51,19 +66,19 @@
   <!-- Stat Boxes -->
   <section style="background:#f4faff; border-bottom:1px solid #d0dde8; padding:1.5rem 2rem;">
     <div style="max-width:960px; margin:0 auto; display:flex; flex-wrap:wrap; gap:1rem; justify-content:center;">
-      <div style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+      <div class="stat-box" style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
         <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">11<span style="font-size:1rem; font-weight:400;">:1</span></div>
         <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Bypass Ratio</div>
       </div>
-      <div style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+      <div class="stat-box" style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
         <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">55<span style="font-size:1rem; font-weight:400;">:1</span></div>
         <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Overall Pressure Ratio</div>
       </div>
-      <div style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+      <div class="stat-box" style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
         <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">196 <span style="font-size:1rem; font-weight:400;">kN</span></div>
         <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Takeoff Thrust</div>
       </div>
-      <div style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+      <div class="stat-box" style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
         <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">16 <span style="font-size:1rem; font-weight:400;">(g/s)/kN</span></div>
         <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Cruise TSFC</div>
       </div>
@@ -231,19 +246,19 @@
     <div class="project-text" style="max-width:860px;">
       <h2>Key Takeaways</h2>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-top:1rem;">
-        <div style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+        <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
           <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">Cycle Validation Before Design</p>
           <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">Building and validating the MATLAB cycle tool against AEDsys (&lt;1% error) before any component design began was the single decision that kept all boundary conditions internally consistent. Changes propagated correctly through every downstream component.</p>
         </div>
-        <div style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+        <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
           <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">Stage Count as a Design Variable</p>
           <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">Treating stage count as a primary design input &mdash; not an outcome &mdash; drove every turbomachinery tradeoff. Accepting moderately elevated loading while keeping De Haller &ge; 0.74 everywhere allowed the 9+3 stage layout: structurally lighter and mechanically simpler than benchmark engines.</p>
         </div>
-        <div style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+        <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
           <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">Gearbox Enables Fan Efficiency</p>
           <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">Decoupling the 3.65 m fan (2,200 RPM) from the LP spool (7,000 RPM) via a 3.2:1 planetary gearbox was essential to keep fan tip Mach numbers subsonic and maintain a single-stage fan. It also minimized the fan-to-LPC transition duct length and its associated total pressure losses.</p>
         </div>
-        <div style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+        <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
           <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">Nozzle Trade: CD Not Justified at BPR 11</p>
           <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">A quantitative trade study showed that a CD core nozzle yields only ~1.6% whole-engine thrust improvement despite a 7.7% core-only gain &mdash; because the bypass stream dominates gross thrust at high bypass ratios. This system-level thinking prevented over-engineering a single component at the expense of overall design simplicity.</p>
         </div>

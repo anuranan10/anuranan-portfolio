@@ -5,6 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TDRS-M Orbital Mechanics and Trajectory Design | Anuranan Bharadwaj</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .stat-box { animation: fadeInUp 0.55s ease both; }
+    .stat-box:nth-child(1) { animation-delay: 0.05s; }
+    .stat-box:nth-child(2) { animation-delay: 0.18s; }
+    .stat-box:nth-child(3) { animation-delay: 0.31s; }
+    .stat-box:nth-child(4) { animation-delay: 0.44s; }
+    .snapshot-card { animation: fadeInUp 0.5s ease 0.05s both; }
+    .takeaway-card { transition: transform 0.22s ease, box-shadow 0.22s ease; }
+    .takeaway-card:hover { transform: translateY(-5px); box-shadow: 0 14px 32px rgba(0,64,128,0.22); }
+    table tr:not(:first-child):hover td { background: #ddeeff !important; transition: background 0.15s ease; }
+  </style>
 </head>
 <body>
   <nav>
@@ -25,7 +40,7 @@
   </header>
 
   <!-- Engineering Snapshot Card -->
-  <section style="background:#004080; color:white; padding:2rem;">
+  <section class="snapshot-card" style="background:#004080; color:white; padding:2rem;">
     <div style="max-width:960px; margin:0 auto; display:flex; flex-wrap:wrap; gap:2rem; align-items:flex-start;">
       <div style="flex:1; min-width:200px;">
         <p style="font-size:0.75em; letter-spacing:0.07em; text-transform:uppercase; opacity:0.65; margin:0 0 0.35rem;">Role</p>
@@ -51,19 +66,19 @@
   <!-- Stat Boxes -->
   <section style="background:#f4faff; border-bottom:1px solid #d0dde8; padding:1.5rem 2rem;">
     <div style="max-width:960px; margin:0 auto; display:flex; flex-wrap:wrap; gap:1rem; justify-content:center;">
-      <div style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+      <div class="stat-box" style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
         <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">5.36 <span style="font-size:1rem; font-weight:400;">km/s</span></div>
         <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Total Mission &Delta;v</div>
       </div>
-      <div style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+      <div class="stat-box" style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
         <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">5.48 <span style="font-size:1rem; font-weight:400;">hr</span></div>
         <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">LEO &rarr; GEO Transfer Time</div>
       </div>
-      <div style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+      <div class="stat-box" style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
         <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">82<span style="font-size:1rem; font-weight:400;">%</span></div>
         <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Propellant Mass Fraction</div>
       </div>
-      <div style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+      <div class="stat-box" style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
         <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">0.028 <span style="font-size:1rem; font-weight:400;">km/s</span></div>
         <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Phasing Maneuver Cost</div>
       </div>
@@ -254,22 +269,22 @@
       <h2>Key Takeaways</h2>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-top:1rem;">
 
-        <div style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+        <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
           <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">Always perform plane changes at apogee.</p>
           <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">The 28.5&deg; inclination reduction cost 1.50 km/s at GEO vs. ~5.00 km/s at LEO perigee &mdash; a 3.5 km/s saving from a single sequencing decision. This principle is fundamental to every GEO mission trajectory design.</p>
         </div>
 
-        <div style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+        <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
           <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">Launch vehicles do the heavy lifting.</p>
           <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">TDRS-M&rsquo;s Delta IV M+ absorbed most of the inclination reduction through a supersynchronous GTO, cutting the spacecraft&rsquo;s propellant fraction from 82% to 42%. The injection profile is just as important as the onboard propulsion system.</p>
         </div>
 
-        <div style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+        <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
           <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">Phasing orbits are remarkably fuel-efficient.</p>
           <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">Correcting a 5&deg; longitude error cost only 0.028 km/s &mdash; less than 0.6% of total mission &Delta;v. This efficiency makes phasing the standard technique for GEO slot acquisition, satellite repositioning, and on-orbit rendezvous.</p>
         </div>
 
-        <div style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+        <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
           <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">Solver tolerance discipline matters.</p>
           <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">Setting <code>ode45</code> to RelTol = AbsTol = 10<sup>&minus;9</sup> held position error below 10<sup>&minus;5</sup> km over 5400 seconds. That same rigor is what separates a preliminary-design simulation from one that can actually feed a propellant budget calculation.</p>
         </div>

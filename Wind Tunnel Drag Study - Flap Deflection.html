@@ -5,6 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Wind Tunnel Drag Study &mdash; Flap Deflection | Anuranan Bharadwaj</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .stat-box { animation: fadeInUp 0.55s ease both; }
+    .stat-box:nth-child(1) { animation-delay: 0.05s; }
+    .stat-box:nth-child(2) { animation-delay: 0.18s; }
+    .stat-box:nth-child(3) { animation-delay: 0.31s; }
+    .stat-box:nth-child(4) { animation-delay: 0.44s; }
+    .snapshot-card { animation: fadeInUp 0.5s ease 0.05s both; }
+    .takeaway-card { transition: transform 0.22s ease, box-shadow 0.22s ease; }
+    .takeaway-card:hover { transform: translateY(-5px); box-shadow: 0 14px 32px rgba(0,64,128,0.22); }
+    table tr:not(:first-child):hover td { background: #ddeeff !important; transition: background 0.15s ease; }
+  </style>
 </head>
 <body>
   <nav>
@@ -25,7 +40,7 @@
   </header>
 
   <!-- Engineering Snapshot Card -->
-  <section style="background:#004080; color:white; padding:2rem;">
+  <section class="snapshot-card" style="background:#004080; color:white; padding:2rem;">
     <div style="max-width:960px; margin:0 auto; display:flex; flex-wrap:wrap; gap:2rem; align-items:flex-start;">
       <div style="flex:1; min-width:200px;">
         <p style="font-size:0.75em; letter-spacing:0.07em; text-transform:uppercase; opacity:0.65; margin:0 0 0.35rem;">Role</p>
@@ -51,19 +66,19 @@
   <!-- Stat Boxes -->
   <section style="background:#f4faff; border-bottom:1px solid #d0dde8; padding:1.5rem 2rem;">
     <div style="max-width:960px; margin:0 auto; display:flex; flex-wrap:wrap; gap:1rem; justify-content:center;">
-      <div style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+      <div class="stat-box" style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
         <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">5</div>
         <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Flap Deflection Angles Tested</div>
       </div>
-      <div style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+      <div class="stat-box" style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
         <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">2.20<span style="font-size:1rem; font-weight:400;"> N</span></div>
         <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Peak Drag (Full Flap, 50&deg;)</div>
       </div>
-      <div style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+      <div class="stat-box" style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
         <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">0.220</div>
         <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Max C<sub>d</sub> (50&deg; Deflection)</div>
       </div>
-      <div style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+      <div class="stat-box" style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
         <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">&lt;0.06<span style="font-size:1rem; font-weight:400;"> N</span></div>
         <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Uncertainty Across All Trials</div>
       </div>
@@ -203,22 +218,22 @@
       <h2>Key Takeaways</h2>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-top:1rem;">
 
-        <div style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+        <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
           <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">Flap deployment carries a measurable drag penalty confirmed by wake survey.</p>
           <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">Drag force rose 16.9% from 1.882 N at 0&deg; to 2.200 N at full flap (50&deg;). The corresponding C<sub>d</sub> increase from 0.200 to 0.220 directly quantifies the cost in aerodynamic efficiency that operators accept in exchange for the lift benefit during takeoff and landing.</p>
         </div>
 
-        <div style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+        <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
           <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">Wake width is a direct visual indicator of drag magnitude.</p>
           <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">The traverse velocity profiles revealed that the wake deficit broadened progressively with flap angle. This one-to-one relationship between wake width and drag &mdash; predicted by the momentum theorem &mdash; was confirmed experimentally, reinforcing the physical basis of the measurement technique used in this study.</p>
         </div>
 
-        <div style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+        <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
           <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">Non-monotonic behavior at intermediate angles highlights the limits of coarse angle spacing.</p>
           <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">The dip at 25&deg; &mdash; where drag fell below both the 15&deg; and 35&deg; values &mdash; could not be definitively attributed to physics or experimental error with only five data points. Denser sampling between 20&deg; and 30&deg; and a more rigid model mount would be required to distinguish flow reattachment from measurement noise.</p>
         </div>
 
-        <div style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+        <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
           <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">Uncertainty propagation gives confidence intervals that reflect real physical variability, not just instrument resolution.</p>
           <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">By propagating errors from pressure, atmospheric temperature, and statistical scatter in dynamic pressure through the drag integral, the final uncertainties (&plusmn;0.043 to &plusmn;0.059 N) captured contributions from both instrumentation and flow unsteadiness. All five measurements remained distinct within their 95% confidence bands, confirming the wake survey resolved meaningful differences between deflection angles.</p>
         </div>
