@@ -11,6 +11,9 @@ nav {
     display: flex;
     justify-content: space-around;
     padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 nav a {
@@ -101,9 +104,22 @@ footer {
 
 .page-header {
     text-align: center;
-    padding: 2rem;
-    background-color: #004080;
+    padding: 3.5rem 2rem;
+    background: linear-gradient(135deg, #002d5e 0%, #004080 55%, #00529f 100%);
     color: white;
+}
+
+.page-header h1 {
+    font-size: 2.1rem;
+    margin: 0 0 0.5rem;
+    letter-spacing: -0.01em;
+}
+
+.page-header p {
+    font-size: 0.95rem;
+    opacity: 0.82;
+    margin: 0;
+    letter-spacing: 0.02em;
 }
 
 .project-row {
@@ -114,12 +130,16 @@ footer {
     max-width: 1000px;
     padding: 2rem;
     background: #f4faff;
-    /* soft blue background */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     gap: 2rem;
     border-radius: 10px;
     flex-wrap: wrap;
-    transition: all 0.3s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-row:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(0, 64, 128, 0.14);
 }
 
 .project-text {
@@ -132,7 +152,35 @@ footer {
 
 .project-text h2 {
     color: #003366;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.55rem;
+    position: relative;
+}
+
+.project-text h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 36px;
+    height: 3px;
+    background: #004080;
+    border-radius: 2px;
+}
+
+.project-text figure {
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.project-text figure img {
+    transition: transform 0.35s ease;
+    display: block;
+    width: 100%;
+}
+
+.project-text figure img:hover {
+    transform: scale(1.025);
 }
 
 .project-title-link {
