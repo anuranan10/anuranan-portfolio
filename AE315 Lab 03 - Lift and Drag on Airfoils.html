@@ -1,4 +1,4 @@
-ï»¿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -89,15 +89,15 @@
     </div>
     <div class="project-image-group">
       <figure style="margin:0; text-align:center;">
-        <img src="Folder/AE315/lab03/fig04.jpeg" alt="Lift coefficient vs angle of attack â€” experimental compared to theoretical potential flow" />
+        <img src="Folder/AE315/lab03/fig04.jpeg" alt="Lift coefficient vs angle of attack — experimental compared to theoretical potential flow" />
         <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Figure 4: Lift coefficient vs angle of attack &mdash; experimental vs potential flow</figcaption>
       </figure>
       <figure style="margin:0; text-align:center;">
-        <img src="Folder/AE315/lab03/fig05.png" alt="Drag coefficient vs angle of attack â€” experimental compared to potential flow" />
+        <img src="Folder/AE315/lab03/fig05.png" alt="Drag coefficient vs angle of attack — experimental compared to potential flow" />
         <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Figure 5: Drag coefficient vs angle of attack &mdash; experimental vs potential flow</figcaption>
       </figure>
       <figure style="margin:0; text-align:center;">
-        <img src="Folder/AE315/lab03/fig08.png" alt="Drag polar â€” Cd vs Cl showing the aerodynamic efficiency envelope of the NACA 4412" />
+        <img src="Folder/AE315/lab03/fig08.png" alt="Drag polar — Cd vs Cl showing the aerodynamic efficiency envelope of the NACA 4412" />
         <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Figure 6: Drag polar &mdash; C<sub>d</sub> vs C<sub>l</sub> for the NACA 4412</figcaption>
       </figure>
     </div>
@@ -107,7 +107,7 @@
     <div class="project-text">
       <h2>MATLAB Code</h2>
       <p>Surface pressure and wake traverse data were integrated to extract aerodynamic coefficients. The zero-lift angle was found by linear interpolation of the C<sub>l</sub>&ndash;&alpha; curve through zero lift.</p>
-      <pre style="background:#f4faff; padding:1rem; border-radius:6px; overflow-x:auto;"><code>% Lift coefficient from pressure integration (lower âˆ’ upper)
+      <pre style="background:#f4faff; padding:1rem; border-radius:6px; overflow-x:auto;"><code>% Lift coefficient from pressure integration (lower - upper)
 Cl(i) = trapz(lower_x, Cp_lower(i,:)) - trapz(upper_x, Cp_upper(i,:));
 
 % Drag from wake momentum deficit
@@ -115,7 +115,7 @@ D(i)  = rho * trapz(z(i,:), Vel(i,:) .* (V_inf - Vel(i,:)));
 Cd(i) = D(i) / (0.5 * rho * V_inf^2 * chord);
 
 % Zero-lift angle of attack
-alpha_0 = interp1(Cl, AoA_vals, 0, 'linear', 'extrap');  % = -3.31Â°</code></pre>
+alpha_0 = interp1(Cl, AoA_vals, 0, 'linear', 'extrap');  % = -3.31°</code></pre>
     </div>
   </section>
 
@@ -135,11 +135,11 @@ alpha_0 = interp1(Cl, AoA_vals, 0, 'linear', 'extrap');  % = -3.31Â°</code></pre
         <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Figure 7: Pitching moment coefficient about the leading edge vs angle of attack</figcaption>
       </figure>
       <figure style="margin:0; text-align:center;">
-        <img src="Folder/AE315/lab03/fig07.jpeg" alt="Pitching moment coefficient about the quarter-chord vs angle of attack â€” confirming aerodynamic center" />
+        <img src="Folder/AE315/lab03/fig07.jpeg" alt="Pitching moment coefficient about the quarter-chord vs angle of attack — confirming aerodynamic center" />
         <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Figure 8: Pitching moment coefficient about the quarter-chord &mdash; confirming aerodynamic center</figcaption>
       </figure>
       <figure style="margin:0; text-align:center;">
-        <img src="Folder/AE315/lab03/fig09.png" alt="Lift-to-drag ratio vs angle of attack â€” peak efficiency near 9 degrees AoA" />
+        <img src="Folder/AE315/lab03/fig09.png" alt="Lift-to-drag ratio vs angle of attack — peak efficiency near 9 degrees AoA" />
         <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Figure 9: Lift-to-drag ratio vs angle of attack &mdash; peak efficiency near 9&deg;</figcaption>
       </figure>
     </div>
@@ -151,11 +151,11 @@ alpha_0 = interp1(Cl, AoA_vals, 0, 'linear', 'extrap');  % = -3.31Â°</code></pre
 
   <footer>
     <div class="footer-container">
-      <span>Phone: (215) 397â€“5806</span>
+      <span>Phone: (215) 397–5806</span>
       <span>Email: <a href="mailto:bharadwajanuranan@gmail.com">bharadwajanuranan@gmail.com</a></span>
       <span><a href="https://linkedin.com/in/anuranan-bharadwaj" target="_blank">LinkedIn</a></span>
       <span><a href="https://github.com/anuranan10" target="_blank">GitHub</a></span>
-      <span>&copy; 2030 Anuranan Bharadwaj</span>
+      <span>&copy; 2025 Anuranan Bharadwaj</span>
     </div>
   </footer>
 </body>

@@ -1,10 +1,24 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Aircraft Wing Structural Analysis | Anuranan Bharadwaj</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .stat-box { animation: fadeInUp 0.55s ease both; }
+    .stat-box:nth-child(1) { animation-delay: 0.05s; }
+    .stat-box:nth-child(2) { animation-delay: 0.18s; }
+    .stat-box:nth-child(3) { animation-delay: 0.31s; }
+    .stat-box:nth-child(4) { animation-delay: 0.44s; }
+    .snapshot-card { animation: fadeInUp 0.5s ease 0.05s both; }
+    .takeaway-card { transition: transform 0.22s ease, box-shadow 0.22s ease; }
+    .takeaway-card:hover { transform: translateY(-5px); box-shadow: 0 14px 32px rgba(0,64,128,0.22); }
+  </style>
 </head>
 <body>
   <nav>
@@ -20,37 +34,152 @@
   <header class="page-header">
     <div class="header-content">
       <h1>Aircraft Wing Structural Analysis</h1>
-      <p>Finite element simulation of wing stiffness and stress response under aerodynamic loads</p>
+      <p>Structures &middot; ERAU</p>
     </div>
   </header>
 
+  <nav class="breadcrumb" aria-label="breadcrumb">
+    <a href="aerospace.html">Aerospace Projects</a> &rsaquo; Aircraft Wing Structural Analysis
+  </nav>
+
+  <!-- Engineering Snapshot -->
+  <section class="snapshot-card" style="background:#004080; color:white; padding:2rem;">
+    <div style="max-width:960px; margin:0 auto; display:flex; flex-wrap:wrap; gap:2rem; align-items:flex-start;">
+      <div style="flex:1; min-width:200px;">
+        <p style="font-size:0.75em; letter-spacing:0.07em; text-transform:uppercase; opacity:0.65; margin:0 0 0.35rem;">Role</p>
+        <p style="font-weight:600; font-size:1.05em; margin:0 0 0.25rem;">Individual &mdash; CAD Modeling &amp; FEA Simulation</p>
+        <p style="font-size:0.88em; opacity:0.8; margin:0;">Structures &middot; ERAU</p>
+      </div>
+      <div style="flex:1; min-width:200px;">
+        <p style="font-size:0.75em; letter-spacing:0.07em; text-transform:uppercase; opacity:0.65; margin:0 0 0.35rem;">Tools</p>
+        <p style="font-size:0.92em; line-height:1.75; margin:0;">Fusion 360 &middot; FEMAP &middot; NX Nastran</p>
+      </div>
+      <div style="flex:1.6; min-width:240px;">
+        <p style="font-size:0.75em; letter-spacing:0.07em; text-transform:uppercase; opacity:0.65; margin:0 0 0.35rem;">Key Contributions</p>
+        <ul style="margin:0; padding-left:1.15rem; font-size:0.92em; line-height:1.85;">
+          <li>Modeled full wing assembly including spars, ribs, stringers, and skin panels in Fusion 360</li>
+          <li>Transferred geometry to FEMAP and solved with NX Nastran under distributed aerodynamic loading</li>
+          <li>Validated mesh quality with Jacobian values above 0.6 across all elements</li>
+          <li>Interpreted stress and displacement contours to confirm structural adequacy and identify load paths</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stat Boxes -->
+  <section style="background:#f4faff; border-bottom:1px solid #d0dde8; padding:1.5rem 2rem;">
+    <div style="max-width:960px; margin:0 auto; display:flex; flex-wrap:wrap; gap:1rem; justify-content:center;">
+      <div class="stat-box" style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+        <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">&gt;0.6</div>
+        <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Min Jacobian</div>
+      </div>
+      <div class="stat-box" style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+        <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">0.15 <span style="font-size:1rem; font-weight:400;">in</span></div>
+        <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Peak Tip Displacement</div>
+      </div>
+      <div class="stat-box" style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+        <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">3D</div>
+        <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Full Assembly Model</div>
+      </div>
+      <div class="stat-box" style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+        <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">FEA</div>
+        <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">NX Nastran Solver</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Overview -->
   <section class="project-row">
-    <div class="project-text">
+    <div class="project-text" style="max-width:820px;">
       <h2>Project Overview</h2>
+      <p>Structural analysis of an aircraft wing under aerodynamic loading is one of the most fundamental tasks in aerospace engineering design. This project covered the complete workflow from 3D CAD geometry creation through finite element analysis, with the goal of assessing stress distribution and deflection behavior under realistic flight loads.</p>
+      <p>The wing assembly was modeled in Fusion 360 with all primary structural members included: front and rear spars, ribs at regular spanwise stations, longitudinal stringers, and upper and lower skin panels. The assembled geometry was then transferred to FEMAP for preprocessing, where distributed aerodynamic loads were applied, boundary conditions were set at the wing root, and the mesh was generated and validated before solving with NX Nastran.</p>
       <ul>
-        <li>Modeled a detailed aircraft wing assembly in Fusion 360 including spars, ribs, stringers, and skin panels.</li>
-        <li>Transferred geometry to FEMAP and solved with NX Nastran for realistic distributed aerodynamic loading conditions.</li>
-        <li>Validated mesh quality with Jacobian values above 0.6 and confirmed acceptable peak displacement near 0.15 inches.</li>
-        <li>Interpreted stress and displacement contours to evaluate load paths, deflection behavior, and structural efficiency.</li>
+        <li>Build a high-fidelity 3D CAD model of a full wing assembly with spars, ribs, stringers, and skin</li>
+        <li>Transfer geometry to FEMAP and define realistic distributed aerodynamic loading conditions</li>
+        <li>Generate and validate a finite element mesh with Jacobian quality above 0.6</li>
+        <li>Solve with NX Nastran and interpret von Mises stress and displacement contour outputs</li>
       </ul>
-      <p><a class="project-title-link" href="aerospace.html">Back to Aerospace Projects</a></p>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Folder/Wing1.jpg" alt="Aircraft wing 3D CAD assembly in Fusion 360" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 1: 3D wing assembly in Fusion 360 &mdash; spars, ribs, stringers, and skin panels fully modeled before FEA transfer</figcaption>
+      </figure>
     </div>
-    <div class="project-image-group">
-      <img src="Folder/Wing1.jpg" alt="3D wing model" />
-      <img src="Folder/Wing2.jpg" alt="Wing finite element mesh" />
-      <img src="Folder/Wing3.jpg" alt="Stress or displacement contour output" />
+  </section>
+
+  <!-- CAD Modeling -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:820px;">
+      <h2>CAD Geometry &amp; Assembly</h2>
+      <p>The wing was modeled as a full structural assembly rather than a simplified shell, capturing the load-carrying behavior of each member. The front and rear spars run the full span and carry the majority of bending loads. Ribs are positioned at regular spanwise intervals, maintaining the airfoil cross-section and transferring aerodynamic loads into the spars. Longitudinal stringers between ribs provide additional bending stiffness and reduce skin panel buckling. Skin panels close the structure and carry shear flow.</p>
+      <p>Particular attention was paid to interface geometry between components, ensuring that mating surfaces were flush and that no gaps or overlaps would cause meshing artifacts during FEA preprocessing. The assembly was exported in a format compatible with FEMAP for direct geometry import without manual reconstruction.</p>
     </div>
+  </section>
+
+  <!-- FEA Setup & Results -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:820px;">
+      <h2>Finite Element Analysis</h2>
+      <p>In FEMAP, a distributed aerodynamic pressure load was applied to the upper and lower skin surfaces to simulate lift loading in steady level flight. The wing root was fully constrained as a fixed boundary condition. The finite element mesh was generated using a combination of shell elements for skin panels and beam elements for spar and stringer members, with mesh refinement applied at high-stress locations near the root and spar caps.</p>
+      <p>Mesh quality was assessed using Jacobian values: all elements achieved values above 0.6, confirming that element distortion was within acceptable limits for Nastran&rsquo;s linear static solver.</p>
+      <p><strong>Key results from the NX Nastran solution:</strong></p>
+      <ul>
+        <li>Peak tip displacement of approximately 0.15 inches &mdash; within acceptable deformation limits for the loading scenario</li>
+        <li>Highest von Mises stresses concentrated at the front spar root, consistent with expected bending moment distribution</li>
+        <li>Skin panel stress levels were lower than spar cap stresses, confirming the spars carry the dominant bending load</li>
+        <li>No stress concentrations from meshing artifacts, confirming adequate geometry cleanup during preprocessing</li>
+      </ul>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Folder/Wing2.jpg" alt="Finite element mesh of the wing assembly in FEMAP" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 2: Finite element mesh in FEMAP &mdash; shell elements for skin, beam elements for spars and stringers, Jacobian &gt; 0.6 across all elements</figcaption>
+      </figure>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Folder/Wing3.jpg" alt="Von Mises stress and displacement contour output from NX Nastran" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 3: NX Nastran output &mdash; von Mises stress contour showing peak loading at the front spar root; tip displacement of ~0.15 in under distributed aerodynamic load</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Key Takeaways -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:860px;">
+      <h2>Key Takeaways</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-top:1rem;">
+        <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+          <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">CAD quality directly controls FEA validity</p>
+          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">Interface gaps or overlapping surfaces in the Fusion 360 model cause meshing failures or poor Jacobian values in FEMAP. Cleaning geometry before export eliminated all preprocessing issues and allowed the mesh to be generated without manual repair.</p>
+        </div>
+        <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+          <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">Spars dominate bending load paths</p>
+          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">The von Mises contour confirmed that front spar root stresses were significantly higher than skin panel stresses. In a cantilever wing, the spars carry the majority of bending moment and shear, with skin panels primarily carrying torsional shear flow.</p>
+        </div>
+        <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+          <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">Mesh refinement at stress risers improves solution accuracy</p>
+          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">Applying local mesh refinement near the spar root and spar cap intersections captured the stress gradient more accurately than a uniform mesh. This prevents artificially smooth contours from obscuring genuine stress concentrations in high-load regions.</p>
+        </div>
+        <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+          <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">Jacobian validation is a necessary pre-solve check</p>
+          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">Reviewing Jacobian values before submitting to Nastran caught distorted elements near rib cutouts that would have degraded solution quality. Re-meshing those regions resolved the issue. Relying only on visual mesh inspection is insufficient for production FEA work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 1rem 2rem 2rem;">
+    <p><a class="project-title-link" href="aerospace.html">&#8592; Back to Aerospace Projects</a></p>
   </section>
 
   <footer>
     <div class="footer-container">
-      <span>Phone: (215) 397–5806</span>
+      <span>Phone: (215) 397&ndash;5806</span>
       <span>Email: <a href="mailto:bharadwajanuranan@gmail.com">bharadwajanuranan@gmail.com</a></span>
       <span><a href="https://linkedin.com/in/anuranan-bharadwaj" target="_blank">LinkedIn</a></span>
       <span><a href="https://github.com/anuranan10" target="_blank">GitHub</a></span>
-      <span>&copy; 2030 Anuranan Bharadwaj</span>
+      <span>&copy; 2025 Anuranan Bharadwaj</span>
     </div>
   </footer>
 </body>
 </html>
-

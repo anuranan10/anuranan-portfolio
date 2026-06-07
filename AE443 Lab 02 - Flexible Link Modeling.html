@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -37,15 +37,15 @@
     </div>
     <div class="project-image-group">
       <figure style="margin:0; text-align:center;">
-        <img src="Folder/AE443/lab02/fig01.png" alt="Free-oscillation decay of flexible link angle — used to identify natural frequency and stiffness" />
+        <img src="Folder/AE443/lab02/fig01.png" alt="Free-oscillation decay of flexible link angle � used to identify natural frequency and stiffness" />
         <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Figure 1: Free-oscillation decay of flexible link angle</figcaption>
       </figure>
       <figure style="margin:0; text-align:center;">
-        <img src="Folder/AE443/lab02/fig02.png" alt="Model validation — simulated vs. measured servo angle θ during step command" />
+        <img src="Folder/AE443/lab02/fig02.png" alt="Model validation � simulated vs. measured servo angle ? during step command" />
         <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Figure 2: Model validation &mdash; simulated vs. measured servo angle &theta;</figcaption>
       </figure>
       <figure style="margin:0; text-align:center;">
-        <img src="Folder/AE443/lab02/fig03.png" alt="Model validation — simulated vs. measured flexible link deflection angle α" />
+        <img src="Folder/AE443/lab02/fig03.png" alt="Model validation � simulated vs. measured flexible link deflection angle a" />
         <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Figure 3: Model validation &mdash; simulated vs. measured link deflection &alpha;</figcaption>
       </figure>
     </div>
@@ -100,16 +100,16 @@
 plot(data_alpha(:,1), data_alpha(:,2), 'r', 'LineWidth', 1.5);
 xlabel('Time (s)');  ylabel('Angle (Deg)');  title('Free-Oscillation');
 
-% Model validation — servo angle overlay
+% Model validation � servo angle overlay
 plot(data_theta(:,1), data_theta(:,2), 'LineWidth', 1.5);  % simulated
 hold on
 plot(data_theta(:,1), data_theta(:,3), 'LineWidth', 1.5);  % measured
 legend('Simulated Servo Angle', 'Measured')
 
-% State-space → transfer function and open-loop poles
+% State-space ? transfer function and open-loop poles
 sys   = ss(A, B, C, D);
-TF    = tf(sys);         % 2×1: [theta(s)/u(s); alpha(s)/u(s)]
-poles = eig(A)           % P1=0, P2,3=−8.16±22.52i, P4=−24.01</code></pre>
+TF    = tf(sys);         % 2�1: [theta(s)/u(s); alpha(s)/u(s)]
+poles = eig(A)           % P1=0, P2,3=-8.16�22.52i, P4=-24.01</code></pre>
     </div>
   </section>
 
@@ -131,11 +131,11 @@ poles = eig(A)           % P1=0, P2,3=−8.16±22.52i, P4=−24.01</code></pre>
 
   <footer>
     <div class="footer-container">
-      <span>Phone: (215) 397–5806</span>
+      <span>Phone: (215) 397�5806</span>
       <span>Email: <a href="mailto:bharadwajanuranan@gmail.com">bharadwajanuranan@gmail.com</a></span>
       <span><a href="https://linkedin.com/in/anuranan-bharadwaj" target="_blank">LinkedIn</a></span>
       <span><a href="https://github.com/anuranan10" target="_blank">GitHub</a></span>
-      <span>&copy; 2030 Anuranan Bharadwaj</span>
+      <span>&copy; 2025 Anuranan Bharadwaj</span>
     </div>
   </footer>
 </body>

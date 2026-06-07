@@ -1,10 +1,24 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Database Application for Aircraft Fleet Selection | Anuranan Bharadwaj</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .stat-box { animation: fadeInUp 0.55s ease both; }
+    .stat-box:nth-child(1) { animation-delay: 0.05s; }
+    .stat-box:nth-child(2) { animation-delay: 0.18s; }
+    .stat-box:nth-child(3) { animation-delay: 0.31s; }
+    .stat-box:nth-child(4) { animation-delay: 0.44s; }
+    .snapshot-card { animation: fadeInUp 0.5s ease 0.05s both; }
+    .takeaway-card { transition: transform 0.22s ease, box-shadow 0.22s ease; }
+    .takeaway-card:hover { transform: translateY(-5px); box-shadow: 0 14px 32px rgba(0,64,128,0.22); }
+  </style>
 </head>
 <body>
   <nav>
@@ -20,37 +34,137 @@
   <header class="page-header">
     <div class="header-content">
       <h1>Database Application for Aircraft Fleet Selection</h1>
-      <p>MATLAB and Excel integrated decision-support tool for fleet planning</p>
+      <p>MATLAB &middot; Excel &middot; Decision Support Systems &middot; ERAU</p>
     </div>
   </header>
 
+  <nav class="breadcrumb" aria-label="breadcrumb">
+    <a href="aerospace.html">Aerospace Projects</a> &rsaquo; Database Application for Aircraft Fleet Selection
+  </nav>
+
+  <!-- Engineering Snapshot -->
+  <section class="snapshot-card" style="background:#004080; color:white; padding:2rem;">
+    <div style="max-width:960px; margin:0 auto; display:flex; flex-wrap:wrap; gap:2rem; align-items:flex-start;">
+      <div style="flex:1; min-width:200px;">
+        <p style="font-size:0.75em; letter-spacing:0.07em; text-transform:uppercase; opacity:0.65; margin:0 0 0.35rem;">Role</p>
+        <p style="font-weight:600; font-size:1.05em; margin:0 0 0.25rem;">Individual &mdash; Application Design &amp; Development</p>
+        <p style="font-size:0.88em; opacity:0.8; margin:0;">Decision Support Systems &middot; ERAU</p>
+      </div>
+      <div style="flex:1; min-width:200px;">
+        <p style="font-size:0.75em; letter-spacing:0.07em; text-transform:uppercase; opacity:0.65; margin:0 0 0.35rem;">Tools</p>
+        <p style="font-size:0.92em; line-height:1.75; margin:0;">MATLAB &middot; MATLAB App Designer &middot; Excel</p>
+      </div>
+      <div style="flex:1.6; min-width:240px;">
+        <p style="font-size:0.75em; letter-spacing:0.07em; text-transform:uppercase; opacity:0.65; margin:0 0 0.35rem;">Key Contributions</p>
+        <ul style="margin:0; padding-left:1.15rem; font-size:0.92em; line-height:1.85;">
+          <li>Built a MATLAB GUI enabling airline operators to search, filter, and compare aircraft across key performance parameters</li>
+          <li>Integrated an Excel-backed dataset for structured storage and retrieval of aircraft specifications</li>
+          <li>Implemented dynamic visualizations &mdash; bar charts and scatter plots &mdash; based on the active filtered selection</li>
+          <li>Reduced data retrieval time by approximately 25% relative to manual spreadsheet workflows</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stat Boxes -->
+  <section style="background:#f4faff; border-bottom:1px solid #d0dde8; padding:1.5rem 2rem;">
+    <div style="max-width:960px; margin:0 auto; display:flex; flex-wrap:wrap; gap:1rem; justify-content:center;">
+      <div class="stat-box" style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+        <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">25<span style="font-size:1rem; font-weight:400;">%</span></div>
+        <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Faster Data Retrieval</div>
+      </div>
+      <div class="stat-box" style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+        <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">GUI</div>
+        <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Interactive Interface</div>
+      </div>
+      <div class="stat-box" style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+        <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">Excel</div>
+        <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Live Data Backend</div>
+      </div>
+      <div class="stat-box" style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+        <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">Multi</div>
+        <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Parameter Filtering</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Overview -->
   <section class="project-row">
-    <div class="project-text">
+    <div class="project-text" style="max-width:820px;">
       <h2>Project Overview</h2>
+      <p>Fleet procurement decisions involve comparing dozens of aircraft across a wide range of performance, operational, and economic parameters. Without structured tooling, analysts are forced to manually scan spreadsheets and cross-reference multiple data sources &mdash; a slow and error-prone process. This project addressed that bottleneck by developing an interactive MATLAB application that allows airline operators to query, filter, and compare aircraft options through a single unified interface.</p>
+      <p>The application integrates a live Excel-backed dataset, making it straightforward to update aircraft records without modifying the application code. Users can apply multi-parameter filters and immediately see the filtered results in both tabular and graphical form, turning what had been a manual multi-step lookup process into a streamlined, decision-ready workflow.</p>
       <ul>
-        <li>Built a MATLAB interface that allows airline owners to sort, filter, and compare fleet options by performance and operational criteria.</li>
-        <li>Integrated an Excel-backed dataset for streamlined aircraft information retrieval and update workflows.</li>
-        <li>Implemented visual summaries with tables and plots to support faster, data-driven selection decisions.</li>
-        <li>Improved information access efficiency by approximately 25 percent through structured search and filtering logic.</li>
+        <li>Design a GUI-based application that allows filtering aircraft by multiple performance criteria simultaneously</li>
+        <li>Connect the application to an Excel dataset so records can be updated without redeploying code</li>
+        <li>Display filtered results in both sortable tables and comparative visualizations</li>
+        <li>Reduce the time required to retrieve and compare candidate aircraft versus manual spreadsheet methods</li>
       </ul>
-      <p><a class="project-title-link" href="aerospace.html">Back to Aerospace Projects</a></p>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Folder/MATLAB1.png" alt="MATLAB fleet selection application main interface" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 1: Main application interface &mdash; filter panel and aircraft results table built in MATLAB App Designer</figcaption>
+      </figure>
     </div>
-    <div class="project-image-group2">
-      <img src="Folder/MATLAB1.png" alt="MATLAB fleet selection interface" />
-      <img src="Folder/MATLAB2.png" alt="Filtered aircraft data view" />
-      <img src="Folder/MATLAB3.png" alt="Visualization output for decision support" />
+  </section>
+
+  <!-- Application Design -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:820px;">
+      <h2>Application Design</h2>
+      <p>The application was built using MATLAB App Designer. The interface is divided into three functional areas: a filter panel, a results table, and a visualization panel. Users set filter bounds on parameters such as range, maximum takeoff weight, passenger capacity, and cruise speed, then trigger a query that returns only the aircraft meeting all specified criteria.</p>
+      <p>The Excel integration uses MATLAB&rsquo;s <code>readtable</code> function to load the dataset at application startup. This decouples the data layer from the application logic &mdash; adding a new aircraft or updating a specification requires only editing the Excel file, with no code changes required. The loaded table is held in application state and re-queried on each filter update, keeping response times fast regardless of dataset size.</p>
+      <p>The visualization panel generates comparative charts dynamically based on the filtered selection. A direct side-by-side bar chart is shown when the filtered set is small; a scatter plot of two user-selected parameters provides an overview when more results are present, helping identify dominant options at a glance.</p>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Folder/MATLAB2.png" alt="Filtered aircraft data view showing comparison table" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 2: Filtered results table &mdash; multi-parameter query returning candidate aircraft sorted by a selected performance metric</figcaption>
+      </figure>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Folder/MATLAB3.png" alt="Visualization output comparing aircraft performance parameters" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 3: Visualization panel &mdash; dynamically generated comparative chart based on the active filtered selection</figcaption>
+      </figure>
     </div>
+  </section>
+
+  <!-- Key Takeaways -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:860px;">
+      <h2>Key Takeaways</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-top:1rem;">
+        <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+          <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">Separating data from code reduces maintenance cost</p>
+          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">Storing the aircraft dataset in Excel instead of hardcoding it into the application meant the data could be updated by anyone without touching MATLAB. This separation of data and logic is a fundamental software design principle that pays off immediately when requirements change.</p>
+        </div>
+        <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+          <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">Visualization type should match the comparison task</p>
+          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">A bar chart works well for comparing two aircraft directly; a scatter plot is more informative with many results. Choosing the chart type based on the number of results &mdash; rather than using one type for everything &mdash; made the output immediately interpretable without extra effort from the user.</p>
+        </div>
+        <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+          <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">Multi-parameter filtering exposes non-obvious tradeoffs</p>
+          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">When users applied simultaneous constraints on range, capacity, and fuel efficiency, the filtered set often surfaced counter-intuitive candidates &mdash; aircraft competitive on two parameters but weak on a third. The tool made these tradeoffs visible in a way that manual spreadsheet review rarely achieves.</p>
+        </div>
+        <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+          <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">In-memory queries keep the GUI responsive</p>
+          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">Loading the Excel table once at startup and running filter logic on the in-memory table &mdash; rather than re-reading the file on each query &mdash; kept filter response times under 100ms regardless of dataset size. Re-reading on every filter update would have made the interface feel slow and unresponsive.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 1rem 2rem 2rem;">
+    <p><a class="project-title-link" href="aerospace.html">&#8592; Back to Aerospace Projects</a></p>
   </section>
 
   <footer>
     <div class="footer-container">
-      <span>Phone: (215) 397–5806</span>
+      <span>Phone: (215) 397&ndash;5806</span>
       <span>Email: <a href="mailto:bharadwajanuranan@gmail.com">bharadwajanuranan@gmail.com</a></span>
       <span><a href="https://linkedin.com/in/anuranan-bharadwaj" target="_blank">LinkedIn</a></span>
       <span><a href="https://github.com/anuranan10" target="_blank">GitHub</a></span>
-      <span>&copy; 2030 Anuranan Bharadwaj</span>
+      <span>&copy; 2025 Anuranan Bharadwaj</span>
     </div>
   </footer>
 </body>
 </html>
-

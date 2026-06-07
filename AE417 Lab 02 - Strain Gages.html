@@ -1,4 +1,4 @@
-ï»¿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -106,12 +106,12 @@
         <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Figure 8: Strain vs Load for different beams</figcaption>
       </figure>
       <figure style="margin:0; text-align:center;">
-        <img src="Folder/AE417/lab02/fig18.png" alt="Stress vs Strain Curve â€“ Aluminum Beam" />
-        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Figure 9: Stress vs Strain Curve â€“ Aluminum Beam</figcaption>
+        <img src="Folder/AE417/lab02/fig18.png" alt="Stress vs Strain Curve – Aluminum Beam" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Figure 9: Stress vs Strain Curve – Aluminum Beam</figcaption>
       </figure>
       <figure style="margin:0; text-align:center;">
-        <img src="Folder/AE417/lab02/fig19.png" alt="Stress vs Strain Curve â€“ Honeycomb Core Beam" />
-        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Figure 10: Stress vs Strain Curve â€“ Honeycomb Core Beam</figcaption>
+        <img src="Folder/AE417/lab02/fig19.png" alt="Stress vs Strain Curve – Honeycomb Core Beam" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Figure 10: Stress vs Strain Curve – Honeycomb Core Beam</figcaption>
       </figure>
     </div>
   </section>
@@ -125,15 +125,15 @@ al_strain_T = [0  0.000354  0.000699  0.00104];   % aluminum tension
 hc_strain_T = [0  0.000429  0.000861  0.00129];   % CFRP tension
 
 % Aluminum bending stress: sigma = M*y / I
-M_al     = F * L_al;                  % NÂ·m
+M_al     = F * L_al;                  % N·m
 sigma_al = M_al .* y_al ./ I_al;     % Pa
 
 % CFRP sandwich facing stress: sigma = M / (b * h_f * t_face)
 sigma_cf = M_cf ./ (b_cf * h_f * t_face);
 
 % Young's modulus at 1 kg: E = sigma / epsilon
-E_Al   = sigma_al(2) / al_strain_T(2);  % â‰ˆ 84 GPa
-E_CFRP = sigma_cf(2) / hc_strain_T(2); % â‰ˆ 74 GPa</code></pre>
+E_Al   = sigma_al(2) / al_strain_T(2);  % ˜ 84 GPa
+E_CFRP = sigma_cf(2) / hc_strain_T(2); % ˜ 74 GPa</code></pre>
     </div>    <div class="project-image-group">
       <figure style="margin:0; text-align:center;">
         <img src="Folder/AE417/lab02/fig13.png" alt="Honeycomb beam with resting tension" />
@@ -185,11 +185,11 @@ E_CFRP = sigma_cf(2) / hc_strain_T(2); % â‰ˆ 74 GPa</code></pre>
 
   <footer>
     <div class="footer-container">
-      <span>Phone: (215) 397â€“5806</span>
+      <span>Phone: (215) 397–5806</span>
       <span>Email: <a href="mailto:bharadwajanuranan@gmail.com">bharadwajanuranan@gmail.com</a></span>
       <span><a href="https://linkedin.com/in/anuranan-bharadwaj" target="_blank">LinkedIn</a></span>
       <span><a href="https://github.com/anuranan10" target="_blank">GitHub</a></span>
-      <span>&copy; 2030 Anuranan Bharadwaj</span>
+      <span>&copy; 2025 Anuranan Bharadwaj</span>
     </div>
   </footer>
 </body>

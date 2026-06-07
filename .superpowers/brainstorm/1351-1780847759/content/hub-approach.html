@@ -1,0 +1,145 @@
+<h2>How much should the hub page change?</h2>
+<p class="subtitle">Three approaches — same nav, same color palette, different card designs. Pick what feels right.</p>
+
+<div class="cards">
+
+  <!-- Option A: Tags Only -->
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="font-family:sans-serif; font-size:11px; background:#f4faff; padding:10px; border-radius:4px; border:1px solid #ccd9e8;">
+        <div style="background:#004080; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-size:10px; font-weight:bold; margin:-10px -10px 8px;">AEROSPACE ENGINEERING PROJECTS</div>
+
+        <!-- Card 1 -->
+        <div style="background:white; border:1px solid #d8e6f0; border-radius:4px; padding:8px; margin-bottom:6px; display:flex; gap:8px;">
+          <div style="flex:1;">
+            <div style="font-weight:700; color:#004080; font-size:11px; margin-bottom:3px;">High-Bypass Turbofan Engine Senior Design</div>
+            <div style="margin-bottom:4px;">
+              <span style="background:#e0eaf8; color:#004080; font-size:9px; padding:1px 5px; border-radius:10px; margin-right:3px;">Senior Design</span>
+              <span style="background:#e0eaf8; color:#004080; font-size:9px; padding:1px 5px; border-radius:10px; margin-right:3px;">Propulsion</span>
+              <span style="background:#e0eaf8; color:#004080; font-size:9px; padding:1px 5px; border-radius:10px;">MATLAB · AEDsys</span>
+            </div>
+            <div style="font-size:9px; color:#555; line-height:1.4;">Led the design of a 74,770 lbf turbofan engine covering full development from cycle analysis to performance evaluation...</div>
+          </div>
+          <div style="width:60px; background:#dce8f0; border-radius:3px; font-size:8px; color:#888; display:flex; align-items:center; justify-content:center;">imgs</div>
+        </div>
+
+        <!-- Card 2 -->
+        <div style="background:white; border:1px solid #d8e6f0; border-radius:4px; padding:8px; display:flex; gap:8px;">
+          <div style="flex:1;">
+            <div style="font-weight:700; color:#004080; font-size:11px; margin-bottom:3px;">DC-8 PID Controller Design</div>
+            <div style="margin-bottom:4px;">
+              <span style="background:#e0eaf8; color:#004080; font-size:9px; padding:1px 5px; border-radius:10px; margin-right:3px;">Controls</span>
+              <span style="background:#e0eaf8; color:#004080; font-size:9px; padding:1px 5px; border-radius:10px; margin-right:3px;">Group Project</span>
+              <span style="background:#e0eaf8; color:#004080; font-size:9px; padding:1px 5px; border-radius:10px;">MATLAB</span>
+            </div>
+            <div style="font-size:9px; color:#555; line-height:1.4;">PID controller for DC-8 longitudinal and lateral dynamics...</div>
+          </div>
+          <div style="width:60px; background:#dce8f0; border-radius:3px; font-size:8px; color:#888; display:flex; align-items:center; justify-content:center;">imgs</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Tags Only</h3>
+      <p>Keep the existing card layout. Add small category + tools badges below each project title. Minimal change, maximum info density.</p>
+    </div>
+  </div>
+
+  <!-- Option B: Featured Hero + Tagged List -->
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="font-family:sans-serif; font-size:11px; background:#f4faff; padding:10px; border-radius:4px; border:1px solid #ccd9e8;">
+        <div style="background:#004080; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-size:10px; font-weight:bold; margin:-10px -10px 8px;">AEROSPACE ENGINEERING PROJECTS</div>
+
+        <!-- Featured Card -->
+        <div style="background:white; border:2px solid #004080; border-radius:4px; padding:8px; margin-bottom:6px;">
+          <div style="font-size:8px; font-weight:700; color:#004080; letter-spacing:0.05em; text-transform:uppercase; margin-bottom:3px;">★ Flagship Project</div>
+          <div style="font-weight:700; color:#004080; font-size:12px; margin-bottom:3px;">High-Bypass Turbofan Engine Senior Design</div>
+          <div style="margin-bottom:5px;">
+            <span style="background:#004080; color:white; font-size:9px; padding:1px 5px; border-radius:10px; margin-right:3px;">Senior Design</span>
+            <span style="background:#e0eaf8; color:#004080; font-size:9px; padding:1px 5px; border-radius:10px; margin-right:3px;">Propulsion</span>
+            <span style="background:#e0eaf8; color:#004080; font-size:9px; padding:1px 5px; border-radius:10px;">MATLAB · AEDsys</span>
+          </div>
+          <div style="display:flex; gap:6px; margin-bottom:5px;">
+            <div style="flex:1; background:#eaf2fb; border-radius:3px; padding:4px; text-align:center;">
+              <div style="font-size:11px; font-weight:700; color:#004080;">11:1</div>
+              <div style="font-size:8px; color:#666;">BPR</div>
+            </div>
+            <div style="flex:1; background:#eaf2fb; border-radius:3px; padding:4px; text-align:center;">
+              <div style="font-size:11px; font-weight:700; color:#004080;">196 kN</div>
+              <div style="font-size:8px; color:#666;">Thrust</div>
+            </div>
+            <div style="flex:1; background:#eaf2fb; border-radius:3px; padding:4px; text-align:center;">
+              <div style="font-size:11px; font-weight:700; color:#004080;">9 stages</div>
+              <div style="font-size:8px; color:#666;">vs 13–14</div>
+            </div>
+          </div>
+          <div style="font-size:9px; color:#555;">Led full design from cycle analysis to component sizing...</div>
+        </div>
+
+        <!-- Regular Card -->
+        <div style="background:white; border:1px solid #d8e6f0; border-radius:4px; padding:8px; display:flex; gap:8px;">
+          <div style="flex:1;">
+            <div style="font-weight:700; color:#004080; font-size:11px; margin-bottom:3px;">DC-8 PID Controller Design</div>
+            <div style="margin-bottom:3px;">
+              <span style="background:#e0eaf8; color:#004080; font-size:9px; padding:1px 5px; border-radius:10px; margin-right:3px;">Controls</span>
+              <span style="background:#e0eaf8; color:#004080; font-size:9px; padding:1px 5px; border-radius:10px;">MATLAB</span>
+            </div>
+            <div style="font-size:9px; color:#555;">PID controller for DC-8 flight dynamics...</div>
+          </div>
+          <div style="width:55px; background:#dce8f0; border-radius:3px; font-size:8px; color:#888; display:flex; align-items:center; justify-content:center;">imgs</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Featured Hero + Tagged List</h3>
+      <p>Turbofan senior design gets a "Flagship Project" treatment with mini stat boxes. All other cards get tags. One project stands out, rest stay compact.</p>
+    </div>
+  </div>
+
+  <!-- Option C: Discipline Sections -->
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="font-family:sans-serif; font-size:11px; background:#f4faff; padding:10px; border-radius:4px; border:1px solid #ccd9e8;">
+        <div style="background:#004080; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-size:10px; font-weight:bold; margin:-10px -10px 8px;">AEROSPACE ENGINEERING PROJECTS</div>
+
+        <!-- Propulsion section -->
+        <div style="margin-bottom:6px;">
+          <div style="font-size:9px; font-weight:700; color:#004080; letter-spacing:0.06em; text-transform:uppercase; border-bottom:1px solid #c0d4e8; padding-bottom:3px; margin-bottom:5px;">Propulsion &amp; Turbomachinery</div>
+          <div style="background:white; border:1px solid #d8e6f0; border-radius:4px; padding:7px; display:flex; gap:6px;">
+            <div style="flex:1;">
+              <div style="font-weight:700; color:#004080; font-size:11px;">High-Bypass Turbofan Senior Design</div>
+              <div style="font-size:9px; color:#555; margin-top:2px;">MATLAB · AEDsys · CAD &nbsp;|&nbsp; Team Lead</div>
+            </div>
+            <div style="width:55px; background:#dce8f0; border-radius:3px; font-size:8px; color:#888; display:flex; align-items:center; justify-content:center;">imgs</div>
+          </div>
+        </div>
+
+        <!-- Controls section -->
+        <div style="margin-bottom:6px;">
+          <div style="font-size:9px; font-weight:700; color:#004080; letter-spacing:0.06em; text-transform:uppercase; border-bottom:1px solid #c0d4e8; padding-bottom:3px; margin-bottom:5px;">Flight Dynamics &amp; Controls</div>
+          <div style="background:white; border:1px solid #d8e6f0; border-radius:4px; padding:7px; display:flex; gap:6px; margin-bottom:4px;">
+            <div style="flex:1;">
+              <div style="font-weight:700; color:#004080; font-size:10px;">DC-8 PID Controller Design</div>
+              <div style="font-size:9px; color:#555; margin-top:1px;">MATLAB &nbsp;|&nbsp; Group</div>
+            </div>
+            <div style="width:55px; background:#dce8f0; border-radius:3px; font-size:8px; color:#888; display:flex; align-items:center; justify-content:center;">imgs</div>
+          </div>
+          <div style="background:white; border:1px solid #d8e6f0; border-radius:4px; padding:7px; display:flex; gap:6px;">
+            <div style="flex:1;">
+              <div style="font-weight:700; color:#004080; font-size:10px;">Quanser Aero PID Design</div>
+              <div style="font-size:9px; color:#555; margin-top:1px;">MATLAB &nbsp;|&nbsp; Team</div>
+            </div>
+            <div style="width:55px; background:#dce8f0; border-radius:3px; font-size:8px; color:#888; display:flex; align-items:center; justify-content:center;">imgs</div>
+          </div>
+        </div>
+
+        <div style="font-size:8px; color:#999; text-align:center;">+ Aerodynamics · Structures · Orbital · Systems sections below...</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Grouped by Discipline</h3>
+      <p>Projects split into labeled sections: Propulsion, Controls, Aerodynamics, Structures, Orbital. Helps recruiters scanning for a specific skill area.</p>
+    </div>
+  </div>
+
+</div>
