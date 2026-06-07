@@ -372,8 +372,8 @@ footer {
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 1rem;
-    margin-left: 3.5rem;
-    margin-right: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .project-image-group figure {
