@@ -1,0 +1,78 @@
+<h2>AE Pages: What's Working vs. What Could Be Better</h2>
+<p class="subtitle">My read after going through the hub and both detail pages</p>
+
+<div class="section">
+  <h3 style="color:#16a34a;">✓ What's already strong</h3>
+  <ul style="line-height:2;">
+    <li><strong>Detail pages are genuinely impressive</strong> — Engineering Snapshot, stat boxes, phase-numbered sections, Key Takeaways grid, and captioned figures all read like a real engineering portfolio, not a class assignment printout.</li>
+    <li><strong>Writing quality is high</strong> — technically accurate, first-person, professional tone. The Turbofan page especially reads like something an employer would actually read.</li>
+    <li><strong>Animations add polish</strong> — the fadeInUp on stat boxes and hover lift on takeaway cards are subtle and work well.</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h3 style="color:#dc2626;">↑ Where there's room to improve</h3>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:0.75rem;">
+
+    <div style="background:#fff7f7; border-left:3px solid #dc2626; padding:1rem; border-radius:0 6px 6px 0;">
+      <p style="font-weight:700; margin:0 0 0.4rem;">1. Hub page feels plain vs. the detail pages</p>
+      <p style="font-size:0.88em; margin:0; color:#444; line-height:1.6;">Eight identical-looking cards with no visual hierarchy. A recruiter can't tell the senior design project apart from a one-off controls lab at a glance. No tags, no role indicators, no way to scan.</p>
+    </div>
+
+    <div style="background:#fff7f7; border-left:3px solid #dc2626; padding:1rem; border-radius:0 6px 6px 0;">
+      <p style="font-weight:700; margin:0 0 0.4rem;">2. No project tags or context badges</p>
+      <p style="font-size:0.88em; margin:0; color:#444; line-height:1.6;">Visitors can't see at a glance: Is this a group project? What tools were used? What discipline — propulsion, controls, structures, orbital? Small tags on each hub card would tell that story instantly.</p>
+    </div>
+
+    <div style="background:#fff7f7; border-left:3px solid #dc2626; padding:1rem; border-radius:0 6px 6px 0;">
+      <p style="font-weight:700; margin:0 0 0.4rem;">3. Detail pages vary in depth (inconsistency)</p>
+      <p style="font-size:0.88em; margin:0; color:#444; line-height:1.6;">The Turbofan and DC-8 pages are rich and well-structured. Other detail pages may not be built to the same level — inconsistent quality undermines the overall impression.</p>
+    </div>
+
+    <div style="background:#fff7f7; border-left:3px solid #dc2626; padding:1rem; border-radius:0 6px 6px 0;">
+      <p style="font-weight:700; margin:0 0 0.4rem;">4. HTML structure issue on hub page</p>
+      <p style="font-size:0.88em; margin:0; color:#444; line-height:1.6;">Each project card uses <code>&lt;ul&gt;&lt;p&gt;...&lt;/p&gt;&lt;/ul&gt;</code> — a <code>&lt;p&gt;</code> inside a <code>&lt;ul&gt;</code> is invalid HTML. Should be a plain <code>&lt;p&gt;</code> with no <code>&lt;ul&gt;</code> wrapper.</p>
+    </div>
+
+    <div style="background:#fff7f7; border-left:3px solid #dc2626; padding:1rem; border-radius:0 6px 6px 0;">
+      <p style="font-weight:700; margin:0 0 0.4rem;">5. No breadcrumb / "you are here" on detail pages</p>
+      <p style="font-size:0.88em; margin:0; color:#444; line-height:1.6;">There's a "← Back to Aerospace Projects" link at the bottom only. Adding a simple breadcrumb at the top (<em>Aerospace → Turbofan</em>) makes navigation feel cleaner and shows hierarchy at a glance.</p>
+    </div>
+
+    <div style="background:#fff7f7; border-left:3px solid #dc2626; padding:1rem; border-radius:0 6px 6px 0;">
+      <p style="font-weight:700; margin:0 0 0.4rem;">6. Copyright says 2030</p>
+      <p style="font-size:0.88em; margin:0; color:#444; line-height:1.6;">Footer on all pages shows © 2030. Probably a small oversight — should be 2025 (or left open-ended as © 2025–present).</p>
+    </div>
+
+  </div>
+</div>
+
+<div class="section" style="margin-top:1.5rem;">
+  <h3>Which improvement area should we focus on?</h3>
+  <p class="subtitle">Select what feels most impactful to you</p>
+
+  <div class="options" data-multiselect>
+    <div class="option" data-choice="hub" onclick="toggleSelect(this)">
+      <div class="letter">A</div>
+      <div class="content">
+        <h3>Improve the hub page</h3>
+        <p>Add tags, visual hierarchy, and make flagship projects stand out</p>
+      </div>
+    </div>
+    <div class="option" data-choice="consistency" onclick="toggleSelect(this)">
+      <div class="letter">B</div>
+      <div class="content">
+        <h3>Bring all detail pages up to the same level</h3>
+        <p>Audit the weaker detail pages and bring them to Turbofan/DC-8 quality</p>
+      </div>
+    </div>
+    <div class="option" data-choice="breadcrumb" onclick="toggleSelect(this)">
+      <div class="letter">C</div>
+      <div class="content">
+        <h3>Breadcrumb + small fixes</h3>
+        <p>Add breadcrumbs to detail pages, fix the HTML structure issue, fix copyright year</p>
+      </div>
+    </div>
+  </div>
+</div>
