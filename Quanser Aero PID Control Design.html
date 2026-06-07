@@ -39,6 +39,10 @@
     </div>
   </header>
 
+  <nav class="breadcrumb" aria-label="breadcrumb">
+    <a href="aerospace.html">Aerospace Projects</a> &rsaquo; Quanser Aero PID Control Design
+  </nav>
+
   <!-- Engineering Snapshot Card -->
   <section class="snapshot-card" style="background:#004080; color:white; padding:2rem;">
     <div style="max-width:960px; margin:0 auto; display:flex; flex-wrap:wrap; gap:2rem; align-items:flex-start;">
@@ -98,6 +102,17 @@
         <li>Develop a second-order plant model from experimental data and use it to calculate PID gains analytically, then compare with the tuned controller</li>
         <li>Evaluate closed-loop stability margins using Bode analysis in MATLAB</li>
       </ul>
+
+      <div style="display:flex; flex-wrap:wrap; gap:1.5rem; margin-top:1.2rem;">
+        <figure style="flex:1; min-width:220px; margin:0;">
+          <img src="Folder/QuanserAero/fig11_quanser_aero_setup.png" alt="Quanser Aero hardware setup" style="width:100%; border-radius:6px;" />
+          <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 1: Quanser Aero Setup &mdash; two brushless DC motors driving propellers mounted on a rigid arm, instrumented for pitch and yaw control</figcaption>
+        </figure>
+        <figure style="flex:1; min-width:220px; margin:0;">
+          <img src="Folder/QuanserAero/fig12_free_body_diagram_of_quanser_aero.png" alt="Free body diagram of Quanser Aero" style="width:100%; border-radius:6px;" />
+          <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 2: Free Body Diagram of Quanser Aero &mdash; thrust forces F<sub>0</sub>, F<sub>1</sub> at distance D<sub>t</sub>, body mass M<sub>b</sub>g at offset D<sub>m</sub>, pitch angle &theta;<sub>b</sub></figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
@@ -141,7 +156,7 @@
       <p>With a damping ratio of &zeta; = 0.1178, the uncompensated Quanser Aero pitch axis is highly underdamped. The 68.96% overshoot and 13.63-second settling time confirm that compensation is required before the platform can track any meaningful command.</p>
       <figure style="margin:1rem 0;">
         <img src="Folder/QuanserAero/fig01_unity_step_response.png" alt="Unity-feedback open-loop step response of Quanser Aero pitch axis" style="width:100%; border-radius:6px;" />
-        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 1 &amp; Table 1: Unity-feedback open-loop step response &mdash; PO = 68.96%, T<sub>s</sub> = 13.63 s, &omega;<sub>n</sub> = 1.865 rad/s</figcaption>
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 3 &amp; Table 1: Unity-feedback open-loop step response &mdash; PO = 68.96%, T<sub>s</sub> = 13.63 s, &omega;<sub>n</sub> = 1.865 rad/s</figcaption>
       </figure>
     </div>
   </section>
@@ -155,21 +170,21 @@
       <p>Proportional gain k<sub>p</sub> was varied from 5 to 10 in steps of 2.5. Increasing k<sub>p</sub> decreased peak time slightly (from ~1.17 s at k<sub>p</sub> = 5 to ~1.1 s at k<sub>p</sub> = 10) but drove the percentage overshoot from ~20% up past 60%, with oscillations that failed to decay at the highest gain. Proportional control alone could not satisfy both the peak time and overshoot requirements simultaneously.</p>
       <figure style="margin:1rem 0;">
         <img src="Folder/QuanserAero/fig02_step_response_P_gains.png" alt="Pitch response for three proportional gains" style="width:100%; border-radius:6px;" />
-        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 3: Pitch response for k<sub>p</sub> &isin; {5, 7.5, 10} &mdash; faster response but rapidly growing overshoot</figcaption>
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 4: Pitch response for k<sub>p</sub> &isin; {5, 7.5, 10} &mdash; faster response but rapidly growing overshoot</figcaption>
       </figure>
 
       <h3 style="color:#004080; margin-top:1.5rem;">Derivative Gain</h3>
       <p>Derivative gain k<sub>d</sub> was varied from 4 to 8 in steps of 2, with k<sub>p</sub> held fixed. All three values produced zero percent overshoot &mdash; a significant improvement &mdash; but the tradeoff was increasing peak time (from ~1.6 s at k<sub>d</sub> = 4 to ~2.6 s at k<sub>d</sub> = 8). A secondary test at k<sub>d</sub> = 0.25 showed the expected fast but oscillatory response, confirming the damping role of the derivative term.</p>
       <figure style="margin:1rem 0;">
         <img src="Folder/QuanserAero/fig03_step_response_D_gains.png" alt="Pitch response for three derivative gains" style="width:100%; border-radius:6px;" />
-        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 4 &amp; 5: Pitch response for k<sub>d</sub> &isin; {4, 6, 8} and k<sub>d</sub> = 0.25 &mdash; derivative action eliminates overshoot but slows response</figcaption>
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 5 &amp; 6: Pitch response for k<sub>d</sub> &isin; {4, 6, 8} and k<sub>d</sub> = 0.25 &mdash; derivative action eliminates overshoot but slows response</figcaption>
       </figure>
 
       <h3 style="color:#004080; margin-top:1.5rem;">Integral Gain</h3>
       <p>With the square-wave input active, integral gain k<sub>i</sub> was varied from 3 to 6 in steps of 1.5. At k<sub>i</sub> = 3 the system tracked below the setpoint; at k<sub>i</sub> = 6 the steady-state error was nearly eliminated, but overshoot grew to ~0.4 rad and inter-cycle oscillations became pronounced. A tuned value of k<sub>i</sub> = 5 gave a steady-state pitch of 0.2976 rad (setpoint: 0.3 rad) with controlled overshoot.</p>
       <figure style="margin:1rem 0;">
         <img src="Folder/QuanserAero/fig04_step_response_D_tuned.png" alt="Pitch response for tuned derivative gain and integral gain sweep" style="width:100%; border-radius:6px;" />
-        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 6 &amp; 7: Tuned derivative gain (k<sub>d</sub> = 3, y<sub>peak</sub> = 0.2577 rad) and integral gain sweep (k<sub>i</sub> &isin; {3, 4.5, 6})</figcaption>
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 7 &amp; 8: Tuned derivative gain (k<sub>d</sub> = 3, y<sub>peak</sub> = 0.2577 rad) and integral gain sweep (k<sub>i</sub> &isin; {3, 4.5, 6})</figcaption>
       </figure>
     </div>
   </section>
@@ -209,7 +224,7 @@
 
       <figure style="margin:1rem 0;">
         <img src="Folder/QuanserAero/fig05_step_response_I_tuned_PID.png" alt="Pitch response with final tuned PID gains" style="width:100%; border-radius:6px;" />
-        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 8 &amp; 9: Tuned k<sub>i</sub> = 5 response (left) and final PID k<sub>p</sub> = 8, k<sub>d</sub> = 3.1, k<sub>i</sub> = 5 square-wave tracking (right) &mdash; 4.12% overshoot, y<sub>ss</sub> = 0.2976 rad</figcaption>
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 9 &amp; 10: Tuned k<sub>i</sub> = 5 response (left) and final PID k<sub>p</sub> = 8, k<sub>d</sub> = 3.1, k<sub>i</sub> = 5 square-wave tracking (right) &mdash; 4.12% overshoot, y<sub>ss</sub> = 0.2976 rad</figcaption>
       </figure>
     </div>
   </section>
@@ -235,7 +250,7 @@
 
       <figure style="margin:1rem 0;">
         <img src="Folder/QuanserAero/fig_combined_model_plant.png" alt="Combined comparison of plant and second-order model responses" style="width:100%; border-radius:6px;" />
-        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 14: Overlaid plant (hardware) and second-order model responses &mdash; steady-state error between responses is 0.0092 rad (3.61%)</figcaption>
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 12: Overlaid plant (hardware) and second-order model responses &mdash; steady-state error between responses is 0.0092 rad (3.61%)</figcaption>
       </figure>
 
       <h3 style="color:#004080; margin-top:1.5rem;">Analytically Calculated PID Gains</h3>
@@ -285,12 +300,12 @@
 
       <figure style="margin:1rem 0;">
         <img src="Folder/QuanserAero/fig_bode_open_loop.png" alt="Open-loop Bode plot of Quanser Aero plant" style="width:100%; border-radius:6px;" />
-        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 15: Open-loop Bode plot &mdash; phase margin = 3.68&deg;, barely stable; gain margin = &infin;</figcaption>
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 14: Open-loop Bode plot &mdash; phase margin = 3.68&deg;, barely stable; gain margin = &infin;</figcaption>
       </figure>
 
       <figure style="margin:1rem 0;">
         <img src="Folder/QuanserAero/fig_bode_pid_controlled.png" alt="Bode plot of PID-compensated open loop" style="width:100%; border-radius:6px;" />
-        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 16: PID-compensated open-loop Bode plot &mdash; phase margin improved to 87.5&deg;, bandwidth = 19.32 rad/s</figcaption>
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 15: PID-compensated open-loop Bode plot &mdash; phase margin improved to 87.5&deg;, bandwidth = 19.32 rad/s</figcaption>
       </figure>
     </div>
   </section>
@@ -345,7 +360,7 @@
       <span>Email: <a href="mailto:bharadwajanuranan@gmail.com">bharadwajanuranan@gmail.com</a></span>
       <span><a href="https://linkedin.com/in/anuranan-bharadwaj" target="_blank">LinkedIn</a></span>
       <span><a href="https://github.com/anuranan10" target="_blank">GitHub</a></span>
-      <span>&copy; 2030 Anuranan Bharadwaj</span>
+      <span>&copy; 2025 Anuranan Bharadwaj</span>
     </div>
   </footer>
 </body>

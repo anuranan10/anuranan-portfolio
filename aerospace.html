@@ -20,135 +20,245 @@
   <header class="page-header">
     <div class="header-content">
       <h1>Aerospace Engineering Projects</h1>
-      <p>Hands-on experiences in flight dynamics, experimental aerodynamics, and structural simulation</p>
+      <p>Hands-on experience in propulsion, flight dynamics, aerodynamics, structures, and orbital mechanics</p>
     </div>
-  </header>  
+  </header>
 
-  <section class="project-row">
-    <div class="project-text">
-      <h2><a class="project-title-link" href="High-Bypass Turbofan Engine Senior Design.html">High-Bypass Turbofan Engine Senior Design</a></h2>
-      <ul>
-        <p>Led the design of a 74,770 lbf high-bypass separate-exhaust turbofan engine, covering the full development cycle from cycle analysis and turbomachinery sizing to combustor design and performance evaluation across takeoff, cruise, and loiter mission requirements.</p>
-      </ul>
-    </div>
-    <div class="project-image-group">
-      <img src="Folder/Turbofan/fig00.jpg" alt="High-bypass turbofan engine CAD cutaway" />
-      <img src="Folder/Turbofan/fig07.jpeg" alt="Fan stage CAD front face" />
-      <img src="Folder/Turbofan/fig11.jpeg" alt="High-pressure compressor CAD model" />
-    </div>
-  </section>
+  <div class="ae-hub">
 
-  <section class="project-row">
-    <div class="project-text">
-      <h2><a class="project-title-link" href="DC-8 PID Controller Design.html">DC-8 PID Controller Design</a></h2>
-      <ul>
-        <p>Group project developing automated flight controllers for the McDonnell Douglas DC-8, modeling the aircraft's longitudinal and lateral-directional dynamics and tuning a PID control system to regulate angle of attack and forward speed within specified overshoot and settling time constraints.</p>
-      </ul>
+    <!-- ── PROPULSION & TURBOMACHINERY ── -->
+    <div class="ae-discipline">
+      <span class="ae-discipline-label">Propulsion &amp; Turbomachinery</span>
+      <div class="ae-discipline-rule"></div>
     </div>
-    <div class="project-image-group">
-      <img src="Folder/DC8PID/fig03_stability_table.png" alt="DC-8 stability characteristics table" />
-      <img src="Folder/DC8PID/fig01_aoa_response.png" alt="AOA PID step response" />
-      <img src="Folder/DC8PID/fig02_forward_speed_response.png" alt="Forward speed PID response" />
-    </div>
-  </section>
 
-  <section class="project-row">
-    <div class="project-text">
-      <h2><a class="project-title-link" href="Quanser Aero PID Control Design.html">Quanser Aero PID Control Design</a></h2>
-      <ul>
-        <p>Collaborated with a three-person team to design and evaluate PID controllers for the Quanser Aero pitch control system, achieving 4.12% overshoot and 1.18s peak time against specified performance requirements.</p>
-      </ul>
+    <div class="ae-featured">
+      <div class="ae-featured-badge">Flagship Project</div>
+      <div class="ae-featured-body">
+        <h2><a class="project-title-link" href="High-Bypass Turbofan Engine Senior Design.html">High-Bypass Turbofan Engine Senior Design</a></h2>
+        <div class="ae-tags">
+          <span class="ae-tag-dark">Senior Design</span>
+          <span class="ae-tag-dark">Team Lead</span>
+          <span class="ae-tag">Propulsion</span>
+          <span class="ae-tag">MATLAB</span>
+          <span class="ae-tag">AEDsys</span>
+          <span class="ae-tag">CAD (Onshape)</span>
+        </div>
+        <div class="ae-featured-stats">
+          <div class="ae-stat">
+            <div class="ae-stat-value">11:1</div>
+            <div class="ae-stat-label">Bypass Ratio</div>
+          </div>
+          <div class="ae-stat">
+            <div class="ae-stat-value">196 kN</div>
+            <div class="ae-stat-label">Takeoff Thrust</div>
+          </div>
+          <div class="ae-stat">
+            <div class="ae-stat-value">9 stages</div>
+            <div class="ae-stat-label">vs 13&ndash;14 (GE90)</div>
+          </div>
+          <div class="ae-stat">
+            <div class="ae-stat-value">55:1</div>
+            <div class="ae-stat-label">Overall Pressure Ratio</div>
+          </div>
+        </div>
+        <ul style="font-size:0.9em; color:#333; line-height:1.6; padding-left:1.1rem; margin:0.5rem 0 0;">
+          <li>Led end-to-end design of a 74,770 lbf high-bypass separate-exhaust turbofan (Atlas-85X)</li>
+          <li>Performed cycle analysis and turbomachinery sizing across takeoff, cruise, and loiter conditions</li>
+          <li>Designed combustor geometry and evaluated component efficiencies using AEDsys and MATLAB</li>
+          <li>Produced full CAD model in Onshape and validated performance against Boeing 777-class mission requirements</li>
+        </ul>
+      </div>
+      <div class="ae-featured-images">
+        <img src="Folder/Turbofan/fig00.jpg" alt="Atlas-85X high-bypass turbofan engine CAD cutaway" />
+      </div>
     </div>
-    <div class="project-image-group">
-      <img src="Folder/QuanserAero/fig01_unity_step_response.png" alt="Quanser Aero open-loop step response" />
-      <img src="Folder/QuanserAero/fig09_bode_open_loop.png" alt="Open-loop Bode diagram" />
-      <img src="Folder/QuanserAero/fig10_bode_pid.png" alt="PID-controlled Bode diagram" />
-    </div>
-  </section>
 
-  <section class="project-row">
-    <div class="project-text">
-      <h2><a class="project-title-link" href="TDRS-M Orbital Mechanics and Trajectory Design.html">TDRS-M Orbital Mechanics and Trajectory Design</a></h2>
-      <ul>
-        <p>Group project simulating the complete trajectory and maneuver sequence of a communications satellite from Low Earth Orbit to Geostationary Earth Orbit, modeling fuel burns, propellant consumption, and a precision phasing maneuver to validate real-world mission tradeoffs against NASA's TDRS-M mission profile.</p>
-      </ul>
+    <!-- ── FLIGHT DYNAMICS & CONTROLS ── -->
+    <div class="ae-discipline">
+      <span class="ae-discipline-label">Flight Dynamics &amp; Controls</span>
+      <div class="ae-discipline-rule"></div>
     </div>
-    <div class="project-image-group">
-      <img src="Folder/AE313/fig02_3d_orbit.jpeg" alt="3D ECI frame orbit visualization" />
-      <img src="Folder/AE313/fig05_phasing_longitude.jpeg" alt="Phasing maneuver longitude convergence" />
-      <img src="Folder/AE313/fig06_ascent_schematic.jpeg" alt="LEO to GEO ascent trajectory schematic" />
-    </div>
-  </section>
 
-  <section class="project-row">
-    <div class="project-text">
-      <h2><a class="project-title-link" href="Aircraft Stability &amp; Control Simulation.html">Aircraft Stability &amp; Control Simulation</a></h2>
-      <ul>
-        <p>Designed a subsonic aircraft model and computed aerodynamic derivatives to evaluate flight characteristics across control inputs. Built a closed-loop flight simulation in MATLAB/Simulink and validated pitch, roll, and yaw stability requirements, with 3D maneuver visualization in FlightGear.</p>
-      </ul>      
+    <div class="ae-card">
+      <div class="ae-card-body">
+        <h2><a class="project-title-link" href="DC-8 PID Controller Design.html">DC-8 PID Controller Design</a></h2>
+        <div class="ae-tags">
+          <span class="ae-tag">Controls</span>
+          <span class="ae-tag">Group Project</span>
+          <span class="ae-tag">MATLAB</span>
+        </div>
+        <ul class="ae-card-desc">
+          <li>Designed PID controllers for DC-8 longitudinal and lateral-directional dynamics from linearized state-space models</li>
+          <li>Held AOA overshoot under 4% and verified zero steady-state error analytically via the Final Value Theorem</li>
+          <li>Validated all controllers in MATLAB with step response simulations confirming stability margins and transient specs</li>
+        </ul>
+      </div>
+      <div class="ae-card-images">
+        <img src="Folder/DC8PID/fig02_forward_speed_response.png" alt="Forward speed PID step response — uncontrolled vs controlled" style="object-fit: fill;" />
+      </div>
     </div>
-    <div class="project-image-group">
-      <img src="Folder/AircraftStability/fig01.jpeg" alt="Aircraft CAD top view" />
-      <img src="Folder/AircraftStability/fig14.png" alt="MATLAB/Simulink 6-DOF flight model" />
-      <img src="Folder/AircraftStability/fig15.jpeg" alt="FlightGear level flight simulation" />
-    </div>    
-  </section>
 
-  <section class="project-row">
-    <div class="project-text">
-      <h2><a class="project-title-link" href="Wind Tunnel Drag Study - Flap Deflection.html">Wind Tunnel Drag Study: Flap Deflection</a></h2>
-      <ul>
-        <p>Executed an experimental wake survey on a NACA 4412 wing across five flap deflection angles to quantify the aerodynamic impact of high-lift devices. Processed airflow measurements using MATLAB to extract drag coefficients and validated results against theoretical predictions.</p>
-      </ul>      
+    <div class="ae-card">
+      <div class="ae-card-body">
+        <h2><a class="project-title-link" href="Quanser Aero PID Control Design.html">Quanser Aero PID Control Design</a></h2>
+        <div class="ae-tags">
+          <span class="ae-tag">Controls</span>
+          <span class="ae-tag">Experimental</span>
+          <span class="ae-tag">MATLAB</span>
+        </div>
+        <ul class="ae-card-desc">
+          <li>Tuned PID pitch controller on physical Quanser Aero hardware via QUARC real-time control</li>
+          <li>Achieved 4.12% overshoot and 1.18s peak time with gains k&#x209A;&nbsp;=&nbsp;8, k&#x2091;&nbsp;=&nbsp;3.1, k&#x1D62;&nbsp;=&nbsp;5</li>
+          <li>Identified second-order plant model (&zeta;&nbsp;=&nbsp;0.0452, &omega;&#x2099;&nbsp;=&nbsp;2.18 rad/s) from experimental step response</li>
+          <li>Improved phase margin from 3.68&deg; to 87.5&deg;, confirmed via Bode analysis in MATLAB</li>
+        </ul>
+      </div>
+      <div class="ae-card-images">
+        <img src="Folder/QuanserAero/fig11_quanser_aero_setup.png" alt="Quanser Aero experimental hardware setup" />
+      </div>
     </div>
-    <div class="project-image-group2">
-      <img src="Folder/WindTunnel/fig01.jpeg" alt="Wind tunnel test section with instruments" />
-      <img src="Folder/WindTunnel/fig03.jpeg" alt="NACA 4412 wing mounted in test section" />
-      <img src="Folder/WindTunnel/fig05.png" alt="Drag coefficient vs flap deflection angle" />
-    </div>     
-  </section>
 
-  <section class="project-row">
-    <div class="project-text">
-      <h2><a class="project-title-link" href="Aircraft Wing Structural Analysis.html">Aircraft Wing Structural Analysis</a></h2>
-      <ul>
-        <p>Modeled a full aircraft wing assembly including spars, ribs, stringers, and skin in 3D CAD, then simulated structural behavior under aerodynamic loading using finite element analysis. Assessed stress distribution and deformation to confirm the wing meets structural performance requirements.</p>
-      </ul>      
+    <div class="ae-card">
+      <div class="ae-card-body">
+        <h2><a class="project-title-link" href="Aircraft Stability &amp; Control Simulation.html">Aircraft Stability &amp; Control Simulation</a></h2>
+        <div class="ae-tags">
+          <span class="ae-tag">Simulation</span>
+          <span class="ae-tag">6-DOF</span>
+          <span class="ae-tag">MATLAB</span>
+          <span class="ae-tag">Simulink</span>
+          <span class="ae-tag">FlightGear</span>
+        </div>
+        <ul class="ae-card-desc">
+          <li>Built a closed-loop 6-DOF flight simulation in MATLAB/Simulink from computed stability and control derivatives</li>
+          <li>Validated pitch, roll, and yaw mode eigenvalues against prescribed damping and frequency specifications</li>
+          <li>Exported maneuver trajectories to FlightGear for real-time 3D visualization of simulated flight</li>
+        </ul>
+      </div>
+      <div class="ae-card-images">
+        <img src="Folder/AircraftStability/fig03.png" alt="MATLAB 3D wireframe model orthogonal view" />
+      </div>
     </div>
-    <div class="project-image-group">
-      <img src="Folder/Wing1.jpg" alt="Aircraft 3D Geometry" />
-      <img src="Folder/Wing2.jpg" alt="Simulink Model" />
-      <img src="Folder/Wing3.jpg" alt="FlightGear Visualization" />
-    </div> 
-  </section>
 
-  <section class="project-row">
-    <div class="project-text">
-      <h2><a class="project-title-link" href="Database Application for Aircraft Fleet Selection.html">Database Application for Aircraft Fleet Selection</a></h2>
-      <ul>
-        <p>Developed an interactive database application enabling airline operators to search, filter, and compare aircraft across key performance parameters. Reduced data retrieval time by 25 percent and integrated data visualizations to support procurement decisions.</p>
-      </ul>      
+    <!-- ── EXPERIMENTAL AERODYNAMICS ── -->
+    <div class="ae-discipline">
+      <span class="ae-discipline-label">Experimental Aerodynamics</span>
+      <div class="ae-discipline-rule"></div>
     </div>
-    <div class="project-image-group2">
-      <img src="Folder/MATLAB1.png" alt="Aircraft 3D Geometry" />
-      <img src="Folder/MATLAB2.png" alt="Simulink Model" />
-      <img src="Folder/MATLAB3.png" alt="Simulink Model" />
-    </div> 
-  </section>
 
-  <section style="text-align: center; margin: 3rem 0;">
-    <a class="resume-download-btn" href="AnurananBharadwaj_RESUME_AE.pdf" target="_blank">📄 DOWNLOAD RESUME PDF</a>
-  </section>
+    <div class="ae-card">
+      <div class="ae-card-body">
+        <h2><a class="project-title-link" href="Wind Tunnel Drag Study - Flap Deflection.html">Wind Tunnel Drag Study: Flap Deflection</a></h2>
+        <div class="ae-tags">
+          <span class="ae-tag">Experimental</span>
+          <span class="ae-tag">Aerodynamics</span>
+          <span class="ae-tag">MATLAB</span>
+        </div>
+        <ul class="ae-card-desc">
+          <li>Performed a wake survey on a NACA 4412 wing at five flap deflection angles in a subsonic wind tunnel</li>
+          <li>Extracted drag coefficients from downstream velocity deficit profiles via momentum integral in MATLAB</li>
+          <li>Compared measured C&#x1D30; values against theoretical predictions to validate wake survey methodology</li>
+        </ul>
+      </div>
+      <div class="ae-card-images">
+        <img src="Folder/WindTunnel/fig03.jpeg" alt="NACA 4412 wing mounted in wind tunnel test section" />
+      </div>
+    </div>
+
+    <!-- ── STRUCTURAL ANALYSIS ── -->
+    <div class="ae-discipline">
+      <span class="ae-discipline-label">Structural Analysis</span>
+      <div class="ae-discipline-rule"></div>
+    </div>
+
+    <div class="ae-card">
+      <div class="ae-card-body">
+        <h2><a class="project-title-link" href="Aircraft Wing Structural Analysis.html">Aircraft Wing Structural Analysis</a></h2>
+        <div class="ae-tags">
+          <span class="ae-tag">FEA</span>
+          <span class="ae-tag">Structures</span>
+          <span class="ae-tag">Fusion 360</span>
+          <span class="ae-tag">FEMAP</span>
+          <span class="ae-tag">NX Nastran</span>
+        </div>
+        <ul class="ae-card-desc">
+          <li>Modeled full wing assembly in Fusion 360 &mdash; spars, ribs, stringers, and skin panels</li>
+          <li>Transferred geometry to FEMAP, applied aerodynamic loading, and solved with NX Nastran</li>
+          <li>Validated mesh quality with Jacobian &gt; 0.6; confirmed 0.15 in peak tip displacement</li>
+          <li>Identified front spar root as peak stress location, consistent with cantilever bending theory</li>
+        </ul>
+      </div>
+      <div class="ae-card-images">
+        <img src="Folder/Wing2.jpg" alt="Finite element mesh of wing assembly in FEMAP" style="object-fit: fill;" />
+      </div>
+    </div>
+
+    <!-- ── ORBITAL MECHANICS ── -->
+    <div class="ae-discipline">
+      <span class="ae-discipline-label">Orbital Mechanics</span>
+      <div class="ae-discipline-rule"></div>
+    </div>
+
+    <div class="ae-card">
+      <div class="ae-card-body">
+        <h2><a class="project-title-link" href="TDRS-M Orbital Mechanics and Trajectory Design.html">TDRS-M Orbital Mechanics and Trajectory Design</a></h2>
+        <div class="ae-tags">
+          <span class="ae-tag">Orbital Mechanics</span>
+          <span class="ae-tag">Group Project</span>
+          <span class="ae-tag">MATLAB</span>
+        </div>
+        <ul class="ae-card-desc">
+          <li>Simulated LEO-to-GEO transfer for TDRS-M via Hohmann transfer and phasing maneuver</li>
+          <li>Computed delta-V budgets, transfer times, and propellant consumption via Tsiolkovsky equation</li>
+          <li>Validated orbital parameters against NASA&rsquo;s published mission profile</li>
+          <li>Visualized full trajectory in a 3D ECI reference frame using MATLAB</li>
+        </ul>
+      </div>
+      <div class="ae-card-images">
+        <img src="Folder/AE313/fig02_3d_orbit.jpeg" alt="3D ECI frame LEO-to-GEO orbit visualization" />
+      </div>
+    </div>
+
+    <!-- ── SYSTEMS & DECISION TOOLS ── -->
+    <div class="ae-discipline">
+      <span class="ae-discipline-label">Systems &amp; Decision Tools</span>
+      <div class="ae-discipline-rule"></div>
+    </div>
+
+    <div class="ae-card">
+      <div class="ae-card-body">
+        <h2><a class="project-title-link" href="Database Application for Aircraft Fleet Selection.html">Database Application for Aircraft Fleet Selection</a></h2>
+        <div class="ae-tags">
+          <span class="ae-tag">Data Systems</span>
+          <span class="ae-tag">MATLAB</span>
+          <span class="ae-tag">Excel</span>
+        </div>
+        <ul class="ae-card-desc">
+          <li>Built a MATLAB App Designer GUI for querying and comparing aircraft by multiple performance parameters</li>
+          <li>Integrated a live Excel backend &mdash; records update without modifying application code</li>
+          <li>Generated dynamic bar charts and scatter plots based on the active filtered selection</li>
+          <li>Reduced data retrieval time by ~25% compared to manual spreadsheet workflows</li>
+        </ul>
+      </div>
+      <div class="ae-card-images">
+        <img src="Folder/MATLAB2.png" alt="Filtered results table — multi-parameter aircraft query" />
+      </div>
+    </div>
+
+    <section style="text-align: center; margin: 3rem 0;">
+      <a class="resume-download-btn" href="AnurananBharadwaj_RESUME_AE.pdf" target="_blank">&#128196; DOWNLOAD RESUME PDF</a>
+    </section>
+
+  </div>
 
   <footer>
     <div class="footer-container">
-      <span>Phone: (215) 397–5806</span>
+      <span>Phone: (215) 397&ndash;5806</span>
       <span>Email: <a href="mailto:bharadwajanuranan@gmail.com">bharadwajanuranan@gmail.com</a></span>
       <span><a href="https://linkedin.com/in/anuranan-bharadwaj" target="_blank">LinkedIn</a></span>
       <span><a href="https://github.com/anuranan10" target="_blank">GitHub</a></span>
-      <span>&copy; 2030 Anuranan Bharadwaj</span>
+      <span>&copy; 2025 Anuranan Bharadwaj</span>
     </div>
   </footer>
 </body>
 </html>
-
