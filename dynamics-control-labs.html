@@ -30,9 +30,9 @@
       <p>Applied a square-wave step input to the Quanser SRV02 servo-motor and recorded the load shaft speed response via MATLAB/Simulink to extract steady-state gain (K) and time constant (&#964;) using the bump test method. Iterated model parameters in a validation experiment; best-fit values of K&nbsp;=&nbsp;1.68&nbsp;rad/s/V and &#964;&nbsp;=&nbsp;0.044&nbsp;s produced near-exact agreement between simulated and measured responses.</p>
     </div>
     <div class="project-image-group">
-      <div class="project-image-note">Voltage &amp; speed vs time &mdash; bump test</div>
-      <div class="project-image-note">Model validation overlay</div>
-      <div class="project-image-note">K and &#964; parameter comparison table</div>
+      <img src="Folder/AE443/lab01/fig08.png" alt="63.2% criterion diagram for time constant identification from step response" />
+      <img src="Folder/AE443/lab01/fig07.jpeg" alt="Best-fit validated model — K=1.68, τ=0.044, near-exact overlay of simulated and measured speed" />
+      <img src="Folder/AE443/lab01/fig05.jpeg" alt="Model validation — K=1.53, τ=0.0253 nominal, simulated vs. measured speed" />
     </div>
   </section>
 
@@ -42,9 +42,9 @@
       <p>Derived equations of motion for the SRV02 rotary flexible link using the Euler-Lagrange method, then identified the link's natural frequency (&#969;n&nbsp;=&nbsp;18.49&nbsp;rad/s) and stiffness (K_s&nbsp;=&nbsp;1.30&nbsp;N&#183;m/rad) from a free-oscillation response. Built and validated a 4-state state-space model; open-loop poles and transfer functions were derived and compared against measured servo angle and link angle responses.</p>
     </div>
     <div class="project-image-group">
-      <div class="project-image-note">Free-oscillation plot</div>
-      <div class="project-image-note">Model validation &mdash; servo angle</div>
-      <div class="project-image-note">Model validation &mdash; flexible link angle</div>
+      <img src="Folder/AE443/lab02/fig01.png" alt="Free-oscillation decay of flexible link angle — used to identify natural frequency and stiffness" />
+      <img src="Folder/AE443/lab02/fig03.png" alt="Model validation — simulated vs. measured flexible link deflection angle α" />
+      <img src="Folder/AE443/lab02/fig04.png" alt="Free-oscillation plot with cursor data points for logarithmic decrement calculation" />
     </div>
   </section>
 
@@ -54,9 +54,9 @@
       <p>Designed PV and PIV controllers for load shaft position control of the SRV02. Step tracking was validated in simulation and on hardware; adding an integral gain k_i&nbsp;=&nbsp;38.9&nbsp;V/(rad&#183;s) reduced ramp tracking steady-state error from 0.186&nbsp;rad (PV alone) to 0.007&nbsp;rad (PIV), confirming that the integral term eliminates the Type-1 ramp error present in PV-only control.</p>
     </div>
     <div class="project-image-group">
-      <div class="project-image-note">Step response &mdash; simulated and measured</div>
-      <div class="project-image-note">Ramp response with PV controller</div>
-      <div class="project-image-note">Ramp response with PIV controller</div>
+      <img src="Folder/AE443/lab03/fig01.png" alt="Simulated PV step response — ideal position tracking, tₚ=0.194 s, PO=5%" />
+      <img src="Folder/AE443/lab03/fig05.png" alt="PV controller — measured ramp response on hardware, ess=0.186 rad" />
+      <img src="Folder/AE443/lab03/fig06.png" alt="PIV controller — simulated ramp response with near-zero steady-state error, ess=0.005 rad" />
     </div>
   </section>
 
@@ -66,9 +66,9 @@
       <p>Derived the closed-loop transfer function for a PI-controlled rotary gyroscope and designed gains (k_p&nbsp;=&nbsp;19.79, k_i&nbsp;=&nbsp;39.86) to track a 2&#176; deflection reference. Demonstrated superior disturbance rejection with the PI controller enabled versus disabled, and confirmed system stability for both open-loop and closed-loop configurations using the Routh-Hurwitz criterion.</p>
     </div>
     <div class="project-image-group">
-      <div class="project-image-note">Open-loop vs closed-loop alpha response</div>
-      <div class="project-image-note">PI controller tracking &#945; = 2&#176;</div>
-      <div class="project-image-note">Disturbance rejection &mdash; control on vs off</div>
+      <img src="Folder/AE443/lab04/fig02.png" alt="Open-loop α — transfer function model vs. system output, showing model–hardware discrepancy" />
+      <img src="Folder/AE443/lab04/fig05.png" alt="Closed-loop α — PI controller tracking 2° reference, ess=0.003°" />
+      <img src="Folder/AE443/lab04/fig08.jpeg" alt="Closed-loop with disturbance — PI control holds heading near 0° during base rotation" />
     </div>
   </section>
 
@@ -78,9 +78,9 @@
       <p>Designed and compared PI and lead compensators for SRV02 motor speed regulation using frequency-domain methods. Bode analysis confirmed infinite gain margin and 87.8&#176; phase margin. PI control achieved 4.4% overshoot in simulation and 23.8% on hardware; the lead compensator showed 2% simulated overshoot but 44.4% on hardware, demonstrating that PI control is more robust to unmodeled physical effects in this configuration.</p>
     </div>
     <div class="project-image-group">
-      <div class="project-image-note">Bode diagram &mdash; gain and phase margins</div>
-      <div class="project-image-note">Step response &mdash; PI vs Lead (simulation)</div>
-      <div class="project-image-note">Step response &mdash; PI vs Lead (implementation)</div>
+      <img src="Folder/AE443/lab05/fig06.jpeg" alt="Bode diagram of augmented plant — infinite gain margin, phase margin 87.8° at 1.53 rad/s" />
+      <img src="Folder/AE443/lab05/fig01.png" alt="PI controller — simulated step response, tₚ=0.04 s, PO=4.4%, zero steady-state error" />
+      <img src="Folder/AE443/lab05/fig02.jpeg" alt="PI controller — hardware step response, tₚ=0.034 s, PO=23.8% due to encoder noise" />
     </div>
   </section>
 
