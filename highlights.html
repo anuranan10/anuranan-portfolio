@@ -15,117 +15,139 @@
       background: #fff;
     }
 
+    /* ── Header ── */
     .event-header {
       background: #004080;
       color: white;
-      padding: 1.6rem 2rem 1.4rem;
+      padding: 1.6rem 2rem;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 2rem;
     }
 
     .event-badge {
-      font-size: 2.6rem;
+      flex-shrink: 0;
+      font-size: 2.4rem;
       font-weight: 800;
       letter-spacing: -0.02em;
       line-height: 1;
-      white-space: nowrap;
       color: white;
     }
 
     .event-badge span {
       display: block;
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       font-weight: 500;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      opacity: 0.7;
+      opacity: 0.65;
       margin-top: 0.3rem;
     }
 
-    .event-info {
-      flex: 1;
-    }
+    .event-info { flex: 1; }
 
     .event-title {
-      font-size: 1.05rem;
+      font-size: 1.0rem;
       font-weight: 700;
-      margin: 0 0 0.3rem;
-      color: white;
       font-style: italic;
+      margin: 0 0 0.35rem;
+      color: white;
     }
 
     .event-meta {
-      font-size: 0.82rem;
-      opacity: 0.75;
+      font-size: 0.8rem;
+      opacity: 0.72;
+      margin: 0 0 0.75rem;
       display: flex;
       flex-wrap: wrap;
-      gap: 0 1.2rem;
+      gap: 0 1rem;
+    }
+    .event-meta span + span::before { content: "· "; }
+
+    .event-desc {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      opacity: 0.88;
+      margin: 0;
+      max-width: 620px;
     }
 
-    .event-meta span::before {
-      content: "· ";
-    }
-    .event-meta span:first-child::before {
-      content: "";
-    }
-
-    /* 2×2 photo grid */
-    .photo-grid-2x2 {
+    /* ── Uniform 2×2 photo grid ── */
+    .photo-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto auto;
-      gap: 3px;
+      gap: 4px;
+      background: #e8eef5;
     }
 
-    /* Hero + 3 col layout */
-    .photo-grid-hero {
-      display: grid;
-      grid-template-columns: 1.35fr 1fr 1fr;
-      grid-template-rows: auto auto;
-      gap: 3px;
-    }
-
-    .photo-grid-hero .hero {
-      grid-row: 1 / 3;
-    }
-
-    /* Single centered photo */
-    .photo-single {
-      display: flex;
-      justify-content: center;
-      background: #f4faff;
-      padding: 2rem;
-    }
-
-    .photo-single img {
-      max-height: 520px;
-      border-radius: 8px;
-      box-shadow: 0 2px 12px rgba(0,64,128,0.15);
-      object-fit: cover;
-    }
-
-    .event-card img {
+    .photo-grid img {
       width: 100%;
-      height: 100%;
+      aspect-ratio: 4 / 3;
       object-fit: cover;
+      object-position: top center;
       display: block;
     }
 
-    .photo-grid-2x2 img,
-    .photo-grid-hero img {
-      min-height: 220px;
-      max-height: 320px;
+    /* ncur3 is portrait — show more of it by bumping position slightly down */
+    .photo-grid img.portrait {
+      object-position: 50% 15%;
     }
 
+    /* ── Feature layout: big photo left + info panel right ── */
+    .photo-feature {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+    }
+
+    .photo-feature img {
+      width: 100%;
+      height: 100%;
+      min-height: 380px;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    .photo-feature-panel {
+      background: #f4faff;
+      padding: 2rem 1.8rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.2rem;
+      border-left: 3px solid #d0dde8;
+    }
+
+    .photo-feature-panel .fact {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .photo-feature-panel .fact-label {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #888;
+      font-weight: 600;
+    }
+
+    .photo-feature-panel .fact-value {
+      font-size: 0.95rem;
+      color: #1a1a2e;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    /* ── Responsive ── */
     @media (max-width: 768px) {
       .event-header { flex-direction: column; gap: 0.8rem; }
-      .event-badge { font-size: 2rem; }
-      .photo-grid-2x2,
-      .photo-grid-hero { grid-template-columns: 1fr; }
-      .photo-grid-hero .hero { grid-row: auto; }
-      .photo-grid-2x2 img,
-      .photo-grid-hero img { max-height: 240px; }
+      .event-badge { font-size: 1.9rem; }
+      .photo-grid { grid-template-columns: 1fr; }
+      .photo-grid img { aspect-ratio: 4 / 3; }
+      .photo-feature { grid-template-columns: 1fr; }
+      .photo-feature img { min-height: 260px; }
+      .photo-feature-panel { border-left: none; border-top: 3px solid #d0dde8; }
     }
   </style>
 </head>
@@ -148,7 +170,7 @@
     </div>
   </header>
 
-  <!-- NCUR 2026 -->
+  <!-- ── NCUR 2026 ── -->
   <div class="event-card">
     <div class="event-header">
       <div class="event-badge">
@@ -163,17 +185,18 @@
           <span>May 2026</span>
           <span>w/ K. Satvaldy &amp; V. Shi</span>
         </div>
+        <p class="event-desc">Presented original undergraduate research at one of the largest undergraduate research conferences in the United States, hosted by Virginia Commonwealth University. Represented ERAU among a university-wide delegation, sharing work on a Python-based computational framework for turbine blade aerodynamics analysis and multi-point pressure characterization.</p>
       </div>
     </div>
-    <div class="photo-grid-hero">
-      <img class="hero" src="Extracurricular/ncur2026_1.jpg" alt="Anuranan at the NCUR 2026 entrance in Richmond, Virginia" />
-      <img src="Extracurricular/ncur2026_3.jpg" alt="Presenting the Turbine Aerodynamics research poster at NCUR 2026" />
-      <img src="Extracurricular/ncur2026_4.jpg" alt="Team at the NCUR 2026 welcome arch" />
+    <div class="photo-grid">
+      <img src="Extracurricular/ncur2026_1.jpg" alt="Anuranan at the NCUR 2026 entrance in Richmond, Virginia" />
+      <img src="Extracurricular/ncur2026_3.jpg" class="portrait" alt="Presenting the Turbine Aerodynamics research poster at NCUR 2026" />
+      <img src="Extracurricular/ncur2026_4.jpg" alt="Team at the NCUR 2026 welcome arch — Anuranan with teammates" />
       <img src="Extracurricular/ncur2026_2.jpg" alt="ERAU student delegation at NCUR 2026" />
     </div>
   </div>
 
-  <!-- FURC 2026 -->
+  <!-- ── FURC 2026 ── -->
   <div class="event-card">
     <div class="event-header">
       <div class="event-badge">
@@ -188,15 +211,34 @@
           <span>Spring 2026</span>
           <span>w/ K. Satvaldy &amp; V. Shi</span>
         </div>
+        <p class="event-desc">Presented at the Florida state-level undergraduate research conference hosted at UNF &mdash; the first public presentation of this research before advancing to the national stage at NCUR. Shared findings on computational turbine design tools with students and faculty researchers from across Florida.</p>
       </div>
     </div>
-    <div class="photo-single">
+    <div class="photo-feature">
       <img src="Extracurricular/furc_1.jpg" alt="Presenting the Turbine Aerodynamics research poster at FURC, UNF Jacksonville" />
+      <div class="photo-feature-panel">
+        <div class="fact">
+          <span class="fact-label">Research</span>
+          <span class="fact-value">Turbine Aerodynamics and Performance Characterization</span>
+        </div>
+        <div class="fact">
+          <span class="fact-label">Venue</span>
+          <span class="fact-value">Adam W. Herbert University Center<br>University of North Florida</span>
+        </div>
+        <div class="fact">
+          <span class="fact-label">Team</span>
+          <span class="fact-value">Anuranan Bharadwaj<br>Kalkamanali Satvaldy<br>Vincent Shi</span>
+        </div>
+        <div class="fact">
+          <span class="fact-label">Institution</span>
+          <span class="fact-value">Embry-Riddle Aeronautical University</span>
+        </div>
+      </div>
     </div>
   </div>
 
   <section style="padding: 0 2rem 3rem;">
-    <p style="text-align:center; color:#888; font-size:0.88em;">More to come.</p>
+    <p style="text-align:center; color:#aaa; font-size:0.85em; letter-spacing:0.04em;">More to come.</p>
   </section>
 
   <footer>
