@@ -395,6 +395,8 @@ footer {
     object-fit: fill;
     box-shadow: 0 2px 10px rgba(0,0,0,0.10);
     display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .project-image-note {
