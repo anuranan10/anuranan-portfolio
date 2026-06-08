@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Highlights | Anuranan Bharadwaj</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .event-card {
+      max-width: 1000px;
+      margin: 3rem auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 18px rgba(0,64,128,0.13);
+      background: #fff;
+    }
+
+    .event-header {
+      background: #004080;
+      color: white;
+      padding: 1.6rem 2rem 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .event-badge {
+      font-size: 2.6rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      white-space: nowrap;
+      color: white;
+    }
+
+    .event-badge span {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      margin-top: 0.3rem;
+    }
+
+    .event-info {
+      flex: 1;
+    }
+
+    .event-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin: 0 0 0.3rem;
+      color: white;
+      font-style: italic;
+    }
+
+    .event-meta {
+      font-size: 0.82rem;
+      opacity: 0.75;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 1.2rem;
+    }
+
+    .event-meta span::before {
+      content: "· ";
+    }
+    .event-meta span:first-child::before {
+      content: "";
+    }
+
+    /* 2×2 photo grid */
+    .photo-grid-2x2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 3px;
+    }
+
+    /* Hero + 3 col layout */
+    .photo-grid-hero {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 3px;
+    }
+
+    .photo-grid-hero .hero {
+      grid-row: 1 / 3;
+    }
+
+    /* Single centered photo */
+    .photo-single {
+      display: flex;
+      justify-content: center;
+      background: #f4faff;
+      padding: 2rem;
+    }
+
+    .photo-single img {
+      max-height: 520px;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0,64,128,0.15);
+      object-fit: cover;
+    }
+
+    .event-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-grid-2x2 img,
+    .photo-grid-hero img {
+      min-height: 220px;
+      max-height: 320px;
+    }
+
+    @media (max-width: 768px) {
+      .event-header { flex-direction: column; gap: 0.8rem; }
+      .event-badge { font-size: 2rem; }
+      .photo-grid-2x2,
+      .photo-grid-hero { grid-template-columns: 1fr; }
+      .photo-grid-hero .hero { grid-row: auto; }
+      .photo-grid-2x2 img,
+      .photo-grid-hero img { max-height: 240px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="aerospace.html">Aerospace</a>
+    <a href="cs.html">Computer Science</a>
+    <a href="experience.html">Work Experience</a>
+    <a href="lab-testing-experience.html">Lab Testing Experience</a>
+    <a href="highlights.html">Highlights</a>
+    <a href="resume.html">Resume</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <header class="page-header">
+    <div class="header-content">
+      <h1>Highlights</h1>
+      <p>Conferences attended, research presented, and experiences beyond the classroom</p>
+    </div>
+  </header>
+
+  <!-- NCUR 2026 -->
+  <div class="event-card">
+    <div class="event-header">
+      <div class="event-badge">
+        NCUR 2026
+        <span>National</span>
+      </div>
+      <div class="event-info">
+        <p class="event-title">&ldquo;Turbine Aerodynamics and Performance Characterization&rdquo;</p>
+        <div class="event-meta">
+          <span>National Conference on Undergraduate Research</span>
+          <span>Richmond, Virginia</span>
+          <span>May 2026</span>
+          <span>w/ K. Satvaldy &amp; V. Shi</span>
+        </div>
+      </div>
+    </div>
+    <div class="photo-grid-hero">
+      <img class="hero" src="Extracurricular/ncur2026_1.jpg" alt="Anuranan at the NCUR 2026 entrance in Richmond, Virginia" />
+      <img src="Extracurricular/ncur2026_3.jpg" alt="Presenting the Turbine Aerodynamics research poster at NCUR 2026" />
+      <img src="Extracurricular/ncur2026_4.jpg" alt="Team at the NCUR 2026 welcome arch" />
+      <img src="Extracurricular/ncur2026_2.jpg" alt="ERAU student delegation at NCUR 2026" />
+    </div>
+  </div>
+
+  <!-- FURC 2026 -->
+  <div class="event-card">
+    <div class="event-header">
+      <div class="event-badge">
+        FURC
+        <span>Florida</span>
+      </div>
+      <div class="event-info">
+        <p class="event-title">&ldquo;Turbine Aerodynamics and Performance Characterization&rdquo;</p>
+        <div class="event-meta">
+          <span>Florida Undergraduate Research Conference</span>
+          <span>University of North Florida, Jacksonville</span>
+          <span>Spring 2026</span>
+          <span>w/ K. Satvaldy &amp; V. Shi</span>
+        </div>
+      </div>
+    </div>
+    <div class="photo-single">
+      <img src="Extracurricular/furc_1.jpg" alt="Presenting the Turbine Aerodynamics research poster at FURC, UNF Jacksonville" />
+    </div>
+  </div>
+
+  <section style="padding: 0 2rem 3rem;">
+    <p style="text-align:center; color:#888; font-size:0.88em;">More to come.</p>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <span>Phone: (215) 397&#8211;5806</span>
+      <span>Email: <a href="mailto:bharadwajanuranan@gmail.com">bharadwajanuranan@gmail.com</a></span>
+      <span><a href="https://linkedin.com/in/anuranan-bharadwaj" target="_blank">LinkedIn</a></span>
+      <span><a href="https://github.com/anuranan10" target="_blank">GitHub</a></span>
+      <span>&copy; 2025 Anuranan Bharadwaj</span>
+    </div>
+  </footer>
+</body>
+</html>
