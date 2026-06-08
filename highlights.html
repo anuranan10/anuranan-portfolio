@@ -88,9 +88,11 @@
       display: block;
     }
 
-    /* ncur3 is portrait — show more of it by bumping position slightly down */
+    /* portrait images — show full person, letterbox sides with dark fill */
     .photo-grid img.portrait {
-      object-position: 50% 15%;
+      object-fit: contain;
+      object-position: center;
+      background: #111;
     }
 
     /* ── Feature layout: big photo left + info panel right ── */
@@ -215,7 +217,7 @@
       </div>
     </div>
     <div class="photo-grid">
-      <img src="Extracurricular/furc_1.jpg" alt="Presenting the Turbine Aerodynamics research poster at FURC, UNF Jacksonville" />
+      <img src="Extracurricular/furc_1.jpg" class="portrait" alt="Presenting the Turbine Aerodynamics research poster at FURC, UNF Jacksonville" />
       <img src="Folder/1773534894500.jpg" alt="ERAU students and faculty at FURC, UNF Undergraduate Research backdrop" />
     </div>
   </div>
