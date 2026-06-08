@@ -91,7 +91,7 @@
 
   <!-- Project Overview -->
   <section class="project-row">
-    <div class="project-text" style="max-width:820px;">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Project Overview</h2>
       <p>The ER-18 airlifter demands a propulsion system that can produce high thrust for short-runway hot-day takeoffs while maintaining competitive fuel efficiency across long-duration cruise and loiter missions. For AE 440, our four-person team designed the <strong>Atlas-85X</strong> &mdash; a high-bypass, separate-exhaust, geared turbofan (non-afterburning) &mdash; from cycle analysis through full component detail design. The engine is sized to power a 1,000,000 lb MTOW airlifter with a 6,940 nm range and flat-rated performance off a 5,400 ft runway.</p>
       <p>The primary design challenge was balancing the competing demands of high sea-level thrust and efficient high-altitude cruise. Key choices &mdash; an 11:1 bypass ratio, a 55:1 overall pressure ratio, and a 3.2:1 planetary gearbox decoupling the fan from the LP spool &mdash; were all driven by that trade. A custom MATLAB cycle tool was developed and cross-validated against AEDsys at every station, confirming less than 1% deviation across all thermodynamic quantities before any component design began.</p>
@@ -116,7 +116,7 @@
 
   <!-- Thermodynamic Cycle Analysis -->
   <section class="project-row">
-    <div class="project-text" style="max-width:820px;">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Thermodynamic Cycle Analysis</h2>
       <p>The cycle was analyzed as a modified Brayton cycle with a separate bypass stream. Two operating conditions governed the design: the <strong>design point</strong> at 2,134 m / M 0.82, and <strong>takeoff</strong> at sea level / M 0.10. I built the MATLAB cycle tool to iterate over component efficiencies, pressure ratios, bypass ratio, and cooling bleeds simultaneously, then verified every station total temperature and total pressure against AEDsys outputs. Agreement was within 1% at all stations &mdash; confirming the tool was reliable before it was used to bound the turbomachinery design.</p>
 
@@ -139,7 +139,7 @@
 
   <!-- Inlet Design -->
   <section class="project-row">
-    <div class="project-text" style="max-width:820px;">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Inlet Design</h2>
       <p>The axisymmetric subsonic diffuser was designed to deliver uniform, low-distortion flow to the fan face while preserving as much total pressure as possible at both flight regimes. A key finding during inlet iteration was that the corrected mass flow demand at cruise exceeded that at takeoff &mdash; an inversion from typical expectation driven by the significant thrust lapse at altitude. As a result, the throat was sized for cruise (M<sub>th</sub> = 0.70) rather than takeoff, preventing aerodynamic choking at the dominant operating condition.</p>
       <p>Design parameters determined through Sovran &amp; Klomp diffuser map iteration:</p>
@@ -160,7 +160,7 @@
 
   <!-- Component Design: Turbomachinery -->
   <section class="project-row">
-    <div class="project-text" style="max-width:820px;">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Turbomachinery Component Design</h2>
       <p>The turbomachinery forms the core of the engine and represents the majority of the design effort. All components were designed using mean-line velocity triangle analysis, with hub and tip solutions verified at three radii. The guiding philosophy was to minimize total stage count &mdash; accepting moderate deviations in loading and flow coefficients &mdash; in exchange for reduced weight, shorter engine length, and lower system complexity. The GE90 uses 13 compressor stages and 8 turbine stages; the Atlas-85X achieves comparable performance with 9 compressor stages and 3 turbine stages.</p>
 
@@ -200,7 +200,7 @@
 
   <!-- Combustor -->
   <section class="project-row">
-    <div class="project-text" style="max-width:820px;">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Combustor Design</h2>
       <p>An annular combustor was selected for its compact geometry, uniform exit temperature distribution, and efficient mixing characteristics. Inlet conditions from the HPC exit (P<sub>t3</sub> = 1,593 kPa, T<sub>t3</sub> = 873 K) are raised to the turbine inlet target (P<sub>t4</sub> = 1,530 kPa, T<sub>t4</sub> = 1,778 K), with the combustor sustaining only a 4% pressure drop &mdash; within modern design limits. Geometry was scaled from the TF39 annular combustor reference, then sized to provide a residence time of 0.01 s for complete combustion. The final dimensions (L = 0.41 m, D = 0.67 m, L/D = 0.62) produce a compact, low-weight combustor consistent with the overall design philosophy.</p>
     </div>
@@ -208,7 +208,7 @@
 
   <!-- Nozzle & Performance -->
   <section class="project-row">
-    <div class="project-text" style="max-width:820px;">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Nozzle Design &amp; Performance Results</h2>
       <p>Both the core and bypass streams use convergent-only nozzles. A trade study evaluated whether a convergent-divergent (CD) nozzle was justified for the core stream at NPR = 8.44, which theoretically yields a ~7.7% core gross thrust gain. However, with bypass ratio 11, the core produces only 21% of total gross thrust &mdash; reducing the effective whole-engine thrust improvement to just 1.6%, well below the threshold that justifies the added weight and length. The bypass nozzle operates at NPR = 2.00 with a thrust ratio of 1.00; no diverging section provides benefit at this pressure ratio.</p>
 
@@ -237,7 +237,7 @@
 
   <!-- Team Photo -->
   <section class="project-row">
-    <div class="project-text" style="max-width:820px;">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
       <figure style="margin:0.5rem 0;">
         <img src="Folder/Turbofan/fig33.png" alt="Atlas-85X design team at the AE 440 senior design poster presentation" style="width:100%; max-width:500px; border-radius:6px; display:block; margin:0 auto;" />
         <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Atlas-85X team at the AE 440 senior design poster session &mdash; Anuranan Bharadwaj, Vincent Shi, Nicholas Pradilla, Kalkamanali Satvaldy</figcaption>
@@ -247,7 +247,7 @@
 
   <!-- Key Takeaways -->
   <section class="project-row">
-    <div class="project-text" style="max-width:860px;">
+    <div class="project-text" style="max-width:860px; margin:0 auto;">
       <h2>Key Takeaways</h2>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-top:1rem;">
         <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
