@@ -91,7 +91,7 @@
 
   <!-- System Description -->
   <section class="project-row">
-    <div class="project-text" style="max-width:820px;">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>System Description &amp; Objectives</h2>
       <p>The Quanser Aero is a two-degree-of-freedom laboratory platform that mimics the pitch and yaw dynamics of a helicopter body. Two brushless DC motors drive propellers mounted at the ends of a rigid arm; the resulting thrust forces create moments about the pitch axis (elevation) and the yaw axis (travel). The platform is instrumented with encoders on both axes and connects to a host PC through QUARC real-time software, which closes the control loop in hardware at millisecond sampling rates. Because the aerodynamic coupling, inertia, and motor dynamics are all present, the Quanser Aero provides a physically meaningful testbed for classic control techniques well beyond pure simulation.</p>
       <p>This project focused exclusively on the pitch axis. The objectives were:</p>
@@ -118,7 +118,7 @@
 
   <!-- Open-Loop Characterization -->
   <section class="project-row">
-    <div class="project-text" style="max-width:820px;">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Open-Loop System Characterization</h2>
       <p>The experiment began with a unity-feedback step response on the uncompensated pitch axis to measure baseline dynamics. From the measured response, the following key points were identified: t<sub>peak</sub> = 2.692 s, t<sub>0</sub> = 0.998 s (step onset), y<sub>peak</sub> = 0.15033 rad, y<sub>ss</sub> = 0.0890 rad. These values were used to compute the standard second-order metrics:</p>
       <table style="border-collapse:collapse; font-size:0.9em; margin:0.6rem 0 0.8rem;">
@@ -163,7 +163,7 @@
 
   <!-- PID Gain Effects -->
   <section class="project-row">
-    <div class="project-text" style="max-width:820px;">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Effect of Each Control Action on Pitch Response</h2>
 
       <h3 style="color:#004080; margin-top:1.2rem;">Proportional Gain</h3>
@@ -191,7 +191,7 @@
 
   <!-- Final PID Tuning -->
   <section class="project-row">
-    <div class="project-text" style="max-width:820px;">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Final PID Tuning &amp; Performance</h2>
       <p>The three gains were tuned simultaneously on the hardware until the combined response met all design requirements. The final tuned gains were k<sub>p</sub> = 8, k<sub>d</sub> = 3.1, k<sub>i</sub> = 5. These values were chosen by first setting k<sub>p</sub> high enough for fast rise, then adding k<sub>d</sub> to suppress oscillations, and finally increasing k<sub>i</sub> incrementally to drive out the remaining steady-state error without reintroducing instability.</p>
 
@@ -231,7 +231,7 @@
 
   <!-- Second-Order Approximation -->
   <section class="project-row">
-    <div class="project-text" style="max-width:820px;">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Second-Order System Identification &amp; Analytical PID Design</h2>
       <p>A second independent step response was recorded under unity feedback to derive a second-order plant model. From the measured data (y<sub>peak</sub> = 0.4755 rad, y<sub>ss</sub> = 0.2546 rad, t<sub>p</sub> = 1.442 s), the following model parameters were calculated:</p>
       <ul>
@@ -271,7 +271,7 @@
 
   <!-- Bode Analysis -->
   <section class="project-row">
-    <div class="project-text" style="max-width:820px;">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Frequency-Domain Analysis &amp; Stability Margins</h2>
       <p>Bode plots were generated in MATLAB for both the open-loop plant and the PID-compensated open loop. The plant transfer function G(s) = &omega;<sub>n</sub><sup>2</sup> / (s<sup>2</sup> + 2&zeta;&omega;<sub>n</sub>s + &omega;<sub>n</sub><sup>2</sup>) was combined with the PID controller C(s) = k<sub>p</sub> + k<sub>i</sub>/s + k<sub>d</sub>s, and the <code>margin()</code> function was used to extract gain margins, phase margins, and bandwidth.</p>
 
@@ -312,7 +312,7 @@
 
   <!-- State-Space Context -->
   <section class="project-row">
-    <div class="project-text" style="max-width:820px;">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>State-Space Formulation &amp; System Properties</h2>
       <p>The identified second-order transfer function was converted to state-space form by defining states x<sub>1</sub> = y (pitch angle) and x<sub>2</sub> = &dot;y (pitch rate). The resulting matrices are:</p>
       <p style="margin:0.4rem 0 0.2rem 1.5rem; font-style:italic;">A = [[0, 1], [&minus;&omega;<sub>n</sub><sup>2</sup>, &minus;2&zeta;&omega;<sub>n</sub>]] &nbsp;&nbsp; B = [[0], [&omega;<sub>n</sub><sup>2</sup>]] &nbsp;&nbsp; C = [1, 0] &nbsp;&nbsp; D = [0]</p>
@@ -322,7 +322,7 @@
 
   <!-- Key Takeaways -->
   <section class="project-row">
-    <div class="project-text" style="max-width:860px;">
+    <div class="project-text" style="max-width:860px; margin:0 auto;">
       <h2>Key Takeaways</h2>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-top:1rem;">
 

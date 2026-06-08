@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -90,7 +90,7 @@
 
   <!-- Project Overview -->
   <section class="project-row">
-    <div class="project-text" style="max-width:820px;">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Project Overview</h2>
       <p>Structural analysis of an aircraft wing under aerodynamic loading is one of the most fundamental tasks in aerospace engineering design. This project covered the complete workflow from 3D CAD geometry creation through finite element analysis, with the goal of assessing stress distribution and deflection behavior under realistic flight loads.</p>
       <p>The wing assembly was modeled in Fusion 360 with all primary structural members included: front and rear spars, ribs at regular spanwise stations, longitudinal stringers, and upper and lower skin panels. The assembled geometry was then transferred to FEMAP for preprocessing, where distributed aerodynamic loads were applied, boundary conditions were set at the wing root, and the mesh was generated and validated before solving with NX Nastran.</p>
@@ -110,7 +110,7 @@
 
   <!-- CAD Modeling -->
   <section class="project-row">
-    <div class="project-text" style="max-width:820px;">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>CAD Geometry &amp; Assembly</h2>
       <p>The wing was modeled as a full structural assembly rather than a simplified shell, capturing the load-carrying behavior of each member. The front and rear spars run the full span and carry the majority of bending loads. Ribs are positioned at regular spanwise intervals, maintaining the airfoil cross-section and transferring aerodynamic loads into the spars. Longitudinal stringers between ribs provide additional bending stiffness and reduce skin panel buckling. Skin panels close the structure and carry shear flow.</p>
       <p>Particular attention was paid to interface geometry between components, ensuring that mating surfaces were flush and that no gaps or overlaps would cause meshing artifacts during FEA preprocessing. The assembly was exported in a format compatible with FEMAP for direct geometry import without manual reconstruction.</p>
@@ -119,7 +119,7 @@
 
   <!-- FEA Setup & Results -->
   <section class="project-row">
-    <div class="project-text" style="max-width:820px;">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Finite Element Analysis</h2>
       <p>In FEMAP, a distributed aerodynamic pressure load was applied to the upper and lower skin surfaces to simulate lift loading in steady level flight. The wing root was fully constrained as a fixed boundary condition. The finite element mesh was generated using a combination of shell elements for skin panels and beam elements for spar and stringer members, with mesh refinement applied at high-stress locations near the root and spar caps.</p>
       <p>Mesh quality was assessed using Jacobian values: all elements achieved values above 0.6, confirming that element distortion was within acceptable limits for Nastran&rsquo;s linear static solver.</p>
@@ -145,7 +145,7 @@
 
   <!-- Key Takeaways -->
   <section class="project-row">
-    <div class="project-text" style="max-width:860px;">
+    <div class="project-text" style="max-width:860px; margin:0 auto;">
       <h2>Key Takeaways</h2>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-top:1rem;">
         <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">

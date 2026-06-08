@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -90,7 +90,7 @@
 
   <!-- Project Overview -->
   <section class="project-row">
-    <div class="project-text" style="max-width:820px;">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Project Overview</h2>
       <p>Fleet procurement decisions involve comparing dozens of aircraft across a wide range of performance, operational, and economic parameters. Without structured tooling, analysts are forced to manually scan spreadsheets and cross-reference multiple data sources &mdash; a slow and error-prone process. This project addressed that bottleneck by developing an interactive MATLAB application that allows airline operators to query, filter, and compare aircraft options through a single unified interface.</p>
       <p>The application integrates a live Excel-backed dataset, making it straightforward to update aircraft records without modifying the application code. Users can apply multi-parameter filters and immediately see the filtered results in both tabular and graphical form, turning what had been a manual multi-step lookup process into a streamlined, decision-ready workflow.</p>
@@ -110,7 +110,7 @@
 
   <!-- Application Design -->
   <section class="project-row">
-    <div class="project-text" style="max-width:820px;">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Application Design</h2>
       <p>The application was built using MATLAB App Designer. The interface is divided into three functional areas: a filter panel, a results table, and a visualization panel. Users set filter bounds on parameters such as range, maximum takeoff weight, passenger capacity, and cruise speed, then trigger a query that returns only the aircraft meeting all specified criteria.</p>
       <p>The Excel integration uses MATLAB&rsquo;s <code>readtable</code> function to load the dataset at application startup. This decouples the data layer from the application logic &mdash; adding a new aircraft or updating a specification requires only editing the Excel file, with no code changes required. The loaded table is held in application state and re-queried on each filter update, keeping response times fast regardless of dataset size.</p>
@@ -130,7 +130,7 @@
 
   <!-- Key Takeaways -->
   <section class="project-row">
-    <div class="project-text" style="max-width:860px;">
+    <div class="project-text" style="max-width:860px; margin:0 auto;">
       <h2>Key Takeaways</h2>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-top:1rem;">
         <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">

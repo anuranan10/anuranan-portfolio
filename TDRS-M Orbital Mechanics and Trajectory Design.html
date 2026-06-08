@@ -91,7 +91,7 @@
 
   <!-- Mission Context -->
   <section class="project-row">
-    <div class="project-text" style="max-width:820px;">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Mission Context</h2>
       <p>NASA&rsquo;s Tracking and Data Relay Satellite System (TDRS) provides continuous communication links between LEO spacecraft &mdash; including the International Space Station and Hubble Space Telescope &mdash; and ground networks. Reaching the geostationary belt at 35,786 km altitude from a 300 km parking orbit demands a carefully sequenced multi-burn ascent that consumes the overwhelming majority of a spacecraft&rsquo;s propellant. This project simulated the complete orbital trajectory and maneuver sequence for a TDRS-M-class spacecraft, analyzed the full &Delta;v and mass budget, and designed a longitudinal phasing correction at GEO.</p>
       <ul>
@@ -112,7 +112,7 @@
 
   <!-- Phase 1: Parking Orbit Propagation -->
   <section class="project-row">
-    <div class="project-text" style="max-width:820px;">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Phase 1 &mdash; LEO Parking Orbit Propagation</h2>
       <p>The spacecraft begins in a 300 km circular equatorial parking orbit at r<sub>0</sub> = R<sub>E</sub> + 300 = <strong>6678 km</strong>. Circular velocity follows directly from Earth&rsquo;s gravitational parameter &mu;<sub>E</sub> = 398,600.418 km<sup>3</sup>/s<sup>2</sup>:</p>
       <p style="margin:0.5rem 0 0.5rem 1.5rem; font-style:italic; font-size:1.05em;">V<sub>circ</sub> = &radic;(&mu;/r<sub>0</sub>) = <strong>7.73 km/s</strong></p>
@@ -142,7 +142,7 @@
 
   <!-- Phase 2: Hohmann Transfer -->
   <section class="project-row">
-    <div class="project-text" style="max-width:820px;">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Phase 2 &mdash; Hohmann Transfer (LEO &rarr; GTO)</h2>
       <p>A Hohmann transfer ellipse connects the parking orbit at r<sub>p</sub> = 6678 km to GEO altitude at r<sub>a</sub> = 42,164 km. I applied the vis-viva equation at both endpoints of the transfer orbit:</p>
       <p style="margin:0.5rem 0 0.5rem 1.5rem; font-style:italic; font-size:1.05em;">v = &radic;[&mu;(2/r &minus; 1/a)]</p>
@@ -159,7 +159,7 @@
 
   <!-- Phase 3: GEO Insertion + Plane Change -->
   <section class="project-row">
-    <div class="project-text" style="max-width:820px;">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Phase 3 &mdash; GEO Insertion &amp; Plane Change</h2>
       <p>At transfer apogee (r = 42,164 km), the spacecraft must both circularize its orbit and reduce inclination from 28.5&deg; to 0&deg;. Performing the plane change here &mdash; where the spacecraft velocity is at its minimum of <strong>3.07 km/s</strong> &mdash; is the mission-critical sequencing decision. The same 28.5&deg; inclination reduction performed at LEO perigee (v = 10.15 km/s) would cost approximately <strong>5.00 km/s</strong>, making the propellant budget completely infeasible.</p>
       <p>The two burns at GEO apogee were analyzed separately:</p>
@@ -173,7 +173,7 @@
 
   <!-- Phase 4: Phasing Maneuver -->
   <section class="project-row">
-    <div class="project-text" style="max-width:820px;">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Phase 4 &mdash; GEO Phasing Maneuver</h2>
       <p>With both spacecraft in GEO, an interceptor leading its target by &Delta;&theta;<sub>0</sub> = 5&deg; in longitude needs to slow its drift rate and allow the target to catch up. The strategy is to raise the interceptor into a phasing ellipse with a slightly longer period. The required phasing orbit semi-major axis satisfies:</p>
       <p style="margin:0.5rem 0 0.5rem 1.5rem; font-style:italic; font-size:1.05em;">T<sub>phase</sub> / T<sub>GEO</sub> = 1 + &Delta;&theta; / 2&pi;</p>
@@ -197,7 +197,7 @@
 
   <!-- Results & Verification -->
   <section class="project-row">
-    <div class="project-text" style="max-width:820px;">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Mission Results &amp; Real-World Comparison</h2>
 
       <p><strong>&Delta;v Budget Summary:</strong></p>
@@ -269,7 +269,7 @@
 
   <!-- Key Takeaways -->
   <section class="project-row">
-    <div class="project-text" style="max-width:860px;">
+    <div class="project-text" style="max-width:860px; margin:0 auto;">
       <h2>Key Takeaways</h2>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-top:1rem;">
 

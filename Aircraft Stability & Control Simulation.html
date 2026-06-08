@@ -91,7 +91,7 @@
 
   <!-- Project Overview -->
   <section class="project-row">
-    <div class="project-text" style="max-width:820px;">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Project Overview</h2>
       <p>This project covered the full cycle of aircraft stability and control analysis &mdash; from geometry sizing and hand-derived stability derivatives all the way through closed-loop simulation and 3D flight visualization. The aircraft was a clean-sheet design, sized to fly at Mach 0.6 and 6,500 ft altitude at a trimmed angle of attack of 2&deg;, carrying two passengers at a gross weight of 4,000 lb. The goal was to demonstrate that a designed configuration could simultaneously satisfy aerodynamic, geometric, and stability requirements, and then validate that behavior computationally.</p>
       <ul>
@@ -110,7 +110,7 @@
 
   <!-- Aircraft Geometry & Design -->
   <section class="project-row">
-    <div class="project-text" style="max-width:820px;">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Aircraft Geometry &amp; Design Parameters</h2>
       <p>The aircraft configuration was established through manual geometric sizing. Wing parameters were selected to hit the required lift-curve slope and longitudinal stability margin, while tail sizing was driven by horizontal-tail volume coefficient constraints. The final design used an 11&deg; leading-edge sweep and 3&deg; dihedral on the main wing to balance lateral stability and aerodynamic efficiency.</p>
 
@@ -230,7 +230,7 @@
 
   <!-- Longitudinal Stability Analysis -->
   <section class="project-row">
-    <div class="project-text" style="max-width:820px;">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Longitudinal Stability Analysis</h2>
       <p>Longitudinal static stability was evaluated through the pitching-moment curve slope C<sub>m&alpha;</sub>, which must be negative for a statically stable aircraft. The total C<sub>m&alpha;</sub> is the sum of fuselage, wing, and horizontal-tail contributions. The fuselage contribution was computed using Multhopp&rsquo;s theory (implemented as a MATLAB script), which integrates the pitching moment over 100 upwash and 100 downwash fuselage cross-sections, yielding C<sub>m&alpha;,f</sub> = 0.4702 rad<sup>&minus;1</sup>. Combined with the wing contribution (&minus;0.297 rad<sup>&minus;1</sup>) and tail contribution (&minus;1.53 rad<sup>&minus;1</sup>), the hand-calculated total is:</p>
       <p style="margin:0.4rem 0 0.4rem 1.5rem; font-style:italic;">C<sub>m&alpha;</sub> = 0.4702 &minus; 0.297 &minus; 1.53 &asymp; <strong>&minus;1.35 rad<sup>&minus;1</sup></strong></p>
@@ -250,7 +250,7 @@
 
   <!-- Directional & Lateral Stability -->
   <section class="project-row">
-    <div class="project-text" style="max-width:820px;">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Directional &amp; Lateral Stability Analysis</h2>
       <p>Directional stability is characterized by C<sub>n&beta;</sub> (weathercock stability derivative) &mdash; a positive value indicates the aircraft yaws nose-into-the-wind when disturbed, which is the required stable behavior. Lateral stability is characterized by C<sub>l&beta;</sub> (dihedral effect) &mdash; a negative value means the aircraft rolls away from a sideslip, which is likewise stable. Both were computed analytically, incorporating contributions from the wing, fuselage, and vertical tail.</p>
 
@@ -275,7 +275,7 @@
 
   <!-- Stability Derivative Comparison Table -->
   <section class="project-row">
-    <div class="project-text" style="max-width:820px;">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Hand Calculations vs. DATCOM &mdash; Comparison</h2>
       <p>The table below summarizes the full derivative comparison at the design point (&alpha; = 2&deg;, Mach 0.6, 6,500 ft). Good agreement was achieved for most aerodynamic coefficients. The significant discrepancy in C<sub>m&alpha;</sub> underscores that DATCOM&rsquo;s semi-empirical methods have known limitations for tail-effectiveness estimation on configurations where the horizontal tail is a strong contributor to longitudinal stability, warranting cross-verification with analytical methods.</p>
 
@@ -341,7 +341,7 @@
 
   <!-- Simulink Integration -->
   <section class="project-row">
-    <div class="project-text" style="max-width:820px;">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Simulink Integration &amp; Dynamic Derivatives</h2>
       <p>Five stability derivatives computed by DATCOM were integrated as 1-D lookup-table (T(u)) blocks in a Simulink 6-DOF general aviation flight dynamics model. Each lookup table maps angle of attack (in degrees) to its respective derivative value, evaluated at the design flight condition. This non-linear aerodynamic representation is more accurate than fixed-derivative linear models because it captures how the derivatives change across the angle-of-attack range from &minus;4&deg; to +18&deg;.</p>
 
@@ -392,7 +392,7 @@
 
   <!-- Simulation Results -->
   <section class="project-row">
-    <div class="project-text" style="max-width:820px;">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Simulation Results &mdash; FlightGear Maneuvers</h2>
       <p>Three maneuvers were simulated in FlightGear to validate the aircraft&rsquo;s dynamic behavior and control authority. In each case, Simulink passed state outputs (roll, pitch, yaw, altitude, airspeed) to FlightGear in real time, providing a 3D visual confirmation that the aerodynamic model produces physically plausible responses.</p>
 
@@ -425,7 +425,7 @@
 
   <!-- Key Takeaways -->
   <section class="project-row">
-    <div class="project-text" style="max-width:860px;">
+    <div class="project-text" style="max-width:860px; margin:0 auto;">
       <h2>Key Takeaways</h2>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-top:1rem;">
 
