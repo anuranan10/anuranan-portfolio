@@ -80,6 +80,34 @@
     </div>
   </section>
 
+  <section class="project-row">
+    <div class="project-text">
+      <h2>Neural Network from Scratch &mdash; MNIST Digit Classifier</h2>
+      <ul>
+        <li>Implemented a two-layer feedforward neural network from scratch using <strong>NumPy only</strong> &mdash; no ML frameworks &mdash; to understand and manually derive every step of the training process.</li>
+        <li>Architecture: 784-input layer &rarr; 10-unit hidden layer (<strong>ReLU</strong>) &rarr; 10-class output layer (<strong>Softmax</strong>); trained on 42,000 MNIST handwritten digit images with an 1,000-sample held-out dev set.</li>
+        <li>Implemented forward propagation, backpropagation, one-hot encoding, and gradient descent from first principles; reached <strong>~89% training accuracy</strong> after 500 iterations at &alpha; = 0.1.</li>
+      </ul>
+    </div>
+    <div class="project-image-cs">
+      <img src="CS/Neural_Network/nn.png" alt="Neural network MNIST digit prediction output" />
+    </div>
+  </section>
+
+  <section class="project-row">
+    <div class="project-text">
+      <h2>3D Interactive Airport Scene (Three.js)</h2>
+      <ul>
+        <li>Built a real-time <strong>3D airport environment</strong> using <strong>Three.js / WebGL</strong> with procedurally modeled assets: a full aircraft (fuselage, wings, engines, landing gear), hangar, fuel truck, baggage carts, and light poles &mdash; all with cast and received shadows.</li>
+        <li>Implemented a <strong>dual-camera system</strong> (orbit overview + WASD/FPS first-person navigation) and raycasting for interactive click events: toggle individual light poles on/off and open/close the hangar door.</li>
+        <li>Designed a multi-light pipeline (directional, point, and spot lights with 2048&times;2048 shadow maps), a looping fuel truck animation, and a sine-wave-driven aircraft beacon light; added fog depth and tarmac/grass texture mapping for visual realism.</li>
+      </ul>
+    </div>
+    <div class="project-image-cs">
+      <img src="CS/SemesterProject_AB/taxiway.jpg" alt="Airport taxiway layout reference for 3D scene project" />
+    </div>
+  </section>
+
   <section style="text-align: center; margin: 3rem 0;">
     <a class="resume-download-btn" href="AnurananBharadwaj_RESUME_SE.pdf" target="_blank">📄 DOWNLOAD RESUME PDF</a>
   </section>  
