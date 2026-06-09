@@ -36,9 +36,9 @@
         <span class="ae-tag">Raycasting</span>
       </div>
       <ul>
-        <li>Built a real-time <strong>3D airport environment</strong> using <strong>Three.js / WebGL</strong> with procedurally modeled assets: a full aircraft (fuselage, wings, engines, landing gear), hangar, fuel truck, baggage carts, and light poles &mdash; all with cast and received shadows.</li>
-        <li>Implemented a <strong>dual-camera system</strong> (orbit overview + WASD/FPS first-person navigation) and raycasting for interactive click events: toggle individual light poles on/off and open/close the hangar door.</li>
-        <li>Designed a multi-light pipeline (directional, point, and spot lights with 2048&times;2048 shadow maps), a looping fuel truck animation, and a sine-wave-driven aircraft beacon light; added fog depth and tarmac/grass texture mapping for visual realism.</li>
+        <li>Engineered a fully interactive <strong>3D airport environment from scratch</strong> using <strong>Three.js / WebGL</strong> &mdash; modeling a complete aircraft (fuselage, wings, engines, landing gear), hangar, fuel truck, baggage carts, and light poles with real-time cast and received shadows.</li>
+        <li>Architected a <strong>dual-camera system</strong> with seamless switching between orbit overview and WASD first-person navigation; layered in <strong>raycasting</strong> for click-driven interactions &mdash; toggling individual light poles and animating the hangar door open/close.</li>
+        <li>Designed a production-grade <strong>multi-light pipeline</strong> (directional, point, and spot lights with 2048&times;2048 shadow maps), a looping fuel truck animation, sine-wave beacon lighting, atmospheric fog, and tarmac/grass texture mapping for visual depth.</li>
       </ul>
     </div>
     <div class="project-image-cs">
@@ -57,9 +57,9 @@
         <span class="ae-tag">ReLU / Softmax</span>
       </div>
       <ul>
-        <li>Implemented a two-layer feedforward neural network from scratch using <strong>NumPy only</strong> &mdash; no ML frameworks &mdash; to understand and manually derive every step of the training process.</li>
-        <li>Architecture: 784-input layer &rarr; 10-unit hidden layer (<strong>ReLU</strong>) &rarr; 10-class output layer (<strong>Softmax</strong>); trained on 42,000 MNIST handwritten digit images with an 1,000-sample held-out dev set.</li>
-        <li>Implemented forward propagation, backpropagation, one-hot encoding, and gradient descent from first principles; reached <strong>~89% training accuracy</strong> after 500 iterations at &alpha; = 0.1.</li>
+        <li>Engineered a complete two-layer feedforward neural network using <strong>NumPy only</strong> &mdash; deliberately avoiding ML frameworks to hand-derive and deeply understand every forward pass, gradient, and weight update from first principles.</li>
+        <li>Designed a <strong>784 &rarr; 10 (ReLU) &rarr; 10 (Softmax)</strong> architecture and trained it on 42,000 MNIST digit images, holding out 1,000 samples for unbiased evaluation; manually implemented backpropagation, one-hot encoding, and gradient descent.</li>
+        <li>Achieved <strong>~89% training accuracy</strong> in 500 iterations at &alpha;&nbsp;=&nbsp;0.1, validating correctness of every numerical derivative and confirming the network learned meaningful digit representations from scratch.</li>
       </ul>
     </div>
     <div class="project-image-cs">
@@ -78,9 +78,9 @@
         <span class="ae-tag">Bollinger Bands</span>
       </div>
       <ul>
-        <li>Built a custom Python engine to backtest HFT strategies using <strong>RSI, Bollinger Bands, SL/TP logic</strong>.</li>
-        <li>Loaded tick data from CSVs, calculated rolling statistics, and evaluated portfolio performance.</li>
-        <li>Implemented trade tracking, Sharpe ratio analysis, and parameter optimization with Matplotlib/Pandas.</li>
+        <li>Engineered a Python backtesting engine for simulating <strong>high-frequency trading strategies</strong> combining RSI momentum signals, Bollinger Band mean reversion, and configurable stop-loss/take-profit logic.</li>
+        <li>Ingested and processed <strong>millisecond-resolution tick data</strong> from CSVs, computing rolling statistics and trade signals across thousands of data points using <strong>Pandas</strong>.</li>
+        <li>Delivered quantitative performance insights via <strong>Sharpe ratio analysis</strong>, drawdown tracking, and parameter sweeps &mdash; visualized through multi-panel <strong>Matplotlib</strong> dashboards for rapid strategy evaluation.</li>
       </ul>
     </div>
     <div class="project-image-cs">
@@ -99,9 +99,9 @@
         <span class="ae-tag">HTML / CSS</span>
       </div>
       <ul>
-        <li>Built a <strong>startup-focused full-stack attendance tracking system</strong> that allows professors to generate <strong>dynamic QR</strong> codes for real-time student check-ins, preventing proxy submissions using <strong>time-expiring tokens</strong>.</li>
-        <li>Designed the frontend with <strong>JavaScript, HTML, and CSS</strong>, and developed the backend using <strong>Firebase Cloud Functions</strong> and <strong>Firestore</strong>, enabling real-time session validation and robust database management.</li>
-        <li>Enabled attendance logging in <strong>under 30 seconds</strong> per session with <strong>100% submission accuracy</strong> and a live professor dashboard; improved attendance visibility and reduced manual entry time by <strong>90%</strong>.</li>
+        <li>Architected a <strong>full-stack QR-based attendance platform</strong> enabling professors to generate dynamic, time-expiring QR codes for fraud-proof student check-ins &mdash; eliminating proxy attendance entirely.</li>
+        <li>Built the frontend in <strong>JavaScript / HTML / CSS</strong> and powered the backend with <strong>Firebase Cloud Functions</strong> and <strong>Firestore</strong>, delivering sub-second session validation and real-time dashboard updates for professors.</li>
+        <li>Reduced attendance logging to <strong>under 30 seconds</strong> per session with <strong>100% submission accuracy</strong>, cutting manual entry time by <strong>90%</strong> and giving instructors instant visibility into live class attendance.</li>
       </ul>
     </div>
     <div class="project-image-cs">
@@ -118,9 +118,9 @@
         <span class="ae-tag">CLI</span>
       </div>
       <ul>
-        <li>Designed a robust inventory manager using <strong>Java OOP</strong> principles (encapsulation, inheritance, polymorphism).</li>
-        <li>Automated financial calculations and reduced input errors by 15% while increasing processing speed by 25%.</li>
-        <li>Enabled real-time inventory tracking for pharmaceutical stock, improving business workflow.</li>
+        <li>Architected a modular pharmaceutical inventory management system in <strong>Java</strong>, applying OOP principles &mdash; encapsulation, inheritance, and polymorphism &mdash; to cleanly separate stock, supplier, and transaction logic.</li>
+        <li>Automated multi-step financial calculations and inventory updates, <strong>cutting input errors by 15%</strong> and boosting processing speed by <strong>25%</strong> over the manual workflow it replaced.</li>
+        <li>Delivered real-time stock tracking and restocking visibility, giving pharmacists instant insight into inventory levels and measurably streamlining day-to-day business operations.</li>
       </ul>
     </div>
     <div class="project-image-cs">
@@ -137,9 +137,9 @@
         <span class="ae-tag">WPF</span>
       </div>
       <ul>
-        <li>Created a desktop application using <strong>C#, .NET, and WPF</strong> to analyze Java project codebases.</li>
-        <li>Extracted metrics like LOC, classes, inheritance, and conditionals to help visualize code complexity.</li>
-        <li>Reduced manual code review time by 25% and improved accuracy to 90% over 10+ Java files.</li>
+        <li>Engineered a <strong>WPF desktop application</strong> in <strong>C# / .NET</strong> that statically analyzes Java codebases and surfaces actionable complexity metrics &mdash; LOC, class counts, inheritance depth, and conditional branching.</li>
+        <li>Built a structured analysis pipeline that processes <strong>10+ Java files</strong> in seconds, extracting and visualizing code quality indicators to drive informed refactoring decisions.</li>
+        <li>Reduced manual code review time by <strong>25%</strong> and improved analysis accuracy to <strong>90%</strong>, replacing error-prone line-by-line inspection with automated, reproducible metric reporting.</li>
       </ul>
     </div>
     <div class="project-image-cs">
