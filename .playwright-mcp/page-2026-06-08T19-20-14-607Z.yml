@@ -1,0 +1,179 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - link "Home" [ref=e3] [cursor=pointer]:
+      - /url: index.html
+    - link "Aerospace" [ref=e4] [cursor=pointer]:
+      - /url: aerospace.html
+    - link "Computer Science" [ref=e5] [cursor=pointer]:
+      - /url: cs.html
+    - link "Work Experience" [ref=e6] [cursor=pointer]:
+      - /url: experience.html
+    - link "Lab Testing Experience" [ref=e7] [cursor=pointer]:
+      - /url: lab-testing-experience.html
+    - link "Resume" [ref=e8] [cursor=pointer]:
+      - /url: resume.html
+    - link "Contact" [ref=e9] [cursor=pointer]:
+      - /url: contact.html
+  - banner [ref=e10]:
+    - generic [ref=e11]:
+      - heading "Aerospace Engineering Projects" [level=1] [ref=e12]
+      - paragraph [ref=e13]: Hands-on experience in propulsion, flight dynamics, aerodynamics, structures, and orbital mechanics
+  - generic [ref=e14]:
+    - generic [ref=e16]: Propulsion & Turbomachinery
+    - generic [ref=e18]:
+      - generic [ref=e19]: Flagship Project
+      - generic [ref=e20]:
+        - heading "High-Bypass Turbofan Engine Senior Design" [level=2] [ref=e21]:
+          - link "High-Bypass Turbofan Engine Senior Design" [ref=e22] [cursor=pointer]:
+            - /url: High-Bypass Turbofan Engine Senior Design.html
+        - generic [ref=e23]:
+          - generic [ref=e24]: Senior Design
+          - generic [ref=e25]: Team Lead
+          - generic [ref=e26]: Propulsion
+          - generic [ref=e27]: MATLAB
+          - generic [ref=e28]: AEDsys
+          - generic [ref=e29]: CAD (Onshape)
+        - generic [ref=e30]:
+          - generic [ref=e31]:
+            - generic [ref=e32]: 11:1
+            - generic [ref=e33]: Bypass Ratio
+          - generic [ref=e34]:
+            - generic [ref=e35]: 196 kN
+            - generic [ref=e36]: Takeoff Thrust
+          - generic [ref=e37]:
+            - generic [ref=e38]: 9 stages
+            - generic [ref=e39]: vs 13–14 (GE90)
+          - generic [ref=e40]:
+            - generic [ref=e41]: 55:1
+            - generic [ref=e42]: Overall Pressure Ratio
+        - list [ref=e43]:
+          - listitem [ref=e44]: Led end-to-end design of a 74,770 lbf high-bypass separate-exhaust turbofan (Atlas-85X)
+          - listitem [ref=e45]: Performed cycle analysis and turbomachinery sizing across takeoff, cruise, and loiter conditions
+          - listitem [ref=e46]: Designed combustor geometry and evaluated component efficiencies using AEDsys and MATLAB
+          - listitem [ref=e47]: Produced full CAD model in Onshape and validated performance against Boeing 777-class mission requirements
+      - img "Atlas-85X high-bypass turbofan engine CAD cutaway" [ref=e49]
+    - generic [ref=e51]: Flight Dynamics & Controls
+    - generic [ref=e53]:
+      - generic [ref=e54]:
+        - heading "DC-8 PID Controller Design" [level=2] [ref=e55]:
+          - link "DC-8 PID Controller Design" [ref=e56] [cursor=pointer]:
+            - /url: DC-8 PID Controller Design.html
+        - generic [ref=e57]:
+          - generic [ref=e58]: Controls
+          - generic [ref=e59]: Group Project
+          - generic [ref=e60]: MATLAB
+        - list [ref=e61]:
+          - listitem [ref=e62]: Designed PID controllers for DC-8 longitudinal and lateral-directional dynamics from linearized state-space models
+          - listitem [ref=e63]: Held AOA overshoot under 4% and verified zero steady-state error analytically via the Final Value Theorem
+          - listitem [ref=e64]: Validated all controllers in MATLAB with step response simulations confirming stability margins and transient specs
+      - img "Forward speed PID step response — uncontrolled vs controlled" [ref=e66]
+    - generic [ref=e67]:
+      - generic [ref=e68]:
+        - heading "Quanser Aero PID Control Design" [level=2] [ref=e69]:
+          - link "Quanser Aero PID Control Design" [ref=e70] [cursor=pointer]:
+            - /url: Quanser Aero PID Control Design.html
+        - generic [ref=e71]:
+          - generic [ref=e72]: Controls
+          - generic [ref=e73]: Experimental
+          - generic [ref=e74]: MATLAB
+        - list [ref=e75]:
+          - listitem [ref=e76]: Tuned PID pitch controller on physical Quanser Aero hardware via QUARC real-time control
+          - listitem [ref=e77]: Achieved 4.12% overshoot and 1.18s peak time with gains kₚ = 8, kₑ = 3.1, kᵢ = 5
+          - listitem [ref=e78]: Identified second-order plant model (ζ = 0.0452, ωₙ = 2.18 rad/s) from experimental step response
+          - listitem [ref=e79]: Improved phase margin from 3.68° to 87.5°, confirmed via Bode analysis in MATLAB
+      - img "Quanser Aero experimental hardware setup" [ref=e81]
+    - generic [ref=e82]:
+      - generic [ref=e83]:
+        - heading "Aircraft Stability & Control Simulation" [level=2] [ref=e84]:
+          - link "Aircraft Stability & Control Simulation" [ref=e85] [cursor=pointer]:
+            - /url: Aircraft Stability & Control Simulation.html
+        - generic [ref=e86]:
+          - generic [ref=e87]: Simulation
+          - generic [ref=e88]: 6-DOF
+          - generic [ref=e89]: MATLAB
+          - generic [ref=e90]: Simulink
+          - generic [ref=e91]: FlightGear
+        - list [ref=e92]:
+          - listitem [ref=e93]: Built a closed-loop 6-DOF flight simulation in MATLAB/Simulink from computed stability and control derivatives
+          - listitem [ref=e94]: Validated pitch, roll, and yaw mode eigenvalues against prescribed damping and frequency specifications
+          - listitem [ref=e95]: Exported maneuver trajectories to FlightGear for real-time 3D visualization of simulated flight
+      - img "MATLAB 3D wireframe model orthogonal view" [ref=e97]
+    - generic [ref=e99]: Experimental Aerodynamics
+    - generic [ref=e101]:
+      - generic [ref=e102]:
+        - 'heading "Wind Tunnel Drag Study: Flap Deflection" [level=2] [ref=e103]':
+          - 'link "Wind Tunnel Drag Study: Flap Deflection" [ref=e104] [cursor=pointer]':
+            - /url: Wind Tunnel Drag Study - Flap Deflection.html
+        - generic [ref=e105]:
+          - generic [ref=e106]: Experimental
+          - generic [ref=e107]: Aerodynamics
+          - generic [ref=e108]: MATLAB
+        - list [ref=e109]:
+          - listitem [ref=e110]: Performed a wake survey on a NACA 4412 wing at five flap deflection angles in a subsonic wind tunnel
+          - listitem [ref=e111]: Extracted drag coefficients from downstream velocity deficit profiles via momentum integral in MATLAB
+          - listitem [ref=e112]: Compared measured Cᴰ values against theoretical predictions to validate wake survey methodology
+      - img "NACA 4412 wing mounted in wind tunnel test section" [ref=e114]
+    - generic [ref=e116]: Structural Analysis
+    - generic [ref=e118]:
+      - generic [ref=e119]:
+        - heading "Aircraft Wing Structural Analysis" [level=2] [ref=e120]:
+          - link "Aircraft Wing Structural Analysis" [ref=e121] [cursor=pointer]:
+            - /url: Aircraft Wing Structural Analysis.html
+        - generic [ref=e122]:
+          - generic [ref=e123]: FEA
+          - generic [ref=e124]: Structures
+          - generic [ref=e125]: Fusion 360
+          - generic [ref=e126]: FEMAP
+          - generic [ref=e127]: NX Nastran
+        - list [ref=e128]:
+          - listitem [ref=e129]: Modeled full wing assembly in Fusion 360 — spars, ribs, stringers, and skin panels
+          - listitem [ref=e130]: Transferred geometry to FEMAP, applied aerodynamic loading, and solved with NX Nastran
+          - listitem [ref=e131]: Validated mesh quality with Jacobian > 0.6; confirmed 0.15 in peak tip displacement
+          - listitem [ref=e132]: Identified front spar root as peak stress location, consistent with cantilever bending theory
+      - img "Finite element mesh of wing assembly in FEMAP" [ref=e134]
+    - generic [ref=e136]: Orbital Mechanics
+    - generic [ref=e138]:
+      - generic [ref=e139]:
+        - heading "TDRS-M Orbital Mechanics and Trajectory Design" [level=2] [ref=e140]:
+          - link "TDRS-M Orbital Mechanics and Trajectory Design" [ref=e141] [cursor=pointer]:
+            - /url: TDRS-M Orbital Mechanics and Trajectory Design.html
+        - generic [ref=e142]:
+          - generic [ref=e143]: Orbital Mechanics
+          - generic [ref=e144]: Group Project
+          - generic [ref=e145]: MATLAB
+        - list [ref=e146]:
+          - listitem [ref=e147]: Simulated LEO-to-GEO transfer for TDRS-M via Hohmann transfer and phasing maneuver
+          - listitem [ref=e148]: Computed delta-V budgets, transfer times, and propellant consumption via Tsiolkovsky equation
+          - listitem [ref=e149]: Validated orbital parameters against NASA’s published mission profile
+          - listitem [ref=e150]: Visualized full trajectory in a 3D ECI reference frame using MATLAB
+      - img "3D ECI frame LEO-to-GEO orbit visualization" [ref=e152]
+    - generic [ref=e154]: Systems & Decision Tools
+    - generic [ref=e156]:
+      - generic [ref=e157]:
+        - heading "Database Application for Aircraft Fleet Selection" [level=2] [ref=e158]:
+          - link "Database Application for Aircraft Fleet Selection" [ref=e159] [cursor=pointer]:
+            - /url: Database Application for Aircraft Fleet Selection.html
+        - generic [ref=e160]:
+          - generic [ref=e161]: Data Systems
+          - generic [ref=e162]: MATLAB
+          - generic [ref=e163]: Excel
+        - list [ref=e164]:
+          - listitem [ref=e165]: Built a MATLAB App Designer GUI for querying and comparing aircraft by multiple performance parameters
+          - listitem [ref=e166]: Integrated a live Excel backend — records update without modifying application code
+          - listitem [ref=e167]: Generated dynamic bar charts and scatter plots based on the active filtered selection
+          - listitem [ref=e168]: Reduced data retrieval time by ~25% compared to manual spreadsheet workflows
+      - img "Filtered results table — multi-parameter aircraft query" [ref=e170]
+    - link "📄 DOWNLOAD RESUME PDF" [ref=e172] [cursor=pointer]:
+      - /url: AnurananBharadwaj_RESUME_AE.pdf
+  - contentinfo [ref=e173]:
+    - generic [ref=e174]:
+      - generic [ref=e175]: "Phone: (215) 397–5806"
+      - generic [ref=e176]:
+        - text: "Email:"
+        - link "bharadwajanuranan@gmail.com" [ref=e177] [cursor=pointer]:
+          - /url: mailto:bharadwajanuranan@gmail.com
+      - link "LinkedIn" [ref=e179] [cursor=pointer]:
+        - /url: https://linkedin.com/in/anuranan-bharadwaj
+      - link "GitHub" [ref=e181] [cursor=pointer]:
+        - /url: https://github.com/anuranan10
+      - generic [ref=e182]: © 2025 Anuranan Bharadwaj

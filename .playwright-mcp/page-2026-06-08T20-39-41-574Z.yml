@@ -1,0 +1,69 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - link "Home" [ref=e3] [cursor=pointer]:
+      - /url: index.html
+    - link "Aerospace" [ref=e4] [cursor=pointer]:
+      - /url: aerospace.html
+    - link "Computer Science" [ref=e5] [cursor=pointer]:
+      - /url: cs.html
+    - link "Work Experience" [ref=e6] [cursor=pointer]:
+      - /url: experience.html
+    - link "Lab Testing Experience" [ref=e7] [cursor=pointer]:
+      - /url: lab-testing-experience.html
+    - link "Highlights" [ref=e8] [cursor=pointer]:
+      - /url: highlights.html
+    - link "Resume" [ref=e9] [cursor=pointer]:
+      - /url: resume.html
+    - link "Contact" [ref=e10] [cursor=pointer]:
+      - /url: contact.html
+  - banner [ref=e11]:
+    - generic [ref=e12]:
+      - heading "Highlights" [level=1] [ref=e13]
+      - paragraph [ref=e14]: Conferences attended, research presented, and experiences beyond the classroom
+  - generic [ref=e15]:
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - text: NCUR 2026
+        - generic [ref=e18]: National
+      - generic [ref=e19]:
+        - paragraph [ref=e20]: “Turbine Aerodynamics and Performance Characterization”
+        - generic [ref=e21]:
+          - generic [ref=e22]: National Conference on Undergraduate Research
+          - generic [ref=e23]: · Richmond, Virginia
+          - generic [ref=e24]: · May 2026
+          - generic [ref=e25]: · w/ K. Satvaldy & V. Shi
+        - paragraph [ref=e26]: Presented original undergraduate research at one of the largest undergraduate research conferences in the United States, hosted by Virginia Commonwealth University. Represented ERAU among a university-wide delegation, sharing work on a Python-based computational framework for turbine blade aerodynamics analysis and multi-point pressure characterization.
+    - generic [ref=e27]:
+      - img "Anuranan at the NCUR 2026 entrance in Richmond, Virginia" [ref=e28]
+      - img "Presenting the Turbine Aerodynamics research poster at NCUR 2026" [ref=e29]
+      - img "Team at the NCUR 2026 welcome arch — Anuranan with teammates" [ref=e30]
+      - img "ERAU student delegation at NCUR 2026" [ref=e31]
+  - generic [ref=e32]:
+    - generic [ref=e33]:
+      - generic [ref=e34]:
+        - text: FURC
+        - generic [ref=e35]: Florida
+      - generic [ref=e36]:
+        - paragraph [ref=e37]: “Turbine Aerodynamics and Performance Characterization”
+        - generic [ref=e38]:
+          - generic [ref=e39]: Florida Undergraduate Research Conference
+          - generic [ref=e40]: · University of North Florida, Jacksonville
+          - generic [ref=e41]: · Spring 2026
+          - generic [ref=e42]: · w/ K. Satvaldy & V. Shi
+        - paragraph [ref=e43]: Presented at the Florida state-level undergraduate research conference hosted at UNF — the first public presentation of this research before advancing to the national stage at NCUR. Shared findings on computational turbine design tools with students and faculty researchers from across Florida.
+    - generic [ref=e44]:
+      - img "Presenting the Turbine Aerodynamics research poster at FURC, UNF Jacksonville" [ref=e45]
+      - img "ERAU students and faculty at FURC, UNF Undergraduate Research backdrop" [ref=e46]
+  - paragraph [ref=e48]: More to come.
+  - contentinfo [ref=e49]:
+    - generic [ref=e50]:
+      - generic [ref=e51]: "Phone: (215) 397–5806"
+      - generic [ref=e52]:
+        - text: "Email:"
+        - link "bharadwajanuranan@gmail.com" [ref=e53] [cursor=pointer]:
+          - /url: mailto:bharadwajanuranan@gmail.com
+      - link "LinkedIn" [ref=e55] [cursor=pointer]:
+        - /url: https://linkedin.com/in/anuranan-bharadwaj
+      - link "GitHub" [ref=e57] [cursor=pointer]:
+        - /url: https://github.com/anuranan10
+      - generic [ref=e58]: © 2025 Anuranan Bharadwaj

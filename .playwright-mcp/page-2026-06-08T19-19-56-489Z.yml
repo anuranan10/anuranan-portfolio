@@ -1,0 +1,148 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - link "Home" [ref=e3] [cursor=pointer]:
+      - /url: index.html
+    - link "Aerospace" [ref=e4] [cursor=pointer]:
+      - /url: aerospace.html
+    - link "Computer Science" [ref=e5] [cursor=pointer]:
+      - /url: cs.html
+    - link "Work Experience" [ref=e6] [cursor=pointer]:
+      - /url: experience.html
+    - link "Lab Testing Experience" [ref=e7] [cursor=pointer]:
+      - /url: lab-testing-experience.html
+    - link "Resume" [ref=e8] [cursor=pointer]:
+      - /url: resume.html
+    - link "Contact" [ref=e9] [cursor=pointer]:
+      - /url: contact.html
+  - banner [ref=e10]:
+    - generic [ref=e11]:
+      - 'heading "Lab 05: Schlieren Imaging & Supersonic Wind Tunnels" [level=1] [ref=e12]'
+      - paragraph [ref=e13]: AE 315 · Experimental Aerodynamics · Spring 2025 · ERAU
+  - generic [ref=e14]:
+    - generic [ref=e15]:
+      - heading "Experiment Overview" [level=2] [ref=e16]
+      - paragraph [ref=e17]: Shock waves are one of the most dramatic phenomena in compressible flow — a razor-thin region where pressure, temperature, and density jump discontinuously. They appear inside nozzles, around supersonic bodies, and at control surface impingement points. Schlieren imaging makes them visible without touching the flow, an elegant optical technique used in supersonic aircraft testing, ballistic research, and scramjet development. This lab introduced blowdown supersonic wind tunnel operation and applied Schlieren photography to characterize a normal shock inside the nozzle.
+      - list [ref=e18]:
+        - listitem [ref=e19]: Understand the operating cycle and components of a blowdown supersonic wind tunnel
+        - listitem [ref=e20]: Use Schlieren optics to visually locate and characterize a normal shock in the diverging nozzle section
+        - listitem [ref=e21]: Compute the nozzle pressure ratio (NPR) and shock strength from 13 static pressure taps
+        - listitem [ref=e22]: Determine the choked-flow mass flow rate through the nozzle throat
+    - generic [ref=e23]:
+      - 'figure "Figure 1: Wind Tunnel Dryer" [ref=e24]':
+        - img "Wind tunnel dryer unit and air compressor storage tank in the ERAU blowdown supersonic facility" [ref=e25]
+        - generic [ref=e26]: "Figure 1: Wind Tunnel Dryer"
+      - 'figure "Figure 2: Air Compressor" [ref=e27]':
+        - img "Dryer and air storage system � second view showing pressurized supply plumbing" [ref=e28]
+        - generic [ref=e29]: "Figure 2: Air Compressor"
+      - 'figure "Figure 3: Air Storage Tank" [ref=e30]':
+        - img "Full lab setup showing the supersonic wind tunnel test section, PCO camera, and air compressor in the background" [ref=e31]
+        - generic [ref=e32]: "Figure 3: Air Storage Tank"
+  - generic [ref=e34]:
+    - heading "Equipment & Tools" [level=2] [ref=e35]
+    - list [ref=e36]:
+      - listitem [ref=e37]:
+        - text: ERAU blowdown supersonic wind tunnel with convergent-divergent nozzle (A
+        - subscript [ref=e38]: throat
+        - text: = 0.765 in², half-angle ≈4.8°)
+      - listitem [ref=e39]: Air compressor, high-pressure storage tank, main valve, and pressure regulator
+      - listitem [ref=e40]: 13 static pressure taps along the nozzle floor (positions 1.5–19.5 inches)
+      - listitem [ref=e41]: Schlieren optical imaging system (mirrors, point light source, razor blade cutoff, digital camera)
+      - listitem [ref=e42]: Wind tunnel silencer and quick-disconnect nozzle
+      - listitem [ref=e43]: TracerDAQ data acquisition software; MATLAB for pressure analysis
+  - generic [ref=e44]:
+    - generic [ref=e45]:
+      - heading "Approach & Key Equations" [level=2] [ref=e46]
+      - paragraph [ref=e47]: "The ERAU blowdown tunnel stores compressed air, releases it through a pressure regulator into a convergent-divergent nozzle, and exhausts through a silencer. Thirteen static taps sampled the floor pressure distribution during steady-state operation (identified from the time history as rows 1,653–2,103). Total pressure was back-calculated at the throat assuming Mach 1 flow, and the nozzle pressure ratio was compared against the critical value to confirm shock presence:"
+      - paragraph [ref=e48]:
+        - text: NPR = P
+        - subscript [ref=e49]: "0"
+        - text: / P
+        - subscript [ref=e50]: exit
+        - text: Shock strength S = P
+        - subscript [ref=e51]: after
+        - text: / P
+        - subscript [ref=e52]: before
+      - paragraph [ref=e53]: Mass flow rate was computed from isentropic choked-flow theory. Schlieren images were captured simultaneously to visually confirm shock position and morphology.
+    - generic [ref=e54]:
+      - 'figure "Figure 4: Main ball valve controlling flow into the wind tunnel" [ref=e55]':
+        - img "Main ball valve at the base of the air storage tank controlling flow into the wind tunnel" [ref=e56]
+        - generic [ref=e57]: "Figure 4: Main ball valve controlling flow into the wind tunnel"
+      - 'figure "Figure 5: Pressure regulator and nozzle inlet assembly" [ref=e58]':
+        - img "Pressure regulator and nozzle inlet assembly" [ref=e59]
+        - generic [ref=e60]: "Figure 5: Pressure regulator and nozzle inlet assembly"
+      - 'figure "Figure 6: Wind Tunnel Quick-Disconnect" [ref=e61]':
+        - img "C-D nozzle test section with Schlieren optical components mounted on the optical table" [ref=e62]
+        - generic [ref=e63]: "Figure 6: Wind Tunnel Quick-Disconnect"
+    - generic [ref=e64]:
+      - 'figure "Figure 7: Schlieren imaging setup — mirror mount, knife edge, and PCO camera" [ref=e65]':
+        - img "Schlieren imaging setup � mirror mount, knife edge, and PCO camera aligned on the optical table" [ref=e66]
+        - generic [ref=e67]: "Figure 7: Schlieren imaging setup — mirror mount, knife edge, and PCO camera"
+      - 'figure "Figure 8: Supersonic Wind Tunnel Nozzle" [ref=e68]':
+        - img "Wind tunnel test section showing pressure tap tubes connected to the nozzle floor" [ref=e69]
+        - generic [ref=e70]: "Figure 8: Supersonic Wind Tunnel Nozzle"
+      - 'figure "Figure 9: Wind Tunnel Silencer" [ref=e71]':
+        - img "Convergent-divergent nozzle test section with mirror assembly visible" [ref=e72]
+        - generic [ref=e73]: "Figure 9: Wind Tunnel Silencer"
+  - generic [ref=e74]:
+    - generic [ref=e75]:
+      - heading "Key Results" [level=2] [ref=e76]
+      - list [ref=e77]:
+        - listitem [ref=e78]:
+          - text: Schlieren images confirmed a
+          - strong [ref=e79]: clear normal shock between tap positions 9.5 and 10.5 inches
+          - text: in the diverging section — exactly where static pressure data showed an abrupt pressure rise.
+        - listitem [ref=e80]:
+          - strong [ref=e81]: NPR = 3.932
+          - text: — exceeding the critical NPR, confirming the flow was choked at the throat and a shock existed inside the nozzle.
+        - listitem [ref=e82]:
+          - strong [ref=e83]: Shock strength S = 1.614
+          - text: — a 61.4% pressure jump across the shock, classifying it as a moderately strong normal shock.
+        - listitem [ref=e84]:
+          - strong [ref=e85]: Mass flow rate = 6.10 lbm/s
+          - text: through the 0.765 in² throat, consistent with the measured stagnation conditions from choked-flow theory.
+        - listitem [ref=e86]: "The pressure trace showed the textbook normal shock signature: a smooth decrease through the diverging section, a sharp spike at the shock, and recovery to near back pressure downstream."
+    - generic [ref=e87]:
+      - 'figure "Figure 10: Schlieren Image of Shock" [ref=e88]':
+        - img "Schlieren image showing the normal shock inside the diverging nozzle section" [ref=e89]
+        - generic [ref=e90]: "Figure 10: Schlieren Image of Shock"
+      - 'figure "Figure 11: Schlieren Image of Shock" [ref=e91]':
+        - img "Second Schlieren image of the normal shock � clearer view of shock position and expansion fans" [ref=e92]
+        - generic [ref=e93]: "Figure 11: Schlieren Image of Shock"
+      - 'figure "Figure 12: Pressure vs Position in Wind Tunnel" [ref=e94]':
+        - img "Static pressure vs tap position along the nozzle � pressure drop and sharp spike at shock location" [ref=e95]
+        - generic [ref=e96]: "Figure 12: Pressure vs Position in Wind Tunnel"
+    - 'figure "Figure 13: Pressure Distribution vs Row Points" [ref=e98]':
+      - img "Static pressure vs data row showing the steady-state window used for analysis" [ref=e99]
+      - generic [ref=e100]: "Figure 13: Pressure Distribution vs Row Points"
+  - generic [ref=e102]:
+    - heading "MATLAB Code" [level=2] [ref=e103]
+    - paragraph [ref=e104]: Raw pressure data was time-averaged over the steady-state window, augmented with atmospheric pressure, and used to back-calculate total pressure and compute NPR, shock strength, and mass flow rate.
+    - code [ref=e106]: "% Steady-state average + atmospheric correction range_ss = tempData(1653:2103, :); dataframe = mean(range_ss) + Patm; % 13 taps (psi) % Back-calculate total pressure from throat (M = 1) P0 = dataframe(2) / (1 + (y-1)/2)^(-y/(y-1)); % NPR and shock strength NPR = P0 / mean(dataframe(11)); % = 3.932 shock = dataframe(10) / dataframe(9); % = 1.614 (S = P_after/P_before) % Choked-flow mass rate (lbm/s) a = sqrt(y * R * T); mdot = Ath * (P0/a) * sqrt(y) * ((2/(y+1))^((y+1)/(2*(y-1)))) * 32.174;"
+  - generic [ref=e108]:
+    - heading "Valuable Takeaways" [level=2] [ref=e109]
+    - list [ref=e110]:
+      - listitem [ref=e111]:
+        - strong [ref=e112]: Schlieren imaging turns invisible physics into a photograph.
+        - text: Seeing a shock wave in an actual image — not just a textbook diagram — makes the density gradient concept tangible. The technique is widely used in supersonic testing, hypersonic wind tunnels, and shock-tube experiments.
+      - listitem [ref=e113]:
+        - strong [ref=e114]: NPR is the single diagnostic quantity for nozzle flow regime.
+        - text: Knowing whether NPR exceeds the critical value tells an engineer immediately whether the throat is choked and a shock is present — essential knowledge for nozzle design in rocket engines and high-speed inlets.
+      - listitem [ref=e115]:
+        - strong [ref=e116]: Normal shocks are lossy — they create entropy.
+        - text: The shock strength of 1.614 represents an irreversible pressure rise that drives designers toward oblique shocks and shock-management systems in real supersonic inlets.
+      - listitem [ref=e117]: Gained hands-on experience with a blowdown supersonic facility, interpreted Schlieren photography, and applied compressible flow relations to extract propulsion-relevant parameters from instrumentation data.
+  - paragraph [ref=e119]:
+    - link "← Back to Experimental Aerodynamics Labs" [ref=e120] [cursor=pointer]:
+      - /url: experimental-aerodynamics-labs.html
+  - contentinfo [ref=e121]:
+    - generic [ref=e122]:
+      - generic [ref=e123]: "Phone: (215) 397�5806"
+      - generic [ref=e124]:
+        - text: "Email:"
+        - link "bharadwajanuranan@gmail.com" [ref=e125] [cursor=pointer]:
+          - /url: mailto:bharadwajanuranan@gmail.com
+      - link "LinkedIn" [ref=e127] [cursor=pointer]:
+        - /url: https://linkedin.com/in/anuranan-bharadwaj
+      - link "GitHub" [ref=e129] [cursor=pointer]:
+        - /url: https://github.com/anuranan10
+      - generic [ref=e130]: © 2025 Anuranan Bharadwaj

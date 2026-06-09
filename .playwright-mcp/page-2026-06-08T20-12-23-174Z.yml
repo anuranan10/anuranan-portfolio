@@ -1,0 +1,200 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e233] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=e3]:
+    - navigation "Primary" [ref=e234]:
+      - link "LinkedIn" [ref=e235] [cursor=pointer]:
+        - /url: /?trk=public_post_nav-header-logo
+        - generic [ref=e6]: LinkedIn
+        - img [ref=e8]
+      - list [ref=e19]:
+        - listitem [ref=e20]:
+          - link "Top Content" [ref=e236] [cursor=pointer]:
+            - /url: https://www.linkedin.com/top-content?trk=public_post_guest_nav_menu_topContent
+            - img [ref=e23]
+            - generic [ref=e25]: Top Content
+        - listitem [ref=e26]:
+          - link "People" [ref=e237] [cursor=pointer]:
+            - /url: https://www.linkedin.com/pub/dir/+/+?trk=public_post_guest_nav_menu_people
+            - img [ref=e29]
+            - generic [ref=e31]: People
+        - listitem [ref=e32]:
+          - link "Learning" [ref=e238] [cursor=pointer]:
+            - /url: https://www.linkedin.com/learning/search?trk=public_post_guest_nav_menu_learning
+            - img [ref=e35]
+            - generic [ref=e40]: Learning
+        - listitem [ref=e41]:
+          - link "Jobs" [ref=e239] [cursor=pointer]:
+            - /url: https://www.linkedin.com/jobs/search?trk=public_post_guest_nav_menu_jobs
+            - img [ref=e44]
+            - generic [ref=e46]: Jobs
+        - listitem [ref=e47]:
+          - link "Games" [ref=e240] [cursor=pointer]:
+            - /url: https://www.linkedin.com/games?trk=public_post_guest_nav_menu_games
+            - img [ref=e50]
+            - generic [ref=e52]: Games
+        - listitem [ref=e53]:
+          - link "Get the app" [ref=e241] [cursor=pointer]:
+            - /url: ms-windows-store://pdp/?ProductId=9WZDNCRFJ4Q7&mode=mini&cid=guest_nav_upsell&trk=public_post_guest_nav_menu_windows
+            - img [ref=e56]
+            - generic [ref=e58]: Get the app
+      - generic [ref=e59]:
+        - link "Sign in" [ref=e242] [cursor=pointer]:
+          - /url: https://www.linkedin.com/login?session_redirect=https%3A%2F%2Fwww%2Elinkedin%2Ecom%2Fposts%2Fanuranan-bharadwaj_ncur2026-activity-7456366963997732864-_PKs&fromSignIn=true&trk=public_post_nav-header-signin
+        - link "Join now" [ref=e243] [cursor=pointer]:
+          - /url: https://www.linkedin.com/signup/cold-join?session_redirect=https%3A%2F%2Fwww%2Elinkedin%2Ecom%2Fposts%2Fanuranan-bharadwaj_ncur2026-activity-7456366963997732864-_PKs&trk=public_post_nav-header-join
+  - main [ref=e62]:
+    - generic [ref=e65]:
+      - heading "Anuranan Bharadwaj’s Post" [level=1] [ref=e244]
+      - article [ref=e67]:
+        - generic [ref=e68]:
+          - generic [ref=e70]:
+            - link "View profile for Anuranan Bharadwaj" [ref=e245] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/anuranan-bharadwaj?trk=public_post_feed-actor-image
+              - img "View profile for Anuranan Bharadwaj" [ref=e246]
+            - generic [ref=e73]:
+              - link "View profile for Anuranan Bharadwaj" [ref=e247] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/anuranan-bharadwaj?trk=public_post_feed-actor-name
+                - text: Anuranan Bharadwaj
+              - time [ref=e77]: 1mo
+          - button "Open menu" [ref=e248] [cursor=pointer]:
+            - img [ref=e82]
+        - paragraph [ref=e85]:
+          - text: Last week, I had the opportunity to present at the National Conference on Undergraduate Research
+          - link "#NCUR2026" [ref=e249] [cursor=pointer]:
+            - /url: https://www.linkedin.com/signup/cold-join?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Ffeed%2Fhashtag%2Fncur2026&trk=public_post-text
+          - text: in Richmond, Virginia. It was a great experience representing
+          - link "Embry-Riddle Aeronautical University" [ref=e250] [cursor=pointer]:
+            - /url: https://www.linkedin.com/school/embry-riddle-aeronautical-university/?trk=public_post-text
+          - text: and sharing my work with students and researchers from across the country. A big thank you to the
+          - link "ERAU Office of Undergraduate Research" [ref=e251] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/erau-office-of-undergraduate-research?trk=public_post-text
+          - text: for supporting undergraduate research and helping make opportunities like this possible.
+        - list [ref=e89]:
+          - listitem [ref=e90]:
+            - img "No alternative text description for this image" [ref=e252]
+          - listitem [ref=e92]:
+            - img "No alternative text description for this image" [ref=e253]
+          - listitem [ref=e94]:
+            - img "No alternative text description for this image" [ref=e254]
+          - listitem [ref=e96]:
+            - img "No alternative text description for this image" [ref=e255]
+        - generic [ref=e98]:
+          - link "27 Reactions" [ref=e256] [cursor=pointer]:
+            - /url: https://www.linkedin.com/signup/cold-join?session_redirect=https%3A%2F%2Fwww%2Elinkedin%2Ecom%2Fposts%2Fanuranan-bharadwaj_ncur2026-activity-7456366963997732864-_PKs&trk=public_post_social-actions-reactions
+            - generic [ref=e100]: "27"
+          - link "· 1 Comment" [ref=e257] [cursor=pointer]:
+            - /url: https://www.linkedin.com/signup/cold-join?session_redirect=https%3A%2F%2Fwww%2Elinkedin%2Ecom%2Fposts%2Fanuranan-bharadwaj_ncur2026-activity-7456366963997732864-_PKs&trk=public_post_social-actions-comments
+        - generic [ref=e102]:
+          - link "Like" [ref=e258] [cursor=pointer]:
+            - /url: https://www.linkedin.com/signup/cold-join?session_redirect=https%3A%2F%2Fwww%2Elinkedin%2Ecom%2Fposts%2Fanuranan-bharadwaj_ncur2026-activity-7456366963997732864-_PKs&trk=public_post_like-cta
+            - generic [ref=e105]: Like
+          - link "Comment" [ref=e259] [cursor=pointer]:
+            - /url: https://www.linkedin.com/signup/cold-join?session_redirect=https%3A%2F%2Fwww%2Elinkedin%2Ecom%2Fposts%2Fanuranan-bharadwaj_ncur2026-activity-7456366963997732864-_PKs&trk=public_post_comment-cta
+            - generic [ref=e108]: Comment
+          - button "Share" [ref=e260] [cursor=pointer]:
+            - generic [ref=e111]: Share
+        - generic [ref=e112]:
+          - link "Parth Thakar, graphic" [ref=e261] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/parth-thakar-427838284?trk=public_post_comment_actor-image
+            - img "Parth Thakar, graphic" [ref=e262]
+          - generic [ref=e116]:
+            - generic [ref=e117]:
+              - generic [ref=e118]:
+                - link "Parth Thakar" [ref=e263] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/in/parth-thakar-427838284?trk=public_post_comment_actor-name
+                - generic [ref=e120]: 1mo
+                - button "Open menu" [ref=e264] [cursor=pointer]
+              - paragraph [ref=e125]: Congrats!
+            - generic "Comment Controls" [ref=e265]:
+              - link "Like" [ref=e266] [cursor=pointer]:
+                - /url: https://www.linkedin.com/signup/cold-join?session_redirect=https%3A%2F%2Fwww%2Elinkedin%2Ecom%2Fposts%2Fanuranan-bharadwaj_ncur2026-activity-7456366963997732864-_PKs&trk=public_post_comment_like
+                - generic [ref=e129]: Like
+              - generic [ref=e130]: ·
+              - link "Reply" [ref=e267] [cursor=pointer]:
+                - /url: https://www.linkedin.com/signup/cold-join?session_redirect=https%3A%2F%2Fwww%2Elinkedin%2Ecom%2Fposts%2Fanuranan-bharadwaj_ncur2026-activity-7456366963997732864-_PKs&trk=public_post_comment_reply
+                - generic [ref=e133]: Reply
+        - paragraph [ref=e134]:
+          - text: To view or add a comment,
+          - link "To view or add a comment, sign in" [ref=e268] [cursor=pointer]:
+            - /url: https://www.linkedin.com/signup/cold-join?session_redirect=https%3A%2F%2Fwww%2Elinkedin%2Ecom%2Fposts%2Fanuranan-bharadwaj_ncur2026-activity-7456366963997732864-_PKs&trk=public_post_feed-cta-banner-cta
+            - text: sign in
+    - generic [ref=e136]:
+      - generic [ref=e138]:
+        - figure [ref=e139]:
+          - img [ref=e142]
+        - img "Anuranan Bharadwaj" [ref=e269]
+        - paragraph [ref=e144]: 755 followers
+        - list [ref=e146]:
+          - listitem [ref=e147]:
+            - link "8 Posts" [ref=e270] [cursor=pointer]:
+              - /url: https://www.linkedin.com/signup/cold-join?session_redirect=https%3A%2F%2Fwww%2Elinkedin%2Ecom%2Fin%2Fanuranan-bharadwaj%2Frecent-activity%2F&trk=public_post_follow-posts
+        - generic [ref=e149]:
+          - link "View Profile" [ref=e271] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/anuranan-bharadwaj?trk=public_post_follow-view-profile
+          - link "Follow" [ref=e272] [cursor=pointer]:
+            - /url: https://www.linkedin.com/signup/cold-join?session_redirect=https%3A%2F%2Fwww%2Elinkedin%2Ecom%2Ffeed%2Fupdate%2Furn%3Ali%3Aactivity%3A7456366963997732864&trk=public_post_follow
+            - img [ref=e153]
+            - text: Follow
+      - generic [ref=e155]:
+        - heading "Explore content categories" [level=2] [ref=e273]
+        - generic [ref=e158]:
+          - list [ref=e159]:
+            - listitem [ref=e160]:
+              - link "Career" [ref=e274] [cursor=pointer]:
+                - /url: https://www.linkedin.com/top-content/career/
+            - listitem [ref=e162]:
+              - link "Productivity" [ref=e275] [cursor=pointer]:
+                - /url: https://www.linkedin.com/top-content/productivity/
+            - listitem [ref=e164]:
+              - link "Finance" [ref=e276] [cursor=pointer]:
+                - /url: https://www.linkedin.com/top-content/finance/
+            - listitem [ref=e166]:
+              - link "Soft Skills & Emotional Intelligence" [ref=e277] [cursor=pointer]:
+                - /url: https://www.linkedin.com/top-content/soft-skills-emotional-intelligence/
+            - listitem [ref=e168]:
+              - link "Project Management" [ref=e278] [cursor=pointer]:
+                - /url: https://www.linkedin.com/top-content/project-management/
+            - listitem [ref=e170]:
+              - link "Education" [ref=e279] [cursor=pointer]:
+                - /url: https://www.linkedin.com/top-content/education/
+          - button "Show more" [ref=e280] [cursor=pointer]:
+            - text: Show more
+            - img [ref=e174]
+  - contentinfo [ref=e176]:
+    - list [ref=e177]:
+      - listitem [ref=e178]:
+        - generic [ref=e179]: LinkedIn
+        - generic [ref=e181]: © 2026
+      - listitem [ref=e182]:
+        - link "About" [ref=e281] [cursor=pointer]:
+          - /url: https://about.linkedin.com?trk=d_public_post_footer-about
+      - listitem [ref=e184]:
+        - link "Accessibility" [ref=e282] [cursor=pointer]:
+          - /url: https://www.linkedin.com/accessibility?trk=d_public_post_footer-accessibility
+      - listitem [ref=e186]:
+        - link "User Agreement" [ref=e283] [cursor=pointer]:
+          - /url: https://www.linkedin.com/legal/user-agreement?trk=d_public_post_footer-user-agreement
+      - listitem [ref=e188]:
+        - link "Privacy Policy" [ref=e284] [cursor=pointer]:
+          - /url: https://www.linkedin.com/legal/privacy-policy?trk=d_public_post_footer-privacy-policy
+      - listitem [ref=e190]:
+        - link "Your California Privacy Choices" [ref=e285] [cursor=pointer]:
+          - /url: https://www.linkedin.com/legal/california-privacy-disclosure?trk=d_public_post_footer-california-privacy-rights-act
+      - listitem [ref=e192]:
+        - link "Cookie Policy" [ref=e286] [cursor=pointer]:
+          - /url: https://www.linkedin.com/legal/cookie-policy?trk=d_public_post_footer-cookie-policy
+      - listitem [ref=e194]:
+        - link "Copyright Policy" [ref=e287] [cursor=pointer]:
+          - /url: https://www.linkedin.com/legal/copyright-policy?trk=d_public_post_footer-copyright-policy
+      - listitem [ref=e196]:
+        - link "Brand Policy" [ref=e288] [cursor=pointer]:
+          - /url: https://brand.linkedin.com/policies?trk=d_public_post_footer-brand-policy
+      - listitem [ref=e198]:
+        - link "Guest Controls" [ref=e289] [cursor=pointer]:
+          - /url: https://www.linkedin.com/psettings/guest-controls?trk=d_public_post_footer-guest-controls
+      - listitem [ref=e200]:
+        - link "Community Guidelines" [ref=e290] [cursor=pointer]:
+          - /url: https://www.linkedin.com/legal/professional-community-policies?trk=d_public_post_footer-community-guide
+      - listitem [ref=e202]:
+        - button "Language" [ref=e291]: Language
