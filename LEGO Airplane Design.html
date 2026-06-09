@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LEGO Airplane Design | Anuranan Bharadwaj</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .stat-box { animation: fadeInUp 0.55s ease both; }
+    .stat-box:nth-child(1) { animation-delay: 0.05s; }
+    .stat-box:nth-child(2) { animation-delay: 0.18s; }
+    .stat-box:nth-child(3) { animation-delay: 0.31s; }
+    .stat-box:nth-child(4) { animation-delay: 0.44s; }
+    .snapshot-card { animation: fadeInUp 0.5s ease 0.05s both; }
+    .takeaway-card { transition: transform 0.22s ease, box-shadow 0.22s ease; }
+    .takeaway-card:hover { transform: translateY(-5px); box-shadow: 0 14px 32px rgba(0,64,128,0.22); }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="aerospace.html">Aerospace</a>
+    <a href="cs.html">Computer Science</a>
+    <a href="experience.html">Work Experience</a>
+    <a href="lab-testing-experience.html">Lab Testing Experience</a>
+    <a href="highlights.html">Highlights</a>
+    <a href="resume.html">Resume</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <header class="page-header">
+    <div class="header-content">
+      <h1>LEGO Airplane Design &amp; Engineering Documentation</h1>
+      <p>Engineering Design &middot; ERAU</p>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="breadcrumb">
+    <a href="aerospace.html">Aerospace Projects</a> &rsaquo; LEGO Airplane Design &amp; Engineering Documentation
+  </nav>
+
+  <!-- Engineering Snapshot -->
+  <section class="snapshot-card" style="background:#004080; color:white; padding:2rem;">
+    <div style="max-width:960px; margin:0 auto; display:flex; flex-wrap:wrap; gap:2rem; align-items:flex-start;">
+      <div style="flex:1; min-width:200px;">
+        <p style="font-size:0.75em; letter-spacing:0.07em; text-transform:uppercase; opacity:0.65; margin:0 0 0.35rem;">Role</p>
+        <p style="font-weight:600; font-size:1.05em; margin:0 0 0.25rem;">Individual &mdash; 3D Design &amp; Drawing Package</p>
+        <p style="font-size:0.88em; opacity:0.8; margin:0;">EGR 120: Introduction to Engineering &middot; Spring 2023</p>
+      </div>
+      <div style="flex:1; min-width:200px;">
+        <p style="font-size:0.75em; letter-spacing:0.07em; text-transform:uppercase; opacity:0.65; margin:0 0 0.35rem;">Tools</p>
+        <p style="font-size:0.92em; line-height:1.75; margin:0;">BrickLink Studio &middot; SolidWorks &middot; Rendering</p>
+      </div>
+      <div style="flex:1.6; min-width:240px;">
+        <p style="font-size:0.75em; letter-spacing:0.07em; text-transform:uppercase; opacity:0.65; margin:0 0 0.35rem;">Key Contributions</p>
+        <ul style="margin:0; padding-left:1.15rem; font-size:0.92em; line-height:1.85;">
+          <li>Designed a complete LEGO airplane assembly in BrickLink Studio, placing individual LEGO parts to form a twin-engine aircraft with T-tail and tricycle landing gear</li>
+          <li>Produced a photorealistic rendering of the finished model composited over a runway scene</li>
+          <li>Generated a 17-page engineering drawing package in SolidWorks with title blocks, orthographic multiview projections, and dimensional annotations</li>
+          <li>Presented a comparative study of the LEGO design against real aircraft configurations</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stat Boxes -->
+  <section style="background:#f4faff; border-bottom:1px solid #d0dde8; padding:1.5rem 2rem;">
+    <div style="max-width:960px; margin:0 auto; display:flex; flex-wrap:wrap; gap:1rem; justify-content:center;">
+      <div class="stat-box" style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+        <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">EGR 120</div>
+        <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Introduction to Engineering</div>
+      </div>
+      <div class="stat-box" style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+        <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">17 <span style="font-size:1rem; font-weight:400;">pp</span></div>
+        <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Engineering Drawing Package</div>
+      </div>
+      <div class="stat-box" style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+        <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">Twin</div>
+        <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Engine Configuration</div>
+      </div>
+      <div class="stat-box" style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+        <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">T-Tail</div>
+        <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Empennage Configuration</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Overview -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
+      <h2>Project Overview</h2>
+      <p>The EGR 120 final project required designing a complete LEGO airplane model and producing a formal engineering drawing package that documents the design to industry-standard drafting conventions. The project covered the full design-to-documentation workflow: digital 3D modeling using LEGO-specific CAD software, photorealistic rendering, and the translation of a 3D assembly into a structured set of 2D engineering drawings in SolidWorks.</p>
+      <p>The airplane was designed with an emphasis on visual accuracy and structural plausibility &mdash; selecting LEGO parts whose geometry approximates real aircraft components such as fuselage panels, wing surfaces, engine nacelles, and landing gear struts. The finished design is a twin-engine aircraft featuring a T-tail empennage and tricycle undercarriage, rendered against a runway background to simulate a real aircraft environment.</p>
+      <ul>
+        <li>Design a recognizable airplane configuration using authentic LEGO components in BrickLink Studio</li>
+        <li>Produce a photorealistic rendered image of the completed model</li>
+        <li>Document the design in a formal SolidWorks drawing package following engineering drafting standards</li>
+        <li>Compare the LEGO design to real aircraft configurations and identify analogous design features</li>
+      </ul>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Folder/LEGOPlane/rendering.jpg" alt="LEGO airplane design rendered on a runway" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 1: Photorealistic rendering of the completed LEGO airplane &mdash; twin-engine configuration with T-tail and tricycle landing gear, composited on a runway background</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 3D Design & Rendering -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
+      <h2>3D Design &amp; Rendering</h2>
+      <p>The airplane was designed in BrickLink Studio, a parametric LEGO CAD environment where each component is selected from an actual LEGO part library and snapped into position using the same stud-and-anti-stud connection logic as physical LEGO assembly. This constraint &mdash; that every part must be a real LEGO piece with real connection points &mdash; forces design decisions that parallel actual aircraft design: the fuselage cross-section is governed by available brick widths, wing sweep is approximated by stepped LEGO plate offsets, and nacelle geometry is shaped by cylindrical and curved specialty parts.</p>
+      <p>The aircraft features a twin-engine tractor configuration, a T-tail with the horizontal stabilizer elevated atop the vertical fin, mid-mounted wings, and a retractable-style tricycle landing gear built from LEGO technic axle and wheel components. The teal, orange, and white color scheme was chosen to maximize visual contrast across the major structural groupings &mdash; fuselage, wings, and empennage &mdash; making the design readable in both rendered and orthographic views.</p>
+      <p>The final rendering was produced using BrickLink Studio&rsquo;s built-in ray-trace renderer, with the output composited over a runway photograph to place the model in a realistic aviation context.</p>
+    </div>
+  </section>
+
+  <!-- Engineering Drawing Package -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
+      <h2>Engineering Drawing Package</h2>
+      <p>The 17-page drawing package was produced in SolidWorks and documents the LEGO airplane design using formal engineering drafting conventions. Each sheet follows a consistent title block format including project name, author, scale, sheet number, and revision fields. The package includes multiview orthographic projections (front, top, right-side, and isometric views) of the full assembly, with dimensions and annotations applied according to ANSI/ASME drawing standards introduced in EGR 120.</p>
+      <p>Key elements of the drawing package include:</p>
+      <ul>
+        <li>Full-assembly orthographic views with overall envelope dimensions</li>
+        <li>Isometric assembly view showing the complete airplane from a three-quarter perspective</li>
+        <li>Individual part drawings for major subassemblies including the fuselage, wing panels, empennage, engine nacelles, and landing gear</li>
+        <li>Consistent title block annotations across all 17 sheets, following course-specified formatting standards</li>
+      </ul>
+      <p>Translating the BrickLink Studio 3D geometry into SolidWorks required re-modeling key subassemblies as simplified solid bodies, since BrickLink Studio does not natively export in SolidWorks-compatible formats. This step reinforced the relationship between 3D design intent and the 2D projections used to communicate that intent in formal engineering documentation.</p>
+    </div>
+  </section>
+
+  <!-- Key Takeaways -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:860px; margin:0 auto;">
+      <h2>Key Takeaways</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-top:1rem;">
+        <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+          <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">Design constraints drive creative problem-solving</p>
+          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">Working within the LEGO part library means every design choice is constrained by available geometry. Achieving aerodynamic shapes from rectilinear bricks requires the same kind of trade-off thinking that governs real aircraft design: optimizing within a fixed solution space rather than designing without limits.</p>
+        </div>
+        <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+          <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">Engineering drawing is a precise communication standard</p>
+          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">A drawing is not a picture &mdash; it is a contract. Producing 17 pages of formal documentation to ANSI/ASME standards established early habits around dimension placement, view selection, title block discipline, and scale consistency that underpin every subsequent CAD project.</p>
+        </div>
+        <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+          <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">3D-to-2D translation requires deliberate view selection</p>
+          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">Choosing which views fully define a part &mdash; without redundancy or ambiguity &mdash; is a non-trivial skill. For complex assembled geometry, selecting the front, top, and side orientations that minimize hidden lines and convey the maximum information in the fewest sheets is a design decision in itself.</p>
+        </div>
+        <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+          <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">Rendering grounds a design in physical context</p>
+          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">Compositing the model over a real runway photograph communicates scale and intent in a way that an orthographic drawing cannot. Photorealistic rendering is a standard deliverable in aerospace concept design, and producing one early &mdash; even for a LEGO model &mdash; builds intuition for how design decisions read at full scale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 1rem 2rem 2rem;">
+    <p><a class="project-title-link" href="aerospace.html">&#8592; Back to Aerospace Projects</a></p>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <span>Phone: (215) 397&ndash;5806</span>
+      <span>Email: <a href="mailto:bharadwajanuranan@gmail.com">bharadwajanuranan@gmail.com</a></span>
+      <span><a href="https://linkedin.com/in/anuranan-bharadwaj" target="_blank">LinkedIn</a></span>
+      <span><a href="https://github.com/anuranan10" target="_blank">GitHub</a></span>
+      <span>&copy; 2026 Anuranan Bharadwaj</span>
+    </div>
+  </footer>
+</body>
+</html>
