@@ -36,9 +36,9 @@
         <span class="exp-date">January 2026 – Present</span>
       </div>
       <ul>
-        <li><strong>Designed and implemented Python automation frameworks</strong> using AxCent's APIs to execute automated testing of turbomachinery blade design workflows, replacing manual validation and generating structured <strong>Excel-based verification reports</strong>.</li>
-        <li><strong>Developed automated validation pipelines</strong> to test AxCent software outputs across diverse blade design configurations, ensuring robustness and accelerating internal QA cycles for proprietary turbomachinery design tools.</li>
-        <li><strong>Analyzing blade profile repositories</strong> applied to 3D turbine rotor and stator models, validating key geometric parameters including <strong>blade count, leading/trailing edge radius, gauge angle, inlet angle, and rotation direction (CW/CCW)</strong> to ensure design consistency and reliability.</li>
+        <li><strong>Extended Axcent's automated CFD testing framework</strong> from single-solver (pbCFD) to dual-solver support by integrating <strong>FINE/Turbo (Cadence Design Systems)</strong>, modifying Python automation scripts and adapting API calls to handle solver-specific execution flows, data handling, and post-processing differences.</li>
+        <li><strong>Implemented a polling-based solver monitoring function</strong> that periodically checks simulation status and gates data processing until completion, resolving a robustness issue where the pipeline terminated before solver output was fully generated.</li>
+        <li><strong>Conducted a geometric consistency study</strong> of 20+ Axcent blade profiles applied to axial turbine configurations, extracting parameters (camber, max thickness, LE/TE radii, unguided turning angle) across CW/CCW orientations and SI/British unit systems — findings directly identified bugs in Axcent's blade geometry implementation.</li>
       </ul>
     </div>
 
@@ -68,9 +68,9 @@
         <span class="exp-date">May 2025 – Present</span>
       </div>
       <ul>
-        <li>Developed a dynamic <strong>Python-Excel integrated tool</strong> to accurately calculate <strong>turbine blade throat openings</strong> and <strong>deviation angles</strong> using <strong>Aungier's correlations</strong> and <strong>Mach-dependent flow effects</strong>, improving precision through iterative <strong>root-finding methods</strong>.</li>
-        <li>Validated computational results against <strong>experimental data</strong> and automated <strong>multi-stage turbine parameter analysis</strong> to support <strong>design iteration</strong> and <strong>aerodynamic characterization</strong>.</li>
-        <li>Leading the design and <strong>CAD modeling</strong> of a custom horizontal <strong>pitot rake</strong> to enable <strong>multi-point total pressure measurements</strong> within the <strong>turbine cascade rig</strong>, facilitating <strong>instrumentation upgrades</strong> and efficient <strong>airflow testing</strong>.</li>
+        <li><strong>Built an Excel-Python computational tool</strong> implementing <strong>Aungier's deviation angle correlations</strong> with Mach-dependent branching (M=1, M&gt;0.5, M≤0.5) across four blade rows (S1, R1, S2, R2) of a turbine cascade, using Python's <strong>fsolve</strong> to converge deviation angle and throat opening values through iterative root-finding.</li>
+        <li><strong>Automated multi-stage turbine parameter analysis</strong> in Python — reading inputs directly from Excel, reproducing Aungier-based calculations, and updating outputs on input changes — replacing manual Goal Seek iteration and enabling rapid aerodynamic design exploration.</li>
+        <li><strong>Designed and iteratively prototyped a custom five-arm pitot rake</strong> in <strong>PETG via 3D printing</strong> for the ERAU turbine cascade rig, progressing from a two-arm fit-check prototype to a final external-mount structure supporting five simultaneous pitot tube measurements, eliminating the need for repeated single-probe test runs.</li>
       </ul>
     </div>
 
