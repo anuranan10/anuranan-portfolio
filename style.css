@@ -227,6 +227,67 @@ footer {
     padding: 1.5rem 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid transparent;
+}
+
+.exp-card--internship  { border-left-color: #004080; }
+.exp-card--research    { border-left-color: #1a6b4a; }
+.exp-card--teaching    { border-left-color: #8a5c00; }
+.exp-card--design-team { border-left-color: #4d2e8a; }
+
+.exp-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+.exp-header h2 {
+    margin: 0;
+    color: #004080;
+}
+
+.role-tag {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+}
+
+.role-tag--internship  { background: #dce9f8; color: #003d7a; }
+.role-tag--research    { background: #e2f2ec; color: #1a6b4a; }
+.role-tag--teaching    { background: #fdf0d9; color: #7a4e00; }
+.role-tag--design-team { background: #ede8f7; color: #4d2e8a; }
+
+.exp-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.exp-org {
+    font-weight: 600;
+    color: #222;
+    font-size: 0.9rem;
+}
+
+.exp-date {
+    color: #666;
+    font-size: 0.85rem;
+}
+
+.exp-date::before {
+    content: '\00b7';
+    margin-right: 0.5rem;
+    color: #bbb;
 }
 
 .exp-card h2 {
@@ -234,17 +295,12 @@ footer {
     color: #004080;
 }
 
-.exp-card p {
-    font-style: italic;
-    margin-bottom: 1rem;
-    color: #333;
-}
-
 .exp-card ul {
     padding-left: 1.25rem;
     list-style-type: disc;
     line-height: 1.7;
     color: #333;
+    margin: 0;
 }
 
 .resume-section {
@@ -739,6 +795,11 @@ ul.ae-card-desc li {
     .contact-grid {
       padding: 1rem;
       width: 100%;
+    }
+
+    .exp-header {
+      flex-direction: column;
+      gap: 0.4rem;
     }
   
     .contact-grid {
