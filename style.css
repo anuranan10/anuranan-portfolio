@@ -47,8 +47,8 @@ header {
 
 .profile img {
     border-radius: 50%;
-    width: 260px;
-    height: 260px;
+    width: 320px;
+    height: 320px;
     object-fit: cover;
     margin-bottom: 0.75rem;
     border: 3px solid rgba(255, 255, 255, 0.25);
@@ -56,7 +56,7 @@ header {
 
 .tagline {
     margin: 0.25rem 0 0;
-    font-size: 1.05rem;
+    font-size: 1.2rem;
     font-weight: 600;
     letter-spacing: 0.04em;
     text-transform: uppercase;
@@ -64,9 +64,9 @@ header {
 }
 
 .about {
-    max-width: 600px;
-    font-size: 1.1rem;
-    line-height: 1.8;
+    max-width: 700px;
+    font-size: 1.2rem;
+    line-height: 1.85;
     text-align: justify;
 }
 
@@ -134,10 +134,10 @@ footer {
 
 .quick-links {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1.25rem;
-    max-width: 1100px;
-    margin: 2.5rem auto;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.85rem;
+    max-width: 880px;
+    margin: 2rem auto;
     padding: 0 2rem;
 }
 
@@ -145,7 +145,7 @@ footer {
     background: #f4faff;
     border: 1px solid #d0dde8;
     border-radius: 8px;
-    padding: 1.25rem 1.4rem;
+    padding: 0.85rem 1rem;
     text-decoration: none;
     color: inherit;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -158,15 +158,15 @@ footer {
 }
 
 .quick-link-card h3 {
-    margin: 0 0 0.5rem;
+    margin: 0 0 0.35rem;
     color: #004080;
-    font-size: 1.05rem;
+    font-size: 0.92rem;
 }
 
 .quick-link-card p {
     margin: 0;
-    font-size: 0.875rem;
-    line-height: 1.55;
+    font-size: 0.78rem;
+    line-height: 1.45;
     color: #444;
 }
 
