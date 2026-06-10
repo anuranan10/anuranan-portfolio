@@ -145,7 +145,7 @@
   <!-- Phase 1: Modal Analysis -->
   <section class="project-row">
     <div class="project-text" style="max-width:820px; margin:0 auto;">
-      <h2 class="phase-heading"><span class="phase-badge">1</span> Transfer Functions &amp; Modal Characterization</h2>
+      <h2 class="phase-heading">Transfer Functions &amp; Modal Characterization</h2>
       <p>Three classical approximation transfer functions were derived from the DC-8&rsquo;s published stability derivatives, one for each natural mode of motion. Each was obtained by applying Laplace transforms to the linearized equations of motion and isolating the ratio of output state to control surface deflection.</p>
 
       <p><strong>Short Period (elevator &rarr; angle of attack):</strong></p>
@@ -191,7 +191,7 @@
   <!-- Phase 2: AOA PID -->
   <section class="project-row">
     <div class="project-text" style="max-width:820px; margin:0 auto;">
-      <h2 class="phase-heading"><span class="phase-badge">2</span> Angle of Attack PID Controller</h2>
+      <h2 class="phase-heading">Angle of Attack PID Controller</h2>
       <p>The closed-loop transfer function C(s) for the AOA loop combines the short period plant G(s), an actuator model G<sub>A</sub>(s) = 50/(s+50), and the PID controller G<sub>C</sub>(s) = (k<sub>d</sub>s<sup>2</sup> + k<sub>p</sub>s + k<sub>I</sub>)/s. To make the gain system solvable (3 unknowns, 3 equations), the actuator was treated as perfect (G<sub>A</sub> = 1), reducing the closed-loop characteristic equation to 3rd order.</p>
 
       <p>Performance specifications mapped to desired pole locations:</p>
@@ -215,7 +215,7 @@
   <!-- Phase 3: Forward Speed PID -->
   <section class="project-row">
     <div class="project-text" style="max-width:820px; margin:0 auto;">
-      <h2 class="phase-heading"><span class="phase-badge">3</span> Forward Speed PID Controller (Throttle Input)</h2>
+      <h2 class="phase-heading">Forward Speed PID Controller (Throttle Input)</h2>
       <p>The throttle-controlled forward speed loop used the phugoid transfer function as the plant, paired with an actuator G<sub>A</sub>(s) = 75/(s+75). The closed-loop characteristic equation expanded to 4th order. Because the actuator introduced a 4th pole at s = &minus;75 while only 3 PID gains are available, the system was underdetermined. The 4th pole was removed from the desired characteristic equation to make it solvable.</p>
 
       <p>Performance specifications:</p>
