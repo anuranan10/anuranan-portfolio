@@ -86,11 +86,18 @@
     </div>
   </section>
 
+  <!-- Page Intro -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
+      <p style="font-size:0.92em; color:#004080; line-height:1.7; font-style:italic; text-align:center;">This page walks through a clean-sheet aircraft stability and control study &mdash; from geometry sizing and hand-derived stability derivatives, through DATCOM cross-validation, to a closed-loop 6-DOF Simulink model visualized live in FlightGear.</p>
+    </div>
+  </section>
+
   <!-- Project Overview -->
   <section class="project-row">
     <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Project Overview</h2>
-      <p>This project covered the full cycle of aircraft stability and control analysis &mdash; from geometry sizing and hand-derived stability derivatives all the way through closed-loop simulation and 3D flight visualization. The aircraft was a clean-sheet design, sized to fly at Mach 0.6 and 6,500 ft altitude at a trimmed angle of attack of 2&deg;, carrying two passengers at a gross weight of 4,000 lb. The goal was to demonstrate that a designed configuration could simultaneously satisfy aerodynamic, geometric, and stability requirements, and then validate that behavior computationally.</p>
+      <p>This project covered the full cycle of aircraft stability and control analysis &mdash; from geometry sizing and hand-derived stability derivatives all the way through closed-loop simulation and 3D flight visualization. The aircraft was a clean-sheet design, sized to fly at <strong>Mach 0.6</strong> and <strong>6,500 ft</strong> altitude at a trimmed angle of attack of <strong>2&deg;</strong>, carrying two passengers at a gross weight of <strong>4,000 lb</strong>. The goal was to demonstrate that a designed configuration could simultaneously satisfy aerodynamic, geometric, and stability requirements, and then validate that behavior computationally.</p>
       <ul>
         <li>Define aircraft geometry (wing, horizontal tail, vertical tail, fuselage) to satisfy required C<sub>L&alpha;</sub>, C<sub>D0</sub>, C<sub>m&alpha;</sub>, and C<sub>n&beta;</sub> targets</li>
         <li>Compute key stability derivatives analytically and cross-validate with USAF DATCOM across multiple flight conditions and angles of attack</li>
@@ -109,7 +116,7 @@
   <section class="project-row">
     <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Aircraft Geometry &amp; Design Parameters</h2>
-      <p>The aircraft configuration was established through manual geometric sizing. Wing parameters were selected to hit the required lift-curve slope and longitudinal stability margin, while tail sizing was driven by horizontal-tail volume coefficient constraints. The final design used an 11&deg; leading-edge sweep and 3&deg; dihedral on the main wing to balance lateral stability and aerodynamic efficiency.</p>
+      <p>The aircraft configuration was established through manual geometric sizing. Wing parameters were selected to hit the required lift-curve slope and longitudinal stability margin, while tail sizing was driven by horizontal-tail volume coefficient constraints. The final design used an <strong>11&deg; leading-edge sweep</strong> and <strong>3&deg; dihedral</strong> on the main wing to balance lateral stability and aerodynamic efficiency.</p>
 
       <table style="border-collapse:collapse; font-size:0.9em; margin:0.6rem 0 1rem; width:100%;">
         <tr style="background:#004080; color:white;">
@@ -229,9 +236,15 @@
   <section class="project-row">
     <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Longitudinal Stability Analysis</h2>
-      <p>Longitudinal static stability was evaluated through the pitching-moment curve slope C<sub>m&alpha;</sub>, which must be negative for a statically stable aircraft. The total C<sub>m&alpha;</sub> is the sum of fuselage, wing, and horizontal-tail contributions. The fuselage contribution was computed using Multhopp&rsquo;s theory (implemented as a MATLAB script), which integrates the pitching moment over 100 upwash and 100 downwash fuselage cross-sections, yielding C<sub>m&alpha;,f</sub> = 0.4702 rad<sup>&minus;1</sup>. Combined with the wing contribution (&minus;0.297 rad<sup>&minus;1</sup>) and tail contribution (&minus;1.53 rad<sup>&minus;1</sup>), the hand-calculated total is:</p>
+      <p>Longitudinal static stability was evaluated through the pitching-moment curve slope C<sub>m&alpha;</sub>, which must be negative for a statically stable aircraft. The total C<sub>m&alpha;</sub> is the sum of fuselage, wing, and horizontal-tail contributions. The fuselage contribution was computed using <strong>Multhopp&rsquo;s theory</strong> (implemented as a MATLAB script), which integrates the pitching moment over <strong>100 upwash</strong> and <strong>100 downwash</strong> fuselage cross-sections, yielding C<sub>m&alpha;,f</sub> = <strong>0.4702 rad<sup>&minus;1</sup></strong>. Combined with the wing contribution (<strong>&minus;0.297 rad<sup>&minus;1</sup></strong>) and tail contribution (<strong>&minus;1.53 rad<sup>&minus;1</sup></strong>), the hand-calculated total is:</p>
       <p style="margin:0.4rem 0 0.4rem 1.5rem; font-style:italic;">C<sub>m&alpha;</sub> = 0.4702 &minus; 0.297 &minus; 1.53 &asymp; <strong>&minus;1.35 rad<sup>&minus;1</sup></strong></p>
-      <p>DATCOM reported C<sub>m&alpha;</sub> = &minus;0.293 rad<sup>&minus;1</sup>, a significant departure from the analytical result. This discrepancy is attributed to DATCOM&rsquo;s semi-empirical assumptions, which can underestimate tail effectiveness for certain geometry configurations. Both values are negative, confirming the aircraft is statically stable in pitch, though the magnitude &mdash; and therefore the static margin &mdash; differs between the two methods. The neutral point was computed analytically at N<sub>0</sub> = 0.435 (43.5% MAC).</p>
+      <p>DATCOM reported C<sub>m&alpha;</sub> = <strong>&minus;0.293 rad<sup>&minus;1</sup></strong>, a significant departure from the analytical result. Both values are negative, confirming the aircraft is statically stable in pitch, though the magnitude &mdash; and therefore the static margin &mdash; differs between the two methods. The neutral point was computed analytically at <strong>N<sub>0</sub> = 0.435 (43.5% MAC)</strong>.</p>
+
+      <div style="background:#fff8ec; border-left:4px solid #f0a30a; border-radius:0 6px 6px 0; padding:1rem 1.2rem; margin:1.2rem 0;">
+        <p style="font-size:0.72em; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#f0a30a; margin:0 0 0.6rem;">Design Decision</p>
+        <p style="margin:0 0 0.5rem; font-size:0.92em; line-height:1.65; color:#333;"><strong>Trade-off:</strong> Reported both the hand-calculated C<sub>m&alpha;</sub> (<strong>&minus;1.35 rad<sup>&minus;1</sup></strong>) and the DATCOM value (<strong>&minus;0.293 rad<sup>&minus;1</sup></strong>) side by side rather than reconciling them to a single number.</p>
+        <p style="margin:0; font-size:0.92em; line-height:1.65; color:#333;"><strong>Why:</strong> The discrepancy is attributed to DATCOM&rsquo;s semi-empirical assumptions, which can underestimate tail effectiveness for certain geometry configurations. Since both methods agree on the sign (statically stable) but disagree on magnitude, presenting both values preserves that information for downstream design decisions rather than masking it with a single averaged figure.</p>
+      </div>
 
       <figure style="margin:1rem 0;">
         <img src="Folder/AircraftStability/fig06.png" alt="DATCOM output table showing longitudinal stability coefficients" style="width:100%; border-radius:6px;" />
@@ -251,17 +264,11 @@
       <h2>Directional &amp; Lateral Stability Analysis</h2>
       <p>Directional stability is characterized by C<sub>n&beta;</sub> (weathercock stability derivative) &mdash; a positive value indicates the aircraft yaws nose-into-the-wind when disturbed, which is the required stable behavior. Lateral stability is characterized by C<sub>l&beta;</sub> (dihedral effect) &mdash; a negative value means the aircraft rolls away from a sideslip, which is likewise stable. Both were computed analytically, incorporating contributions from the wing, fuselage, and vertical tail.</p>
 
-      <p><strong>Directional stability (C<sub>n&beta;</sub>):</strong></p>
-      <p style="margin:0.4rem 0 0.4rem 1.5rem; font-style:italic;">
-        Hand-calculated: <strong>0.189 rad<sup>&minus;1</sup></strong> &nbsp;&nbsp; DATCOM: <strong>0.183 rad<sup>&minus;1</sup></strong> &nbsp;&nbsp; Error: <strong>&lt;3.5%</strong>
-      </p>
-      <p>The close agreement confirms that the vertical tail is correctly sized for adequate yaw stiffness at this flight condition.</p>
-
-      <p><strong>Lateral stability (C<sub>l&beta;</sub>):</strong></p>
-      <p style="margin:0.4rem 0 0.4rem 1.5rem; font-style:italic;">
-        Hand-calculated: <strong>&minus;0.1231 rad<sup>&minus;1</sup></strong> &nbsp;&nbsp; DATCOM: <strong>&minus;0.113 rad<sup>&minus;1</sup></strong> &nbsp;&nbsp; Difference: <strong>0.01 rad<sup>&minus;1</sup></strong>
-      </p>
-      <p>The 0.01 rad<sup>&minus;1</sup> difference between methods is well within acceptable engineering agreement, and both values confirm negative (stable) dihedral effect. The 3&deg; wing dihedral combined with the wing sweep contributes the dominant stabilizing lateral moment.</p>
+      <ul>
+        <li><strong>Directional stability (C<sub>n&beta;</sub>):</strong> Hand-calculated <strong>0.189 rad<sup>&minus;1</sup></strong> &nbsp;&middot;&nbsp; DATCOM <strong>0.183 rad<sup>&minus;1</sup></strong> &nbsp;&middot;&nbsp; error <strong>&lt;3.5%</strong> &mdash; the close agreement confirms the vertical tail is correctly sized for adequate yaw stiffness at this flight condition</li>
+        <li><strong>Lateral stability (C<sub>l&beta;</sub>):</strong> Hand-calculated <strong>&minus;0.1231 rad<sup>&minus;1</sup></strong> &nbsp;&middot;&nbsp; DATCOM <strong>&minus;0.113 rad<sup>&minus;1</sup></strong> &nbsp;&middot;&nbsp; difference <strong>0.01 rad<sup>&minus;1</sup></strong> &mdash; well within acceptable engineering agreement, and both values confirm negative (stable) dihedral effect</li>
+      </ul>
+      <p>The <strong>3&deg; wing dihedral</strong> combined with the wing sweep contributes the dominant stabilizing lateral moment.</p>
 
       <figure style="margin:1rem 0;">
         <img src="Folder/AircraftStability/fig07.png" alt="Hand calculations for directional stability Cnbeta" style="width:100%; border-radius:6px;" />
@@ -274,7 +281,7 @@
   <section class="project-row">
     <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Hand Calculations vs. DATCOM &mdash; Comparison</h2>
-      <p>The table below summarizes the full derivative comparison at the design point (&alpha; = 2&deg;, Mach 0.6, 6,500 ft). Good agreement was achieved for most aerodynamic coefficients. The significant discrepancy in C<sub>m&alpha;</sub> underscores that DATCOM&rsquo;s semi-empirical methods have known limitations for tail-effectiveness estimation on configurations where the horizontal tail is a strong contributor to longitudinal stability, warranting cross-verification with analytical methods.</p>
+      <p>The table below summarizes the full derivative comparison at the design point (&alpha; = 2&deg;, Mach 0.6, 6,500 ft). <strong>Good agreement</strong> was achieved for most aerodynamic coefficients. The significant discrepancy in <strong>C<sub>m&alpha;</sub></strong> underscores that DATCOM&rsquo;s semi-empirical methods have known limitations for tail-effectiveness estimation on configurations where the horizontal tail is a strong contributor to longitudinal stability, warranting cross-verification with analytical methods.</p>
 
       <table style="border-collapse:collapse; font-size:0.9em; margin:0.6rem 0 1rem; width:100%;">
         <tr style="background:#004080; color:white;">
@@ -340,7 +347,7 @@
   <section class="project-row">
     <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Simulink Integration &amp; Dynamic Derivatives</h2>
-      <p>Five stability derivatives computed by DATCOM were integrated as 1-D lookup-table (T(u)) blocks in a Simulink 6-DOF general aviation flight dynamics model. Each lookup table maps angle of attack (in degrees) to its respective derivative value, evaluated at the design flight condition. This non-linear aerodynamic representation is more accurate than fixed-derivative linear models because it captures how the derivatives change across the angle-of-attack range from &minus;4&deg; to +18&deg;.</p>
+      <p><strong>Five stability derivatives</strong> computed by DATCOM were integrated as <strong>1-D lookup-table (T(u))</strong> blocks in a Simulink <strong>6-DOF</strong> general aviation flight dynamics model. Each lookup table maps angle of attack (in degrees) to its respective derivative value, evaluated at the design flight condition. This non-linear aerodynamic representation is more accurate than fixed-derivative linear models because it captures how the derivatives change across the angle-of-attack range from <strong>&minus;4&deg; to +18&deg;</strong>.</p>
 
       <table style="border-collapse:collapse; font-size:0.9em; margin:0.6rem 0 1rem;">
         <tr style="background:#004080; color:white;">
@@ -391,16 +398,13 @@
   <section class="project-row">
     <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Simulation Results &mdash; FlightGear Maneuvers</h2>
-      <p>Three maneuvers were simulated in FlightGear to validate the aircraft&rsquo;s dynamic behavior and control authority. In each case, Simulink passed state outputs (roll, pitch, yaw, altitude, airspeed) to FlightGear in real time, providing a 3D visual confirmation that the aerodynamic model produces physically plausible responses.</p>
+      <p><strong>Three maneuvers</strong> were simulated in FlightGear to validate the aircraft&rsquo;s dynamic behavior and control authority. In each case, Simulink passed state outputs (roll, pitch, yaw, altitude, airspeed) to FlightGear in real time, providing a 3D visual confirmation that the aerodynamic model produces physically plausible responses.</p>
 
-      <p><strong>Level Flight</strong> (V = 654 ft/s, &delta;<sub>e</sub> = &minus;1.71&deg;, all other surfaces neutral, Alt = 6,500 ft):<br>
-      The &minus;1.71&deg; elevator deflection trims the aircraft at the design point. The negative sign indicates the elevator must be deflected trailing-edge-up (download on the tail) to maintain 2&deg; angle of attack &mdash; consistent with a statically stable, aft-CG aircraft.</p>
-
-      <p><strong>Pitch-Up</strong> (V = 630 ft/s, &delta;<sub>e</sub> = +2&deg;, Alt = 6,530 ft):<br>
-      Increasing elevator to +2&deg; produces a nose-up pitch response and a modest altitude gain of ~30 ft, confirming positive elevator effectiveness (negative C<sub>m&delta;e</sub>). The slight airspeed decrease to 630 ft/s is physically consistent with the pitch-altitude energy exchange.</p>
-
-      <p><strong>Right Bank</strong> (V = 654 ft/s, all surfaces neutral, Alt = 6,500 ft):<br>
-      The right-bank maneuver demonstrates the model&rsquo;s lateral-directional dynamics. With neutral controls, any induced roll will couple through the dihedral effect (C<sub>l&beta;</sub> = &minus;0.113 rad<sup>&minus;1</sup>) and directional stability (C<sub>n&beta;</sub> = 0.183 rad<sup>&minus;1</sup>) to produce the characteristic spiral and Dutch-roll coupling inherent to the design.</p>
+      <ul>
+        <li><strong>Level Flight</strong> &nbsp;&middot;&nbsp; V = <strong>654 ft/s</strong> &nbsp;&middot;&nbsp; &delta;<sub>e</sub> = <strong>&minus;1.71&deg;</strong> &nbsp;&middot;&nbsp; Alt = 6,500 ft &mdash; the &minus;1.71&deg; elevator deflection trims the aircraft at the design point. The negative sign indicates the elevator must be deflected trailing-edge-up (download on the tail) to maintain 2&deg; angle of attack &mdash; consistent with a statically stable, aft-CG aircraft</li>
+        <li><strong>Pitch-Up</strong> &nbsp;&middot;&nbsp; V = <strong>630 ft/s</strong> &nbsp;&middot;&nbsp; &delta;<sub>e</sub> = <strong>+2&deg;</strong> &nbsp;&middot;&nbsp; Alt = 6,530 ft &mdash; produces a nose-up pitch response and a modest altitude gain of <strong>~30 ft</strong>, confirming positive elevator effectiveness (negative C<sub>m&delta;e</sub>). The slight airspeed decrease to 630 ft/s is physically consistent with the pitch-altitude energy exchange</li>
+        <li><strong>Right Bank</strong> &nbsp;&middot;&nbsp; V = <strong>654 ft/s</strong> &nbsp;&middot;&nbsp; all surfaces neutral &nbsp;&middot;&nbsp; Alt = 6,500 ft &mdash; demonstrates the model&rsquo;s lateral-directional dynamics. With neutral controls, any induced roll couples through the dihedral effect (C<sub>l&beta;</sub> = &minus;0.113 rad<sup>&minus;1</sup>) and directional stability (C<sub>n&beta;</sub> = 0.183 rad<sup>&minus;1</sup>) to produce the characteristic spiral and Dutch-roll coupling inherent to the design</li>
+      </ul>
 
       <div style="display:flex; gap:1rem; flex-wrap:wrap; margin:1rem 0;">
         <figure style="flex:1; min-width:220px; margin:0;">

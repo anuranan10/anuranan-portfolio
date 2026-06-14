@@ -86,6 +86,13 @@
     </div>
   </section>
 
+  <!-- Page Intro -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
+      <p style="font-size:0.92em; color:#004080; line-height:1.7; font-style:italic; text-align:center;">This page walks through the full trajectory design for a TDRS-M-class spacecraft &mdash; propagating the LEO parking orbit, computing the LEO&ndash;GTO&ndash;GEO &Delta;v and propellant budget, designing a GEO phasing maneuver, and benchmarking every result against the real 2017 TDRS-M mission.</p>
+    </div>
+  </section>
+
   <!-- Mission Context -->
   <section class="project-row">
     <div class="project-text" style="max-width:820px; margin:0 auto;">
@@ -113,7 +120,8 @@
       <h2>Phase 1 &mdash; LEO Parking Orbit Propagation</h2>
       <p>The spacecraft begins in a 300 km circular equatorial parking orbit at r<sub>0</sub> = R<sub>E</sub> + 300 = <strong>6678 km</strong>. Circular velocity follows directly from Earth&rsquo;s gravitational parameter &mu;<sub>E</sub> = 398,600.418 km<sup>3</sup>/s<sup>2</sup>:</p>
       <p style="margin:0.5rem 0 0.5rem 1.5rem; font-style:italic; font-size:1.05em;">V<sub>circ</sub> = &radic;(&mu;/r<sub>0</sub>) = <strong>7.73 km/s</strong></p>
-      <p>Starting from the Cartesian state r(0) = [6678, 0, 0] km and v(0) = [0, 7.73, 0] km/s, I integrated the two-body equations of motion for exactly one orbital period T = 2&pi;&radic;(r<sub>0</sub><sup>3</sup>/&mu;) = <strong>5400 s</strong> using MATLAB&rsquo;s <code>ode45</code> at RelTol = AbsTol = 10<sup>&minus;9</sup>. The Classical Orbital Elements for this phase: a = 6678 km, e = 0, i = 28.5&deg;, &Omega; = 0&deg;, &omega; = 0&deg;, &theta; = 0&deg;.</p>
+      <p>Starting from the Cartesian state r(0) = [6678, 0, 0] km and v(0) = [0, 7.73, 0] km/s, I integrated the two-body equations of motion for exactly one orbital period T = 2&pi;&radic;(r<sub>0</sub><sup>3</sup>/&mu;) = <strong>5400 s</strong> using MATLAB&rsquo;s <code>ode45</code> at <strong>RelTol = AbsTol = 10<sup>&minus;9</sup></strong>.</p>
+      <p>Classical Orbital Elements for this phase: <strong>a = 6678 km</strong> &nbsp;&middot;&nbsp; <strong>e = 0</strong> &nbsp;&middot;&nbsp; <strong>i = 28.5&deg;</strong> &nbsp;&middot;&nbsp; &Omega; = 0&deg; &nbsp;&middot;&nbsp; &omega; = 0&deg; &nbsp;&middot;&nbsp; &theta; = 0&deg;.</p>
 
       <figure style="margin:1rem 0;">
         <img src="Folder/AE313/fig01_parking_orbit_2d.jpeg" alt="2D parking orbit propagation &ndash; closed circular trajectory at 6678 km radius" style="width:100%; border-radius:6px;" />
@@ -150,7 +158,7 @@
         <li>Transfer orbit period: T<sub>t</sub> = <strong>10.95 hr</strong> &nbsp;&rarr;&nbsp; time to apogee: t<sub>PA</sub> = <strong>5.48 hr</strong></li>
         <li>GTO injection burn: &Delta;v<sub>1</sub> = 10.15 &minus; 7.73 = <strong>2.42 km/s</strong></li>
       </ul>
-      <p>This first burn is the most energetically demanding maneuver of the entire mission, consuming 45% of the total &Delta;v budget in a single impulsive firing at LEO perigee.</p>
+      <p>This first burn is the most energetically demanding maneuver of the entire mission, consuming <strong>45% of the total &Delta;v budget</strong> in a single impulsive firing at LEO perigee.</p>
     </div>
   </section>
 
@@ -170,8 +178,13 @@
       <p style="margin:0.5rem 0 0.2rem 1.5rem; font-style:italic; font-size:1.05em;">&Delta;v<sub>circ</sub> = V<sub>GEO</sub> &minus; V<sub>a,t</sub> = 3.07 &minus; 1.61 = <strong>1.46 km/s</strong></p>
       <p style="margin:0.2rem 0 0.5rem 1.5rem; font-style:italic; font-size:1.05em;">&Delta;v<sub>inc</sub> = 2 V<sub>GEO</sub> sin(&Delta;i / 2) = 2(3.07) sin(14.25&deg;) = <strong>1.50 km/s</strong></p>
       <p><strong>Total mission &Delta;v:</strong> 2.42 + 1.46 + 1.50 = <strong>5.36 km/s</strong>.</p>
-      <p>Propellant mass was estimated using the Tsiolkovsky Rocket Equation with m<sub>0</sub> = 3500 kg, I<sub>sp</sub> = 320 s (V<sub>e</sub> = I<sub>sp</sub> &middot; g<sub>0</sub> = 3.139 km/s):</p>
-      <p style="margin:0.5rem 0 0.5rem 1.5rem; font-style:italic; font-size:1.05em;">m<sub>0</sub> / m<sub>f</sub> = e<sup>&Delta;v/V<sub>e</sub></sup> = e<sup>5.36/3.139</sup> = 5.53 &nbsp;&rarr;&nbsp; m<sub>f</sub> = <strong>633 kg</strong>, m<sub>p</sub> = <strong>2867 kg (82%)</strong></p>
+      <p>Propellant mass was estimated using the Tsiolkovsky Rocket Equation:</p>
+      <p style="margin:0.5rem 0 0.5rem 1.5rem; font-style:italic; font-size:1.05em;">m<sub>0</sub> / m<sub>f</sub> = e<sup>&Delta;v/V<sub>e</sub></sup> = e<sup>5.36/3.139</sup> = 5.53</p>
+      <ul>
+        <li>Initial mass <strong>m<sub>0</sub> = 3500 kg</strong> &nbsp;&middot;&nbsp; specific impulse <strong>I<sub>sp</sub> = 320 s</strong> &nbsp;&middot;&nbsp; exhaust velocity <strong>V<sub>e</sub> = 3.139 km/s</strong></li>
+        <li>Final mass <strong>m<sub>f</sub> = 633 kg</strong></li>
+        <li>Propellant mass <strong>m<sub>p</sub> = 2867 kg</strong> &mdash; a <strong>propellant mass fraction of 82%</strong></li>
+      </ul>
     </div>
   </section>
 
@@ -179,7 +192,7 @@
   <section class="project-row">
     <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Phase 4 &mdash; GEO Phasing Maneuver</h2>
-      <p>With both spacecraft in GEO, an interceptor leading its target by &Delta;&theta;<sub>0</sub> = 5&deg; in longitude needs to slow its drift rate and allow the target to catch up. The strategy is to raise the interceptor into a phasing ellipse with a slightly longer period. The required phasing orbit semi-major axis satisfies:</p>
+      <p>With both spacecraft in GEO, an interceptor leading its target by &Delta;&theta;<sub>0</sub> = <strong>5&deg;</strong> in longitude needs to slow its drift rate and allow the target to catch up. The strategy is to raise the interceptor into a phasing ellipse with a slightly longer period. The required phasing orbit semi-major axis satisfies:</p>
       <p style="margin:0.5rem 0 0.5rem 1.5rem; font-style:italic; font-size:1.05em;">T<sub>phase</sub> / T<sub>GEO</sub> = 1 + &Delta;&theta; / 2&pi;</p>
       <p>Computed phasing orbit parameters:</p>
       <ul>
@@ -190,7 +203,7 @@
         <li>Burn 2 (return to GEO): &Delta;v<sub>2</sub> = <strong>0.014 km/s</strong></li>
         <li>Total phasing cost: <strong>0.028 km/s</strong> &mdash; less than 0.6% of total mission &Delta;v</li>
       </ul>
-      <p>Numerical propagation using <code>ode45</code> tracked both spacecraft simultaneously in the ECI frame, confirming that the relative longitude decreased smoothly from 5&deg; to 0&deg; over the 24.3-hour window.</p>
+      <p>Numerical propagation using <code>ode45</code> tracked both spacecraft simultaneously in the ECI frame, confirming that the relative longitude decreased smoothly from <strong>5&deg; to 0&deg;</strong> over the <strong>24.3-hour</strong> window.</p>
 
       <figure style="margin:1rem 0;">
         <img src="Folder/AE313/fig05_phasing_longitude.jpeg" alt="Relative longitude vs time &ndash; phasing maneuver convergence from 5 to 0 degrees" style="width:100%; border-radius:6px;" />
@@ -267,7 +280,13 @@
         </tr>
       </table>
 
-      <p>The ~2.7&times; gap in spacecraft &Delta;v between this simulation and the real mission is not an error &mdash; it is a deliberate consequence of the analysis scope. Real GEO missions off-load the bulk of inclination reduction to the launch vehicle through a supersynchronous GTO injection profile. By forcing the spacecraft to carry out every maneuver from scratch, this analysis isolates exactly how much each burn costs and why launch vehicle selection is the dominant driver of propellant budget on any GEO mission.</p>
+      <p>The <strong>~2.7&times; gap</strong> in spacecraft &Delta;v between this simulation and the real mission is not an error &mdash; it is a deliberate consequence of the analysis scope. Real GEO missions off-load the bulk of inclination reduction to the launch vehicle through a <strong>supersynchronous GTO</strong> injection profile. By forcing the spacecraft to carry out every maneuver from scratch, this analysis isolates exactly how much each burn costs and why <strong>launch vehicle selection</strong> is the dominant driver of propellant budget on any GEO mission.</p>
+
+      <div style="background:#fff8ec; border-left:4px solid #f0a30a; border-radius:0 6px 6px 0; padding:1rem 1.2rem; margin:1.2rem 0;">
+        <p style="font-size:0.72em; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#f0a30a; margin:0 0 0.6rem;">Design Decision</p>
+        <p style="margin:0 0 0.5rem; font-size:0.92em; line-height:1.65; color:#333;"><strong>Trade-off:</strong> Modeled the spacecraft performing the <strong>full 28.5&deg; inclination reduction</strong> itself, rather than assuming a launch vehicle absorbs most of it via a supersynchronous transfer orbit.</p>
+        <p style="margin:0; font-size:0.92em; line-height:1.65; color:#333;"><strong>Why:</strong> Carrying every maneuver from scratch isolates the true cost of each burn, producing a <strong>conservative spacecraft &Delta;v of 5.36 km/s</strong> against the real TDRS-M&rsquo;s <strong>~2.0 km/s</strong> &mdash; making clear how much of a real mission&rsquo;s propellant budget is actually determined by the launch vehicle, not the spacecraft.</p>
+      </div>
     </div>
   </section>
 

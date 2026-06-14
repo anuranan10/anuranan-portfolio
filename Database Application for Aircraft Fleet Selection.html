@@ -85,17 +85,24 @@
     </div>
   </section>
 
+  <!-- Page Intro -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
+      <p style="font-size:0.92em; color:#004080; line-height:1.7; font-style:italic; text-align:center;">This page covers the design and development of a MATLAB-based decision support application that lets airline operators filter, compare, and visualize aircraft fleet options &mdash; replacing manual spreadsheet review with a single interactive interface backed by a live Excel dataset.</p>
+    </div>
+  </section>
+
   <!-- Project Overview -->
   <section class="project-row">
     <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Project Overview</h2>
-      <p>Fleet procurement decisions involve comparing dozens of aircraft across a wide range of performance, operational, and economic parameters. Without structured tooling, analysts are forced to manually scan spreadsheets and cross-reference multiple data sources &mdash; a slow and error-prone process. This project addressed that bottleneck by developing an interactive MATLAB application that allows airline operators to query, filter, and compare aircraft options through a single unified interface.</p>
-      <p>The application integrates a live Excel-backed dataset, making it straightforward to update aircraft records without modifying the application code. Users can apply multi-parameter filters and immediately see the filtered results in both tabular and graphical form, turning what had been a manual multi-step lookup process into a streamlined, decision-ready workflow.</p>
+      <p>Fleet procurement decisions involve comparing dozens of aircraft across a wide range of performance, operational, and economic parameters. Without structured tooling, analysts are forced to manually scan spreadsheets and cross-reference multiple data sources &mdash; a slow and error-prone process. This project addressed that bottleneck by developing an interactive <strong>MATLAB application</strong> that allows airline operators to query, filter, and compare aircraft options through a single unified interface.</p>
+      <p>The application integrates a <strong>live Excel-backed dataset</strong>, making it straightforward to update aircraft records without modifying the application code. Users can apply multi-parameter filters and immediately see the filtered results in both tabular and graphical form, turning what had been a manual multi-step lookup process into a streamlined, decision-ready workflow.</p>
       <ul>
-        <li>Design a GUI-based application that allows filtering aircraft by multiple performance criteria simultaneously</li>
-        <li>Connect the application to an Excel dataset so records can be updated without redeploying code</li>
-        <li>Display filtered results in both sortable tables and comparative visualizations</li>
-        <li>Reduce the time required to retrieve and compare candidate aircraft versus manual spreadsheet methods</li>
+        <li><strong>Multi-parameter filtering</strong> &mdash; a GUI-based application that allows filtering aircraft by multiple performance criteria simultaneously</li>
+        <li><strong>Excel-backed dataset</strong> &mdash; connects the application to an Excel dataset so records can be updated without redeploying code</li>
+        <li><strong>Dual output views</strong> &mdash; displays filtered results in both sortable tables and comparative visualizations</li>
+        <li><strong>~25% faster retrieval</strong> &mdash; reduces the time required to retrieve and compare candidate aircraft versus manual spreadsheet methods</li>
       </ul>
 
       <figure style="margin:1.2rem 0;">
@@ -109,8 +116,14 @@
   <section class="project-row">
     <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Application Design</h2>
-      <p>The application was built using MATLAB App Designer. The interface is divided into three functional areas: a filter panel, a results table, and a visualization panel. Users set filter bounds on parameters such as range, maximum takeoff weight, passenger capacity, and cruise speed, then trigger a query that returns only the aircraft meeting all specified criteria.</p>
-      <p>The Excel integration uses MATLAB&rsquo;s <code>readtable</code> function to load the dataset at application startup. This decouples the data layer from the application logic &mdash; adding a new aircraft or updating a specification requires only editing the Excel file, with no code changes required. The loaded table is held in application state and re-queried on each filter update, keeping response times fast regardless of dataset size.</p>
+      <p>The application was built using <strong>MATLAB App Designer</strong>. The interface is divided into three functional areas: a filter panel, a results table, and a visualization panel.</p>
+      <ul>
+        <li><strong>Filter panel</strong> &mdash; sets bounds on parameters such as range, maximum takeoff weight, passenger capacity, and cruise speed</li>
+        <li><strong>Query engine</strong> &mdash; returns only the aircraft meeting all specified criteria</li>
+        <li><strong>Excel integration</strong> &mdash; uses MATLAB&rsquo;s <code>readtable</code> function to load the dataset at application startup</li>
+        <li><strong>Decoupled data layer</strong> &mdash; adding a new aircraft or updating a specification requires only editing the Excel file, with no code changes required</li>
+        <li><strong>In-memory state</strong> &mdash; the loaded table is held in application state and re-queried on each filter update, keeping response times fast regardless of dataset size</li>
+      </ul>
 
       <div style="background:#fff8ec; border-left:4px solid #f0a30a; border-radius:0 6px 6px 0; padding:1rem 1.2rem; margin:1.2rem 0;">
         <p style="font-size:0.72em; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#f0a30a; margin:0 0 0.6rem;">Design Decision</p>
@@ -118,7 +131,7 @@
         <p style="margin:0; font-size:0.92em; line-height:1.65; color:#333;"><strong>Why:</strong> The fleet dataset is small (dozens of aircraft, not millions of rows) and is maintained by analysts who already work in spreadsheets &mdash; a database would have added setup and maintenance overhead without a corresponding performance benefit at this scale. Loading the whole table once with <code>readtable</code> and filtering in memory gave sub-100ms response times while keeping the data editable by anyone with Excel, no SQL knowledge required.</p>
       </div>
 
-      <p>The visualization panel generates comparative charts dynamically based on the filtered selection. A direct side-by-side bar chart is shown when the filtered set is small; a scatter plot of two user-selected parameters provides an overview when more results are present, helping identify dominant options at a glance.</p>
+      <p>The visualization panel generates comparative charts dynamically based on the filtered selection. A direct side-by-side <strong>bar chart</strong> is shown when the filtered set is small; a <strong>scatter plot</strong> of two user-selected parameters provides an overview when more results are present, helping identify dominant options at a glance.</p>
 
       <figure style="margin:1.2rem 0;">
         <img src="Folder/MATLAB2.png" alt="Filtered aircraft data view showing comparison table" style="width:100%; border-radius:6px;" />
