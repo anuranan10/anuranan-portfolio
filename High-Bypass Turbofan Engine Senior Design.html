@@ -340,33 +340,168 @@
       </figure>
 
       <h3 style="margin-top:1.5rem; color:#004080;">High-Pressure Compressor &mdash; 6 Stages</h3>
-      <p>The HPC on the HP spool performs the primary compression. The first stage is deliberately front-loaded, allowing downstream stages to ease progressively &mdash; this strategy let the HPC reach its full pressure ratio in <strong>six stages</strong> where reference engines require <strong>nine to eleven</strong>.</p>
-      <ul>
-        <li>HP spool speed <strong>13,000 RPM</strong> &nbsp;&middot;&nbsp; pressure ratio <strong>&pi;<sub>HPC</sub> = 15.7</strong></li>
-        <li>Blade height collapses from <strong>8 cm</strong> (stage 1) to <strong>1 cm</strong> (stage 6) &nbsp;&middot;&nbsp; meanline blade speed <strong>495 m/s</strong></li>
-        <li>Stage pressure ratio front-loaded at <strong>~1.95</strong> (stage 1), easing to <strong>~1.37</strong> (stage 6)</li>
-        <li><strong>60&ndash;110 blades</strong> per stage</li>
-        <li>All six stages: De Haller numbers <strong>&ge; 0.75</strong>, diffusion factors <strong>&le; 0.38</strong></li>
-      </ul>
 
       <figure style="margin:1.2rem 0;">
         <img src="Folder/Turbofan/fig11.jpeg" alt="HPC CAD model showing 6-stage high-pressure compressor" style="width:100%; border-radius:6px;" />
         <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 18: High-pressure compressor CAD model &mdash; 6 stages, blade height tapering from 8 cm to 1 cm, &pi;<sub>HPC</sub> = 15.7, &eta;<sub>HPC</sub> = 0.89</figcaption>
       </figure>
 
-      <h3 style="margin-top:1.5rem; color:#004080;">Turbines &mdash; 1-Stage HPT + 2-Stage LPT</h3>
-      <p>The HPT receives flow directly from the combustor and extracts power to drive the HPC; the LPT extracts power across <strong>two stages</strong> to drive both the LPC and (through the gearbox) the fan. The <strong>three-stage</strong> turbine total compares to <strong>eight stages</strong> in the GE90/GE9X &mdash; a substantial complexity and weight reduction.</p>
+      <p>The HPC on the HP spool performs the primary compression. The first stage is deliberately front-loaded, allowing downstream stages to ease progressively &mdash; this strategy let the HPC reach its full pressure ratio in <strong>six stages</strong> where reference engines require <strong>nine to eleven</strong>.</p>
       <ul>
-        <li>HPT inlet temperature <strong>T<sub>4</sub> = 1,778 K</strong> &nbsp;&middot;&nbsp; power extracted <strong>26.8 MW</strong></li>
-        <li>HPT isentropic efficiency <strong>&eta;<sub>HPT</sub> = 0.96</strong> &nbsp;&middot;&nbsp; stage loading coefficient <strong>2.0</strong> (high but within acceptable limits)</li>
-        <li>LPT speed <strong>7,000 RPM</strong> &nbsp;&middot;&nbsp; power extracted <strong>18.9 MW</strong> across 2 stages</li>
-        <li>LPT blade heights grow from <strong>9 cm</strong> to <strong>15 cm</strong> as flow expands through the turbine</li>
+        <li>HP spool speed <strong>13,000 RPM</strong></li>
+        <li>Pressure ratio <strong>&pi;<sub>HPC</sub> = 15.7</strong></li>
+        <li>Power input <strong>18.9 MW</strong> &nbsp;&middot;&nbsp; efficiency <strong>90%</strong></li>
+        <li>Blade height collapses from <strong>8 cm</strong> (stage 1) to <strong>1 cm</strong> (stage 6) &nbsp;&middot;&nbsp; meanline blade speed <strong>495 m/s</strong></li>
+        <li>Stage pressure ratio front-loaded at <strong>~1.95</strong> (stage 1), easing to <strong>~1.37</strong> (stage 6)</li>
+        <li><strong>60&ndash;110 blades</strong> per stage</li>
+        <li>All six stages: De Haller numbers <strong>&ge; 0.75</strong>, diffusion factors <strong>&le; 0.38</strong></li>
+        <li>Degree of reaction maintained between <strong>0.8</strong> and <strong>0.92</strong> from hub to tip, ensuring effective compressor performance</li>
       </ul>
 
       <figure style="margin:1.2rem 0;">
-        <img src="Folder/Turbofan/fig16.png" alt="HPT CAD model showing single-stage high-pressure turbine" style="width:100%; border-radius:6px;" />
-        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 19: High-pressure turbine CAD model &mdash; single stage, 45 rotor / 51 stator blades, T<sub>4</sub> = 1,778 K, &eta;<sub>HPT</sub> = 0.96</figcaption>
+        <img src="Folder/Turbofan/fig47.png" alt="h-s diagram for the HPC" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 19: h-s diagram &mdash; HPC</figcaption>
       </figure>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Folder/Turbofan/fig48.png" alt="Pressure vs. station plot for the HPC" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 20: Pressure vs. station &mdash; HPC</figcaption>
+      </figure>
+
+      <div style="background:#fff8ec; border-left:4px solid #f0a30a; border-radius:0 6px 6px 0; padding:1rem 1.2rem; margin:1.2rem 0;">
+        <p style="font-size:0.72em; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#f0a30a; margin:0 0 0.6rem;">Design Decision</p>
+        <p style="margin:0 0 0.5rem; font-size:0.92em; line-height:1.65; color:#333;"><strong>Trade-off:</strong> <strong>Front-loaded</strong> the pressure rise, with the <strong>first stage</strong> operating at a pressure ratio of approximately <strong>1.95</strong> and subsequent stages easing progressively from <strong>~1.7 to ~1.4</strong>, down to <strong>~1.37</strong> at the final stage. Although the early-stage ratios are <strong>high</strong> given the <strong>adverse pressure gradient</strong> across compressors, they remain within the <strong>&le; ~2.0</strong> limit suggested in academic literature. Combined with slight deviations from <strong>recommended loading and flow coefficient ranges</strong>, this enabled a <strong>six-stage HPC</strong>.</p>
+        <p style="margin:0; font-size:0.92em; line-height:1.65; color:#333;"><strong>Why:</strong> Together with the <strong>three-stage LPC</strong>, this yields a <strong>nine-stage compressor system</strong> for the entire engine. A <strong>sanity check</strong> against existing engines shows the <strong>GE90</strong> and <strong>GE9X</strong> use approximately <strong>13</strong> and <strong>14</strong> compressor stages, respectively &mdash; underscoring the significant <strong>complexity reduction</strong> achieved.</p>
+      </div>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Folder/Turbofan/fig50.png" alt="Velocity triangles for the HPC first stage (mean-line radius)" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 21: Velocity triangles (mean-line radius) &mdash; HPC 1st stage</figcaption>
+      </figure>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Folder/Turbofan/fig49.png" alt="Mach number vs. station plot for the HPC" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 22: Mach number vs. station &mdash; HPC</figcaption>
+      </figure>
+
+      <div style="background:#fff8ec; border-left:4px solid #f0a30a; border-radius:0 6px 6px 0; padding:1rem 1.2rem; margin:1.2rem 0;">
+        <p style="font-size:0.72em; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#f0a30a; margin:0 0 0.6rem;">Design Decision</p>
+        <p style="margin:0 0 0.5rem; font-size:0.92em; line-height:1.65; color:#333;"><strong>Trade-off:</strong> Maintained <strong>zero exit swirl</strong> at the stator exit for each stage, ensuring purely axial flow into the subsequent stage.</p>
+        <p style="margin:0; font-size:0.92em; line-height:1.65; color:#333;"><strong>Why:</strong> Axial inflow to each downstream stage <strong>minimizes losses</strong>. Both absolute and relative Mach numbers remain <strong>well below 1.4</strong>.</p>
+      </div>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Folder/Turbofan/fig51.png" alt="Meridional view of the HPC showing blade radii vs. axial position" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 23: Meridional view &mdash; HPC</figcaption>
+      </figure>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Folder/Turbofan/fig52.png" alt="Loading and flow coefficients per stage for the HPC" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 24: Stage characteristics &mdash; HPC loading and flow coefficients</figcaption>
+      </figure>
+
+      <div style="background:#fff8ec; border-left:4px solid #f0a30a; border-radius:0 6px 6px 0; padding:1rem 1.2rem; margin:1.2rem 0;">
+        <p style="font-size:0.72em; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#f0a30a; margin:0 0 0.6rem;">Design Decision</p>
+        <p style="margin:0 0 0.5rem; font-size:0.92em; line-height:1.65; color:#333;"><strong>Trade-off:</strong> <strong>Minimized stage count</strong> to a <strong>six-stage HPC</strong>, accepting a <strong>slight reduction in efficiency</strong> in exchange for <strong>reduced weight and cost</strong> &mdash; loading and flow coefficients <strong>occasionally deviate from recommended ranges</strong>, falling slightly <strong>below 0.4</strong> or <strong>above 0.6</strong> in magnitude.</p>
+        <p style="margin:0; font-size:0.92em; line-height:1.65; color:#333;"><strong>Why:</strong> A key design priority was to <strong>reduce overall weight and cost</strong> &mdash; <strong>fewer stages</strong> were favored over the <strong>marginal efficiency gain</strong> from a more conventional stage count.</p>
+      </div>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Folder/Turbofan/fig53.png" alt="Blade counts and turning angles per stage for the HPC" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 25: Stage characteristics &mdash; HPC blade counts and turning angles</figcaption>
+      </figure>
+
+      <p>Blade counts range from approximately <strong>60 to 110 per stage</strong>, with <strong>camber angles maintained below a magnitude of 45&deg;</strong>.</p>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Folder/Turbofan/fig54.png" alt="De Haller numbers and diffusion factors per stage for the HPC" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 26: Airfoil health &mdash; HPC De Haller numbers and diffusion factors</figcaption>
+      </figure>
+
+      <div style="background:#fff8ec; border-left:4px solid #f0a30a; border-radius:0 6px 6px 0; padding:1rem 1.2rem; margin:1.2rem 0;">
+        <p style="font-size:0.72em; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#f0a30a; margin:0 0 0.6rem;">Design Decision</p>
+        <p style="margin:0 0 0.5rem; font-size:0.92em; line-height:1.65; color:#333;"><strong>Trade-off:</strong> The <strong>De Haller number</strong> for both rotor and stator across all stages was maintained above <strong>0.68</strong>, while the average <strong>diffusion factor</strong> was kept below <strong>0.45</strong>.</p>
+        <p style="margin:0; font-size:0.92em; line-height:1.65; color:#333;"><strong>Why:</strong> Slightly lower rotor diffusion factors indicate <strong>lightly loaded stages</strong>, which <strong>reduces the risk of flow separation</strong> and improves efficiency &mdash; resulting in <strong>higher stall margins</strong> and a more stable operating range.</p>
+      </div>
+
+      <h3 style="margin-top:1.5rem; color:#004080;">Turbines &mdash; 1-Stage HPT + 2-Stage LPT</h3>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Folder/Turbofan/fig16.png" alt="HPT CAD model showing single-stage high-pressure turbine" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 27: High-pressure turbine CAD model &mdash; single stage, 45 rotor / 51 stator blades, T<sub>4</sub> = 1,778 K, &eta;<sub>HPT</sub> = 0.96</figcaption>
+      </figure>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Folder/Turbofan/fig55.png" alt="LPT CAD model showing two-stage low-pressure turbine" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 28: Low-pressure turbine CAD model &mdash; two stages</figcaption>
+      </figure>
+
+      <p>The HPT receives flow directly from the combustor and extracts power to drive the HPC; the LPT extracts power across <strong>two stages</strong> to drive both the LPC and (through the gearbox) the fan. The <strong>three-stage</strong> turbine total compares to <strong>eight stages</strong> in the GE90/GE9X &mdash; a substantial complexity and weight reduction.</p>
+      <p style="margin-bottom:0.4rem;"><strong>High-Pressure Turbine &mdash; 1 Stage</strong></p>
+      <ul>
+        <li>HP spool speed <strong>13,000 RPM</strong></li>
+        <li>Power extracted <strong>26.8 MW</strong> &nbsp;&middot;&nbsp; efficiency <strong>96%</strong></li>
+        <li>Blade height <strong>4 cm</strong> &nbsp;&middot;&nbsp; meanline blade speed <strong>515 m/s</strong></li>
+      </ul>
+      <p style="margin-bottom:0.4rem;"><strong>Low-Pressure Turbine &mdash; 2 Stages</strong></p>
+      <ul>
+        <li>LP spool speed <strong>7,000 RPM</strong></li>
+        <li>Power extracted <strong>18.9 MW</strong> across 2 stages &nbsp;&middot;&nbsp; efficiency <strong>92%</strong></li>
+        <li>Blade height grows from <strong>9 cm</strong> (stage 1) to <strong>15 cm</strong> (stage 2) &nbsp;&middot;&nbsp; meanline blade speed <strong>300 m/s</strong></li>
+        <li>Degree of reaction maintained within a range of approximately <strong>0.1</strong> to <strong>0.76</strong> from hub to tip, ensuring effective work extraction across the turbine (HPT+LPT)</li>
+      </ul>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Folder/Turbofan/fig56.png" alt="h-s diagram for the HPT and LPT" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 29: h-s diagram &mdash; HPT &amp; LPT</figcaption>
+      </figure>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Folder/Turbofan/fig57.png" alt="Pressure vs. station plot for the HPT and LPT" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 30: Pressure vs. station &mdash; HPT &amp; LPT</figcaption>
+      </figure>
+
+      <p>A <strong>smooth decrease</strong> in pressure and enthalpy was maintained across the stages, avoiding abrupt variations in thermodynamic behavior. The <strong>HPT</strong> experiences a <strong>significantly larger enthalpy drop</strong> compared to the <strong>LPT</strong> due to the high-energy flow entering from the combustor and extracting significant energy to power the <strong>HPC</strong>.</p>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Folder/Turbofan/fig58.png" alt="Velocity triangles for the turbine (mean-line radius)" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 31: Velocity triangles (mean-line radius) &mdash; turbine</figcaption>
+      </figure>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Folder/Turbofan/fig59.png" alt="Mach number vs. station plot for the turbine" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 32: Mach number vs. station &mdash; turbine</figcaption>
+      </figure>
+
+      <div style="background:#fff8ec; border-left:4px solid #f0a30a; border-radius:0 6px 6px 0; padding:1rem 1.2rem; margin:1.2rem 0;">
+        <p style="font-size:0.72em; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#f0a30a; margin:0 0 0.6rem;">Design Decision</p>
+        <p style="margin:0 0 0.5rem; font-size:0.92em; line-height:1.65; color:#333;"><strong>Trade-off:</strong> Maintained <strong>zero exit swirl</strong> at each stage, ensuring <strong>axial flow</strong> into downstream components.</p>
+        <p style="margin:0; font-size:0.92em; line-height:1.65; color:#333;"><strong>Why:</strong> This <strong>minimizes exit losses</strong>. Both absolute and relative Mach numbers remain <strong>below 1.3</strong>.</p>
+      </div>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Folder/Turbofan/fig60.png" alt="Meridional view of the turbine showing blade radii vs. axial position" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 33: Meridional view &mdash; turbine</figcaption>
+      </figure>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Folder/Turbofan/fig61.png" alt="Loading and flow coefficients per stage for the turbine" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 34: Stage characteristics &mdash; turbine loading and flow coefficients</figcaption>
+      </figure>
+
+      <div style="background:#fff8ec; border-left:4px solid #f0a30a; border-radius:0 6px 6px 0; padding:1rem 1.2rem; margin:1.2rem 0;">
+        <p style="font-size:0.72em; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#f0a30a; margin:0 0 0.6rem;">Design Decision</p>
+        <p style="margin:0 0 0.5rem; font-size:0.92em; line-height:1.65; color:#333;"><strong>Trade-off:</strong> <strong>Minimized stage count</strong> to <strong>one HPT stage</strong> and <strong>two LPT stages</strong>, accepting a <strong>slight reduction in efficiency</strong> in exchange for <strong>lower system complexity</strong> &mdash; loading and flow coefficients <strong>occasionally deviate from recommended ranges</strong>, falling slightly <strong>below 0.4</strong> or <strong>above 0.6</strong> in magnitude.</p>
+        <p style="margin:0; font-size:0.92em; line-height:1.65; color:#333;"><strong>Why:</strong> A key design priority was to <strong>reduce overall weight and cost</strong> &mdash; <strong>fewer stages</strong> were favored over the <strong>marginal efficiency gain</strong> from a more conventional stage count.</p>
+      </div>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Folder/Turbofan/fig62.png" alt="Blade counts and turning angles per stage for the turbine" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 35: Stage characteristics &mdash; turbine blade counts and turning angles</figcaption>
+      </figure>
+
+      <p>Blade counts range from approximately <strong>30 to 70 per stage</strong>, with <strong>camber angles maintained below a magnitude of 120&deg;</strong>.</p>
+
     </div>
   </section>
 
@@ -374,7 +509,34 @@
   <section class="project-row">
     <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Combustor Design</h2>
-      <p>An annular combustor was selected for its compact geometry, uniform exit temperature distribution, and efficient mixing characteristics. Inlet conditions from the HPC exit (P<sub>t3</sub> = 1,593 kPa, T<sub>t3</sub> = 873 K) are raised to the turbine inlet target (P<sub>t4</sub> = 1,530 kPa, T<sub>t4</sub> = 1,778 K), with the combustor sustaining only a 4% pressure drop &mdash; within modern design limits. Geometry was scaled from the TF39 annular combustor reference, then sized to provide a residence time of 0.01 s for complete combustion. The final dimensions (L = 0.41 m, D = 0.67 m, L/D = 0.62) produce a compact, low-weight combustor consistent with the overall design philosophy.</p>
+      <p>The combustor mixes high-pressure air from the HPC with fuel to add thermal energy to the flow before it enters the turbine. An <strong>annular configuration</strong> was selected for its compact geometry, efficient mixing, and uniform exit temperature distribution, with <strong>primary, secondary, and dilution zones</strong> ensuring proper combustion and temperature control before the flow reaches the HPT.</p>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Folder/Turbofan/fig63.png" alt="Combustor CAD model showing annular configuration" style="width:100%; max-width:340px; display:block; margin:0 auto; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 36: Combustor CAD model &mdash; annular configuration</figcaption>
+      </figure>
+
+      <ul>
+        <li>Inlet total pressure <strong>P<sub>t3</sub> = 1,593 kPa</strong> &nbsp;&middot;&nbsp; inlet total temperature <strong>T<sub>t3</sub> = 873 K</strong></li>
+        <li>Exit total pressure <strong>P<sub>t4</sub> = 1,530 kPa</strong> &nbsp;&middot;&nbsp; exit total temperature (turbine inlet) <strong>T<sub>t4</sub> = 1,778 K</strong></li>
+        <li>Pressure drop <strong>4%</strong> across the combustor &mdash; within modern design limits</li>
+        <li>Geometry scaled from the <strong>TF39 annular combustor</strong> reference</li>
+        <li>Length <strong>L = 0.41 m</strong> &nbsp;&middot;&nbsp; diameter <strong>D = 0.67 m</strong> &nbsp;&middot;&nbsp; <strong>L/D = 0.62</strong></li>
+        <li>Residence time <strong>t<sub>res</sub> = 0.01 s</strong>, sufficient for complete combustion</li>
+      </ul>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Folder/Turbofan/fig64.png" alt="Airflow distribution diagram for the annular combustor showing primary and dilution zones" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 37: Airflow distribution &mdash; primary and dilution zones</figcaption>
+      </figure>
+
+      <div style="background:#fff8ec; border-left:4px solid #f0a30a; border-radius:0 6px 6px 0; padding:1rem 1.2rem; margin:1.2rem 0;">
+        <p style="font-size:0.72em; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#f0a30a; margin:0 0 0.6rem;">Design Decision</p>
+        <p style="margin:0 0 0.5rem; font-size:0.92em; line-height:1.65; color:#333;"><strong>Trade-off:</strong> <strong>Scaled</strong> the <strong>TF39 annular combustor</strong> down to a <strong>low L/D ratio of 0.62</strong>, prioritizing <strong>reduced size and weight</strong> over a more conservative reference geometry.</p>
+        <p style="margin:0; font-size:0.92em; line-height:1.65; color:#333;"><strong>Why:</strong> The <strong>compact geometry</strong> keeps residence time (<strong>0.01 s</strong>) adequate for <strong>complete combustion</strong> while remaining consistent with the overall design philosophy of <strong>minimizing weight</strong> &mdash; integrating cleanly with the upstream <strong>HPC</strong> and downstream <strong>HPT</strong>.</p>
+      </div>
+
+      <p style="font-size:0.85em; color:#b3261e; font-style:italic;"><strong>Note:</strong> The combustor received less design depth than the other components, both in our project and in the course more broadly &mdash; the curriculum's emphasis was on the inlet, turbomachinery, and nozzle. Rather than a full detailed design, the combustor was scaled down from the TF39 annular combustor, chosen as a reference engine of a comparable thrust class.</p>
     </div>
   </section>
 
@@ -382,37 +544,81 @@
   <section class="project-row">
     <div class="project-text" style="max-width:820px; margin:0 auto;">
       <h2>Nozzle Design &amp; Performance Results</h2>
-      <p>Both the core and bypass streams use convergent-only nozzles. A trade study evaluated whether a convergent-divergent (CD) nozzle was justified for the core stream at NPR = 8.44, which theoretically yields a ~7.7% core gross thrust gain. However, with bypass ratio 11, the core produces only 21% of total gross thrust &mdash; reducing the effective whole-engine thrust improvement to just 1.6%, well below the threshold that justifies the added weight and length. The bypass nozzle operates at NPR = 2.00 with a thrust ratio of 1.00; no diverging section provides benefit at this pressure ratio.</p>
+      <p>The nozzle is the final stage of the engine cycle, converting the high internal energy of the core and bypass streams into kinetic energy to produce thrust. Both streams use <strong>convergent-only</strong> nozzles in a <strong>separate-exhaust, non-afterburning</strong> configuration, sized at the <strong>cruise design point</strong> (<strong>M<sub>0</sub> = 0.85</strong>, <strong>h<sub>0</sub> = 12,192 m</strong>).</p>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Folder/Turbofan/fig65.png" alt="Nozzle CAD model showing the core and bypass exhaust geometry" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 40: Nozzle CAD model &mdash; convergent core and bypass exhaust</figcaption>
+      </figure>
+
+      <ul>
+        <li>Core nozzle inlet (Station 7): <strong>T<sub>t7</sub> = 1,044.6 K</strong> &nbsp;&middot;&nbsp; <strong>P<sub>t7</sub> = 158.9 kPa</strong> &nbsp;&middot;&nbsp; <strong>M<sub>7</sub> = 0.6</strong></li>
+        <li>Bypass nozzle inlet (Station 17): <strong>T<sub>t17</sub> = 269.0 K</strong> &nbsp;&middot;&nbsp; <strong>P<sub>t17</sub> = 37.7 kPa</strong> &nbsp;&middot;&nbsp; <strong>M<sub>17</sub> = 0.55</strong></li>
+        <li>Total pressure loss coefficients: core <strong>&pi;<sub>n</sub> = 0.997</strong> &nbsp;&middot;&nbsp; bypass <strong>&pi;<sub>nf</sub> = 0.98</strong></li>
+        <li>Core areas: inlet <strong>A<sub>7</sub> = 0.501 m&sup2;</strong> converging to throat <strong>A<sub>9</sub> = 0.264 m&sup2;</strong> &nbsp;&middot;&nbsp; hub-to-tip ratio <strong>0.627</strong></li>
+        <li>Bypass areas: inlet <strong>A<sub>17</sub> = 7.87 m&sup2;</strong> converging to throat <strong>A<sub>19</sub> = 6.40 m&sup2;</strong></li>
+        <li>Both streams choked at cruise: core <strong>NPR = 8.441</strong> (critical 1.838) &nbsp;&middot;&nbsp; bypass <strong>NPR = 2.00</strong> (critical 1.932)</li>
+        <li>Adiabatic efficiencies near-ideal: core <strong>&eta;<sub>n</sub> = 0.995</strong> &nbsp;&middot;&nbsp; bypass <strong>&eta;<sub>nf</sub> = 0.972</strong></li>
+      </ul>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Folder/Turbofan/fig21.png" alt="Core and bypass nozzle temperature, area, and Mach number vs station number" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 41: Core (left) and bypass (right) nozzle performance &mdash; static temperature drop and flow acceleration to choked conditions at cruise</figcaption>
+      </figure>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Folder/Turbofan/fig22.jpeg" alt="Core and bypass nozzle pressure, velocity, Mach and area vs station number" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 42: Pressure, velocity, and area plots for core (stations 7&ndash;9) and bypass (stations 17&ndash;19) nozzles &mdash; both streams choked at cruise</figcaption>
+      </figure>
 
       <p><strong>Cruise performance summary (M 0.85, 12,192 m):</strong></p>
       <ul>
-        <li>Net thrust: <strong>67.3 kN</strong> &mdash; verified by gross thrust balance: 47.5 kN (core) + 179.1 kN (bypass) &minus; 159.3 kN (ram drag) = 67.3 kN</li>
+        <li>Net thrust: <strong>67.3 kN</strong> &mdash; verified by gross thrust balance: <strong>47.5 kN</strong> (core) + <strong>179.1 kN</strong> (bypass) &minus; <strong>159.3 kN</strong> (ram drag) = <strong>67.3 kN</strong></li>
         <li>Core nozzle: accelerates from M 0.6 / 364 m/s at inlet to choked exit at <strong>580 m/s</strong>; T<sub>static</sub> drops from 991 K to 908 K</li>
         <li>Bypass nozzle: accelerates to choked exit at <strong>300 m/s</strong>; T<sub>t19</sub> = 269 K</li>
         <li>Specific thrust: <strong>84 N/(kg/s)</strong> &nbsp;&middot;&nbsp; TSFC: <strong>16 (g/s)/kN</strong></li>
         <li>Takeoff thrust: <strong>333 kN</strong> (sea level, flat-rated)</li>
       </ul>
 
+      <div style="background:#fff8ec; border-left:4px solid #f0a30a; border-radius:0 6px 6px 0; padding:1rem 1.2rem; margin:1.2rem 0;">
+        <p style="font-size:0.72em; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#f0a30a; margin:0 0 0.6rem;">Design Decision</p>
+        <p style="margin:0 0 0.5rem; font-size:0.92em; line-height:1.65; color:#333;"><strong>Trade-off:</strong> Evaluated a <strong>convergent-divergent (CD)</strong> core nozzle against the simpler <strong>convergent-only</strong> design. At the core's <strong>NPR = 8.44</strong>, a CD nozzle theoretically yields a <strong>~7.7% core gross thrust gain</strong> &mdash; above the 5% threshold normally used to justify the added weight. However, with a <strong>bypass ratio of 11</strong>, the core produces only <strong>21% of total gross thrust</strong>, reducing the effective whole-engine gain to just <strong>~1.6%</strong>.</p>
+        <p style="margin:0; font-size:0.92em; line-height:1.65; color:#333;"><strong>Why:</strong> The <strong>~1.6% net gain</strong> does not justify the added <strong>weight, length, and complexity</strong> of a diverging section &mdash; a <strong>convergent-only</strong> core nozzle was selected. The bypass nozzle (<strong>NPR = 2.00</strong>, exit pressure ratio <strong>P<sub>19</sub>/P<sub>0</sub> = 1.036</strong>) is nearly perfectly expanded, so no CD trade study was required there either.</p>
+      </div>
+
       <figure style="margin:1.2rem 0;">
-        <img src="Folder/Turbofan/fig21.png" alt="Core and bypass nozzle temperature, area, and Mach number vs station number" style="width:100%; border-radius:6px;" />
-        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 20: Core (left) and bypass (right) nozzle performance &mdash; static temperature drop and flow acceleration to choked conditions at cruise</figcaption>
+        <img src="Folder/Turbofan/fig66.png" alt="h-s diagram for the bypass nozzle" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 43: h-s diagram &mdash; bypass nozzle</figcaption>
       </figure>
 
       <figure style="margin:1.2rem 0;">
-        <img src="Folder/Turbofan/fig22.jpeg" alt="Core and bypass nozzle pressure, velocity, Mach and area vs station number" style="width:100%; border-radius:6px;" />
-        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 21: Pressure, velocity, and area plots for core (stations 7&ndash;9) and bypass (stations 17&ndash;19) nozzles &mdash; both streams choked at cruise</figcaption>
+        <img src="Folder/Turbofan/fig67.png" alt="h-s diagram for the core nozzle" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 44: h-s diagram &mdash; core nozzle</figcaption>
       </figure>
+    </div>
+  </section>
 
-      <p>The engine achieves thrust and TSFC comparable to the GE90 and GE9X while using significantly fewer stages: 9 total compressor stages vs. 13&ndash;14, and 3 turbine stages vs. 8 in the benchmark engines. The trade-off is a moderate reduction in peak isentropic efficiency, accepted in exchange for lower weight, shorter axial length (6.63 m inlet to nozzle cone), and reduced mechanical complexity.</p>
+  <!-- Overall Comparison -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
+      <h2>Overall Engine Comparison</h2>
+      <p>The engine achieves <strong>thrust and TSFC comparable to the GE90 and GE9X</strong> while using <strong>significantly fewer stages</strong>:</p>
+      <ul>
+        <li><strong>9 total compressor stages</strong> vs. <strong>13&ndash;14</strong> in the GE90/GE9X</li>
+        <li><strong>3 turbine stages</strong> vs. <strong>8</strong> in the GE90/GE9X</li>
+        <li>Axial length of <strong>6.63 m</strong> from inlet to nozzle cone &mdash; <strong>shorter</strong> than the benchmark engines</li>
+        <li>Trade-off: a <strong>moderate reduction in peak isentropic efficiency</strong>, accepted in exchange for <strong>lower weight</strong> and <strong>reduced mechanical complexity</strong></li>
+      </ul>
     </div>
   </section>
 
   <!-- Team Photo -->
   <section class="project-row">
     <div class="project-text" style="max-width:820px; margin:0 auto;">
+      <h2>The Team</h2>
       <figure style="margin:0.5rem 0;">
         <img src="Folder/Turbofan/fig33.png" alt="Atlas-85X design team at the AE 440 senior design poster presentation" style="width:100%; max-width:500px; border-radius:6px; display:block; margin:0 auto;" />
-        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Atlas-85X team at the AE 440 senior design poster session &mdash; Anuranan Bharadwaj, Vincent Shi, Nicholas Pradilla, Kalkamanali Satvaldy</figcaption>
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Atlas-85X team &mdash; Anuranan Bharadwaj (me), Kalkamanali Satvaldy, Nicholas Pradilla, Vincent Shi</figcaption>
       </figure>
     </div>
   </section>
@@ -421,22 +627,26 @@
   <section class="project-row">
     <div class="project-text" style="max-width:860px; margin:0 auto;">
       <h2>Key Takeaways</h2>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-top:1rem;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:1.2rem; margin-top:1rem;">
         <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+          <p style="font-size:0.72em; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#004080; opacity:0.6; margin:0 0 0.4rem;">Process</p>
           <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">Cycle Validation Before Design</p>
-          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">Building and validating the MATLAB cycle tool against AEDsys (&lt;1% error) before any component design began was the single decision that kept all boundary conditions internally consistent. Changes propagated correctly through every downstream component.</p>
+          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">Building and <strong>validating the MATLAB cycle tool against AEDsys</strong> (<strong>&lt;1% error</strong>) before any component design began was the single decision that kept all boundary conditions internally consistent. Changes propagated correctly through every downstream component.</p>
         </div>
         <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+          <p style="font-size:0.72em; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#004080; opacity:0.6; margin:0 0 0.4rem;">Turbomachinery</p>
           <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">Stage Count as a Design Variable</p>
-          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">Treating stage count as a primary design input &mdash; not an outcome &mdash; drove every turbomachinery tradeoff. Accepting moderately elevated loading while keeping De Haller &ge; 0.74 everywhere allowed the 9+3 stage layout: structurally lighter and mechanically simpler than benchmark engines.</p>
+          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;"><strong>Treating stage count as a primary design input</strong> &mdash; not an outcome &mdash; drove every turbomachinery tradeoff. Allowing some stage characteristics to <strong>drift slightly from their advised ranges</strong>, occasionally costing a bit of efficiency, made the <strong>9+3 stage layout</strong> possible: <strong>structurally lighter</strong> and <strong>mechanically simpler</strong> than benchmark engines.</p>
         </div>
         <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+          <p style="font-size:0.72em; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#004080; opacity:0.6; margin:0 0 0.4rem;">Fan &amp; Gearbox</p>
           <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">Gearbox Enables Fan Efficiency</p>
-          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">Decoupling the 3.65 m fan (2,200 RPM) from the LP spool (7,000 RPM) via a 3.2:1 planetary gearbox was essential to keep fan tip Mach numbers subsonic and maintain a single-stage fan. It also minimized the fan-to-LPC transition duct length and its associated total pressure losses.</p>
+          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">Fan efficiency improves at lower speeds, so a <strong>gearbox between the LPC and fan</strong> let each spin at its own optimum: 7,000 RPM vs. 2,200 RPM, a <strong>~3.2:1 ratio</strong> &mdash; well within the <strong>~5:1</strong> industry capability. It also kept the <strong>fan-to-LPC transition duct short</strong>, reducing pressure losses.</p>
         </div>
         <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+          <p style="font-size:0.72em; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#004080; opacity:0.6; margin:0 0 0.4rem;">Nozzle</p>
           <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">Nozzle Trade: CD Not Justified at BPR 11</p>
-          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">A quantitative trade study showed that a CD core nozzle yields only ~1.6% whole-engine thrust improvement despite a 7.7% core-only gain &mdash; because the bypass stream dominates gross thrust at high bypass ratios. This system-level thinking prevented over-engineering a single component at the expense of overall design simplicity.</p>
+          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">A <strong>quantitative trade study</strong> showed that a CD core nozzle yields only <strong>~1.6%</strong> whole-engine thrust improvement despite a <strong>7.7%</strong> core-only gain &mdash; because the bypass stream dominates gross thrust at high bypass ratios. This <strong>system-level thinking</strong> prevented <strong>over-engineering a single component</strong> at the expense of overall design simplicity.</p>
         </div>
       </div>
     </div>
