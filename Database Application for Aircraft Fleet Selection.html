@@ -111,6 +111,13 @@
       <h2>Application Design</h2>
       <p>The application was built using MATLAB App Designer. The interface is divided into three functional areas: a filter panel, a results table, and a visualization panel. Users set filter bounds on parameters such as range, maximum takeoff weight, passenger capacity, and cruise speed, then trigger a query that returns only the aircraft meeting all specified criteria.</p>
       <p>The Excel integration uses MATLAB&rsquo;s <code>readtable</code> function to load the dataset at application startup. This decouples the data layer from the application logic &mdash; adding a new aircraft or updating a specification requires only editing the Excel file, with no code changes required. The loaded table is held in application state and re-queried on each filter update, keeping response times fast regardless of dataset size.</p>
+
+      <div style="background:#fff8ec; border-left:4px solid #f0a30a; border-radius:0 6px 6px 0; padding:1rem 1.2rem; margin:1.2rem 0;">
+        <p style="font-size:0.72em; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#f0a30a; margin:0 0 0.6rem;">Design Decision</p>
+        <p style="margin:0 0 0.5rem; font-size:0.92em; line-height:1.65; color:#333;"><strong>Trade-off:</strong> Used an <strong>Excel workbook</strong> as the data backend, loaded into an in-memory table at startup, rather than standing up a relational database (e.g., SQL) behind the application.</p>
+        <p style="margin:0; font-size:0.92em; line-height:1.65; color:#333;"><strong>Why:</strong> The fleet dataset is small (dozens of aircraft, not millions of rows) and is maintained by analysts who already work in spreadsheets &mdash; a database would have added setup and maintenance overhead without a corresponding performance benefit at this scale. Loading the whole table once with <code>readtable</code> and filtering in memory gave sub-100ms response times while keeping the data editable by anyone with Excel, no SQL knowledge required.</p>
+      </div>
+
       <p>The visualization panel generates comparative charts dynamically based on the filtered selection. A direct side-by-side bar chart is shown when the filtered set is small; a scatter plot of two user-selected parameters provides an overview when more results are present, helping identify dominant options at a glance.</p>
 
       <figure style="margin:1.2rem 0;">

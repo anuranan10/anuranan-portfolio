@@ -164,6 +164,12 @@
 
       <p>The drag coefficient C<sub>d</sub> versus flap deflection is plotted in Figure 6 with 95% confidence error bars. The trend is predominantly increasing &mdash; C<sub>d</sub> rises from 0.200 at 0&deg; to 0.220 at 50&deg; &mdash; consistent with the expected growth in pressure drag from enhanced flow separation. A small dip to C<sub>d</sub> = 0.191 at 25&deg; breaks the otherwise monotonic trend. This anomaly could reflect minor flow reattachment at that intermediate angle, measurement scatter from the mounting instability, or a combination of both. At higher Reynolds numbers or with a more rigidly mounted model, finer angle increments would be needed to resolve whether this dip is physically real or experimental artifact.</p>
 
+      <div style="background:#fff8ec; border-left:4px solid #f0a30a; border-radius:0 6px 6px 0; padding:1rem 1.2rem; margin:1.2rem 0;">
+        <p style="font-size:0.72em; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#f0a30a; margin:0 0 0.6rem;">Design Decision</p>
+        <p style="margin:0 0 0.5rem; font-size:0.92em; line-height:1.65; color:#333;"><strong>Trade-off:</strong> Tested only <strong>five flap angles</strong> (0&deg;, 15&deg;, 25&deg;, 35&deg;, 50&deg;) across the full deflection range, rather than sampling more densely around the <strong>25&deg; dip</strong> to determine whether it was physical or noise.</p>
+        <p style="margin:0; font-size:0.92em; line-height:1.65; color:#333;"><strong>Why:</strong> Each configuration required a full tunnel run and probe traverse, so five angles were chosen to characterize the <strong>overall trend</strong> within the lab session&rsquo;s time budget. The coarser spacing left the 25&deg; anomaly unresolved &mdash; an accepted gap rather than a flaw, since the primary goal was establishing the <strong>monotonic drag-vs-deflection relationship</strong>, not resolving local features.</p>
+      </div>
+
       <figure style="margin:1rem 0;">
         <img src="Folder/WindTunnel/fig05.png" alt="Drag coefficient C_d plotted against flap deflection angle from 0 to 50 degrees with error bars" style="width:100%; border-radius:6px;" />
         <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 6: C<sub>d</sub> vs. flap deflection (0&deg;&ndash;50&deg;) with 95% confidence error bars. The overall trend confirms increasing drag with deflection; the local minimum at 25&deg; warrants further investigation.</figcaption>
