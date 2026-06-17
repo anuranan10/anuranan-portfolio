@@ -1,6 +1,6 @@
 # Anuranan Bharadwaj — Website Content (anuranan.info)
 
-This document mirrors the full content of [anuranan.info](https://anuranan.info), Anuranan Bharadwaj's personal portfolio website. It walks through every page — the homepage bio, aerospace and computer science project pages, work experience, lab testing experience (all 16 individual lab reports across three ERAU courses), highlights, resume, and contact information — so that reading this file gives the same overall impression as browsing the live site.
+This document mirrors the full content of [anuranan.info](https://anuranan.info), Anuranan Bharadwaj's personal portfolio website. It walks through every page — the homepage bio, aerospace and computer science project pages, work experience, lab testing experience (all 16 individual lab reports across three ERAU courses), the CFD/CAD simulations page, highlights, resume, and contact information — so that reading this file gives the same overall impression as browsing the live site.
 
 ---
 
@@ -27,43 +27,69 @@ The Aerospace Projects hub ("Hands-on experience in propulsion, flight dynamics,
 
 ### Flagship Project: High-Bypass Turbofan Engine Senior Design
 
-**AE 440, Senior Design, Spring 2026, ERAU**
-**Role:** Team Lead — Inlet & Turbomachinery Design
-**Tools:** MATLAB, AEDsys, Excel, CAD (Onshape), Sovran & Klomp Diffuser Maps
+**AE 435 & AE 440, Jet Propulsion Senior Design, Fall 2025–Spring 2026, ERAU**
+**Role:** Team Lead — Cycle, Inlet & Turbomachinery Design
+**Tools:** MATLAB, AEDsys, Excel, ONX, SolidWorks, 3ds Max, Sovran & Klomp Diffuser Maps
 
-**Headline stats:** 11:1 bypass ratio · 196 kN takeoff thrust · 9 compressor/turbine stages (vs. 13–14 in the GE90) · 55:1 overall pressure ratio · 16 (g/s)/kN cruise TSFC
+**Headline stats:** 11:1 bypass ratio · 333 kN takeoff thrust · 9+3 compressor/turbine stages (vs. 13–14+8 in the GE90/GE9X) · 55:1 overall pressure ratio · 16 (g/s)/kN cruise TSFC
 
-A four-person team (Anuranan Bharadwaj, Vincent Shi, Nicholas Pradilla, and Kalkamanali Satvaldy) led the end-to-end design of the **Atlas-85X**, a 74,770 lbf high-bypass, separate-exhaust turbofan for a 1,000,000 lb MTOW airlifter with a 6,940 nm range and 5,400 ft runway requirement.
+The page opens with an italicized note that **Design Decision** callouts run throughout, highlighting the engineering trade-offs behind the design — useful for a reviewer who wants the reasoning without reading the full process.
+
+**RFP Requirements**
+The RFP called for a next-generation tactical airlifter (ER-18, an upgraded Boeing C-17 Globemaster III) engine for the USAF: thrust class 50,000–70,000+ lbf, 2–4 engines, 200 kW power offtake, 5 lb/s bleed air; aircraft MTOW up to 1,000,000 lb, wing loading under 175 psf, payload up to 50,000 lb; a mission profile spanning short/rough/hot-runway takeoff, up to 4,500 nm high-altitude cruise, low-altitude tactical cruise with airdrop, 3G maneuvering with paratroop deployment, and landing on a short, soft runway; performance targets of sub-7,500 ft takeoff roll (goal), 30,000 ft minimum cruise ceiling, sub-3,000 ft landing distance (goal), and a 2030 entry into service.
+
+**Our Solution: Atlas-85X**
+A four-person team (Anuranan Bharadwaj, Vincent Shi, Nicholas Pradilla, and Kalkamanali Satvaldy) led the end-to-end design of the **Atlas-85X** — a high-bypass, separate-exhaust, geared turbofan (non-afterburning) — from cycle analysis through full component detail design.
+- Architecture: single-stage fan, 3-stage LPC, 6-stage HPC, annular combustor, 1-stage HPT, 2-stage LPT, dual converging nozzles
+- Bypass ratio 11:1 and overall pressure ratio 55:1, balancing takeoff thrust against cruise efficiency
+- 3.2:1 planetary gearbox decoupling the fan from the LP spool for optimal blade speeds at both ends
+- Sized for a 1,000,000 lb MTOW airlifter, delivering 6,940 nm range with flat-rated performance off a 5,400 ft runway
+- Custom MATLAB cycle tool cross-validated against AEDsys at every station, confirming <1% deviation before component design began
+- Two design points carried through the full analysis: takeoff (SLS, M 0.1) and cruise (M 0.85, 12,192 m)
+- 9 total compressor stages vs. 13–14 in benchmark engines (GE90/GE9X)
+- Aerodynamic health validated at every turbomachinery stage using De Haller numbers and diffusion factors
 
 **Cycle Analysis & Validation**
-A custom MATLAB cycle analysis tool was built and validated against AEDsys with less than 1% error, then used to size the engine across takeoff, cruise, and loiter conditions.
+The cycle was modeled as a modified Brayton cycle with a separate bypass stream, analyzed at a design point (2,134 m / M 0.82) and at takeoff (sea level / M 0.10). The custom MATLAB cycle tool iterated over component efficiencies, pressure ratios, bypass ratio, and cooling bleeds, then was validated against AEDsys with less than 1% error at every station before being used to size the engine. Key parameters: bypass ratio 11:1 (635 kg/s total at cruise — 582 kg/s bypass, 52 kg/s core), fan pressure ratio 1.3, overall pressure ratio 55:1 (LPC 3.5 × HPC 15.7), and turbine inlet temperature 1,778 K.
 
 **Inlet Design**
-The inlet throat was sized for the cruise condition (M_th = 0.70), with average pressure recovery coefficient C̄p = 0.25, diffuser pressure ratio π_d = 0.960, area ratio A0/A1 = 0.90, and fan-face Mach number M2 = 0.55, using Sovran & Klomp diffuser maps.
+The axisymmetric subsonic diffuser was designed for uniform, low-distortion fan-face flow at both flight regimes. A key finding was that corrected mass flow demand at cruise exceeded takeoff demand — so the throat was sized for cruise (M_th = 0.70) rather than takeoff, preventing choking at the dominant operating condition. Parameters from Sovran & Klomp diffuser map iteration: area ratio A2/Ath = 1.19, nondimensional length L/R1 = 0.95, pressure recovery coefficient C̄p = 0.25, diffuser pressure ratio π_d = 0.960, capture area ratio A0/A1 = 0.90, diffuser exit Mach M2 = 0.55 at cruise, lip bluntness ratio r1/rHL = 1.04. The CFM56 engine was used as a baseline sectional-view reference. *Design Decision: accepted a 4% total pressure loss (ideal π_d = 0.998 → realized 0.960) by positioning the design point near maximum C̄p rather than at the theoretical ideal, trading a small thermodynamic penalty for robust off-design stability margin.*
 
 **Turbomachinery**
-- Single-stage fan: 38 rotor blades, 3.65 m diameter, π = 1.30, 2,200 RPM via a 3.2:1 reduction gearbox
-- 3-stage low-pressure compressor (LPC): π = 3.5, η = 0.90, 7,000 RPM
-- 6-stage high-pressure compressor (HPC): π = 15.7, η = 0.89, 13,000 RPM, blade speed 495 m/s
-- 1-stage high-pressure turbine (HPT): 45/51 blades, T4 = 1,778 K, η = 0.96, 26.8 MW
-- 2-stage low-pressure turbine (LPT): 18.9 MW, 7,000 RPM
+The GE90 uses 13 compressor stages and 8 turbine stages; the Atlas-85X matches performance with 9 compressor stages and 3 turbine stages, by deliberately treating stage count as a primary design input and accepting moderate deviations in loading/flow coefficients to minimize it.
+- Single-stage fan: 38 rotor blades, 30 stator vanes, 3.65 m diameter, π = 1.30, 2,200 RPM via a 3.2:1 reduction gearbox (LP spool at 7,000 RPM), 12.3 MW power input, 92% efficiency, De Haller 0.77 rotor / 0.89 stator, degree of reaction 0.40 (hub) to 0.95 (tip)
+- 3-stage low-pressure compressor (LPC): π = 3.5, η = 0.90, 7,000 RPM, 53 kg/s core flow, blade height tapering 24→13 cm, mean blade speed 275 m/s, De Haller ≥ 0.74, diffusion factor ≤ 0.43, ~1.3–1.4 pressure ratio per stage
+- 6-stage high-pressure compressor (HPC): π = 15.7, η = 0.89, 13,000 RPM, blade speed 495 m/s, blade height 8→1 cm, stage pressure ratio front-loaded ~1.95 (stage 1) easing to ~1.37 (stage 6), De Haller ≥ 0.75, diffusion factor ≤ 0.38
+- 1-stage high-pressure turbine (HPT): 45/51 blades, T4 = 1,778 K, η = 0.96, 26.8 MW, blade speed 515 m/s
+- 2-stage low-pressure turbine (LPT): 18.9 MW across 2 stages, η = 0.92, 7,000 RPM, blade height 9→15 cm, blade speed 300 m/s, degree of reaction 0.1–0.76
 
-The design uses 9 compressor stages plus 3 turbine stages, compared to 13–14 compressor stages and 8 turbine stages in the GE90/GE9X family — a major simplification enabled by the geared fan architecture.
+*Design Decisions threaded through this section:* a 3.2:1 gearbox was added specifically because fan efficiency improves at lower RPM, while also shortening the fan-to-LPC transition duct; the single-stage fan and minimized LPC/HPC/turbine stage counts each traded a slight efficiency reduction for lower weight, cost, and complexity; zero exit swirl was maintained at every stator exit to minimize losses; and slightly negative hub rotor diffusion factors were accepted without further iteration since the stage averages remained positive and all other checks passed.
 
 **Combustor**
-Annular combustor, length 0.41 m, diameter 0.67 m, L/D = 0.62, 4% pressure drop, 0.01 s residence time.
+Annular configuration with primary, secondary, and dilution zones, scaled from the TF39 reference combustor: inlet Pt3 = 1,593 kPa / Tt3 = 873 K, exit Pt4 = 1,530 kPa / Tt4 (turbine inlet) = 1,778 K, 4% pressure drop, length 0.41 m, diameter 0.67 m, L/D = 0.62, residence time 0.01 s. *Design Decision: scaled the TF39 down to this low L/D ratio to prioritize reduced size and weight, while keeping residence time adequate for complete combustion.* The combustor received less design depth than the other components — both in the project and in the course — since curriculum emphasis was on the inlet, turbomachinery, and nozzle.
 
-**Nozzles**
-Both core and bypass streams use convergent-only nozzles. A trade study comparing convergent-divergent (CD) nozzles found only a 1.6% whole-engine performance gain versus a 7.7% core-only gain at BPR 11 — not enough to justify the added weight and complexity of a CD nozzle at this bypass ratio.
+**Nozzle Design & Performance**
+Both core and bypass streams use convergent-only nozzles in a separate-exhaust, non-afterburning configuration, sized at cruise (M 0.85, 12,192 m). Core nozzle inlet (Station 7): Tt7 = 1,044.6 K, Pt7 = 158.9 kPa, M7 = 0.6; bypass inlet (Station 17): Tt17 = 269.0 K, Pt17 = 37.7 kPa, M17 = 0.55. Total pressure loss coefficients: core π_n = 0.997, bypass π_nf = 0.98. Both streams choke at cruise (core NPR = 8.441 vs. critical 1.838; bypass NPR = 2.00 vs. critical 1.932), with near-ideal adiabatic efficiencies (core η_n = 0.995, bypass η_nf = 0.972). *Design Decision: a convergent-divergent (CD) core nozzle would yield a ~7.7% core-only gross thrust gain at NPR 8.44, but with BPR 11 the core produces only 21% of total gross thrust — reducing the whole-engine gain to ~1.6%, not enough to justify a CD nozzle's added weight and complexity. The bypass nozzle (already nearly perfectly expanded at P19/P0 = 1.036) needed no such trade study.*
 
 **Cruise Performance**
-Net thrust = 67.3 kN (47.5 kN core + 179.1 kN bypass − 159.3 kN ram drag), specific thrust = 84 N/(kg/s), TSFC = 16 (g/s)/kN.
+Net thrust = 67.3 kN (47.5 kN core + 179.1 kN bypass − 159.3 kN ram drag), specific thrust = 84 N/(kg/s), TSFC = 16 (g/s)/kN, takeoff thrust = 333 kN (sea level, flat-rated).
+
+**Overall Engine Comparison**
+Thrust and TSFC comparable to the GE90/GE9X, achieved with significantly fewer stages: 9 compressor stages (vs. 13–14), 3 turbine stages (vs. 8), and a shorter 6.63 m axial length — trading a moderate reduction in peak isentropic efficiency for lower weight and mechanical complexity.
+
+**Outcomes & Accomplishments**
+The Atlas-85X met every RFP requirement with significant margin, and the design placed among the **top 2 in the senior design class** — driven in large part by having the shortest takeoff distance of any team's design. Final headline numbers: 1,000,000 lb MTOW, 6,940 nm range, 5,400 ft takeoff distance (full throttle), flat-rated engine rating.
+
+**The Team**
+Anuranan Bharadwaj, Kalkamanali Satvaldy, Nicholas Pradilla, and Vincent Shi at the AE 440 senior design poster presentation.
 
 **Key Takeaways**
-- Cycle validation before design: validating the MATLAB cycle tool against AEDsys before sizing components avoided compounding errors downstream.
-- Stage count as a design variable: minimizing stage count (9 vs. 13–14+8 in legacy designs) directly reduces weight, cost, and maintenance burden.
-- Gearbox enables fan efficiency: decoupling fan speed from LPC/LPT speed via the 3.2:1 gearbox lets each component operate near its efficiency optimum.
-- Nozzle trade — CD not justified at BPR 11: the marginal whole-engine gain (1.6%) does not offset the added complexity of a convergent-divergent nozzle at this bypass ratio.
+- Cycle validation before design: validating the MATLAB cycle tool against AEDsys (<1% error) before any component design began kept all boundary conditions internally consistent as changes propagated downstream.
+- Stage count as a design variable: treating stage count as a primary input rather than an outcome — allowing some characteristics to drift slightly from advised ranges — made the 9+3 stage layout possible, structurally lighter and mechanically simpler than benchmark engines.
+- Gearbox enables fan efficiency: a gearbox between the LPC and fan let each spin at its own optimum (7,000 vs. 2,200 RPM, a ~3.2:1 ratio within the ~5:1 industry capability), while keeping the fan-to-LPC transition duct short.
+- Nozzle trade — CD not justified at BPR 11: a quantitative trade study showed only a ~1.6% whole-engine gain despite a 7.7% core-only gain, because the bypass stream dominates gross thrust at high bypass ratio — system-level thinking that avoided over-engineering a single component.
+
+**Full Documents:** links to the AE 440 Final Report (PDF) and the AE440 Engine Poster (PDF).
 
 ---
 
@@ -95,10 +121,12 @@ This project derived linearized longitudinal and lateral-directional transfer fu
 **Angle-of-Attack PID Controller**
 Design target: Mp ≤ 5%, giving ζd = 0.6901, ωnd = 0.4347 rad/s, third pole p3 ≈ −3, and a desired characteristic equation s³ + 3.6s² + 1.989s + 0.567 = 0. Resulting gains: kP = 0.3718, kI = −0.4366, kD = −1.569.
 
-Result: 4% overshoot (meets the ≤5% spec), settling time ts = 15s (does **not** meet the <10s spec), and 0° steady-state error (Final Value Theorem confirmed).
+Result: 4% overshoot (meets the ≤5% spec), settling time ts = 15s (does **not** meet the <10s spec), and 0° steady-state error (Final Value Theorem confirmed). *Design Decision: the actuator was treated as ideal (G_A = 1) rather than carrying its full 50/(s+50) dynamics into the design equations — otherwise the characteristic equation would exceed 3rd order, leaving only 3 PID gains to satisfy more than 3 coefficient-matching equations (unsolvable).*
 
 **Forward Speed PID Controller**
-Design target: Mp ≤ 7%, giving ζd = 0.6461, ωnd = 0.3095, p3 ≈ −2, with gains kD = −0.075, kP = −7.364×10⁻³, kI = −2.381×10⁻³. ΔUss = 0 in theory, but the response showed large transients, indicating the forward-speed model was not well-conditioned for this controller design.
+Design target: Mp ≤ 7%, giving ζd = 0.6461, ωnd = 0.3095, p3 ≈ −2, with gains kD = −0.075, kP = −7.364×10⁻³, kI = −2.381×10⁻³. ΔUss = 0 in theory, but the response showed large transients, indicating the forward-speed model was not well-conditioned for this controller design. *Design Decision: the actuator's 4th pole (4th-order characteristic equation, only 3 PID gains available) was dropped from the desired characteristic equation to make the system solvable, preserving zero steady-state error at the cost of near-zero gains and large transients.*
+
+The phugoid mode itself was deliberately left uncontrolled — its low damping is normal and stable for transport aircraft, just slow to settle, so design effort was focused on the AOA and forward-speed loops instead.
 
 **Key Takeaways** (4 total) cover transfer function derivation from state-space models, the trade-off between meeting overshoot vs. settling-time specs simultaneously, the value of the Final Value Theorem for verifying steady-state behavior analytically, and the limits of pole-placement design when a plant model is poorly conditioned.
 
@@ -129,7 +157,7 @@ kp = 8, kd = 3.1, ki = 5 → tp = 1.18s (marginally fails the <1.1s spec), PO = 
 Second-order model fit: G(s) = 1.27332 / (s² + 0.10047s + 3.62403), giving ζ = 0.0452, ωn = 2.18 rad/s. Errors versus measured response: 0.14% (peak time), 3.48% (overshoot), 3.61% (steady-state).
 
 **Analytical vs. Workbook Gains**
-Theoretical PID gains: kd = 3.847, kp = 3.437, ki = 3.141. The workbook (course-provided) gains used for hardware were kp = 3.3739, kd = 3.7484, ki = 3.06, giving 0% overshoot but a slower peak time of 4.64s.
+Theoretical PID gains: kd = 3.847, kp = 3.437, ki = 3.141. The workbook (course-provided) gains used for hardware were kp = 3.3739, kd = 3.7484, ki = 3.06, giving 0% overshoot but a slower peak time of 4.64s — nearly 4x slower than the empirically tuned controller's 1.18s. The analytical gains targeted a critically damped response, but that conservative target combined with the second-order model's blind spots (friction, actuator saturation) made them too sluggish for square-wave tracking; empirical tuning on real hardware compensated for those unmodeled effects directly.
 
 **Frequency Response**
 Open-loop phase margin = 3.68° (near-unstable); PID-compensated phase margin = 87.5°, gain margin infinite for both, bandwidth = 19.32 rad/s.
@@ -161,7 +189,7 @@ The team built a closed-loop 6-DOF flight simulation in MATLAB/Simulink for a ge
 Other parameters: CL0 = 0.143, CD0 = 0.017, CLα = 4.648/rad (0.0811/deg), Vstall = 163.8 ft/s, fuselage length = 27.708 ft.
 
 **Longitudinal Stability**
-Hand-calculated Cmα,fuselage (via Multhopp's method) = 0.4702/rad. Total hand-calc Cmα ≈ −1.35/rad vs. DATCOM's −0.293/rad — a large discrepancy attributed to limitations in DATCOM's tail-effectiveness modeling. Neutral point N0 = 0.435 (43.5% MAC).
+Hand-calculated Cmα,fuselage (via Multhopp's method) = 0.4702/rad. Total hand-calc Cmα ≈ −1.35/rad vs. DATCOM's −0.293/rad — a large discrepancy attributed to limitations in DATCOM's tail-effectiveness modeling. Neutral point N0 = 0.435 (43.5% MAC). Both values were reported side by side rather than reconciled to one number: since the methods agree on sign (statically stable) but disagree on magnitude, presenting both preserves that information for downstream design decisions instead of masking it with an averaged figure.
 
 **Directional & Lateral Stability**
 - Directional: Cnβ (hand) = 0.189/rad vs. Cnβ (DATCOM) = 0.183/rad — agreement within 3.5%
@@ -177,7 +205,7 @@ Five lookup-table-driven derivatives (Cnr = −0.008426, Cnp = −0.0006962, Cmq
 2. Pitch-Up: V = 630 ft/s, δe = +2°, Altitude = 6,530 ft
 3. Right Bank: V = 654 ft/s, neutral controls
 
-**Key Takeaways** (4 total) discuss the divergence between hand calculations and DATCOM for pitch stiffness, the strong agreement on directional derivatives, the value of FlightGear visualization for sanity-checking simulation results, and the overall workflow connecting hand analysis, DATCOM, and 6-DOF simulation.
+**Key Takeaways** (4 total): DATCOM is reliable for lateral-directional derivatives but can diverge sharply on Cmα for tail-dominated configurations; lookup-table aerodynamics (vs. fixed linear derivatives) captures non-linear behavior through stall-approach angles of attack; a full design cycle forces trade-offs between static stability margin and elevator control power; and FlightGear visualization bridges the gap between equations and physical intuition in a way pure numbers cannot.
 
 ---
 
@@ -222,7 +250,7 @@ Drag rose 16.9% from 0° to 50° flap deflection. The 25° case showed an anomal
 
 **Headline stats:** >0.6 minimum Jacobian · 0.15 in peak tip displacement · full 3D assembly model · NX Nastran FEA solver
 
-A complete wing assembly — front and rear spars, ribs, stringers, and skin panels — was modeled in Fusion 360 and transferred to FEMAP for finite element analysis. A distributed aerodynamic load was applied to the skin, with the wing root fixed as the boundary condition. The mesh combined shell elements (skin) with beam elements (spars/stringers), and all elements achieved a Jacobian quality metric above 0.6.
+A complete wing assembly — front and rear spars, ribs, stringers, and skin panels — was modeled in Fusion 360 and transferred to FEMAP for finite element analysis. A distributed aerodynamic load was applied to the skin, with the wing root fixed as the boundary condition. The mesh combined shell elements (skin) with beam elements (spars/stringers), and all elements achieved a Jacobian quality metric above 0.6. Design Decision: shell/beam idealization was chosen over a full solid mesh because skin is thin relative to its planar dimensions and the spar/stringer caps are long, slender members — both are well-represented by 1D/2D elements without the element-count explosion a solid mesh would require, keeping the model small enough to refine locally at the spar root while still resolving the governing load paths.
 
 **Results**
 - Peak tip displacement ≈ 0.15 in
@@ -288,6 +316,8 @@ The simulated mission (5.36 km/s, 82% propellant fraction) used significantly mo
 
 A MATLAB App Designer GUI was built for querying and comparing aircraft by multiple performance parameters, featuring a filter panel, results table, and visualization panel. The application reads from an Excel backend via `readtable()`, decoupling data from application logic so records can be updated without code changes. Bar charts are used for small result sets and scatter plots for larger sets, and in-memory queries keep response times under 100ms — a roughly 25% improvement in data retrieval speed compared to manual spreadsheet workflows.
 
+Design Decision: an Excel workbook (loaded into an in-memory table at startup) was chosen over a relational database backend. The fleet dataset is small (dozens of aircraft, not millions of rows) and maintained by analysts who already work in spreadsheets, so a database would have added setup/maintenance overhead without a performance benefit at this scale — `readtable()` plus in-memory filtering gave sub-100ms response times while keeping the data editable by anyone with Excel, no SQL required.
+
 **Key Takeaways** (4 total): separating data from code simplifies maintenance; visualization type should match the size/shape of the result set; multi-parameter filtering helps expose design trade-offs; and in-memory queries are essential for keeping a GUI responsive.
 
 ---
@@ -302,7 +332,7 @@ A MATLAB App Designer GUI was built for querying and comparing aircraft by multi
 
 **Headline stats:** EGR 120 · 17-page engineering drawing package · twin-engine configuration · T-tail empennage
 
-A twin-engine LEGO airplane with a T-tail empennage and tricycle landing gear was designed in BrickLink Studio (using the real LEGO part library and connection logic) in a teal/orange/white color scheme, drawing inspiration from a reference LEGO Technic race plane. A photorealistic ray-traced rendering was composited onto a runway photo background.
+A twin-engine LEGO airplane with a T-tail empennage and tricycle landing gear was designed in BrickLink Studio (using the real LEGO part library and connection logic) in a teal/orange/white color scheme, drawing inspiration from a reference LEGO Technic race plane. A photorealistic ray-traced rendering was composited onto a runway photo background. Design Decision: working exclusively within the real LEGO part library (rather than freeform geometry) mirrors the constraint-driven nature of real aircraft design, where every shape decision must trace back to an available, manufacturable component.
 
 **17-Page SolidWorks Drawing Package**
 - Sheet 01/17: Full Assembly Isometric (1:1 scale)
@@ -317,7 +347,7 @@ A twin-engine LEGO airplane with a T-tail empennage and tricycle landing gear wa
 
 ## 3. Computer Science Projects
 
-**Header:** "Computer Science Projects" — "Selected software projects built using Java, Python, MERN, C#, and more"
+**Header:** "Computer Science Projects" — "A selection of software projects spanning interactive graphics, full-stack web apps, and systems programming"
 
 ### 1. 3D Interactive Airport Scene (Three.js)
 **Tags:** Three.js, WebGL, JavaScript, OrbitControls, Raycasting
@@ -415,7 +445,7 @@ The Work Experience page header reads: "A blend of technical internships, teachi
 
 ## 5. Lab Testing Experience
 
-**Header:** "ERAU Lab Testing Experience" — "Hands-on experimentation across aerodynamics, structural mechanics, dynamics, and controls — Embry-Riddle Aeronautical University"
+**Header:** "ERAU Lab Testing Experience" — "Hands-on experimentation across aerodynamics, structural mechanics, dynamics, and controls"
 
 This section is a hub linking to three sub-hubs, each covering a different ERAU laboratory course.
 
@@ -663,7 +693,45 @@ All five motors showed the characteristic black-powder thrust profile: a sharp i
 
 ---
 
-## 6. Highlights
+## 6. Simulations
+
+**Header:** "Simulations" — "CFD, CAD, and computational modeling work across aerodynamics and structures"
+
+This page is a flat-list hub (no discipline subsection headers) showcasing CFD/CAD/simulation-focused work. It contains one dedicated project plus three cards cross-listed from the Aerospace hub — the same detail pages, linked a second time here because the work is as much "simulation" as it is its home discipline.
+
+### NACA 2412 Airfoil CFD Analysis (dedicated Simulations project)
+
+**Personal Project · OpenFOAM RANS Simulation**
+**Role:** Individual — CFD Setup, Meshing & Post-Processing
+**Tools:** OpenFOAM (simpleFoam, blockMesh), ParaView
+
+**Headline stats:** Re ≈ 6.8×10⁶ · 0°→45° angle-of-attack sweep · k-ω SST turbulence closure · 4 flow regimes captured
+
+A steady incompressible RANS sweep on a NACA 2412 airfoil (2% max camber at 40% chord, 12% max thickness) across four angles of attack — 0°, 15°, 30°, and 45° — using OpenFOAM's `simpleFoam` solver with a k-ω SST turbulence closure on a structured blockMesh O-topology grid (re-meshed per AoA so the airfoil rotates within a fixed-axis inflow, keeping inlet/outlet boundary conditions clean). Freestream velocity ≈ 99 m/s, unit chord, Re ≈ 6.8×10⁶.
+
+**Case 0° — Attached Flow Baseline:** Even at zero geometric incidence, the 2% camber produces measurable suction-side lift. Stagnation at the leading edge (Cp = +1.0), upper-surface suction peak Cp,min ≈ −0.557 at x/c = 0.22, thin attached boundary layer, narrow symmetric low-drag wake.
+
+**Case 15° — Near-Stall:** Operating near maximum lift. Suction peak intensifies to Cp,min ≈ −3.6 (implied local velocity over 2× freestream, ~212 m/s). The stagnation point migrates from the geometric nose to the lower leading edge. Early trailing-edge boundary-layer thickening — the first hint of the separation that fully develops by 30°.
+
+**Case 30° — Deep Stall:** Leading-edge separation fully established. The sharp suction peak collapses into a broad, near-uniform low-pressure plateau (Cp,base ≈ −0.8 to −1.2) — a separated dead-air region rather than attached flow. A large standing wake vortex appears downstream of the trailing edge (the steady-RANS mean-flow approximation of what is physically a shed, unsteady vortex). Lift mechanism shifts to high pressure on the windward lower surface; L/D collapses from a cruise-like 15–20 to roughly 0.5–2.
+
+**Case 45° — Bluff-Body Vortex Shedding:** The airfoil behaves as a bluff body with von Kármán-type vortex shedding. Because this physics is inherently time-periodic, the steady solver cannot converge — the force history oscillates between ~4,800 N and ~13,100 N well past 500 iterations rather than settling. Extended-domain views show a high-pressure windward face and a deep suction base (Cp,base ≈ −1.0 to −2.0), comparable to a circular cylinder's base pressure at high Re. Design Decision: the sweep was deliberately continued through 45° with the steady solver despite knowing the physics had become unsteady — the goal was mapping the qualitative regime transition, and the solver's failure to converge is itself useful diagnostic evidence of the underlying vortex-shedding physics. The correct follow-up tool (noted, not built here) is a transient solver (`pimpleFoam`) or a scale-resolving approach (DES/LES).
+
+**Surface Cp (α = 0°):** Quantitative data confirms the field plots — upper-surface suction peak at x/c = 0.22 (Cp = −0.557), a smaller secondary lower-surface suction region near its own leading edge, and both surfaces recovering to a small positive Cp at the trailing edge (0.136 upper vs. 0.152 lower), confirming the Kutta condition and bound circulation.
+
+**Comparative Analysis:** A summary table tracks flow regime, Cp,min, stagnation point location, boundary layer state, and recommended solver across all four cases — steady RANS validity drops from "High" at 0° to "Very Low" at 45°, with `pimpleFoam`/DES recommended for the 30° and 45° cases.
+
+**Key Takeaways** (4 total): camber produces lift even at zero incidence, matching thin-airfoil theory; the stagnation point's migration across the sweep is a direct visual proxy for growing bound circulation; RANS validity degrades past stall, and recognizing where a solver's assumptions stop holding matters as much as the solve itself; and the circular "halo" artifacts visible in far-field plots are O-grid block-interface interpolation artifacts, not physical flow features.
+
+A "View Full CFD Analysis Report" button links out to a separate, more detailed technical dashboard report (dark-themed, with interactive Cp and force-convergence charts) for readers who want the complete governing equations, SIMPLE-algorithm walkthrough, and full per-case physics breakdown beyond what's summarized here.
+
+### Cross-Listed Projects
+
+Three more cards link to detail pages that live primarily on the Aerospace hub (see Section 2 above for full content): **Aircraft Wing Structural Analysis** (Fusion 360 CAD + FEMAP/NX Nastran FEA), **Aircraft Stability & Control Simulation** (6-DOF MATLAB/Simulink + FlightGear), and **LEGO Airplane Design & Engineering Documentation** (BrickLink Studio CAD + SolidWorks drawing package).
+
+---
+
+## 7. Highlights
 
 **Header:** "Highlights" — "Conferences attended, research presented, and experiences beyond the classroom"
 
@@ -694,7 +762,7 @@ Selected for the 2024 Honeywell Aerospace Mentorship cohort. Participated in pro
 
 ---
 
-## 7. Resume
+## 8. Resume
 
 **Header:** "Resume" — "Download or view tailored resumes for Aerospace and Software Engineering opportunities"
 
@@ -708,7 +776,7 @@ File: `AnurananBharadwaj_RESUME_SE.pdf`
 
 ---
 
-## 8. Contact
+## 9. Contact
 
 **Header:** "Contact Me" — "I'm open to collaboration and opportunities in aerospace and software engineering. Feel free to reach out!"
 
