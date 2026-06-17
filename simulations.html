@@ -28,12 +28,6 @@
 
   <div class="ae-hub">
 
-    <!-- ── COMPUTATIONAL FLUID DYNAMICS ── -->
-    <div class="ae-discipline">
-      <span class="ae-discipline-label">Computational Fluid Dynamics</span>
-      <div class="ae-discipline-rule"></div>
-    </div>
-
     <div class="ae-card">
       <div class="ae-card-body">
         <h2><a class="project-title-link" href="NACA 2412 Airfoil CFD Analysis.html">NACA 2412 Airfoil CFD Analysis</a></h2>
@@ -50,6 +44,69 @@
       </div>
       <div class="ae-card-images">
         <img src="Simulations/NACA_Airfoil/P_30.png" alt="Pressure field around NACA 2412 airfoil at 30 degrees angle of attack showing a standing wake vortex" />
+      </div>
+    </div>
+
+    <div class="ae-card">
+      <div class="ae-card-body">
+        <h2><a class="project-title-link" href="Aircraft Wing Structural Analysis.html">Aircraft Wing Structural Analysis</a></h2>
+        <div class="ae-tags">
+          <span class="ae-tag">FEA</span>
+          <span class="ae-tag">Structures</span>
+          <span class="ae-tag">Fusion 360</span>
+          <span class="ae-tag">FEMAP</span>
+          <span class="ae-tag">NX Nastran</span>
+        </div>
+        <ul class="ae-card-desc">
+          <li>Modeled full wing assembly in Fusion 360 &mdash; spars, ribs, stringers, and skin panels</li>
+          <li>Transferred geometry to FEMAP, applied aerodynamic loading, and solved with NX Nastran</li>
+          <li>Validated mesh quality with Jacobian &gt; 0.6; confirmed 0.15 in peak tip displacement</li>
+          <li>Identified front spar root as peak stress location, consistent with cantilever bending theory</li>
+        </ul>
+      </div>
+      <div class="ae-card-images">
+        <img src="Folder/Wing2.jpg" alt="Finite element mesh of wing assembly in FEMAP" style="object-fit: fill;" />
+      </div>
+    </div>
+
+    <div class="ae-card">
+      <div class="ae-card-body">
+        <h2><a class="project-title-link" href="Aircraft Stability &amp; Control Simulation.html">Aircraft Stability &amp; Control Simulation</a></h2>
+        <div class="ae-tags">
+          <span class="ae-tag">Simulation</span>
+          <span class="ae-tag">6-DOF</span>
+          <span class="ae-tag">MATLAB</span>
+          <span class="ae-tag">Simulink</span>
+          <span class="ae-tag">FlightGear</span>
+        </div>
+        <ul class="ae-card-desc">
+          <li>Built a closed-loop 6-DOF flight simulation in MATLAB/Simulink from computed stability and control derivatives</li>
+          <li>Validated pitch, roll, and yaw mode eigenvalues against prescribed damping and frequency specifications</li>
+          <li>Exported maneuver trajectories to FlightGear for real-time 3D visualization of simulated flight</li>
+        </ul>
+      </div>
+      <div class="ae-card-images">
+        <img src="Folder/AircraftStability/fig03.png" alt="MATLAB 3D wireframe model orthogonal view" />
+      </div>
+    </div>
+
+    <div class="ae-card">
+      <div class="ae-card-body">
+        <h2><a class="project-title-link" href="LEGO Airplane Design.html">LEGO Airplane Design &amp; Engineering Documentation</a></h2>
+        <div class="ae-tags">
+          <span class="ae-tag">CAD</span>
+          <span class="ae-tag">Engineering Drawing</span>
+          <span class="ae-tag">BrickLink Studio</span>
+          <span class="ae-tag">SolidWorks</span>
+        </div>
+        <ul class="ae-card-desc">
+          <li>Designed a twin-engine LEGO airplane in BrickLink Studio with T-tail empennage and tricycle landing gear, selecting parts from the full LEGO library to approximate real aircraft geometry</li>
+          <li>Produced a 17-page SolidWorks engineering drawing package with multiview orthographic projections, dimensional annotations, and ANSI-standard title blocks</li>
+          <li>Generated a photorealistic rendering of the completed model composited over a runway background</li>
+        </ul>
+      </div>
+      <div class="ae-card-images">
+        <img src="Folder/LEGOPlane/rendering.jpg" alt="LEGO airplane design rendered on a runway" />
       </div>
     </div>
 
