@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NACA 2412 Airfoil CFD Analysis | Anuranan Bharadwaj</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .stat-box { animation: fadeInUp 0.55s ease both; }
+    .stat-box:nth-child(1) { animation-delay: 0.05s; }
+    .stat-box:nth-child(2) { animation-delay: 0.18s; }
+    .stat-box:nth-child(3) { animation-delay: 0.31s; }
+    .stat-box:nth-child(4) { animation-delay: 0.44s; }
+    .snapshot-card { animation: fadeInUp 0.5s ease 0.05s both; }
+    .takeaway-card { transition: transform 0.22s ease, box-shadow 0.22s ease; }
+    .takeaway-card:hover { transform: translateY(-5px); box-shadow: 0 14px 32px rgba(0,64,128,0.22); }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="aerospace.html">Aerospace</a>
+    <a href="cs.html">Computer Science</a>
+    <a href="experience.html">Work Experience</a>
+    <a href="lab-testing-experience.html">Lab Testing Experience</a>
+    <a href="simulations.html">Simulations</a>
+    <a href="highlights.html">Highlights</a>
+    <a href="resume.html">Resume</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <header class="page-header">
+    <div class="header-content">
+      <h1>NACA 2412 Airfoil &mdash; CFD Analysis</h1>
+      <p>Computational Fluid Dynamics &middot; OpenFOAM RANS Simulation &middot; Personal Project</p>
+    </div>
+  </header>
+
+  <!-- Engineering Snapshot -->
+  <section class="snapshot-card" style="background:#004080; color:white; padding:2rem;">
+    <div style="max-width:960px; margin:0 auto; display:flex; flex-wrap:wrap; gap:2rem; align-items:flex-start;">
+      <div style="flex:1; min-width:200px;">
+        <p style="font-size:0.75em; letter-spacing:0.07em; text-transform:uppercase; opacity:0.65; margin:0 0 0.35rem;">Role</p>
+        <p style="font-weight:600; font-size:1.05em; margin:0 0 0.25rem;">Individual &mdash; CFD Setup, Meshing &amp; Post-Processing</p>
+        <p style="font-size:0.88em; opacity:0.8; margin:0;">Personal Project &middot; OpenFOAM</p>
+      </div>
+      <div style="flex:1; min-width:200px;">
+        <p style="font-size:0.75em; letter-spacing:0.07em; text-transform:uppercase; opacity:0.65; margin:0 0 0.35rem;">Tools</p>
+        <p style="font-size:0.92em; line-height:1.75; margin:0;">OpenFOAM (simpleFoam, blockMesh)<br>ParaView</p>
+      </div>
+      <div style="flex:1.6; min-width:240px;">
+        <p style="font-size:0.75em; letter-spacing:0.07em; text-transform:uppercase; opacity:0.65; margin:0 0 0.35rem;">Key Contributions</p>
+        <ul style="margin:0; padding-left:1.15rem; font-size:0.92em; line-height:1.85;">
+          <li>Built a blockMesh O-topology grid and ran a steady RANS (k-&omega; SST) angle-of-attack sweep from 0&deg; to 45&deg;</li>
+          <li>Captured the full stall progression &mdash; attached flow, suction-dominated near-stall, deep stall, and bluff-body vortex shedding</li>
+          <li>Extracted and interpreted surface C<sub>p</sub> distributions against expected cambered-airfoil behavior</li>
+          <li>Diagnosed the steady solver's convergence breakdown at high AoA and identified the correct follow-up solver</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stat Boxes -->
+  <section style="background:#f4faff; border-bottom:1px solid #d0dde8; padding:1.5rem 2rem;">
+    <div style="max-width:960px; margin:0 auto; display:flex; flex-wrap:wrap; gap:1rem; justify-content:center;">
+      <div class="stat-box" style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+        <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">6.8&times;10<span style="font-size:1rem; font-weight:400;">&sup6;</span></div>
+        <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Reynolds Number</div>
+      </div>
+      <div class="stat-box" style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+        <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">0&deg;&rarr;45&deg;</div>
+        <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Angle-of-Attack Sweep</div>
+      </div>
+      <div class="stat-box" style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+        <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">k-&omega; SST</div>
+        <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Turbulence Closure</div>
+      </div>
+      <div class="stat-box" style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+        <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">4</div>
+        <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Flow Regimes Captured</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Page Intro -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
+      <p style="font-size:0.92em; color:#004080; line-height:1.7; font-style:italic; text-align:center;">This page walks through a steady RANS angle-of-attack sweep on a NACA 2412 airfoil in OpenFOAM, from the attached-flow baseline through full bluff-body stall. <strong>Design Decision</strong> callouts highlight the judgment calls made along the way &mdash; particularly around how far to trust a steady solver as the flow separates.</p>
+    </div>
+  </section>
+
+  <!-- Project Overview -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
+      <h2>Project Overview</h2>
+      <p>I ran a series of steady incompressible RANS simulations on a <strong>NACA 2412</strong> airfoil &mdash; 2% max camber at 40% chord, 12% max thickness &mdash; across four angles of attack (<strong>0&deg;, 15&deg;, 30&deg;, 45&deg;</strong>) using OpenFOAM's <code>simpleFoam</code> solver. The goal was to trace the complete aerodynamic lifecycle of a cambered airfoil: clean attached flow, the leading-edge suction peak that builds toward stall, the leading-edge separation of deep stall, and the bluff-body vortex shedding that takes over once the airfoil stops behaving like a wing at all.</p>
+      <ul>
+        <li><strong>Mesh:</strong> structured blockMesh O-topology grid, with the airfoil physically rotated for each AoA case so the inflow direction stays fixed along the domain axis</li>
+        <li><strong>Solver:</strong> <code>simpleFoam</code> (SIMPLE algorithm) &mdash; steady, incompressible, with the k-&omega; SST turbulence model for near-wall and adverse-pressure-gradient behavior</li>
+        <li><strong>Boundary conditions:</strong> fixed-velocity inlet, no-slip airfoil wall with wall functions on k and &omega;, zero-gradient outlet referenced to 0 Pa gauge, slip/symmetry far-field</li>
+        <li><strong>Flow conditions:</strong> freestream velocity &asymp; 99 m/s, unit chord, Re &asymp; 6.8&times;10<sup>6</sup> &mdash; fully turbulent regime</li>
+        <li>Pressure is reported in OpenFOAM's native kinematic units (p/&rho;, m&sup2;/s&sup2;); the pressure coefficient throughout is C<sub>p</sub> = p / q<sub>&infin;</sub>, with q<sub>&infin;</sub> &asymp; 4,908 m&sup2;/s&sup2;</li>
+      </ul>
+
+      <div style="background:#fff8ec; border-left:4px solid #f0a30a; border-radius:0 6px 6px 0; padding:1rem 1.2rem; margin:1.2rem 0;">
+        <p style="font-size:0.72em; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#f0a30a; margin:0 0 0.6rem;">Design Decision</p>
+        <p style="margin:0 0 0.5rem; font-size:0.92em; line-height:1.65; color:#333;"><strong>Trade-off:</strong> Re-meshed the domain for each AoA by rotating the airfoil within a fixed O-grid, rather than rotating the inlet velocity vector against a single static mesh.</p>
+        <p style="margin:0; font-size:0.92em; line-height:1.65; color:#333;"><strong>Why:</strong> Rotating the velocity vector would have left skewed inlet/outlet patches relative to the flow direction at every case but the baseline. Re-meshing per case keeps the inlet and outlet boundary conditions clean and axis-aligned at the cost of regenerating the grid four times instead of once &mdash; a worthwhile trade for boundary-condition simplicity and solution accuracy.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case: AoA 0 -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
+      <h2>Case: &alpha; = 0&deg; &mdash; Attached Flow Baseline</h2>
+      <p>Even with zero geometric incidence, the airfoil's 2% camber (zero-lift AoA &asymp; &minus;2.1&deg;) produces a measurable suction-side lift through asymmetric circulation. The flow stagnates exactly at the leading edge (x/c = 0, C<sub>p</sub> = +1.0) and accelerates sharply around the convex upper surface, reaching a suction peak of <strong>C<sub>p,min</sub> &asymp; &minus;0.557 at x/c = 0.22</strong>. Even the lower surface shows mild suction over its first 30% chord &mdash; camber accelerates flow on both surfaces near the nose, with the upper surface always winning out to produce net lift.</p>
+      <ul>
+        <li>Boundary layer fully attached, with a smooth, moderate adverse pressure gradient toward the trailing edge</li>
+        <li>Velocity field confirms the pressure result: local velocity at the suction peak runs ~25% above freestream, matching the inviscid Bernoulli estimate</li>
+        <li>Thin, symmetric wake &mdash; the signature of a low-drag, fully attached configuration</li>
+      </ul>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Simulations/NACA_Airfoil/P_0.png" alt="Pressure field around NACA 2412 at 0 degrees angle of attack" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 1: Pressure field, &alpha; = 0&deg; &mdash; leading-edge stagnation and upper-surface suction peak at x/c = 0.22</figcaption>
+      </figure>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Simulations/NACA_Airfoil/U_0.png" alt="Velocity field around NACA 2412 at 0 degrees angle of attack" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 2: Velocity magnitude field, &alpha; = 0&deg; &mdash; thin attached boundary layer and narrow symmetric wake</figcaption>
+      </figure>
+
+      <p style="font-size:0.85em;"><a href="Simulations/NACA_Airfoil/P_0_animation.avi" style="color:#004080; text-decoration:none; font-weight:600;">&#9658; Pressure convergence animation</a> &middot; <a href="Simulations/NACA_Airfoil/U_0_animation.avi" style="color:#004080; text-decoration:none; font-weight:600;">&#9658; Velocity convergence animation</a></p>
+    </div>
+  </section>
+
+  <!-- Case: AoA 15 -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
+      <h2>Case: &alpha; = 15&deg; &mdash; Near-Stall</h2>
+      <p>At 15&deg;, NACA 2412 is operating close to its maximum lift coefficient. The leading-edge suction peak has intensified dramatically to <strong>C<sub>p,min</sub> &asymp; &minus;3.6</strong>, implying a local velocity over <strong>twice freestream</strong> (&asymp;212 m/s) at the peak. The stagnation point has also migrated &mdash; rather than sitting at the geometric nose, it now sits on the <strong>lower</strong> leading edge, displaced by the angled incoming flow. This is the most aerodynamically efficient point in the sweep: high lift at moderate drag, but riding right at the edge of separation.</p>
+      <ul>
+        <li>Pressure differential across the airfoil reaches roughly 24,300 m&sup2;/s&sup2; (kinematic) &mdash; the dominant lift-generating mechanism at this incidence</li>
+        <li>Streamlines pack tightly over the upper surface, consistent with the contracted stream-tube implied by the suction peak</li>
+        <li>Early signs of trailing-edge boundary-layer thickening, the first hint of the separation that fully develops by 30&deg;</li>
+      </ul>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Simulations/NACA_Airfoil/P_15.png" alt="Pressure field around NACA 2412 at 15 degrees angle of attack" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 3: Pressure field, &alpha; = 15&deg; &mdash; intense leading-edge suction (C<sub>p,min</sub> &asymp; &minus;3.6), stagnation point displaced to the lower leading edge</figcaption>
+      </figure>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Simulations/NACA_Airfoil/U_15.png" alt="Velocity field around NACA 2412 at 15 degrees angle of attack" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 4: Velocity magnitude field, &alpha; = 15&deg; &mdash; elongated, deflected wake and high-speed upper-surface flow</figcaption>
+      </figure>
+
+      <p style="font-size:0.85em;"><a href="Simulations/NACA_Airfoil/P_15_animation.avi" style="color:#004080; text-decoration:none; font-weight:600;">&#9658; Pressure convergence animation</a> &middot; <a href="Simulations/NACA_Airfoil/U_15_animation.avi" style="color:#004080; text-decoration:none; font-weight:600;">&#9658; Velocity convergence animation</a></p>
+    </div>
+  </section>
+
+  <!-- Case: AoA 30 -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
+      <h2>Case: &alpha; = 30&deg; &mdash; Deep Stall</h2>
+      <p>By 30&deg;, leading-edge separation is fully established. The sharp suction peak from the 15&deg; case has collapsed into a broad, nearly uniform low-pressure plateau (<strong>C<sub>p,base</sub> &asymp; &minus;0.8 to &minus;1.2</strong>) covering most of the upper surface &mdash; the signature of a separated dead-air region rather than attached flow. A large standing wake vortex appears immediately downstream of the trailing edge in both the pressure and velocity fields; this is the steady-RANS mean-flow approximation of what is physically an unsteady shed vortex.</p>
+      <ul>
+        <li>Lift mechanism shifts from upper-surface suction to high pressure on the windward lower surface &mdash; increasingly flat-plate-like behavior</li>
+        <li>L/D collapses from a cruise-like 15&ndash;20 down to roughly 0.5&ndash;2 in this regime</li>
+        <li>Steady RANS convergence is marginal here &mdash; results are qualitatively but not quantitatively reliable</li>
+      </ul>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Simulations/NACA_Airfoil/P_30.png" alt="Pressure field around NACA 2412 at 30 degrees angle of attack showing a standing wake vortex" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 5: Pressure field, &alpha; = 30&deg; &mdash; leading-edge separation with a standing wake vortex and a broad low-pressure plateau on the upper surface</figcaption>
+      </figure>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Simulations/NACA_Airfoil/U_30.png" alt="Velocity field around NACA 2412 at 30 degrees angle of attack showing large recirculation" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 6: Velocity magnitude field, &alpha; = 30&deg; &mdash; large recirculation zone and separated shear layer from the leading edge</figcaption>
+      </figure>
+
+      <p style="font-size:0.85em;"><a href="Simulations/NACA_Airfoil/P_30_animation.avi" style="color:#004080; text-decoration:none; font-weight:600;">&#9658; Pressure convergence animation</a> &middot; <a href="Simulations/NACA_Airfoil/U_30_animation.avi" style="color:#004080; text-decoration:none; font-weight:600;">&#9658; Velocity convergence animation</a></p>
+    </div>
+  </section>
+
+  <!-- Case: AoA 45 -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
+      <h2>Case: &alpha; = 45&deg; &mdash; Bluff-Body Vortex Shedding</h2>
+      <p>At 45&deg; the airfoil no longer behaves aerodynamically as a wing &mdash; it behaves as a bluff body. The near-field pressure plot shows alternating high- and low-pressure regions in a staggered pattern downstream, the signature of a von K&aacute;rm&aacute;n-type vortex street. Because this physics is inherently time-periodic, the <strong>steady</strong> <code>simpleFoam</code> solver cannot converge: the force history oscillates between roughly 4,800 N and 13,100 N well past 500 iterations rather than settling to a fixed value. The extended-domain views resolve a cleaner mean structure &mdash; a high-pressure region on the windward face and a deep suction base (<strong>C<sub>p,base</sub> &asymp; &minus;1.0 to &minus;2.0</strong>), comparable to a circular cylinder's base pressure at high Re.</p>
+      <ul>
+        <li>Persistent large-amplitude force oscillation is itself diagnostic evidence of unsteady physics, not just a failed solve</li>
+        <li>Multi-vortex wake structure visible in the near-field velocity plot; wake width at one chord downstream already rivals the chord length</li>
+        <li>Pressure drag now dominates entirely &mdash; the streamlined shape provides no benefit at this incidence</li>
+      </ul>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Simulations/NACA_Airfoil/P_45.png" alt="Near-field pressure field around NACA 2412 at 45 degrees angle of attack" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 7: Pressure field (near-field), &alpha; = 45&deg; &mdash; alternating vortex-street pressure signature in the wake</figcaption>
+      </figure>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Simulations/NACA_Airfoil/U_45.png" alt="Near-field velocity field around NACA 2412 at 45 degrees angle of attack" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 8: Velocity magnitude field (near-field), &alpha; = 45&deg; &mdash; multi-vortex wake with counter-rotating structures</figcaption>
+      </figure>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Simulations/NACA_Airfoil/P_45_extra.png" alt="Far-field pressure field around NACA 2412 at 45 degrees angle of attack" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 9: Pressure field (extended domain), &alpha; = 45&deg; &mdash; windward high-pressure / leeward base-suction dipole, characteristic of bluff-body flow</figcaption>
+      </figure>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Simulations/NACA_Airfoil/U_45_extra.png" alt="Far-field velocity field around NACA 2412 at 45 degrees angle of attack" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 10: Velocity magnitude field (extended domain), &alpha; = 45&deg; &mdash; wake growth and blockage at one chord downstream</figcaption>
+      </figure>
+
+      <p style="font-size:0.85em;"><a href="Simulations/NACA_Airfoil/P_45_animation.avi" style="color:#004080; text-decoration:none; font-weight:600;">&#9658; Pressure animation</a> &middot; <a href="Simulations/NACA_Airfoil/U_45_animation.avi" style="color:#004080; text-decoration:none; font-weight:600;">&#9658; Velocity animation</a> &middot; <a href="Simulations/NACA_Airfoil/P_45_extra_animation.avi" style="color:#004080; text-decoration:none; font-weight:600;">&#9658; Pressure (far-field) animation</a> &middot; <a href="Simulations/NACA_Airfoil/U_45_extra_animation.avi" style="color:#004080; text-decoration:none; font-weight:600;">&#9658; Velocity (far-field) animation</a></p>
+
+      <div style="background:#fff8ec; border-left:4px solid #f0a30a; border-radius:0 6px 6px 0; padding:1rem 1.2rem; margin:1.2rem 0;">
+        <p style="font-size:0.72em; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#f0a30a; margin:0 0 0.6rem;">Design Decision</p>
+        <p style="margin:0 0 0.5rem; font-size:0.92em; line-height:1.65; color:#333;"><strong>Trade-off:</strong> Continued the sweep through 45&deg; with the <strong>steady</strong> solver despite knowing the flow physics had become inherently unsteady, rather than switching to a transient solver once separation appeared.</p>
+        <p style="margin:0; font-size:0.92em; line-height:1.65; color:#333;"><strong>Why:</strong> The goal of this study was to map the <strong>qualitative</strong> regime transition across the full stall progression, not to extract quantitative loads at high AoA. The steady solver's failure to converge at 45&deg; is itself useful diagnostic evidence of the underlying vortex-shedding physics. For accurate forces in the separated regimes, the correct follow-up is a transient solver (<code>pimpleFoam</code>) or scale-resolving approach (DES/LES) &mdash; noted as the next step rather than worked here.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Surface Cp -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
+      <h2>Surface Pressure Coefficient &mdash; &alpha; = 0&deg;</h2>
+      <p>Surface pressure data extracted from the converged &alpha; = 0&deg; solution confirms the field-plot interpretation quantitatively. The enclosed area between the upper and lower surface C<sub>p</sub> curves is proportional to section lift &mdash; a large gap between the curves means meaningful lift; identical curves would mean zero lift.</p>
+
+      <table style="border-collapse:collapse; font-size:0.9em; margin:0.6rem 0 1.2rem; width:100%;">
+        <tr style="background:#004080; color:white;">
+          <th style="padding:6px 12px; text-align:left;">Location</th>
+          <th style="padding:6px 12px; text-align:left;">Upper Surface C<sub>p</sub></th>
+          <th style="padding:6px 12px; text-align:left;">Lower Surface C<sub>p</sub></th>
+        </tr>
+        <tr style="background:#f4faff;">
+          <td style="padding:6px 12px;">Leading edge (x/c &asymp; 0)</td>
+          <td style="padding:6px 12px;"><strong>+1.00</strong> (stagnation)</td>
+          <td style="padding:6px 12px;">+0.654 (x/c = 0.004)</td>
+        </tr>
+        <tr>
+          <td style="padding:6px 12px;">Suction peak</td>
+          <td style="padding:6px 12px;"><strong>&minus;0.557</strong> at x/c = 0.22</td>
+          <td style="padding:6px 12px;"><strong>&minus;0.363</strong> at x/c = 0.046</td>
+        </tr>
+        <tr style="background:#f4faff;">
+          <td style="padding:6px 12px;">Mid-chord</td>
+          <td style="padding:6px 12px;">&minus;0.390 (x/c = 0.50)</td>
+          <td style="padding:6px 12px;">&minus;0.199 (x/c = 0.25)</td>
+        </tr>
+        <tr>
+          <td style="padding:6px 12px;">Trailing edge</td>
+          <td style="padding:6px 12px;">+0.136</td>
+          <td style="padding:6px 12px;">+0.152</td>
+        </tr>
+      </table>
+
+      <p>The upper-surface suction peak sits at x/c = 0.22 &mdash; just aft of the nose and ahead of the geometric maximum-thickness location (x/c &asymp; 0.30) &mdash; consistent with inviscid panel-method predictions for this camber distribution. The lower surface shows a smaller, secondary suction region near its own leading edge: camber forces the streamlines to curve concavely on the underside too, just less aggressively than on top. Both surfaces recover to positive C<sub>p</sub> by the trailing edge, with the small remaining difference between them (C<sub>p,upper</sub> = 0.136 vs. C<sub>p,lower</sub> = 0.152) confirming the Kutta condition is satisfied and bound circulation is present.</p>
+    </div>
+  </section>
+
+  <!-- Comparative Analysis -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
+      <h2>Comparative Analysis Across the Sweep</h2>
+      <p>Stepping back across all four cases shows a clean progression from potential-flow-like behavior to fully separated bluff-body flow &mdash; and a corresponding decline in how much the steady RANS solution can be trusted.</p>
+
+      <table style="border-collapse:collapse; font-size:0.85em; margin:0.6rem 0 1.2rem; width:100%;">
+        <tr style="background:#004080; color:white;">
+          <th style="padding:6px 10px; text-align:left;">Parameter</th>
+          <th style="padding:6px 10px; text-align:left;">&alpha; = 0&deg;</th>
+          <th style="padding:6px 10px; text-align:left;">&alpha; = 15&deg;</th>
+          <th style="padding:6px 10px; text-align:left;">&alpha; = 30&deg;</th>
+          <th style="padding:6px 10px; text-align:left;">&alpha; = 45&deg;</th>
+        </tr>
+        <tr style="background:#f4faff;">
+          <td style="padding:6px 10px;">Flow regime</td>
+          <td style="padding:6px 10px;">Attached</td>
+          <td style="padding:6px 10px;">Near-stall</td>
+          <td style="padding:6px 10px;">Deep stall</td>
+          <td style="padding:6px 10px;">Bluff body</td>
+        </tr>
+        <tr>
+          <td style="padding:6px 10px;">C<sub>p,min</sub> (upper)</td>
+          <td style="padding:6px 10px;">&minus;0.557</td>
+          <td style="padding:6px 10px;">&asymp; &minus;3.6</td>
+          <td style="padding:6px 10px;">Plateau &asymp; &minus;1.0</td>
+          <td style="padding:6px 10px;">Dipole structure</td>
+        </tr>
+        <tr style="background:#f4faff;">
+          <td style="padding:6px 10px;">Stagnation point</td>
+          <td style="padding:6px 10px;">At x/c = 0</td>
+          <td style="padding:6px 10px;">Lower leading edge</td>
+          <td style="padding:6px 10px;">Lower surface</td>
+          <td style="padding:6px 10px;">Lower windward face</td>
+        </tr>
+        <tr>
+          <td style="padding:6px 10px;">Boundary layer</td>
+          <td style="padding:6px 10px;">Fully attached</td>
+          <td style="padding:6px 10px;">TE thickening</td>
+          <td style="padding:6px 10px;">LE separation</td>
+          <td style="padding:6px 10px;">Complete separation</td>
+        </tr>
+        <tr style="background:#f4faff;">
+          <td style="padding:6px 10px;">Steady RANS validity</td>
+          <td style="padding:6px 10px;">High</td>
+          <td style="padding:6px 10px;">Moderate</td>
+          <td style="padding:6px 10px;">Low</td>
+          <td style="padding:6px 10px;">Very low</td>
+        </tr>
+        <tr>
+          <td style="padding:6px 10px;">Recommended solver</td>
+          <td style="padding:6px 10px;">simpleFoam</td>
+          <td style="padding:6px 10px;">simpleFoam</td>
+          <td style="padding:6px 10px;">pimpleFoam</td>
+          <td style="padding:6px 10px;">pimpleFoam / DES</td>
+        </tr>
+      </table>
+
+      <p>The widening colorbar range at higher AoA in the raw ParaView plots reflects intensifying pressure gradients as more flow energy is redirected into circulation and ultimately lost to the separated wake. Across every case, the suction side always does more aerodynamic work than the pressure side &mdash; a fundamental characteristic of low-speed aerodynamics.</p>
+    </div>
+  </section>
+
+  <!-- Key Takeaways -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:860px; margin:0 auto;">
+      <h2>Key Takeaways</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:1.2rem; margin-top:1rem;">
+        <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+          <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">Camber Produces Lift at Zero Incidence</p>
+          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">Even at &alpha; = 0&deg;, the 2% camber of NACA 2412 generates a clear suction-side pressure asymmetry. This matched thin-airfoil theory's prediction of a non-zero lift coefficient at zero geometric incidence for a cambered section, confirming the simulation was physically sound before pushing into higher-AoA cases.</p>
+        </div>
+        <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+          <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">Stagnation Point Migration Tracks Circulation</p>
+          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">Across the sweep, the stagnation point visibly migrates from the geometric leading edge (0&deg;) to deep on the lower surface (45&deg;). That migration is a direct, visual proxy for growing bound circulation &mdash; a useful sanity check that didn't require any post-processing to read off the plots.</p>
+        </div>
+        <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+          <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">RANS Validity Degrades Past Stall</p>
+          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">Steady RANS is trustworthy through 15&deg;, but the standing-vortex and bluff-body regimes at 30&ndash;45&deg; are qualitative only. Recognizing where a solver's assumptions stop holding &mdash; rather than reporting unconverged numbers as if they were valid &mdash; is as important as the solve itself.</p>
+        </div>
+        <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+          <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">Mesh Artifacts vs. Physical Features</p>
+          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">The circular "halo" structures visible in the far-field of several plots are inter-block boundaries in the O-grid topology, not physical flow features &mdash; ParaView's color interpolation simply switches discretely across mesh-block interfaces. Telling numerical artifacts apart from real flow structures is a basic but essential post-processing skill.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Full Report -->
+  <section style="text-align: center; margin: 2rem 0;">
+    <a class="resume-download-btn" href="Simulations/NACA_Airfoil/CFD_Analysis_Report.html" target="_blank" rel="noopener noreferrer">&#128196; VIEW FULL CFD ANALYSIS REPORT</a>
+  </section>
+
+  <section style="padding: 1rem 2rem 2rem;">
+    <p><a class="project-title-link" href="simulations.html">&#8592; Back to Simulations</a></p>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <span>Phone: (215) 397&ndash;5806</span>
+      <span>Email: <a href="mailto:bharadwajanuranan@gmail.com">bharadwajanuranan@gmail.com</a></span>
+      <span><a href="https://linkedin.com/in/anuranan-bharadwaj" target="_blank">LinkedIn</a></span>
+      <span><a href="https://github.com/anuranan10" target="_blank">GitHub</a></span>
+      <span>&copy; 2025 Anuranan Bharadwaj</span>
+    </div>
+  </footer>
+</body>
+</html>
