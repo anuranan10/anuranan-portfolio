@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Laminar Pipe Flow &mdash; ANSYS Fluent CFD Analysis | Anuranan Bharadwaj</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .stat-box { animation: fadeInUp 0.55s ease both; }
+    .stat-box:nth-child(1) { animation-delay: 0.05s; }
+    .stat-box:nth-child(2) { animation-delay: 0.18s; }
+    .stat-box:nth-child(3) { animation-delay: 0.31s; }
+    .stat-box:nth-child(4) { animation-delay: 0.44s; }
+    .snapshot-card { animation: fadeInUp 0.5s ease 0.05s both; }
+    .takeaway-card { transition: transform 0.22s ease, box-shadow 0.22s ease; }
+    .takeaway-card:hover { transform: translateY(-5px); box-shadow: 0 14px 32px rgba(0,64,128,0.22); }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="aerospace.html">Aerospace</a>
+    <a href="cs.html">Computer Science</a>
+    <a href="experience.html">Work Experience</a>
+    <a href="lab-testing-experience.html">Lab Testing Experience</a>
+    <a href="simulations.html">Simulations</a>
+    <a href="highlights.html">Highlights</a>
+    <a href="resume.html">Resume</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <header class="page-header">
+    <div class="header-content">
+      <h1>Laminar Pipe Flow &mdash; ANSYS Fluent CFD Analysis</h1>
+      <p>Computational Fluid Dynamics &middot; ANSYS Fluent 2026 R1 &middot; Personal Project</p>
+    </div>
+  </header>
+
+  <!-- Engineering Snapshot -->
+  <section class="snapshot-card" style="background:#004080; color:white; padding:2rem;">
+    <div style="max-width:960px; margin:0 auto; display:flex; flex-wrap:wrap; gap:2rem; align-items:flex-start;">
+      <div style="flex:1; min-width:200px;">
+        <p style="font-size:0.75em; letter-spacing:0.07em; text-transform:uppercase; opacity:0.65; margin:0 0 0.35rem;">Role</p>
+        <p style="font-weight:600; font-size:1.05em; margin:0 0 0.25rem;">Individual &mdash; CFD Setup, Meshing &amp; Post-Processing</p>
+        <p style="font-size:0.88em; opacity:0.8; margin:0;">Personal Project &middot; ANSYS Fluent (Student)</p>
+      </div>
+      <div style="flex:1; min-width:200px;">
+        <p style="font-size:0.75em; letter-spacing:0.07em; text-transform:uppercase; opacity:0.65; margin:0 0 0.35rem;">Tools</p>
+        <p style="font-size:0.92em; line-height:1.75; margin:0;">ANSYS Fluent 2026 R1 (meshing &amp; solver)<br>ANSYS CFD-Post</p>
+      </div>
+      <div style="flex:1.6; min-width:240px;">
+        <p style="font-size:0.75em; letter-spacing:0.07em; text-transform:uppercase; opacity:0.65; margin:0 0 0.35rem;">Key Contributions</p>
+        <ul style="margin:0; padding-left:1.15rem; font-size:0.92em; line-height:1.85;">
+          <li>Modeled and meshed a 200 mm &times; 3 m circular pipe in ANSYS Fluent, defining inlet, outlet, and wall boundaries through named selections</li>
+          <li>Hand-calculated Re &asymp; 100 from the fluid properties to confirm laminar flow before selecting the viscous model</li>
+          <li>Solved the developing velocity field and compared the centerline outlet velocity against the Hagen&ndash;Poiseuille fully-developed prediction</li>
+          <li>Recorded an animation of the developing velocity field in ANSYS CFD-Post, adapted from a companion tutorial on pipe flow post-processing</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stat Boxes -->
+  <section style="background:#f4faff; border-bottom:1px solid #d0dde8; padding:1.5rem 2rem;">
+    <div style="max-width:960px; margin:0 auto; display:flex; flex-wrap:wrap; gap:1rem; justify-content:center;">
+      <div class="stat-box" style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+        <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">100</div>
+        <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Reynolds Number (Laminar)</div>
+      </div>
+      <div class="stat-box" style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+        <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">200 mm</div>
+        <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Pipe Diameter</div>
+      </div>
+      <div class="stat-box" style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+        <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">1 &rarr; 1.79 m/s</div>
+        <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Inlet &rarr; Centerline Velocity</div>
+      </div>
+      <div class="stat-box" style="flex:1; min-width:140px; text-align:center; background:white; border-radius:8px; padding:1.1rem 1rem; box-shadow:0 1px 5px rgba(0,64,128,0.10);">
+        <div style="font-size:2rem; font-weight:700; color:#004080; line-height:1.1;">200</div>
+        <div style="font-size:0.78em; color:#555; margin-top:0.35rem; text-transform:uppercase; letter-spacing:0.04em;">Solver Iterations</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Page Intro -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
+      <p style="font-size:0.92em; color:#004080; line-height:1.7; font-style:italic; text-align:center;">This page walks through a laminar, incompressible flow-through-pipe simulation built end-to-end in ANSYS Fluent &mdash; geometry, meshing, boundary conditions, and solving &mdash; followed by a post-processing pass in ANSYS CFD-Post. A <strong>Design Decision</strong> callout examines a subtle boundary-condition choice and why it turned out not to affect the result.</p>
+    </div>
+  </section>
+
+  <!-- Project Overview -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
+      <h2>Project Overview</h2>
+      <p>I built a 3D circular pipe &mdash; <strong>200 mm diameter, 3 m long</strong> &mdash; directly in Fluent's geometry editor, meshed it, and solved for steady, incompressible, laminar flow of a low-viscosity fluid entering at a uniform velocity. The goal was to trace the velocity profile as it develops from a flat inlet condition to a parabolic profile downstream, and to check the result against the classical analytical solution for laminar pipe flow.</p>
+      <ul>
+        <li><strong>Geometry:</strong> circular cross-section sketched to 200 mm diameter and extruded 3 m along the pipe axis</li>
+        <li><strong>Mesh:</strong> patch-conforming tetrahedral mesh generated over the full solid, with inlet, outlet, and wall faces split into named selections for boundary-condition assignment</li>
+        <li><strong>Fluid properties:</strong> density &rho; = 1 kg/m&sup3;, dynamic viscosity &mu; = 2&times;10<sup>-3</sup> kg/(m&middot;s)</li>
+        <li><strong>Boundary conditions:</strong> uniform velocity inlet at 1 m/s, pressure outlet, no-slip pipe wall</li>
+        <li><strong>Solver:</strong> pressure-based, double precision, standard initialization from the inlet, run to 200 iterations</li>
+      </ul>
+
+      <div style="background:#fff8ec; border-left:4px solid #f0a30a; border-radius:0 6px 6px 0; padding:1rem 1.2rem; margin:1.2rem 0;">
+        <p style="font-size:0.72em; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#f0a30a; margin:0 0 0.6rem;">Design Decision</p>
+        <p style="margin:0 0 0.5rem; font-size:0.92em; line-height:1.65; color:#333;"><strong>Trade-off:</strong> Set the outlet pressure boundary condition to 101,325 Pa (1 atmosphere) rather than the more conventional 0 Pa gauge.</p>
+        <p style="margin:0; font-size:0.92em; line-height:1.65; color:#333;"><strong>Why it doesn't matter here:</strong> Fluent's pressure boundary conditions are gauge values referenced against a separately-defined operating pressure (101,325 Pa by default), so specifying 101,325 Pa gauge effectively double-counts atmospheric pressure at the outlet. For an <em>incompressible</em> solve, though, only pressure <em>gradients</em> drive the momentum equations &mdash; the absolute reference level is arbitrary. The velocity field comes out identical either way; the only consequence is that the reported pressure contour is offset by a constant 101,325 Pa rather than reading 0 at the outlet. Worth knowing before trusting an absolute pressure reading from a Fluent post-process, but harmless for the velocity results this project cares about.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Verifying the Flow Regime -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
+      <h2>Verifying the Flow Regime</h2>
+      <p>Before picking a viscous model in Fluent, I checked the Reynolds number by hand using the pipe diameter and fluid properties:</p>
+      <p style="text-align:center; font-size:1.05em; color:#004080; font-weight:600; margin:1rem 0;">Re = &rho;VD / &mu; = (1)(1)(0.2) / (2&times;10<sup>-3</sup>) = 100</p>
+      <p>With Re = 100, well under the pipe-flow transition threshold of &asymp;2,300, the flow is solidly laminar &mdash; confirming the laminar viscous model was the right choice rather than invoking a turbulence closure the flow doesn't need.</p>
+    </div>
+  </section>
+
+  <!-- Velocity Field Results -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:820px; margin:0 auto;">
+      <h2>Velocity Field Results</h2>
+      <p>The inlet enters as a uniform plug profile at 1 m/s, dropping to exactly zero at the wall to satisfy the no-slip condition. Moving downstream, viscous shear reshapes that flat profile into the parabolic distribution characteristic of laminar pipe flow, with the centerline velocity climbing to <strong>1.79 m/s</strong> by the outlet, 3 m downstream.</p>
+
+      <figure style="margin:1.2rem 0;">
+        <img src="Simulations/FlowThroughPipe/VelocityContour.png" alt="Velocity contour along the length of the pipe, showing the flat inlet profile developing into a parabolic profile downstream" style="width:100%; border-radius:6px;" />
+        <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; text-align:center; font-style:italic;">Fig. 1: Velocity contour along the pipe &mdash; the entrance region (left) shows the profile narrowing and developing before settling into a steady parabolic band for the remainder of the pipe. Peak velocity: 1.786 m/s.</figcaption>
+      </figure>
+
+      <p>The contour makes the development region visible directly: the high-velocity core is narrower right at the inlet and widens over a short distance before the color band stabilizes for the rest of the pipe &mdash; a visual read on the flow becoming fully developed.</p>
+
+      <p>It's worth checking that number against theory. For fully-developed laminar pipe flow, the Hagen&ndash;Poiseuille solution predicts a parabolic profile with a centerline velocity of exactly <strong>twice</strong> the mean velocity:</p>
+      <p style="text-align:center; font-size:1.05em; color:#004080; font-weight:600; margin:1rem 0;">v<sub>max</sub> = 2 &times; v<sub>avg</sub> = 2 &times; 1 m/s = 2.0 m/s</p>
+      <p>The simulated 1.79 m/s comes in about 10% under that fully-developed value. The hydrodynamic entrance length for this case, L<sub>e</sub> &asymp; 0.05&middot;Re&middot;D = 0.05(100)(0.2 m) = 1 m, says the profile should be essentially fully developed well before the 3 m outlet &mdash; so the gap is more likely attributable to the coarse default mesh and a modest 200-iteration run than to genuine entrance effects. A finer mesh and a tighter residual target would be the natural next step to close that gap.</p>
+    </div>
+  </section>
+
+  <!-- Extended Post-Processing -->
+  <section class="project-row" style="flex-direction: column; align-items: center;">
+    <div class="project-text" style="max-width:820px; margin:0 auto; width: 100%;">
+      <h2>Extended Post-Processing</h2>
+      <p>Beyond the static contour, I recorded an animation of the solution to show the velocity field developing along the pipe over the course of the run &mdash; a technique adapted from a companion Fluent tutorial covering post-processing workflows for pipe flow. Watching the profile evolve frame by frame makes the entrance-region development much easier to follow than a single static image.</p>
+    </div>
+    <figure style="margin: 0.5rem auto 0; text-align: center; width: 100%;">
+      <video controls muted style="width: 100%; max-width: 640px; border-radius: 6px; display: block; margin: 0 auto;">
+        <source src="Simulations/FlowThroughPipe/VelocityDevelopment.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <figcaption style="font-size:0.82em; color:#555; margin-top:0.35rem; font-style:italic;">Velocity field developing along the pipe over the course of the solve</figcaption>
+    </figure>
+  </section>
+
+  <!-- Key Takeaways -->
+  <section class="project-row">
+    <div class="project-text" style="max-width:860px; margin:0 auto;">
+      <h2>Key Takeaways</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:1.2rem; margin-top:1rem;">
+        <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+          <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">Reynolds Number as a Design Gate</p>
+          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">Computing Re by hand before touching the viscous-model dropdown turned a software setting into an engineering decision. Re &asymp; 100 confirmed laminar flow was the physically correct choice, not just the simpler one.</p>
+        </div>
+        <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+          <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">No-Slip Condition Is Directly Visible</p>
+          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">The velocity profile plots show the no-slip condition without needing to be told about it &mdash; velocity reads exactly zero at the wall in both the inlet and outlet profiles, a quick sanity check that the boundary conditions were applied correctly.</p>
+        </div>
+        <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+          <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">Absolute Pressure Level Doesn't Affect Incompressible Velocity Fields</p>
+          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">Setting the outlet gauge pressure to 101,325 Pa instead of 0 Pa looked like an error at first glance, but for incompressible flow only pressure gradients matter. Understanding <em>why</em> a boundary condition choice doesn't break the physics is as valuable as getting the setting "right" in the first place.</p>
+        </div>
+        <div class="takeaway-card" style="background:#f4faff; border-left:4px solid #004080; border-radius:0 6px 6px 0; padding:1.1rem 1.2rem;">
+          <p style="font-weight:700; color:#004080; margin:0 0 0.5rem; font-size:0.97em;">A Static Contour Only Tells Half the Story</p>
+          <p style="margin:0; font-size:0.88em; line-height:1.65; color:#333;">A single color contour captures the converged state, but recording the solution's development as an animation made the entrance-region behavior &mdash; the profile narrowing then widening into its parabolic steady band &mdash; far easier to see than reading it off one static frame.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 1rem 2rem 2rem;">
+    <p><a class="project-title-link" href="simulations.html">&#8592; Back to Simulations</a></p>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <span>Phone: (215) 397&ndash;5806</span>
+      <span>Email: <a href="mailto:bharadwajanuranan@gmail.com">bharadwajanuranan@gmail.com</a></span>
+      <span><a href="https://linkedin.com/in/anuranan-bharadwaj" target="_blank">LinkedIn</a></span>
+      <span><a href="https://github.com/anuranan10" target="_blank">GitHub</a></span>
+      <span>&copy; 2025 Anuranan Bharadwaj</span>
+    </div>
+  </footer>
+</body>
+</html>
