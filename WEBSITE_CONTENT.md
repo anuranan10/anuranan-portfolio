@@ -697,7 +697,7 @@ All five motors showed the characteristic black-powder thrust profile: a sharp i
 
 **Header:** "Simulations" — "CFD, CAD, and computational modeling work across aerodynamics and structures"
 
-This page is a flat-list hub (no discipline subsection headers) showcasing CFD/CAD/simulation-focused work. It contains one dedicated project plus three cards cross-listed from the Aerospace hub — the same detail pages, linked a second time here because the work is as much "simulation" as it is its home discipline.
+This page is a flat-list hub (no discipline subsection headers) showcasing CFD/CAD/simulation-focused work. It contains two dedicated projects plus three cards cross-listed from the Aerospace hub — the same detail pages, linked a second time here because the work is as much "simulation" as it is its home discipline.
 
 ### NACA 2412 Airfoil CFD Analysis (dedicated Simulations project)
 
@@ -724,6 +724,26 @@ A steady incompressible RANS sweep on a NACA 2412 airfoil (2% max camber at 40% 
 **Key Takeaways** (4 total): camber produces lift even at zero incidence, matching thin-airfoil theory; the stagnation point's migration across the sweep is a direct visual proxy for growing bound circulation; RANS validity degrades past stall, and recognizing where a solver's assumptions stop holding matters as much as the solve itself; and the circular "halo" artifacts visible in far-field plots are O-grid block-interface interpolation artifacts, not physical flow features.
 
 A "View Full CFD Analysis Report" button links out to a separate, more detailed technical dashboard report (dark-themed, with interactive Cp and force-convergence charts) for readers who want the complete governing equations, SIMPLE-algorithm walkthrough, and full per-case physics breakdown beyond what's summarized here.
+
+### Laminar Pipe Flow — ANSYS Fluent CFD Analysis (dedicated Simulations project)
+
+**Personal Project · ANSYS Fluent 2026 R1**
+**Role:** Individual — CFD Setup, Meshing & Post-Processing
+**Tools:** ANSYS Fluent 2026 R1 (meshing & solver), ANSYS CFD-Post
+
+**Headline stats:** Re ≈ 100 (laminar) · 200 mm pipe diameter · 1 → 1.79 m/s inlet-to-centerline velocity · 200 solver iterations
+
+A 3D circular pipe — 200 mm diameter, 3 m long — built directly in Fluent's geometry editor, meshed with a patch-conforming tetrahedral mesh, and solved for steady, incompressible, laminar flow (ρ = 1 kg/m³, μ = 2×10⁻³ kg/(m·s)) entering at a uniform 1 m/s. Before selecting the viscous model, Re = ρVD/μ = (1)(1)(0.2)/(2×10⁻³) = 100 was hand-calculated and confirmed well under the ≈2,300 pipe-flow transition threshold.
+
+**Design Decision:** the outlet pressure boundary condition was set to 101,325 Pa (1 atmosphere) rather than the more conventional 0 Pa gauge. Since Fluent's pressure BCs are gauge values referenced against a separately-defined operating pressure (101,325 Pa by default), this effectively double-counts atmospheric pressure at the outlet — but for an incompressible solve, only pressure *gradients* drive the momentum equations, so the velocity field comes out identical either way. The only consequence is that the reported pressure contour is offset by a constant 101,325 Pa rather than reading 0 at the outlet.
+
+**Velocity Field Results:** The inlet enters as a uniform plug profile at 1 m/s, dropping to exactly zero at the wall (no-slip). Viscous shear reshapes that flat profile into a parabolic distribution downstream, with centerline velocity climbing to 1.79 m/s by the outlet — visible in the contour as a high-velocity core that narrows at the inlet before widening into a steady band. Checked against the Hagen–Poiseuille fully-developed prediction (v_max = 2 × v_avg = 2.0 m/s), the simulated value comes in about 10% under, attributed to the coarse default mesh and a modest 200-iteration run rather than genuine entrance effects (the theoretical entrance length, ≈1 m, is well short of the 3 m pipe).
+
+**Pressure Field Results:** The same plane, colored by static pressure, decreases smoothly from 101,330.82 Pa at the inlet to 101,325.00 Pa at the outlet — the outlet value lands almost exactly on the specified outlet BC, confirming the Design Decision's point that the absolute level is just the BC plus a near-constant offset. The physically meaningful 5.82 Pa inlet-to-outlet drop runs about 20% above the Hagen–Poiseuille friction-only estimate (32μLV/D² = 4.8 Pa) — consistent with, not contradicting, the same entrance-length story, since accelerating the flow into its parabolic shape takes additional pressure drop beyond fully-developed wall friction alone.
+
+**Extended Post-Processing — Streamlines in Motion:** An embedded video shows ANSYS CFD-Post streamline tracers advecting through the pipe, colored by velocity magnitude, adapted from a companion Fluent tutorial. Centerline tracers (orange-red, near the 1.79 m/s peak) visibly outrun the wall-adjacent tracers (green, moving at a fraction of that speed) — by the end, the fastest tracers have already exited while the slowest are still only partway down the pipe, making the same parabolic-profile physics from the contour directly visible as motion.
+
+**Key Takeaways** (4 total): computing Re by hand before touching the viscous-model dropdown turns a software setting into an engineering decision; the no-slip condition is directly visible in the velocity profiles without needing to be told about it; understanding *why* the unconventional outlet pressure BC doesn't break the incompressible-flow physics is as valuable as getting the setting "right"; and the streamline animation reveals the same parabolic profile as a race between fast- and slow-moving tracers, making the magnitude of the wall-to-centerline speed difference viscerally obvious in a way a static color legend doesn't.
 
 ### Cross-Listed Projects
 
