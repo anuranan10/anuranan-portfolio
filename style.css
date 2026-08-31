@@ -41,6 +41,13 @@ nav a:hover {
     white-space: nowrap;
 }
 
+/* Focusable only where the burger is actually visible. */
+@media (min-width: 769px) {
+    .nav-toggle {
+      display: none;
+    }
+}
+
 /* Collapsed bar is mobile-only; hidden at tablet and desktop. */
 .nav-bar {
     display: none;
@@ -817,10 +824,10 @@ ul.ae-card-desc li {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     max-width: 100%;
-    margin-bottom: 1rem;
 }
 
-/* Tablet: keep one clean row instead of letting nine links wrap. */
+/* Tablet: centered rows at readable size. Wraps to a second row at the
+   narrow end rather than overflowing the page. */
 @media (min-width: 769px) and (max-width: 1024px) {
     nav {
       padding: 0.75rem 0.5rem;
@@ -917,6 +924,8 @@ ul.ae-card-desc li {
     .nav-links {
       display: none;
       flex-direction: column;
+      flex-wrap: nowrap;
+      align-items: stretch;
       width: 100%;
       max-height: calc(100vh - 52px);   /* must match .nav-bar height */
       overflow-y: auto;
