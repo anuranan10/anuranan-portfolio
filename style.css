@@ -980,6 +980,7 @@ ul.ae-card-desc li {
     .project-image-cs {
       width: 100%;
       justify-content: center;
+      min-width: 0;   /* overrides the 300px floor, which overflows a 320px screen */
     }
   
     .experience,
