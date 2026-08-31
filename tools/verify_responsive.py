@@ -62,8 +62,11 @@ def check_nav(path, html):
         fail("nav", path.name, f"link list changed: {found}")
 
     # The toggle must precede the links for the ~ sibling selector to work.
-    if block.index('id="nav-toggle"') > block.index('class="nav-links"'):
-        fail("nav", path.name, "nav-toggle must come before nav-links")
+    # Guarded: when either marker is absent the missing-token checks above
+    # already reported it, and .index() would raise instead of reporting.
+    if 'id="nav-toggle"' in block and 'class="nav-links"' in block:
+        if block.index('id="nav-toggle"') > block.index('class="nav-links"'):
+            fail("nav", path.name, "nav-toggle must come before nav-links")
 
 
 def check_tables(path, html):
