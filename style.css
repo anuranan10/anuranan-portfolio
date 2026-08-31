@@ -819,11 +819,19 @@ ul.ae-card-desc li {
 }
 
 /* Wide data tables scroll inside their own box so the page never
-   scrolls horizontally. */
+   scrolls horizontally. The overflow — and the block formatting context
+   it creates — is scoped to narrow screens, because a BFC here would
+   stop each table's own margins collapsing with its siblings and shift
+   desktop layout. */
 .table-scroll {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
     max-width: 100%;
+}
+
+@media (max-width: 1024px) {
+    .table-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
 }
 
 /* Tablet: centered rows at readable size. Wraps to a second row at the
