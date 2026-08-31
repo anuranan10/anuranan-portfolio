@@ -126,7 +126,8 @@
       <h2>Aircraft Geometry &amp; Design Parameters</h2>
       <p>The aircraft configuration was established through manual geometric sizing. Wing parameters were selected to hit the required lift-curve slope and longitudinal stability margin, while tail sizing was driven by horizontal-tail volume coefficient constraints. The final design used an <strong>11&deg; leading-edge sweep</strong> and <strong>3&deg; dihedral</strong> on the main wing to balance lateral stability and aerodynamic efficiency.</p>
 
-      <table style="border-collapse:collapse; font-size:0.9em; margin:0.6rem 0 1rem; width:100%;">
+      <div class="table-scroll">
+<table style="border-collapse:collapse; font-size:0.9em; margin:0.6rem 0 1rem; width:100%;">
         <tr style="background:#004080; color:white;">
           <th style="padding:6px 12px; text-align:left;">Parameter</th>
           <th style="padding:6px 12px; text-align:left;">Wing</th>
@@ -178,9 +179,11 @@
           <td style="padding:6px 12px;">0.833</td>
         </tr>
       </table>
+</div>
 
       <p>Key flight-condition parameters and resulting aerodynamic coefficients at &alpha; = 2&deg;:</p>
-      <table style="border-collapse:collapse; font-size:0.9em; margin:0.6rem 0 1rem; width:100%;">
+      <div class="table-scroll">
+<table style="border-collapse:collapse; font-size:0.9em; margin:0.6rem 0 1rem; width:100%;">
         <tr style="background:#004080; color:white;">
           <th style="padding:6px 12px; text-align:left;">Parameter</th>
           <th style="padding:6px 12px; text-align:left;">Value</th>
@@ -226,6 +229,7 @@
           <td style="padding:6px 12px;">163.8 ft/s</td>
         </tr>
       </table>
+</div>
 
       <div style="display:flex; gap:1rem; flex-wrap:wrap; margin:1rem 0;">
         <figure style="flex:1; min-width:220px; margin:0;">
@@ -291,7 +295,8 @@
       <h2>Hand Calculations vs. DATCOM &mdash; Comparison</h2>
       <p>The table below summarizes the full derivative comparison at the design point (&alpha; = 2&deg;, Mach 0.6, 6,500 ft). <strong>Good agreement</strong> was achieved for most aerodynamic coefficients. The significant discrepancy in <strong>C<sub>m&alpha;</sub></strong> underscores that DATCOM&rsquo;s semi-empirical methods have known limitations for tail-effectiveness estimation on configurations where the horizontal tail is a strong contributor to longitudinal stability, warranting cross-verification with analytical methods.</p>
 
-      <table style="border-collapse:collapse; font-size:0.9em; margin:0.6rem 0 1rem; width:100%;">
+      <div class="table-scroll">
+<table style="border-collapse:collapse; font-size:0.9em; margin:0.6rem 0 1rem; width:100%;">
         <tr style="background:#004080; color:white;">
           <th style="padding:6px 14px; text-align:left;">Parameter</th>
           <th style="padding:6px 14px; text-align:center;">Hand-Calculated</th>
@@ -348,6 +353,7 @@
           <td style="padding:6px 12px; text-align:center;">N/A</td>
         </tr>
       </table>
+</div>
     </div>
   </section>
 
@@ -357,7 +363,8 @@
       <h2>Simulink Integration &amp; Dynamic Derivatives</h2>
       <p><strong>Five stability derivatives</strong> computed by DATCOM were integrated as <strong>1-D lookup-table (T(u))</strong> blocks in a Simulink <strong>6-DOF</strong> general aviation flight dynamics model. Each lookup table maps angle of attack (in degrees) to its respective derivative value, evaluated at the design flight condition. This non-linear aerodynamic representation is more accurate than fixed-derivative linear models because it captures how the derivatives change across the angle-of-attack range from <strong>&minus;4&deg; to +18&deg;</strong>.</p>
 
-      <table style="border-collapse:collapse; font-size:0.9em; margin:0.6rem 0 1rem;">
+      <div class="table-scroll">
+<table style="border-collapse:collapse; font-size:0.9em; margin:0.6rem 0 1rem;">
         <tr style="background:#004080; color:white;">
           <th style="padding:6px 14px; text-align:left;">Derivative</th>
           <th style="padding:6px 14px; text-align:left;">Physical Meaning</th>
@@ -389,6 +396,7 @@
           <td style="padding:6px 12px; text-align:center;">0.003193</td>
         </tr>
       </table>
+</div>
 
       <figure style="margin:1rem 0;">
         <img src="Folder/AircraftStability/fig13.png" alt="Simulink lookup table blocks for five aerodynamic derivatives" style="width:100%; border-radius:6px;" />

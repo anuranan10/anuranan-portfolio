@@ -811,9 +811,13 @@ ul.ae-card-desc li {
   white-space: nowrap;
 }
 
-/* Horizontal-scroll wrapper for wide tables (used by Task 3). */
+/* Wide data tables scroll inside their own box so the page never
+   scrolls horizontally. */
 .table-scroll {
-  overflow-x: auto;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+    margin-bottom: 1rem;
 }
 
 /* Tablet: keep one clean row instead of letting nine links wrap. */

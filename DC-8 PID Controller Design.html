@@ -173,7 +173,8 @@
       <p style="margin:0.4rem 0 0.4rem 1.5rem; font-style:italic;">&Delta;P(s) / &Delta;&delta;<sub>r</sub>(s) = (0.03379s &minus; 0.3953) / (s<sup>2</sup> + 0.3794s + 0.7918)</p>
 
       <p>Natural frequencies and damping ratios extracted from pole locations:</p>
-      <table style="border-collapse:collapse; font-size:0.9em; margin:0.6rem 0 0.8rem;">
+      <div class="table-scroll">
+<table style="border-collapse:collapse; font-size:0.9em; margin:0.6rem 0 0.8rem;">
         <tr style="background:#004080; color:white;">
           <th style="padding:6px 12px;">Mode</th>
           <th style="padding:6px 12px;">Poles</th>
@@ -199,6 +200,7 @@
           <td style="padding:6px 12px;"><strong>0.2132</strong></td>
         </tr>
       </table>
+</div>
       <p>The phugoid mode&rsquo;s low damping (<strong>&zeta; = 0.0798</strong>) is characteristic of commercial transport aircraft &mdash; it produces slow, lightly-damped speed-altitude oscillations that pilots typically correct through autothrottle engagement. The short period&rsquo;s <strong>&zeta; = 0.5196</strong> is within the acceptable MIL-SPEC range for <strong>Level 1 handling qualities</strong>.</p>
 
       <div style="background:#fff8ec; border-left:4px solid #f0a30a; border-radius:0 6px 6px 0; padding:1rem 1.2rem; margin:1.2rem 0;">
@@ -271,7 +273,8 @@
     <div class="project-text">
       <h2>Key Results</h2>
       <p>The <strong>AOA loop</strong> met the overshoot specification (<strong>4% &le; 5%</strong>) but missed the settling time target (<strong>15 s vs. &lt;10 s</strong>), while achieving exact <strong>zero steady-state error</strong>. The <strong>forward speed loop</strong> verified zero steady-state error analytically but produced large-amplitude transients, falling short of both transient specs.</p>
-      <table style="border-collapse:collapse; font-size:0.9em; margin:0.5rem 0 1.2rem;">
+      <div class="table-scroll">
+<table style="border-collapse:collapse; font-size:0.9em; margin:0.5rem 0 1.2rem;">
         <tr style="background:#004080; color:white;">
           <th style="padding:6px 12px;">Controller</th>
           <th style="padding:6px 12px;">Max Overshoot</th>
@@ -294,9 +297,11 @@
           <td style="padding:6px 12px;">Analytically &#10007;</td>
         </tr>
       </table>
+</div>
 
       <p><strong>PID Gain Summary:</strong></p>
-      <table style="border-collapse:collapse; font-size:0.9em; margin:0.5rem 0;">
+      <div class="table-scroll">
+<table style="border-collapse:collapse; font-size:0.9em; margin:0.5rem 0;">
         <tr style="background:#004080; color:white;">
           <th style="padding:6px 12px;">Loop</th>
           <th style="padding:6px 12px;">k<sub>P</sub></th>
@@ -316,6 +321,7 @@
           <td style="padding:6px 12px;">&minus;0.075</td>
         </tr>
       </table>
+</div>
     </div>
     <div class="project-image-group">
       <img src="Folder/DC8PID/fig01_aoa_response.png" alt="AOA PID step response" style="width:100%; border-radius:6px; margin-bottom:0.5rem;" />

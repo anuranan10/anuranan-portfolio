@@ -83,7 +83,8 @@
   <section class="project-row">
     <div class="project-text">
       <h2>Key Results</h2>
-      <table style="border-collapse:collapse; font-size:0.9em; margin:0.5rem 0;">
+      <div class="table-scroll">
+<table style="border-collapse:collapse; font-size:0.9em; margin:0.5rem 0;">
         <tr style="background:#004080; color:white;">
           <th style="padding:5px 10px;">Controller / Test</th><th style="padding:5px 10px;">t<sub>p</sub> (s)</th><th style="padding:5px 10px;">PO (%)</th><th style="padding:5px 10px;">e<sub>ss</sub> (rad/s)</th>
         </tr>
@@ -92,6 +93,7 @@
         <tr style="background:#f4faff;"><td style="padding:5px 10px;">Lead &mdash; simulation</td><td style="padding:5px 10px;">0.04</td><td style="padding:5px 10px;">2.0</td><td style="padding:5px 10px;">0</td></tr>
         <tr><td style="padding:5px 10px;">Lead &mdash; hardware</td><td style="padding:5px 10px;">0.03</td><td style="padding:5px 10px;">44.4</td><td style="padding:5px 10px;">&minus;0.0012</td></tr>
       </table>
+</div>
       <ul>
         <li>Both controllers met simulation specs; lead had marginally lower simulated overshoot (2% vs 4.4%).</li>
         <li>On hardware, <strong>PI overshoot (23.8%) was far more moderate than lead (44.4%)</strong> &mdash; the lead compensator&rsquo;s derivative-like action amplified encoder quantization noise into the control signal, producing large velocity spikes at step transitions.</li>

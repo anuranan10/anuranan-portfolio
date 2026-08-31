@@ -137,7 +137,8 @@
         <li><strong>t<sub>peak</sub> = 2.692 s</strong> &nbsp;&middot;&nbsp; <strong>t<sub>0</sub> = 0.998 s</strong> (step onset) &nbsp;&middot;&nbsp; <strong>y<sub>peak</sub> = 0.15033 rad</strong> &nbsp;&middot;&nbsp; <strong>y<sub>ss</sub> = 0.0890 rad</strong></li>
       </ul>
       <p>These values were used to compute the standard second-order metrics:</p>
-      <table style="border-collapse:collapse; font-size:0.9em; margin:0.6rem 0 0.8rem;">
+      <div class="table-scroll">
+<table style="border-collapse:collapse; font-size:0.9em; margin:0.6rem 0 0.8rem;">
         <tr style="background:#004080; color:white;">
           <th style="padding:6px 14px;">Parameter</th>
           <th style="padding:6px 14px;">Symbol</th>
@@ -169,6 +170,7 @@
           <td style="padding:6px 14px;"><strong>1.865 rad/s</strong></td>
         </tr>
       </table>
+</div>
       <p>With a damping ratio of <strong>&zeta; = 0.1178</strong>, the uncompensated Quanser Aero pitch axis is highly underdamped. The <strong>68.96% overshoot</strong> and <strong>13.63-second settling time</strong> confirm that compensation is required before the platform can track any meaningful command.</p>
       <figure style="margin:1rem 0;">
         <img src="Folder/QuanserAero/fig01_unity_step_response.png" alt="Unity-feedback open-loop step response of Quanser Aero pitch axis" style="width:100%; border-radius:6px;" />
@@ -226,7 +228,8 @@
       <h2>Final PID Tuning &amp; Performance</h2>
       <p>The three gains were tuned simultaneously on the hardware until the combined response met all design requirements. The final tuned gains were <strong>k<sub>p</sub> = 8, k<sub>d</sub> = 3.1, k<sub>i</sub> = 5</strong>. These values were chosen by first setting k<sub>p</sub> high enough for fast rise, then adding k<sub>d</sub> to suppress oscillations, and finally increasing k<sub>i</sub> incrementally to drive out the remaining steady-state error without reintroducing instability.</p>
 
-      <table style="border-collapse:collapse; font-size:0.9em; margin:0.6rem 0 0.8rem;">
+      <div class="table-scroll">
+<table style="border-collapse:collapse; font-size:0.9em; margin:0.6rem 0 0.8rem;">
         <tr style="background:#004080; color:white;">
           <th style="padding:6px 14px;">Parameter</th>
           <th style="padding:6px 14px;">Value</th>
@@ -252,6 +255,7 @@
           <td style="padding:6px 14px;">&#10003;</td>
         </tr>
       </table>
+</div>
 
       <figure style="margin:1rem 0;">
         <img src="Folder/QuanserAero/fig05_step_response_I_tuned_PID.png" alt="Pitch response with final tuned PID gains" style="width:100%; border-radius:6px;" />
@@ -312,7 +316,8 @@
       <h2>Frequency-Domain Analysis &amp; Stability Margins</h2>
       <p>Bode plots were generated in MATLAB for both the open-loop plant and the PID-compensated open loop. The plant transfer function G(s) = &omega;<sub>n</sub><sup>2</sup> / (s<sup>2</sup> + 2&zeta;&omega;<sub>n</sub>s + &omega;<sub>n</sub><sup>2</sup>) was combined with the PID controller C(s) = k<sub>p</sub> + k<sub>i</sub>/s + k<sub>d</sub>s, and the <code>margin()</code> function was used to extract gain margins, phase margins, and bandwidth.</p>
 
-      <table style="border-collapse:collapse; font-size:0.9em; margin:0.6rem 0 0.8rem;">
+      <div class="table-scroll">
+<table style="border-collapse:collapse; font-size:0.9em; margin:0.6rem 0 0.8rem;">
         <tr style="background:#004080; color:white;">
           <th style="padding:6px 14px;">System</th>
           <th style="padding:6px 14px;">Phase Margin</th>
@@ -332,6 +337,7 @@
           <td style="padding:6px 14px;"><strong>19.32 rad/s</strong></td>
         </tr>
       </table>
+</div>
 
       <p>The open-loop plant has a phase margin of only <strong>3.68&deg;</strong>, placing it right at the edge of instability &mdash; consistent with the severe oscillations seen in the open-loop step response. Adding the PID controller drives the phase margin to <strong>87.5&deg;</strong>, a dramatic improvement indicating robust stability with ample damping. The gain margin is infinite for both cases because the phase never crosses &minus;180&deg; in the frequency range of interest.</p>
 

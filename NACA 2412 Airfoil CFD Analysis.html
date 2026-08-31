@@ -243,7 +243,8 @@
       <h2>Surface Pressure Coefficient &mdash; &alpha; = 0&deg;</h2>
       <p>Surface pressure data extracted from the converged &alpha; = 0&deg; solution confirms the field-plot interpretation quantitatively. The enclosed area between the upper and lower surface C<sub>p</sub> curves is proportional to section lift &mdash; a large gap between the curves means meaningful lift; identical curves would mean zero lift.</p>
 
-      <table style="border-collapse:collapse; font-size:0.9em; margin:0.6rem 0 1.2rem; width:100%;">
+      <div class="table-scroll">
+<table style="border-collapse:collapse; font-size:0.9em; margin:0.6rem 0 1.2rem; width:100%;">
         <tr style="background:#004080; color:white;">
           <th style="padding:6px 12px; text-align:left;">Location</th>
           <th style="padding:6px 12px; text-align:left;">Upper Surface C<sub>p</sub></th>
@@ -270,6 +271,7 @@
           <td style="padding:6px 12px;">+0.152</td>
         </tr>
       </table>
+</div>
 
       <p>The upper-surface suction peak sits at x/c = 0.22 &mdash; just aft of the nose and ahead of the geometric maximum-thickness location (x/c &asymp; 0.30) &mdash; consistent with inviscid panel-method predictions for this camber distribution. The lower surface shows a smaller, secondary suction region near its own leading edge: camber forces the streamlines to curve concavely on the underside too, just less aggressively than on top. Both surfaces recover to positive C<sub>p</sub> by the trailing edge, with the small remaining difference between them (C<sub>p,upper</sub> = 0.136 vs. C<sub>p,lower</sub> = 0.152) confirming the Kutta condition is satisfied and bound circulation is present.</p>
     </div>
@@ -281,7 +283,8 @@
       <h2>Comparative Analysis Across the Sweep</h2>
       <p>Stepping back across all four cases shows a clean progression from potential-flow-like behavior to fully separated bluff-body flow &mdash; and a corresponding decline in how much the steady RANS solution can be trusted.</p>
 
-      <table style="border-collapse:collapse; font-size:0.85em; margin:0.6rem 0 1.2rem; width:100%;">
+      <div class="table-scroll">
+<table style="border-collapse:collapse; font-size:0.85em; margin:0.6rem 0 1.2rem; width:100%;">
         <tr style="background:#004080; color:white;">
           <th style="padding:6px 10px; text-align:left;">Parameter</th>
           <th style="padding:6px 10px; text-align:left;">&alpha; = 0&deg;</th>
@@ -332,6 +335,7 @@
           <td style="padding:6px 10px;">pimpleFoam / DES</td>
         </tr>
       </table>
+</div>
 
       <p>The widening colorbar range at higher AoA in the raw ParaView plots reflects intensifying pressure gradients as more flow energy is redirected into circulation and ultimately lost to the separated wake. Across every case, the suction side always does more aerodynamic work than the pressure side &mdash; a fundamental characteristic of low-speed aerodynamics.</p>
     </div>

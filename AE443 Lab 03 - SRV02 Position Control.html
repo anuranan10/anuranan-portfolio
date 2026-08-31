@@ -100,7 +100,8 @@
   <section class="project-row">
     <div class="project-text">
       <h2>Key Results</h2>
-      <table style="border-collapse:collapse; font-size:0.9em; margin:0.5rem 0;">
+      <div class="table-scroll">
+<table style="border-collapse:collapse; font-size:0.9em; margin:0.5rem 0;">
         <tr style="background:#004080; color:white;">
           <th style="padding:5px 10px;">Test</th><th style="padding:5px 10px;">t<sub>p</sub> (s)</th><th style="padding:5px 10px;">PO (%)</th><th style="padding:5px 10px;">e<sub>ss</sub> (rad)</th>
         </tr>
@@ -111,6 +112,7 @@
         <tr style="background:#f4faff;"><td style="padding:5px 10px;">Ramp sim (PIV)</td><td style="padding:5px 10px;">&mdash;</td><td style="padding:5px 10px;">&mdash;</td><td style="padding:5px 10px;">0.005</td></tr>
         <tr><td style="padding:5px 10px;">Ramp impl (PIV)</td><td style="padding:5px 10px;">&mdash;</td><td style="padding:5px 10px;">&mdash;</td><td style="padding:5px 10px;">0.007</td></tr>
       </table>
+</div>
       <ul>
         <li>Hardware step response (PO = 7.86%) slightly exceeded the 5% design spec, attributable to friction and encoder quantization noise not captured in the model.</li>
         <li>PIV reduced ramp e<sub>ss</sub> from ~0.19 rad to ~0.007 rad &mdash; a <strong>97% reduction</strong> by adding one integral term, directly validating the Type-2 behavior theory predicts.</li>
