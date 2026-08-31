@@ -28,6 +28,32 @@ nav a:hover {
     text-decoration: underline;
 }
 
+/* --- Responsive nav ------------------------------------------------ */
+/* Hidden but focusable: clipped rather than display:none so the menu
+   stays operable from the keyboard (Tab to it, Space to toggle). */
+.nav-toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+/* Collapsed bar is mobile-only; hidden at tablet and desktop. */
+.nav-bar {
+    display: none;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1 1 100%;
+}
+
 header {
     display: flex;
     flex-direction: row;
@@ -785,14 +811,123 @@ ul.ae-card-desc li {
   white-space: nowrap;
 }
 
+/* Horizontal-scroll wrapper for wide tables (used by Task 3). */
+.table-scroll {
+  overflow-x: auto;
+}
+
+/* Tablet: keep one clean row instead of letting nine links wrap. */
+@media (min-width: 769px) and (max-width: 1024px) {
+    nav {
+      padding: 0.75rem 0.5rem;
+    }
+
+    .nav-links {
+      flex-wrap: nowrap;
+      justify-content: center;
+    }
+
+    nav a {
+      font-size: 0.85rem;
+      margin: 0 0.4rem;
+      white-space: nowrap;
+    }
+}
+
 @media (max-width: 768px) {
     nav {
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 1rem;
+      flex-direction: row;
+      align-items: stretch;
+      flex-wrap: wrap;
+      gap: 0;
+      padding: 0;
     }
-  
+
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      height: 52px;          /* must match calc(100vh - 52px) below */
+      box-sizing: border-box;
+      padding: 0 0.5rem 0 1rem;
+    }
+
+    .nav-page {
+      font-weight: bold;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      margin-right: 0.5rem;
+    }
+
+    /* Three bars drawn from two pseudo-elements: ::before carries the top
+       bar plus a box-shadow copy for the middle, ::after is the bottom. */
+    .nav-burger {
+      position: relative;
+      width: 44px;           /* 44px touch target */
+      height: 44px;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .nav-burger::before,
+    .nav-burger::after {
+      content: "";
+      position: absolute;
+      left: 9px;
+      width: 26px;
+      height: 3px;
+      border-radius: 2px;
+      background: #fff;
+      transition: top 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .nav-burger::before {
+      top: 15px;
+      box-shadow: 0 5.5px 0 #fff;   /* the middle bar */
+    }
+
+    .nav-burger::after {
+      top: 26px;
+    }
+
+    /* Checked: collapse the three bars into an X. */
+    .nav-toggle:checked ~ .nav-bar .nav-burger::before {
+      top: 20px;
+      box-shadow: none;
+      transform: rotate(45deg);
+    }
+
+    .nav-toggle:checked ~ .nav-bar .nav-burger::after {
+      top: 20px;
+      transform: rotate(-45deg);
+    }
+
+    .nav-toggle:focus-visible ~ .nav-bar .nav-burger {
+      outline: 2px solid #cfe3ff;
+      outline-offset: -4px;
+    }
+
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      max-height: calc(100vh - 52px);   /* must match .nav-bar height */
+      overflow-y: auto;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .nav-toggle:checked ~ .nav-links {
+      display: flex;
+    }
+
+    .nav-links a {
+      margin: 0;
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
     header {
       flex-direction: column;
       padding: 2rem 1rem;
