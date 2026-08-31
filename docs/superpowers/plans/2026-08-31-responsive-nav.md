@@ -391,15 +391,17 @@ Because `.nav-links` is the sole visible child of `nav` and reuses the same
 In `style.css`, immediately **before** the `@media (max-width: 768px)` block, add:
 
 ```css
-/* Tablet: keep one clean row instead of letting nine links wrap. */
+/* Tablet: centered rows at readable size. Wraps to a second row at the
+   narrow end rather than overflowing — see the spec's revision note. */
 @media (min-width: 769px) and (max-width: 1024px) {
     nav {
       padding: 0.75rem 0.5rem;
     }
 
     .nav-links {
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
       justify-content: center;
+      row-gap: 0.5rem;
     }
 
     nav a {
@@ -755,9 +757,9 @@ cb.focus();
 
 Expected: both `true`. A `display: none` checkbox is not focusable, so this guards the clip-rect approach.
 
-- [ ] **Step 5: Confirm tablet renders one row**
+- [ ] **Step 5: Confirm tablet rows are tidy and bounded**
 
-At 1024px and again at 800px on `index.html`, evaluate:
+One row at 1024px; at 800px one or two rows are acceptable but never more, and the page must not overflow. At 1024px and again at 800px on `index.html`, evaluate:
 
 ```js
 const tops = [...document.querySelectorAll('.nav-links a')]

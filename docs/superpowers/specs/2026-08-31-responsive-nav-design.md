@@ -89,7 +89,9 @@ Three tiers. Boundaries are stated precisely because 768px is the existing query
 
 **Above 1024px — unchanged.** `.nav-bar` is `display: none`. `.nav-links` renders as the current flex row with today's font size and margins. No visual change from the current site.
 
-**769–1024px (new).** `.nav-bar` stays hidden and `.nav-links` stays a row, but `nav a` drops to `font-size: 0.85rem` and `margin: 0 0.4rem`, with `justify-content: center`. This fits all nine links on one line instead of wrapping.
+**769–1024px (new).** `.nav-bar` stays hidden. `nav a` drops to `font-size: 0.85rem` and `margin: 0 0.4rem`, with `justify-content: center` and `row-gap: 0.5rem`.
+
+**Revised 2026-08-31 after browser verification.** This tier originally specified `flex-wrap: nowrap` to force a single row. Measurement showed that is not achievable: at 769px the nine links need 851px against 785px available, and forcing one row by shrinking type only reaches 756px of 769px (~13px slack) before the width plateaus — fragile enough that slightly wider font rendering on a real device would push the page back into horizontal overflow. The tier now uses `flex-wrap: wrap`, so links form one centered row where they fit (1024px and iPad landscape) and wrap to a second centered row where they do not. Readable 0.85rem type is preserved and the page can never overflow. Decision confirmed with the user.
 
 **768px and below.** `.nav-bar` becomes visible as a flex row (page name left, burger right). `.nav-links` is `display: none` until the checkbox is checked, then `display: flex` with `flex-direction: column`.
 
@@ -147,7 +149,7 @@ Render pages in Chrome at 375px (phone), 800px (tablet), 1024px (tablet upper ed
 2. **Menu toggles.** At 375px, the collapsed bar shows the correct page name; tapping the burger reveals all nine links; tapping again collapses.
 3. **Keyboard access.** At 375px, the toggle is reachable by Tab and operable with Space.
 4. **Desktop unchanged.** At 1440px, `index.html` and `aerospace.html` are visually identical to the pre-change site.
-5. **Tablet single row.** At 1024px and 800px, nav links occupy exactly one row with no wrapping. Measured by confirming every `nav a` shares the same `offsetTop`.
+5. **Tablet rows are tidy and bounded.** At 1024px every `nav a` shares the same `offsetTop` (one row). At 800px the links may occupy one or two rows, but never more, and the page must not overflow horizontally.
 6. **Tables scroll locally.** On a table page at 375px, the table scrolls horizontally while the page does not.
 
 ## Risks
