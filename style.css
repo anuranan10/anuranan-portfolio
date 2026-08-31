@@ -827,8 +827,9 @@ ul.ae-card-desc li {
     }
 
     .nav-links {
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
       justify-content: center;
+      row-gap: 0.5rem;
     }
 
     nav a {
