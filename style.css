@@ -191,7 +191,9 @@ footer {
     box-shadow: 0 10px 24px rgba(0, 64, 128, 0.12);
 }
 
-.quick-link-card h3 {
+/* Was h3; promoted to h2 so the page outline has no skipped level.
+   Size and margins are set explicitly, so rendering is unchanged. */
+.quick-link-card h2 {
     margin: 0 0 0.35rem;
     color: #004080;
     font-size: 0.92rem;
@@ -471,8 +473,13 @@ footer {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.contact-item h3 {
+/* Was h3; promoted to h2 so the page outline has no skipped level. The
+   explicit size and top margin reproduce the browser's h3 defaults
+   (1.17em, with a 1em top margin), so rendering is unchanged. */
+.contact-item h2 {
     color: #004080;
+    font-size: 1.17em;
+    margin-top: 1em;
     margin-bottom: 0.5rem;
 }
 
@@ -1046,3 +1053,42 @@ ul.ae-card-desc li {
     }
   }
   
+/* --- Accessibility -------------------------------------------------- */
+/* Skip link: parked off-screen until focused, so pointer users never see
+   it while Tab reaches it before the nine nav links. */
+.skip-link {
+    position: fixed;
+    left: -9999px;
+    top: 0;
+    z-index: 200;   /* must beat the sticky nav's z-index: 100 */
+    padding: 0.75rem 1rem;
+    background: #ffffff;
+    color: #004080;
+    font-weight: bold;
+    text-decoration: none;
+    border: 2px solid #004080;
+    border-radius: 0 0 4px 0;
+}
+
+.skip-link:focus {
+    left: 0;
+}
+
+/* <main> is focusable only as a skip-link target; it should never draw a
+   ring of its own. */
+main:focus {
+    outline: none;
+}
+
+/* A visible focus ring everywhere, not just on the hamburger. The browser
+   default is nearly invisible against the dark nav. */
+a:focus-visible {
+    outline: 2px solid #004080;
+    outline-offset: 2px;
+}
+
+nav a:focus-visible,
+footer a:focus-visible {
+    outline: 2px solid #cfe3ff;
+    outline-offset: 2px;
+}
