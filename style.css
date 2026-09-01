@@ -1014,6 +1014,9 @@ ul.ae-card-desc li {
     .contact-grid {
       padding: 1rem;
       width: 100%;
+      /* Without this, width:100% plus 1rem of padding measures 32px wider
+         than the viewport and scrolls the whole page sideways. */
+      box-sizing: border-box;
     }
 
     .exp-header {
