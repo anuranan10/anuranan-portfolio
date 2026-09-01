@@ -10,6 +10,21 @@ Static personal portfolio website for Anuranan Bharadwaj, hosted at [anuranan.in
 
 Single shared stylesheet (`style.css`) consumed by all pages. No preprocessing, no bundling. Navigation links and the footer block are duplicated across every HTML file — changes to nav or footer must be applied to each page manually.
 
+### Generated blocks — do not hand-edit
+
+The `<head>` metadata between the `<!-- meta:auto -->` and `<!-- /meta:auto -->` comments is generated. Hand edits there are overwritten the next time the script runs. To change a page's description or preview image, edit `DESCRIPTIONS` (or `FORCE_CARD`) in `tools/add_meta.py` and rerun it.
+
+`tools/` holds build-time Python only — never shipped to the browser, so the no-JavaScript rule is unaffected. All scripts are idempotent and are run from the repo root:
+
+| Script | Purpose |
+|---|---|
+| `add_meta.py` | Regenerates the `<head>` metadata block on all 39 pages |
+| `make_brand_assets.py` | Regenerates `favicon.*`, `apple-touch-icon.png`, `og-card.png` |
+| `rewrite_nav.py` | Replaces the `<nav>` block on all 39 pages |
+| `wrap_tables.py` | Wraps `<table>` elements in `.table-scroll` |
+| `verify_responsive.py` | Asserts nav/table/CSS structure — run after layout changes |
+| `verify_meta.py` | Asserts metadata completeness and that referenced assets exist |
+
 ### Page structure
 
 | File | Purpose |
