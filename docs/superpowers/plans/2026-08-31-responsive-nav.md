@@ -46,7 +46,7 @@ Builds the test that every later task is checked against. It must fail now and k
 - Consumes: nothing.
 - Produces: a CLI returning exit code 0 on pass, 1 on failure. Later tasks run `python tools/verify_responsive.py` as their test step. Checks are grouped by name: `nav`, `tables`, `css`.
 
-- [ ] **Step 1: Write the failing test harness**
+- [x] **Step 1: Write the failing test harness**
 
 Create `tools/verify_responsive.py`:
 
@@ -184,13 +184,13 @@ if __name__ == "__main__":
     sys.exit(main())
 ```
 
-- [ ] **Step 2: Run it to confirm it fails**
+- [x] **Step 2: Run it to confirm it fails**
 
 Run: `python tools/verify_responsive.py`
 
 Expected: exit code 1, output beginning `FAIL -`, listing missing `id="nav-toggle"` for all 39 files plus the missing CSS selectors. This confirms the harness detects the current, unfixed state.
 
-- [ ] **Step 3: Commit the harness**
+- [x] **Step 3: Commit the harness**
 
 ```bash
 git add tools/verify_responsive.py
@@ -212,7 +212,7 @@ Markup and styles ship together so the site is never left with restyled markup a
 - Consumes: `tools/verify_responsive.py` from Task 1.
 - Produces: the class names `.nav-toggle`, `.nav-bar`, `.nav-page`, `.nav-burger`, `.nav-links` in markup and CSS. Task 5 asserts against these exact names.
 
-- [ ] **Step 1: Write the nav rewrite script**
+- [x] **Step 1: Write the nav rewrite script**
 
 Create `tools/rewrite_nav.py`:
 
@@ -314,19 +314,19 @@ if __name__ == "__main__":
     sys.exit(main())
 ```
 
-- [ ] **Step 2: Run the rewrite**
+- [x] **Step 2: Run the rewrite**
 
 Run: `python tools/rewrite_nav.py`
 
 Expected: `rewritten: 39   already done: 0   refused: 0`. Any `REFUSED` line means stop and inspect that file — do not proceed.
 
-- [ ] **Step 3: Spot-check two files**
+- [x] **Step 3: Spot-check two files**
 
 Run: `sed -n '/<nav>/,/<\/nav>/p' index.html` and `sed -n '/<nav>/,/<\/nav>/p' aerospace.html`
 
 Expected: `index.html` shows `<span class="nav-page">Home</span>`; `aerospace.html` shows `<span class="nav-page">Aerospace Projects</span>`. Both list the same nine links.
 
-- [ ] **Step 4: Remove the two obsolete mobile nav rules**
+- [x] **Step 4: Remove the two obsolete mobile nav rules**
 
 In `style.css`, inside the `@media (max-width: 768px)` block, the current nav rule reads:
 
@@ -351,7 +351,7 @@ Replace that entire rule with:
     }
 ```
 
-- [ ] **Step 5: Add base nav rules**
+- [x] **Step 5: Add base nav rules**
 
 In `style.css`, immediately after the existing `nav a:hover` rule (around line 29), add:
 
@@ -386,7 +386,7 @@ In `style.css`, immediately after the existing `nav a:hover` rule (around line 2
 Because `.nav-links` is the sole visible child of `nav` and reuses the same
 `justify-content: space-around`, desktop rendering is unchanged.
 
-- [ ] **Step 6: Add the tablet block**
+- [x] **Step 6: Add the tablet block**
 
 In `style.css`, immediately **before** the `@media (max-width: 768px)` block, add:
 
@@ -412,7 +412,7 @@ In `style.css`, immediately **before** the `@media (max-width: 768px)` block, ad
 }
 ```
 
-- [ ] **Step 7: Add the mobile nav rules**
+- [x] **Step 7: Add the mobile nav rules**
 
 In `style.css`, inside the `@media (max-width: 768px)` block, directly after the `nav` rule edited in Step 4, add:
 
@@ -503,13 +503,13 @@ In `style.css`, inside the `@media (max-width: 768px)` block, directly after the
     }
 ```
 
-- [ ] **Step 8: Run the harness**
+- [x] **Step 8: Run the harness**
 
 Run: `python tools/verify_responsive.py`
 
 Expected: still `FAIL`, but **only** `[tables]` failures remain — all `[nav]` and `[css]` checks now pass. If any `[nav]` or `[css]` line appears, fix it before committing.
 
-- [ ] **Step 9: Commit**
+- [x] **Step 9: Commit**
 
 ```bash
 git add tools/rewrite_nav.py style.css *.html
@@ -531,7 +531,7 @@ git commit -m "feat: add CSS-only hamburger nav and tablet breakpoint"
 
 Affected files, 20 tables total: `AE315 Lab 04 - Forces and Moments on a Canard Delta Wing.html` (1), `AE417 Lab 06 - Rocket Thrust Measurement.html` (1), `AE443 Lab 01 - Servo Modeling.html` (1), `AE443 Lab 03 - SRV02 Position Control.html` (1), `AE443 Lab 05 - Speed Control.html` (1), `Aircraft Stability & Control Simulation.html` (4), `DC-8 PID Controller Design.html` (3), `NACA 2412 Airfoil CFD Analysis.html` (2), `Quanser Aero PID Control Design.html` (3), `TDRS-M Orbital Mechanics and Trajectory Design.html` (2), `Wind Tunnel Drag Study - Flap Deflection.html` (1).
 
-- [ ] **Step 1: Write the table wrapping script**
+- [x] **Step 1: Write the table wrapping script**
 
 Create `tools/wrap_tables.py`:
 
@@ -591,19 +591,19 @@ if __name__ == "__main__":
     sys.exit(main())
 ```
 
-- [ ] **Step 2: Run it**
+- [x] **Step 2: Run it**
 
 Run: `python tools/wrap_tables.py`
 
 Expected: `wrapped 20 table(s) across 11 file(s)`, with per-file counts matching the list above.
 
-- [ ] **Step 3: Confirm idempotency**
+- [x] **Step 3: Confirm idempotency**
 
 Run: `python tools/wrap_tables.py`
 
 Expected: `wrapped 0 table(s) across 0 file(s)`. If it wraps again, the skip logic is broken — `git checkout -- *.html` and fix before continuing.
 
-- [ ] **Step 4: Add the CSS**
+- [x] **Step 4: Add the CSS**
 
 In `style.css`, at the end of the file **outside** any media query (these rules apply at every width), add:
 
@@ -618,13 +618,13 @@ In `style.css`, at the end of the file **outside** any media query (these rules 
 }
 ```
 
-- [ ] **Step 5: Run the harness**
+- [x] **Step 5: Run the harness**
 
 Run: `python tools/verify_responsive.py`
 
 Expected: `PASS - 39 files verified`, exit code 0. All checks now green.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add tools/wrap_tables.py style.css *.html
@@ -644,7 +644,7 @@ git commit -m "fix: make wide data tables scroll without moving the page"
 
 `.project-image-cs` sets `min-width: 300px` (style.css:551) at every width. On a 320px viewport the content box is roughly 288px, so the element overflows and drags the page sideways.
 
-- [ ] **Step 1: Add the override**
+- [x] **Step 1: Add the override**
 
 In `style.css`, inside the `@media (max-width: 768px)` block, the existing rule reads:
 
@@ -665,13 +665,13 @@ Replace it with:
     }
 ```
 
-- [ ] **Step 2: Verify no regression**
+- [x] **Step 2: Verify no regression**
 
 Run: `python tools/verify_responsive.py`
 
 Expected: `PASS - 39 files verified`.
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add style.css
@@ -693,7 +693,7 @@ Structural checks cannot prove the layout is right. This task confirms actual re
 
 Use the Chrome browser tools. Open the local file directly, e.g. `file:///C:/Users/anura/OneDrive%20-%20Embry-Riddle%20Aeronautical%20University/Desktop/Projects/Personal%20Website/index.html`.
 
-- [ ] **Step 1: Check for horizontal overflow at every width**
+- [x] **Step 1: Check for horizontal overflow at every width**
 
 For each width in **375, 800, 1024, 1440**, resize the window, then for each of `index.html`, `aerospace.html`, `cs.html`, `NACA 2412 Airfoil CFD Analysis.html`, and `DC-8 PID Controller Design.html`, evaluate:
 
@@ -715,7 +715,7 @@ Expected: `overflows: false` in all 20 combinations. If true, find the culprit w
   .map(el => el.tagName + '.' + el.className)
 ```
 
-- [ ] **Step 2: Confirm the menu toggles at 375px**
+- [x] **Step 2: Confirm the menu toggles at 375px**
 
 At 375px on `index.html`, evaluate:
 
@@ -733,7 +733,7 @@ cb.click();
 
 Expected: `before: "none"`, `after: "flex"`, `restored: "none"`, `count: 9`, `page: "Home"`.
 
-- [ ] **Step 3: Confirm the collapsed bar height**
+- [x] **Step 3: Confirm the collapsed bar height**
 
 At 375px, evaluate:
 
@@ -744,7 +744,7 @@ At 375px, evaluate:
 
 Expected: both `52`. This confirms the sticky nav no longer swallows the viewport, and that the `calc(100vh - 52px)` constant is correct.
 
-- [ ] **Step 4: Confirm keyboard operability**
+- [x] **Step 4: Confirm keyboard operability**
 
 At 375px, evaluate:
 
@@ -757,7 +757,7 @@ cb.focus();
 
 Expected: both `true`. A `display: none` checkbox is not focusable, so this guards the clip-rect approach.
 
-- [ ] **Step 5: Confirm tablet rows are tidy and bounded**
+- [x] **Step 5: Confirm tablet rows are tidy and bounded**
 
 One row at 1024px; at 800px one or two rows are acceptable but never more, and the page must not overflow. At 1024px and again at 800px on `index.html`, evaluate:
 
@@ -770,7 +770,7 @@ const tops = [...document.querySelectorAll('.nav-links a')]
 
 Expected: `rows: 1` at both widths, and `barHidden: "none"`.
 
-- [ ] **Step 6: Confirm desktop is unchanged**
+- [x] **Step 6: Confirm desktop is unchanged**
 
 At 1440px on `index.html` and `aerospace.html`, evaluate:
 
@@ -784,7 +784,7 @@ const tops = [...document.querySelectorAll('.nav-links a')]
 
 Expected: `rows: 1`, `fontSize: "16px"` (the unmodified base size), `barHidden: "none"`. Also take a screenshot and compare against `git stash`-ed original if any doubt remains.
 
-- [ ] **Step 7: Confirm tables scroll locally**
+- [x] **Step 7: Confirm tables scroll locally**
 
 At 375px on `NACA 2412 Airfoil CFD Analysis.html`, evaluate:
 
@@ -796,7 +796,7 @@ const w = document.querySelector('.table-scroll');
 
 Expected: `pageOverflows: false`. `scrollable` may be either value depending on that table's width — the requirement is only that the page does not move.
 
-- [ ] **Step 8: Report results**
+- [x] **Step 8: Report results**
 
 Summarize each check as pass/fail with the measured numbers. Do not claim success for any check that was not actually run. If a check fails, report it plainly rather than adjusting the expectation.
 
