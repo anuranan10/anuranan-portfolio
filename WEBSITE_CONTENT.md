@@ -327,21 +327,21 @@ Design Decision: an Excel workbook (loaded into an in-memory table at startup) w
 #### LEGO Airplane Design & Engineering Documentation
 
 **EGR 120: Introduction to Engineering, Spring 2023**
-**Role:** Individual — 3D Design & Drawing Package
-**Tools:** BrickLink Studio, SolidWorks, Rendering
+**Role:** Individual, 3D Modeling & Drawing Package
+**Tools:** CATIA (3D modeling, rendering, engineering drawings, GD&T)
 
-**Headline stats:** EGR 120 · 17-page engineering drawing package · twin-engine configuration · T-tail empennage
+**Headline stats:** EGR 120 · 17 sheet engineering drawing package · twin-propeller configuration · tricycle landing gear
 
-A twin-engine LEGO airplane with a T-tail empennage and tricycle landing gear was designed in BrickLink Studio (using the real LEGO part library and connection logic) in a teal/orange/white color scheme, drawing inspiration from a reference LEGO Technic race plane. A photorealistic ray-traced rendering was composited onto a runway photo background. Design Decision: working exclusively within the real LEGO part library (rather than freeform geometry) mirrors the constraint-driven nature of real aircraft design, where every shape decision must trace back to an available, manufacturable component.
+Individual project in EGR 120, a freshman 3D modeling course. The starting point was a physical LEGO Technic race plane. Every part was measured by hand with calipers and rules (uncertainty about ±0.1 mm, with engineering assumptions where features could not be measured directly) and modeled from scratch in CATIA. The assembly has a very high part count, which was the hardest part of the project, and no 3D models of LEGO parts exist online (unlike nuts and bolts, available from McMaster-Carr). The course required changes to the physical model, so two design decisions were made. (1) Propulsion: the single nose propeller was changed to two propellers mounted on the wings (twin-propeller configuration; no propulsion analysis was done). (2) Landing gear: the two front wheels and one rear wheel were changed to a tricycle layout, with a single nose wheel and two main wheels at the back, like commercial aircraft, because twin propellers mean more thrust and more weight and the goal was a configuration that is more stable on the ground. Deliverables: a 17 sheet engineering drawing package with GD&T, a CATIA render, and a rendered image composited on a runway background. Images: physical model (original) and CATIA model (redesign: twin propeller, tricycle gear).
 
-**17-Page SolidWorks Drawing Package**
+**17-Sheet CATIA Drawing Package (with GD&T)**
 - Sheet 01/17: Full Assembly Isometric (1:1 scale)
 - Sheet 02/17: Full Assembly Exploded View with 22 part callouts (1:2 scale)
 - Sheet 08/17: Wing 1 Subassembly (1:1 scale)
 - Sheet 13/17: Section A-A view (2:1 scale)
 - Sheet 16/17: Support Element detail with H8/f7 tolerances (2:1 scale)
 
-**Key Takeaways** (4 total): design constraints (limited part library) drive creativity; engineering drawings are a communication standard across disciplines; translating a 3D model to 2D views requires deliberate view selection; and rendering grounds a design in a realistic physical context.
+**Key Takeaways** (4 total): modeling from scratch with no part library; measuring by hand and managing assumptions; configuration changes (twin propellers, tricycle gear) need a stated reason; and drawings and GD&T as documentation.
 
 ---
 
@@ -747,7 +747,7 @@ A 3D circular pipe — 200 mm diameter, 3 m long — built directly in Fluent's 
 
 ### Cross-Listed Projects
 
-Three more cards link to detail pages that live primarily on the Aerospace hub (see Section 2 above for full content): **Aircraft Wing Structural Analysis** (Fusion 360 CAD + FEMAP/NX Nastran FEA), **Aircraft Stability & Control Simulation** (6-DOF MATLAB/Simulink + FlightGear), and **LEGO Airplane Design & Engineering Documentation** (BrickLink Studio CAD + SolidWorks drawing package).
+Three more cards link to detail pages that live primarily on the Aerospace hub (see Section 2 above for full content): **Aircraft Wing Structural Analysis** (Fusion 360 CAD + FEMAP/NX Nastran FEA), **Aircraft Stability & Control Simulation** (6-DOF MATLAB/Simulink + FlightGear), and **LEGO Airplane Design & Engineering Documentation** (CATIA modeling + GD&T drawing package).
 
 ---
 

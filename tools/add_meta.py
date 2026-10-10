@@ -188,9 +188,10 @@ DESCRIPTIONS = {
         "filter, compare, and visualize aircraft fleet options against a "
         "structured performance database.",
     "LEGO Airplane Design.html":
-        "EGR 120 design-to-documentation project: a custom LEGO airplane "
-        "modeled and rendered in 3D, documented in a 17-page SolidWorks "
-        "engineering drawing package.",
+        "EGR 120 project: a LEGO Technic race plane measured by hand and "
+        "modeled from scratch in CATIA, redesigned with twin propellers "
+        "and tricycle gear, documented in a 17 sheet drawing package with "
+        "GD&T.",
 }
 
 # Pages whose own imagery is not the best preview get the branded card.
